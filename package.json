@@ -1,11 +1,22 @@
 {
-  "name": "@noodlesoup/angular",
-  "version": "1.0.0",
-  "description": "Angular library for NoodleSoup component ecosystem",
+  "name": "@chilibits/angular",
+  "version": "0.0.1",
+  "description": "Angular library for ChiliBits component ecosystem",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bruno Poeta",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thenoodlesoup/lib-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thenoodlesoup/lib-angular/issues"
+  },
+  "homepage": "https://github.com/thenoodlesoup/lib-angular#readme"
 }
