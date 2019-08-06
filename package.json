@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thenoodlesoup/lib-angular.git"
+    "url": "git+https://github.com/chilibits/lib-angular.git"
   },
   "bugs": {
-    "url": "https://github.com/thenoodlesoup/lib-angular/issues"
+    "url": "https://github.com/chilibits/lib-angular/issues"
   },
-  "homepage": "https://github.com/thenoodlesoup/lib-angular#readme"
+  "homepage": "https://github.com/chilibits/lib-angular#readme"
 }
