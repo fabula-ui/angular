@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "fabula": {
+      "root": "projects/fabula",
+      "sourceRoot": "projects/fabula/src",
+      "projectType": "library",
+      "prefix": "fab",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/fabula/tsconfig.lib.json",
+            "project": "projects/fabula/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fabula/src/test.ts",
+            "tsConfig": "projects/fabula/tsconfig.spec.json",
+            "karmaConfig": "projects/fabula/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fabula/tsconfig.lib.json",
+              "projects/fabula/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "fabula-angular"

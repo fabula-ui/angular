@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import {FabulaModule} from '../../projects/fabula/src/lib/fabula.module';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FabulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
