@@ -1,7 +1,7 @@
 {
-  "name": "@chilibits/angular",
+  "name": "@fabula/angular",
   "version": "0.0.1",
-  "description": "Angular library for ChiliBits component ecosystem",
+  "description": "Angular library for Fabula component ecosystem",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chilibits/lib-angular.git"
+    "url": "git+https://github.com/fabula-ui/lib-angular.git"
   },
   "bugs": {
-    "url": "https://github.com/chilibits/lib-angular/issues"
+    "url": "https://github.com/fabula-ui/lib-angular/issues"
   },
-  "homepage": "https://github.com/chilibits/lib-angular#readme"
+  "homepage": "https://github.com/fabula-ui/lib-angular#readme"
 }
