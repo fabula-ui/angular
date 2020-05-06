@@ -1,7 +1,7 @@
 {
-  "name": "fabula-angular-base",
+  "name": "fabula-lib-angular",
+  "description": "Fabula UI Angular library",
   "version": "0.0.3",
-  "description": "Angular library for Fabula component ecosystem",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -31,9 +31,9 @@
     "@angular/cli": "~7.3.5",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^8.9.5",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -49,16 +49,5 @@
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fabula-ui/lib-angular.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fabula-ui/lib-angular/issues"
-  },
-  "homepage": "https://github.com/fabula-ui/lib-angular#readme"
+  }
 }

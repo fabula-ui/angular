@@ -1,0 +1,7 @@
+<div class="fab-avatar-wrapper" data-fab-wrapper="avatar" [attr.data-corner-style]="cornerStyle">
+  <div class="fab-avatar" [attr.data-color]="color" [attr.data-corner-style]="cornerStyle" [attr.data-size]="size">
+    <i class="fab-avatar__icon fas fa-image"></i>
+    <div class="fab-avatar__image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+  </div>
+  <ng-content></ng-content>
+</div>

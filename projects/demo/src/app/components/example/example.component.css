@@ -1,0 +1,11 @@
+.example {
+    display: flex;
+    /* display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 15px;
+    grid-template-columns: repeat(1000, 1fr);  */
+}
+
+.example > :host {
+    margin-right: 15px;
+}
