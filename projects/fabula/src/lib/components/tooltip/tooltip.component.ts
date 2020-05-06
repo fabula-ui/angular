@@ -16,14 +16,14 @@ export class TooltipComponent implements AfterViewInit {
     @Input() offset: string;
     @Input() placement = 'top';
 
-    private color = 'default';
-    private cornerStyle = 'hard';
-    private element: any;
-    private hostElement: any;
-    private props: any;
-    private title = '';
-    private tooltipElement: any;
-    private wrapper: any;
+    public color = 'default';
+    public cornerStyle = 'hard';
+    public element: any;
+    public hostElement: any;
+    public props: any;
+    public title = '';
+    public tooltipElement: any;
+    public wrapper: any;
 
     constructor(
         public elRef: ElementRef,

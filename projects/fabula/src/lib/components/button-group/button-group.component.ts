@@ -4,7 +4,7 @@ import {
   Input,
   OnInit
 } from '@angular/core';
-import { FabulaService } from 'dist/fabula/lib/services/fabula.service';
+import { FabulaService } from '../../services/fabula.service';
 
 import { ButtonGroupStyles } from './button-group.styles';
 
