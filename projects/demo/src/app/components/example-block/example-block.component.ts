@@ -7,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ExampleBlockComponent implements OnInit {
   @Input() title = '';
+  @Input() visible = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleVisibility() {
+    this.visible = !this.visible;
   }
 
 }

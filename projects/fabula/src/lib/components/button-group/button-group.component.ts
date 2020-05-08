@@ -4,35 +4,33 @@ import {
   Input,
   OnInit
 } from '@angular/core';
-import { FabulaService } from '../../services/fabula.service';
 
-import { ButtonGroupStyles } from './button-group.styles';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
-  providers: [ButtonGroupStyles],
   selector: 'fab-button-group',
-  styles: [],
   templateUrl: './button-group.component.html'
 })
 export class ButtonGroupComponent implements OnInit {
   @Input() flow = 'horizontal';
+  @Input() glued = false;
   @Input() spacing: string;
   @Input() wrap = true;
   constructor(
     private elRef: ElementRef,
-    private styles: ButtonGroupStyles
+    private themeService: ThemeService,
   ) { }
 
   ngOnInit() {
     const el = this.elRef.nativeElement;
     const props = {
       flow: this.flow,
+      glued: this.glued,
       spacing: this.spacing,
       wrap: this.wrap
     };
-    const css = this.styles.css(props);
 
-    el.classList.add(css);
+    this.themeService.attachClasses(el, 'buttonGroup', props);
   }
 
 }

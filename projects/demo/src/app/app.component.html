@@ -1,12 +1,69 @@
-<!-- <fab-avatar></fab-avatar>
-<fab-button>Button</fab-button>
-<fab-button color="primary">Button</fab-button>
-<fab-button color="primary" [rounded]="true">Button</fab-button>
-<fab-button [clear]="true">Button</fab-button>
-<fab-button color="primary" [clear]="true">Button</fab-button>
-<fab-button color="aux" [clear]="true">Button</fab-button> -->
+<app-example-block title="Avatar" [visible]="false">
+  <app-example title="Color">
+    <fab-avatar></fab-avatar>
+    <fab-avatar color="primary"></fab-avatar>
+    <fab-avatar color="secondary"></fab-avatar>
+    <fab-avatar color="success"></fab-avatar>
+    <fab-avatar color="danger"></fab-avatar>
+    <fab-avatar color="warning"></fab-avatar>
+    <fab-avatar color="hot"></fab-avatar>
+    <fab-avatar color="cold"></fab-avatar>
+    <fab-avatar color="dark"></fab-avatar>
+    <fab-avatar color="light"></fab-avatar>
+    <fab-avatar color="aux"></fab-avatar>
+  </app-example>
 
-<app-example title="Clear">
+  <app-example title="Rounded">
+    <fab-avatar color="primary"></fab-avatar>
+    <fab-avatar color="primary" [rounded]="true"></fab-avatar>
+  </app-example>
+
+  <app-example title="Show Initials">
+    <fab-avatar showInitials="A B"></fab-avatar>
+    <fab-avatar color="primary" showInitials="C D"></fab-avatar>
+    <fab-avatar color="secondary" showInitials="E F"></fab-avatar>
+    <fab-avatar color="success" showInitials="G H"></fab-avatar>
+    <fab-avatar color="danger" showInitials="I J"></fab-avatar>
+    <fab-avatar color="warning" showInitials="K L"></fab-avatar>
+    <fab-avatar color="hot" showInitials="M N"></fab-avatar>
+    <fab-avatar color="cold" showInitials="O P"></fab-avatar>
+    <fab-avatar color="dark" showInitials="Q R"></fab-avatar>
+    <fab-avatar color="light" showInitials="S T"></fab-avatar>
+    <fab-avatar color="aux" showInitials="U V"></fab-avatar>
+  </app-example>
+
+  <app-example title="Show Initials (rounded)">
+    <fab-avatar showInitials="A B"></fab-avatar>
+    <fab-avatar color="primary" [rounded]="true" showInitials="C D"></fab-avatar>
+    <fab-avatar color="secondary" [rounded]="true" showInitials="E F"></fab-avatar>
+    <fab-avatar color="success" [rounded]="true" showInitials="G H"></fab-avatar>
+    <fab-avatar color="danger" [rounded]="true" showInitials="I J"></fab-avatar>
+    <fab-avatar color="warning" [rounded]="true" showInitials="K L"></fab-avatar>
+    <fab-avatar color="hot" [rounded]="true" showInitials="M N"></fab-avatar>
+    <fab-avatar color="cold" [rounded]="true" showInitials="O P"></fab-avatar>
+    <fab-avatar color="dark" [rounded]="true" showInitials="Q R"></fab-avatar>
+    <fab-avatar color="light" [rounded]="true" showInitials="S T"></fab-avatar>
+    <fab-avatar color="aux" [rounded]="true" showInitials="U V"></fab-avatar>
+  </app-example>
+
+  <app-example title="Size">
+    <fab-avatar showInitials="XL" size="xl"></fab-avatar>
+    <fab-avatar showInitials="LG" size="lg"></fab-avatar>
+    <fab-avatar showInitials="MD" size="md"></fab-avatar>
+    <fab-avatar showInitials="SM" size="sm"></fab-avatar>
+    <fab-avatar showInitials="XS" size="xs"></fab-avatar>
+  </app-example>
+</app-example-block>
+
+<app-example-block title="Badge" [visible]="false">
+  <app-example title="Color">
+    <fab-badge><i class="fas fa-check"></i></fab-badge>
+  </app-example>
+</app-example-block>
+
+<app-example-block title="Button" [visible]="false">
+
+  <app-example title="Clear">
     <fab-button [clear]="true">Default</fab-button>
     <fab-button color="primary" [clear]="true">Primary</fab-button>
     <fab-button color="secondary" [clear]="true">Secondary</fab-button>
@@ -18,9 +75,9 @@
     <fab-button color="dark" [clear]="true">Dark</fab-button>
     <fab-button color="light" [clear]="true">Light</fab-button>
     <fab-button color="aux" [clear]="true">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Color">
+  <app-example title="Color">
     <fab-button>Default</fab-button>
     <fab-button color="primary">Primary</fab-button>
     <fab-button color="secondary">Secondary</fab-button>
@@ -32,15 +89,15 @@
     <fab-button color="dark">Dark</fab-button>
     <fab-button color="light">Light</fab-button>
     <fab-button color="aux">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Compact vs wide">
+  <app-example title="Compact vs wide">
     <fab-button color="primary">Normal</fab-button>
     <fab-button color="primary" [compact]="true">Compact</fab-button>
     <fab-button color="primary" [wide]="true">Wide</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Disabled">
+  <app-example title="Disabled">
     <fab-button [disabled]="true">Default</fab-button>
     <fab-button color="primary" [disabled]="true">Primary</fab-button>
     <fab-button color="secondary" [disabled]="true">Secondary</fab-button>
@@ -52,14 +109,14 @@
     <fab-button color="dark" [disabled]="true">Dark</fab-button>
     <fab-button color="light" [disabled]="true">Light</fab-button>
     <fab-button color="aux" [disabled]="true">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Expand">
+  <app-example title="Expand">
     <fab-button color="primary">Normal</fab-button>
     <fab-button color="primary" [expand]="true">Expand</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Faded">
+  <app-example title="Faded">
     <fab-button [faded]="true">Default</fab-button>
     <fab-button color="primary" [faded]="true">Primary</fab-button>
     <fab-button color="secondary" [faded]="true">Secondary</fab-button>
@@ -71,9 +128,9 @@
     <fab-button color="dark" [faded]="true">Dark</fab-button>
     <fab-button color="light" [faded]="true">Light</fab-button>
     <fab-button color="aux" [faded]="true">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Gradient">
+  <app-example title="Gradient">
     <fab-button [gradient]="true">Default</fab-button>
     <fab-button color="primary" [gradient]="true">Primary</fab-button>
     <fab-button color="secondary" [gradient]="true">Secondary</fab-button>
@@ -85,9 +142,9 @@
     <fab-button color="dark" [gradient]="true">Dark</fab-button>
     <fab-button color="light" [gradient]="true">Light</fab-button>
     <fab-button color="aux" [gradient]="true">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Invert">
+  <app-example title="Invert">
     <fab-button [invert]="true">Default</fab-button>
     <fab-button color="primary" [invert]="true">Primary</fab-button>
     <fab-button color="secondary" [invert]="true">Secondary</fab-button>
@@ -99,9 +156,9 @@
     <fab-button color="dark" [invert]="true">Dark</fab-button>
     <fab-button color="light" [invert]="true">Light</fab-button>
     <fab-button color="aux" [invert]="true">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Outline">
+  <app-example title="Outline">
     <fab-button [outline]="true">Default</fab-button>
     <fab-button color="primary" [outline]="true">Primary</fab-button>
     <fab-button color="secondary" [outline]="true">Secondary</fab-button>
@@ -113,17 +170,29 @@
     <fab-button color="dark" [outline]="true">Dark</fab-button>
     <fab-button color="light" [outline]="true">Light</fab-button>
     <fab-button color="aux" [outline]="true">Aux</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Outline">
+  <app-example title="Outline">
     <fab-button color="primary">Default</fab-button>
     <fab-button color="primary" [rounded]="true">Rounded</fab-button>
-</app-example>
+  </app-example>
 
-<app-example title="Size">
+  <app-example title="Size">
     <fab-button color="primary" size="xl">Button XLarge</fab-button>
     <fab-button color="primary" size="lg">Button Large</fab-button>
     <fab-button color="primary">Button</fab-button>
     <fab-button color="primary" size="sm">Button Small</fab-button>
     <fab-button color="primary" size="xs">Button XSmall</fab-button>
-</app-example>
+  </app-example>
+
+</app-example-block>
+
+<app-example-block title="Button Group">
+  <app-example title="Glued">
+    <fab-button-group [glued]="true">
+      <fab-button color="primary">Button 1</fab-button>
+      <fab-button color="primary">Button 2</fab-button>
+      <fab-button color="primary">Button 2</fab-button>
+    </fab-button-group>
+  </app-example>
+</app-example-block>

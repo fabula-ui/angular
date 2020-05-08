@@ -3,7 +3,7 @@ import { Component, Input, OnInit, ElementRef, Renderer2, Renderer } from '@angu
 import { BadgeStyles } from './badge.styles';
 
 // Services
-import { FabulaService } from '../../services/fabula.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'fab-badge',
@@ -22,13 +22,18 @@ export class BadgeComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-    private fabulaService: FabulaService,
+    private themeService: ThemeService,
     public styles: BadgeStyles,
     ) { }
 
   ngOnInit() {
-    // Set styles
-    this.fabulaService.setStyles(this.elRef.nativeElement, this.styles);
+    const el = this.elRef.nativeElement;
+    const props = {
+      color: this.color,
+      size: this.size
+    };
+
+    this.themeService.attachClasses(el, 'badge', props);
   }
 
 }

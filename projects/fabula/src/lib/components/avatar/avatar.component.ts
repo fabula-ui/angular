@@ -9,8 +9,9 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class AvatarComponent implements OnInit {
   @Input() color = '';
-  @Input('corner-style') cornerStyle = 'circle';
   @Input() image = '';
+  @Input() rounded = false;
+  @Input() showInitials = '';
   @Input() size = 'md';
 
   constructor(
@@ -20,10 +21,24 @@ export class AvatarComponent implements OnInit {
 
   ngOnInit() {
     const el = this.elRef.nativeElement;
-    const props = {};
+    const props = {
+      color: this.color,
+      size: this.size
+    };
 
-    this.themeService.attachClasses(el, 'avatar');
-    // this.fabulaService.setStyles(el, this.styles, props);
+    this.themeService.attachClasses(el, 'avatar', props);
+  }
+
+  get initials(): string {
+    const words = this.showInitials.split(' ');
+
+    if (words.length > 1) {
+      return `${words[0].slice(0, 1)}${words[1].slice(0,1)}`;
+    } else if (words.length === 1) {
+      return this.showInitials.slice(0, 2);
+    } else {
+      return '';
+    }
   }
 
 }
