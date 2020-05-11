@@ -1,0 +1,6 @@
+<div class="fab-dropdown" [attr.data-open]="isOpen">
+    <ng-content select="[dropdown-toggle]"></ng-content>
+    <div class="fab-dropdown__menu">
+        <ng-content select="[dropdown-menu]" #dropdownMenu></ng-content>
+    </div>
+</div>

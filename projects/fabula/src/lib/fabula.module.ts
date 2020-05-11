@@ -9,6 +9,9 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonGroupComponent } from './components/button-group/button-group.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { InputComponent } from './components/input/input.component';
+import { InputGroupComponent } from './components/input-group/input-group.component';
 import { CardComponent } from './components/card/card.component';
 import { CardBodyComponent } from './components/card-body/card-body.component';
 import { CollapseComponent } from './components/collapse/collapse.component';
@@ -47,80 +50,94 @@ import { ThemeService } from './services/theme.service';
 
 @NgModule({
   declarations: [
-    // Components
     AvatarComponent,
     BadgeComponent,
     ButtonComponent,
     ButtonGroupComponent,
-    CardComponent,
-    CardBodyComponent,
-    CollapseComponent,
-    CollapseContentComponent,
-    CollapseToggleComponent,
-    TooltipComponent,
+    DropdownComponent,
+    InputComponent,
+    InputGroupComponent
+    // // Components
+    // AvatarComponent,
+    // BadgeComponent,
+    // ButtonComponent,
+    // ButtonGroupComponent,
+    // CardComponent,
+    // CardBodyComponent,
+    // CollapseComponent,
+    // CollapseContentComponent,
+    // CollapseToggleComponent,
+    // TooltipComponent,
 
-    // Directives
-    BlockDirective,
-    CardBodyDirective,
-    CardFooterDirective,
-    CardHeaderDirective,
-    CardImageDirective,
-    CardSubtitleDirective,
-    CardTextDirective,
-    CardTitleDirective,
-    ClearDirective,
-    DisabledDirective,
-    ElementDirective,
-    FixedHeightDirective,
-    FloatDirective,
-    InvertColorDirective,
-    OutlineDirective,
-    PlacementDirective,
-    SizeDirective,
-    SubtitleDirective,
-    TitleDirective,
-    TooltipDirective
+    // // Directives
+    // BlockDirective,
+    // CardBodyDirective,
+    // CardFooterDirective,
+    // CardHeaderDirective,
+    // CardImageDirective,
+    // CardSubtitleDirective,
+    // CardTextDirective,
+    // CardTitleDirective,
+    // ClearDirective,
+    // DisabledDirective,
+    // ElementDirective,
+    // FixedHeightDirective,
+    // FloatDirective,
+    // InvertColorDirective,
+    // OutlineDirective,
+    // PlacementDirective,
+    // SizeDirective,
+    // SubtitleDirective,
+    // TitleDirective,
+    // TooltipDirective
   ],
   entryComponents: [
-    TooltipComponent
+    // TooltipComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    // Components
     AvatarComponent,
     BadgeComponent,
     ButtonComponent,
     ButtonGroupComponent,
-    CardComponent,
-    CardBodyComponent,
-    CollapseComponent,
-    CollapseContentComponent,
-    CollapseToggleComponent,
-    TooltipComponent,
+    DropdownComponent,
+    InputComponent,
+    InputGroupComponent
+    // Components
+    // AvatarComponent,
+    // BadgeComponent,
+    // ButtonComponent,
+    // ButtonGroupComponent,
+    // CardComponent,
+    // CardBodyComponent,
+    // CollapseComponent,
+    // CollapseContentComponent,
+    // CollapseToggleComponent,
+    // TooltipComponent,
 
     // Directives
-    BlockDirective,
-    CardBodyDirective,
-    CardFooterDirective,
-    CardHeaderDirective,
-    CardImageDirective,
-    CardSubtitleDirective,
-    CardTextDirective,
-    CardTitleDirective,
-    ClearDirective,
-    DisabledDirective,
-    ElementDirective,
-    FixedHeightDirective,
-    FloatDirective,
-    InvertColorDirective,
-    OutlineDirective,
-    PlacementDirective,
-    SizeDirective,
-    SubtitleDirective,
-    TitleDirective,
-    TooltipDirective
+    // BlockDirective,
+    // CardBodyDirective,
+    // CardFooterDirective,
+    // CardHeaderDirective,
+    // CardImageDirective,
+    // CardSubtitleDirective,
+    // CardTextDirective,
+    // CardTitleDirective,
+    // ClearDirective,
+    // DisabledDirective,
+    // ElementDirective,
+    // FixedHeightDirective,
+    // FloatDirective,
+    // InvertColorDirective,
+    // OutlineDirective,
+    // PlacementDirective,
+    // SizeDirective,
+    // SubtitleDirective,
+    // TitleDirective,
+    // TooltipDirective
   ]
 })
 export class FabulaModule {

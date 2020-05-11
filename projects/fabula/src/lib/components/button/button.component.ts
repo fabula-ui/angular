@@ -14,20 +14,21 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent implements OnInit {
+  @Input() border = false;
   @Input() color = '';
-  @Input() compact = false;
-  @Input() clear = false;
-  @Input() disabled = false;
-  @Input() expand = false;
-  @Input() faded = false;
+  @Input() compact: boolean;
+  @Input() clear: boolean;
+  @Input() disabled: boolean;
+  @Input() expand: boolean;
+  @Input() faded: boolean;
   @Input() glow = true;
-  @Input() gradient = false;
-  @Input() invert = false;
+  @Input() gradient: boolean;
+  @Input() invert: boolean;
   @Input() loading: string;
-  @Input() outline = false;
-  @Input() rounded = false;
+  @Input() outline: boolean;
+  @Input() rounded: boolean;
   @Input() size = 'md';
-  @Input() wide = false;
+  @Input() wide: boolean;
 
   constructor(
     private elRef: ElementRef,
@@ -37,6 +38,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
     const el = this.elRef.nativeElement;
     const props = {
+      border: this.border,
       color: this.color,
       clear: this.clear,
       expand: this.expand,

@@ -11,7 +11,7 @@ export class AvatarComponent implements OnInit {
   @Input() color = '';
   @Input() image = '';
   @Input() rounded = false;
-  @Input() showInitials = '';
+  @Input('show-initials') showInitials = '';
   @Input() size = 'md';
 
   constructor(
