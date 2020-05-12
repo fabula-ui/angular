@@ -319,12 +319,18 @@
   </app-example>
 </app-example-block>
 
-<app-example-block title="Dropdown" [visible]="false">
+<app-example-block title="Dropdown">
 
   <app-example title="Color">
     <fab-dropdown>
       <fab-button dropdown-toggle>Dropdown toggle</fab-button>
       <div dropdown-menu>Dropdown menu</div>
+    </fab-dropdown>
+  </app-example>
+
+  <app-example title="Items">
+    <fab-dropdown [items]="dropdownItems">
+      <fab-button dropdown-toggle>Dropdown toggle</fab-button>
     </fab-dropdown>
   </app-example>
 
@@ -402,10 +408,10 @@
 
 </app-example-block>
 
-<app-example-block title="Input group">
+<app-example-block title="Input group" [visible]="false">
   <app-example title="Examples">
     <fab-input-group>
-      <fab-input placeholder="Type something"></fab-input>
+      <fab-input message="Message example" placeholder="Type something"></fab-input>
       <fab-button color="primary" [compact]="true">Button</fab-button>
     </fab-input-group>
 
@@ -473,4 +479,239 @@
       <fab-button [border]="true" color="aux" [compact]="true">Button</fab-button>
     </fab-input-group>
   </app-example>
+</app-example-block>
+
+<app-example-block title="List" [visible]="false">
+
+  <app-example title="Padded (false)">
+    <fab-list [padded]="false">
+      <fab-list-item>
+        <fab-text bold size="lg">
+          <fab-text-part>
+            <span>Full-stack Engineer</span>
+          </fab-text-part>
+
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Google</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text bold size="xl">
+          <fab-text-part>
+            <span>Frontend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Amazon</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text block bold size="xxl">
+          <fab-text-part>
+            <span>Backend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Netflix</fab-text>
+      </fab-list-item>
+    </fab-list>
+  </app-example>
+
+  <app-example title="Padded (true)">
+    <fab-list>
+      <fab-list-item>
+        <fab-text bold size="lg">
+          <fab-text-part>
+            <span>Full-stack Engineer</span>
+          </fab-text-part>
+
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Google</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text bold size="xl">
+          <fab-text-part>
+            <span>Frontend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Amazon</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text block bold size="xxl">
+          <fab-text-part>
+            <span>Backend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Netflix</fab-text>
+      </fab-list-item>
+    </fab-list>
+  </app-example>
+
+  <app-example title="Striped">
+    <fab-list [striped]="true">
+      <fab-list-item>
+        <fab-text bold size="lg">
+          <fab-text-part>
+            <span>Full-stack Engineer</span>
+          </fab-text-part>
+
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Google</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text bold size="xl">
+          <fab-text-part>
+            <span>Frontend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Amazon</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text block bold size="xxl">
+          <fab-text-part>
+            <span>Backend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Netflix</fab-text>
+      </fab-list-item>
+    </fab-list>
+
+    <fab-list color="primary" [striped]="true">
+      <fab-list-item>
+        <fab-text bold [inheritColor]="true" size="lg">
+          <fab-text-part>
+            <span>Full-stack Engineer</span>
+          </fab-text-part>
+
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block [inheritColor]="true">Google</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text bold [inheritColor]="true" size="xl">
+          <fab-text-part>
+            <span>Frontend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux [inheritColor]="true" block>Amazon</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text block bold [inheritColor]="true" size="xxl">
+          <fab-text-part>
+            <span>Backend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block [inheritColor]="true">Netflix</fab-text>
+      </fab-list-item>
+    </fab-list>
+
+    <fab-list color="light" [striped]="true">
+      <fab-list-item>
+        <fab-text bold size="lg">
+          <fab-text-part>
+            <span>Full-stack Engineer</span>
+          </fab-text-part>
+
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Google</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text bold size="xl">
+          <fab-text-part>
+            <span>Frontend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Amazon</fab-text>
+      </fab-list-item>
+
+      <fab-list-item>
+        <fab-text block bold size="xxl">
+          <fab-text-part>
+            <span>Backend Developer</span>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="cold">Full-time</fab-badge>
+          </fab-text-part>
+          <fab-text-part>
+            <fab-badge color="hot">Remote</fab-badge>
+          </fab-text-part>
+        </fab-text>
+        <fab-text aux block>Netflix</fab-text>
+      </fab-list-item>
+    </fab-list>
+  </app-example>
+
 </app-example-block>

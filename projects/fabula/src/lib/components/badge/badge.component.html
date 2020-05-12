@@ -1,4 +1,7 @@
-<div class="fab-badge" data-fab-component="badge" [attr.data-color]="color" [attr.data-corner-style]="cornerStyle" [attr.data-placement-x]="placementX" [attr.data-placement-y]="placementY" [attr.data-size]="size">
-  <i class="fab-badge__icon" [class]="icon" *ngIf="icon"></i>
-  <ng-content></ng-content>
+<div class="fab-badge-wrapper" data-fab-wrapper="badge">
+  <div class="fab-badge" data-fab-component="badge" [attr.data-color]="color" [attr.data-corner-style]="cornerStyle"
+    [attr.data-placement-x]="placementX" [attr.data-placement-y]="placementY" [attr.data-size]="size">
+    <i class="fab-badge__icon" [class]="icon" *ngIf="icon"></i>
+    <ng-content></ng-content>
+  </div>
 </div>

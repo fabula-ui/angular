@@ -12,6 +12,7 @@ import { ButtonGroupComponent } from './components/button-group/button-group.com
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { InputComponent } from './components/input/input.component';
 import { InputGroupComponent } from './components/input-group/input-group.component';
+import { ListComponent } from './components/list/list.component';
 import { CardComponent } from './components/card/card.component';
 import { CardBodyComponent } from './components/card-body/card-body.component';
 import { CollapseComponent } from './components/collapse/collapse.component';
@@ -47,6 +48,9 @@ import { IUserOptions } from './models/user-options.model';
 // Services
 import { FabulaService } from './services/fabula.service';
 import { ThemeService } from './services/theme.service';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import { TextComponent } from './components/text/text.component';
+import { TextPartComponent } from './components/text-part/text-part.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +60,11 @@ import { ThemeService } from './services/theme.service';
     ButtonGroupComponent,
     DropdownComponent,
     InputComponent,
-    InputGroupComponent
+    InputGroupComponent,
+    ListComponent,
+    ListItemComponent,
+    TextComponent,
+    TextPartComponent
     // // Components
     // AvatarComponent,
     // BadgeComponent,
@@ -104,7 +112,11 @@ import { ThemeService } from './services/theme.service';
     ButtonGroupComponent,
     DropdownComponent,
     InputComponent,
-    InputGroupComponent
+    InputGroupComponent,
+    ListComponent,
+    ListItemComponent,
+    TextComponent,
+    TextPartComponent
     // Components
     // AvatarComponent,
     // BadgeComponent,

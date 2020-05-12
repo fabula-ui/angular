@@ -14,6 +14,8 @@ import { ThemeService } from '../../services/theme.service';
     templateUrl: './dropdown.component.html',
 })
 export class DropdownComponent implements OnInit {
+    @Input() items = [];
+    
     public dropdownToggle;
     public host;
     public isOpen = false;
