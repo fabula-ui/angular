@@ -1,13 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 // Services
-import { FabulaService } from '../../services/fabula.service';
-
-// Styles
-import { CardStyles } from './card.styles';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
-  providers: [CardStyles],
   selector: 'fab-card',
   templateUrl: './card.component.html',
 })
@@ -16,29 +12,20 @@ export class CardComponent implements OnInit {
   @Input('corner-style') cornerStyle = 'hard';
   @Input() flow = 'vertical';
 
-  props: object;
+  host;
+
 
   private element: any;
   constructor(
     private elRef: ElementRef,
-    private fabulaService: FabulaService,
-    private styles: CardStyles
+    private themeService: ThemeService,
   ) { }
 
   ngOnInit() {
-    this.element = this.elRef.nativeElement;
-    this.props = {
-      color: this.color,
-      cornerStyle: this.cornerStyle,
-      flow: this.flow
-    };
+    const props = {};
 
-    this.setStyles();
-  }
-
-  // Methods
-  setStyles() {
-    this.fabulaService.setStyles(this.element, this.styles, this.props);
+    this.host = this.elRef.nativeElement;
+    this.themeService.attachClasses(this.host, 'card', props);
   }
 
 }

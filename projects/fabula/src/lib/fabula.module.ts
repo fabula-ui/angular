@@ -9,18 +9,27 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonGroupComponent } from './components/button-group/button-group.component';
+import { CardComponent } from './components/card/card.component';
+import { CardBodyComponent } from './components/card-body/card-body.component';
+import { ColumnComponent } from './components/column/column.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { InputComponent } from './components/input/input.component';
 import { InputGroupComponent } from './components/input-group/input-group.component';
 import { ListComponent } from './components/list/list.component';
-import { CardComponent } from './components/card/card.component';
-import { CardBodyComponent } from './components/card-body/card-body.component';
+import { RowComponent } from './components/row/row.component';
+
+
 import { CollapseComponent } from './components/collapse/collapse.component';
 import { CollapseContentComponent } from './components/collapse-content/collapse-content.component';
 import { CollapseToggleComponent } from './components/collapse-toggle/collapse-toggle.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 
 // Directives
+import { ColumnDirective } from './directives/column.directive';
+import { MarginDirective } from './directives/margin.directive';
+import { PaddingDirective } from './directives/padding.directive';
+import { RowDirective } from './directives/row.directive';
+
 import { BlockDirective } from './directives/block.directive';
 import { CardBodyDirective } from './directives/card-body.directive';
 import { CardFooterDirective } from './directives/card-footer.directive';
@@ -52,26 +61,36 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { TextComponent } from './components/text/text.component';
 import { TextPartComponent } from './components/text-part/text-part.component';
 
+
 @NgModule({
   declarations: [
+    // Components
     AvatarComponent,
     BadgeComponent,
     ButtonComponent,
     ButtonGroupComponent,
+    CardComponent,
+    CardBodyComponent,
+    ColumnComponent,
     DropdownComponent,
     InputComponent,
     InputGroupComponent,
     ListComponent,
     ListItemComponent,
+    RowComponent,
     TextComponent,
-    TextPartComponent
+    TextPartComponent,
+
+    // Directives
+    MarginDirective,
+    PaddingDirective
+    
     // // Components
     // AvatarComponent,
     // BadgeComponent,
     // ButtonComponent,
     // ButtonGroupComponent,
-    // CardComponent,
-    // CardBodyComponent,
+    
     // CollapseComponent,
     // CollapseContentComponent,
     // CollapseToggleComponent,
@@ -106,24 +125,31 @@ import { TextPartComponent } from './components/text-part/text-part.component';
     CommonModule
   ],
   exports: [
+    // Components
     AvatarComponent,
     BadgeComponent,
     ButtonComponent,
     ButtonGroupComponent,
+    CardComponent,
+    CardBodyComponent,
+    ColumnComponent,
     DropdownComponent,
     InputComponent,
     InputGroupComponent,
     ListComponent,
     ListItemComponent,
+    RowComponent,
     TextComponent,
-    TextPartComponent
+    TextPartComponent,
+
+    // Directives
+    MarginDirective,
+    PaddingDirective
     // Components
     // AvatarComponent,
     // BadgeComponent,
     // ButtonComponent,
     // ButtonGroupComponent,
-    // CardComponent,
-    // CardBodyComponent,
     // CollapseComponent,
     // CollapseContentComponent,
     // CollapseToggleComponent,

@@ -19,11 +19,7 @@ import {
 // Services
 import { FabulaService } from '../services/fabula.service';
 
-// Styles
-import { TooltipStyles } from '../components/tooltip/tooltip.styles';
-
 @Directive({
-    providers: [TooltipStyles],
     selector: '[tooltip]',
 })
 export class TooltipDirective implements AfterViewInit {
@@ -43,8 +39,7 @@ export class TooltipDirective implements AfterViewInit {
         private componentFactoryResolver: ComponentFactoryResolver,
         private elRef: ElementRef,
         private fabulaService: FabulaService,
-        private injector: Injector,
-        private styles: TooltipStyles
+        private injector: Injector,     
     ) {
     }
 

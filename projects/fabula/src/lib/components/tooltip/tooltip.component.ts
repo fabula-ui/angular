@@ -3,12 +3,8 @@ import { Component, ElementRef, OnInit, ViewEncapsulation, Input, AfterViewInit 
 // Services
 import { FabulaService } from '../../services/fabula.service';
 
-// Styles
-import { TooltipStyles } from './tooltip.styles';
-
 @Component({
     encapsulation: ViewEncapsulation.None,
-    providers: [TooltipStyles],
     templateUrl: './tooltip.component.html'
 })
 export class TooltipComponent implements AfterViewInit {
@@ -28,7 +24,6 @@ export class TooltipComponent implements AfterViewInit {
     constructor(
         public elRef: ElementRef,
         public fabulaService: FabulaService,
-        public styles: TooltipStyles
     ) {
     }
 
@@ -60,7 +55,7 @@ export class TooltipComponent implements AfterViewInit {
     }
 
     setStyles() {
-        this.fabulaService.setStyles(this.element, this.styles, this.props);
+        
     }
 
     // Getters

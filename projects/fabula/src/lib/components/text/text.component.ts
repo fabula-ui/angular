@@ -23,6 +23,8 @@ export class TextComponent implements OnInit {
   hasChildren;
   host;
   italic;
+  medium;
+  semibold;
 
   constructor(
     public elRef: ElementRef,
@@ -40,6 +42,8 @@ export class TextComponent implements OnInit {
     this.bold = this.host.hasAttribute('bold');
     this.flex = this.host.hasAttribute('flex');
     this.italic = this.host.hasAttribute('italic');
+    this.medium = this.host.hasAttribute('medium');
+    this.semibold = this.host.hasAttribute('semibold');
 
     if (!this.color && this.aux) {
       this.color = 'aux';
@@ -47,6 +51,14 @@ export class TextComponent implements OnInit {
 
     if (!this.weight && this.bold) {
       this.weight = '700';
+    }
+
+    if (!this.weight && this.semibold) {
+      this.weight = '600';
+    }
+
+    if (!this.weight && this.medium) {
+      this.weight = '500';
     }
 
     // Has children

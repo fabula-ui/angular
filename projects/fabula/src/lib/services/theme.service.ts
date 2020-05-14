@@ -2,7 +2,7 @@ import { Injectable, Inject, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Default theme
-import DefaultTheme, { setBaseTheme } from '@fabula/core/theme';
+import DefaultTheme, { attachStyles, attachUtils, setBaseTheme } from '@fabula/core/theme';
 
 // Models
 import { IUserOptions } from '../models/user-options.model';
@@ -17,10 +17,22 @@ export class ThemeService {
     setBaseTheme(options);
   }
 
-  attachClasses(el, component, props = {}) {
-      const componentClasses = this.theme.components[component](props);
+  attachClasses(host, componentName, props = {}) {
+    attachStyles({
+      framework: 'angular',
+      host,
+      componentName,
+      props
+    });
+  }
 
-      el.classList.add(css(componentClasses));
+  attachUtils(host, utilName, props = {}) {
+    attachUtils({
+      framework: 'angular',
+      host,
+      utilName,
+      props
+    });
   }
 
   setComponents() {
@@ -36,12 +48,6 @@ export class ThemeService {
     }
 
     return components;
-  }
-
-  setStyles(el, styles, props = {}) {
-    const css = styles.css(props);
-
-    el.classList.add(css);
   }
 
 }

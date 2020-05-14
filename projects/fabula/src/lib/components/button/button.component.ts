@@ -27,7 +27,7 @@ export class ButtonComponent implements OnInit {
   @Input() loading: string;
   @Input() outline: boolean;
   @Input() rounded: boolean;
-  @Input() size = 'md';
+  @Input() size: string;
   @Input() wide: boolean;
 
   constructor(
@@ -39,8 +39,9 @@ export class ButtonComponent implements OnInit {
     const el = this.elRef.nativeElement;
     const props = {
       border: this.border,
-      color: this.color,
       clear: this.clear,
+      color: this.color,
+      compact: this.compact,
       expand: this.expand,
       faded: this.faded,
       glow: this.glow,
@@ -48,7 +49,8 @@ export class ButtonComponent implements OnInit {
       invert: this.invert,
       loading: this.loading,
       rounded: this.rounded,
-      size: this.size
+      size: this.size,
+      wide: this.wide
     };
 
     this.themeService.attachClasses(el, 'button', props);

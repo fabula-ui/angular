@@ -64,6 +64,14 @@
             "es5BrowserSupport": true
           },
           "configurations": {
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo/src/environments/environment.ts",
+                  "with": "projects/demo/src/environments/environment.hmr.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -96,6 +104,10 @@
             "browserTarget": "demo:build"
           },
           "configurations": {
+            "hmr": {
+              "browserTarget": "demo:build:hmr",
+              "hmr": true
+            },
             "production": {
               "browserTarget": "demo:build:production"
             }

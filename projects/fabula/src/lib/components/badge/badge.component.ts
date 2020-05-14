@@ -1,13 +1,10 @@
 import { Component, Input, OnInit, ElementRef, Renderer2, Renderer } from '@angular/core';
-// const styles = require('@fabula/core/css/badge.css');
-import { BadgeStyles } from './badge.styles';
 
 // Services
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'fab-badge',
-  providers: [BadgeStyles],
   templateUrl: './badge.component.html',
   styles: []
 })
@@ -23,7 +20,6 @@ export class BadgeComponent implements OnInit {
   constructor(
     public elRef: ElementRef,
     private themeService: ThemeService,
-    public styles: BadgeStyles,
     ) { }
 
   ngOnInit() {

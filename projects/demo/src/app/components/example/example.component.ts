@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./example.component.css']
 })
 export class ExampleComponent implements OnInit {
+  @Input() block: false;
   @Input() subtitle = '';
   @Input() title = '';
   constructor() { }
