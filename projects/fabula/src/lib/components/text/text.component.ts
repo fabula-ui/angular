@@ -10,7 +10,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class TextComponent implements OnInit {
   @Input() color: string;
-  @Input() inheritColor: boolean;
+  @Input('inherit-color') inheritColor: boolean;
   @Input() size: string;
   @Input() weight: string;
 

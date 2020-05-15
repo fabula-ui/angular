@@ -321,10 +321,8 @@
 
 <app-example-block title="Card">
 
-  <app-example [block]="true" title="Color">
-
+  <app-example [block]="true" title="Examples">
     <fab-row>
-
       <fab-column col="3">
         <fab-card>
           <fab-card-body>
@@ -390,6 +388,54 @@
               <fab-button color="primary" [wide]="true">Confirm</fab-button>
               <fab-button color="light" [wide]="true">Cancel</fab-button>
             </fab-button-group>
+          </fab-card-body>
+        </fab-card>
+      </fab-column>
+
+    </fab-row>
+
+  </app-example>
+
+  <app-example [block]="true" title="Color">
+
+    <fab-row>
+
+      <fab-column col="3">
+        <fab-card>
+          <fab-card-body p="1">
+            <fab-text bold size="lg">Card Title</fab-text>
+            <fab-text aux mb="1">Card subtitle</fab-text>
+            <fab-button color="primary" [expand]="true">Button</fab-button>
+          </fab-card-body>
+        </fab-card>
+      </fab-column>
+
+      <fab-column col="3">
+        <fab-card color="primary">
+          <fab-card-body p="1">
+            <fab-text bold color="inherit" size="lg">Card Title</fab-text>
+            <fab-text aux color="inherit" mb="1">Card subtitle</fab-text>
+            <fab-button color="primary" [expand]="true" [invert]="true">Button</fab-button>
+          </fab-card-body>
+        </fab-card>
+      </fab-column>
+
+      <fab-column col="3">
+        <fab-card color="secondary">
+          <fab-card-body p="1">
+            <fab-text bold color="inherit" size="lg">Card Title</fab-text>
+            <fab-text aux color="inherit" mb="1">Card subtitle</fab-text>
+            <fab-button color="secondary" [expand]="true" [invert]="true">Button</fab-button>
+          </fab-card-body>
+        </fab-card>
+      </fab-column>
+
+      <fab-column col="3">
+        <fab-card color="cold">
+          <fab-card-body p="1">
+            <fab-text bold color="inherit" size="lg">Card Title</fab-text>
+            <fab-text aux color="inherit" mb="1">Card subtitle</fab-text>
+            <fab-button color="cold" [expand]="true" [invert]="true">Button</fab-button>
           </fab-card-body>
         </fab-card>
       </fab-column>
@@ -706,7 +752,7 @@
 
     <fab-list color="primary" [striped]="true">
       <fab-list-item>
-        <fab-text bold [inheritColor]="true" size="lg">
+        <fab-text bold [inherit-color]="true" size="lg">
           <fab-text-part>
             <span>Full-stack Engineer</span>
           </fab-text-part>
@@ -715,11 +761,11 @@
             <fab-badge color="cold">Full-time</fab-badge>
           </fab-text-part>
         </fab-text>
-        <fab-text aux block [inheritColor]="true">Google</fab-text>
+        <fab-text aux block [inherit-color]="true">Google</fab-text>
       </fab-list-item>
 
       <fab-list-item>
-        <fab-text bold [inheritColor]="true" size="xl">
+        <fab-text bold [inherit-color]="true" size="xl">
           <fab-text-part>
             <span>Frontend Developer</span>
           </fab-text-part>
@@ -730,11 +776,11 @@
             <fab-badge color="hot">Remote</fab-badge>
           </fab-text-part>
         </fab-text>
-        <fab-text aux [inheritColor]="true" block>Amazon</fab-text>
+        <fab-text aux [inherit-color]="true" block>Amazon</fab-text>
       </fab-list-item>
 
       <fab-list-item>
-        <fab-text block bold [inheritColor]="true" size="xxl">
+        <fab-text block bold [inherit-color]="true" size="xxl">
           <fab-text-part>
             <span>Backend Developer</span>
           </fab-text-part>
@@ -745,7 +791,7 @@
             <fab-badge color="hot">Remote</fab-badge>
           </fab-text-part>
         </fab-text>
-        <fab-text aux block [inheritColor]="true">Netflix</fab-text>
+        <fab-text aux block [inherit-color]="true">Netflix</fab-text>
       </fab-list-item>
     </fab-list>
 

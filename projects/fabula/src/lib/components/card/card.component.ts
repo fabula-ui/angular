@@ -8,12 +8,11 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './card.component.html',
 })
 export class CardComponent implements OnInit {
-  @Input() color = 'default';
-  @Input('corner-style') cornerStyle = 'hard';
+  @Input() color: string;
   @Input() flow = 'vertical';
+  @Input() glow = !this.color;
 
   host;
-
 
   private element: any;
   constructor(
@@ -22,7 +21,10 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const props = {};
+    const props = {
+      color: this.color,
+      glow: this.glow
+    };
 
     this.host = this.elRef.nativeElement;
     this.themeService.attachClasses(this.host, 'card', props);

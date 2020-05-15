@@ -48,6 +48,7 @@ export class ButtonComponent implements OnInit {
       gradient: this.gradient,
       invert: this.invert,
       loading: this.loading,
+      outline: this.outline,
       rounded: this.rounded,
       size: this.size,
       wide: this.wide
