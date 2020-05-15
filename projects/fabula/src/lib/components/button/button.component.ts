@@ -15,7 +15,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class ButtonComponent implements OnInit {
   @Input() border = false;
-  @Input() color = '';
+  @Input() color: string;
   @Input() compact: boolean;
   @Input() clear: boolean;
   @Input() disabled: boolean;
