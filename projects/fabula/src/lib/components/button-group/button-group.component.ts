@@ -5,27 +5,44 @@ import {
   OnInit
 } from '@angular/core';
 
+// Component base
+import { GeneralComponent } from '../general-component/general-component.component';
+
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'fab-button-group',
   templateUrl: './button-group.component.html'
 })
-export class ButtonGroupComponent implements OnInit {
+export class ButtonGroupComponent extends GeneralComponent implements OnInit {
   @Input() divider = true;
   @Input() flow = 'horizontal';
   @Input() glued = false;
   @Input() spacing: string;
   @Input() wrap = true;
 
+  host;
+
   constructor(
-    private elRef: ElementRef,
+    public elRef: ElementRef,
     private themeService: ThemeService,
-  ) { }
+  ) { 
+    super(elRef);
+  }
 
   ngOnInit() {
-    const el = this.elRef.nativeElement;
-    const props = {
+    super.ngOnInit();
+
+    let props;
+    this.host = this.elRef.nativeElement;
+
+    props = {
+      al: this.al,
+      alH: this.alH,
+      alV: this.alV,
+      align: this.align,
+      alignH: this.alignH,
+      alignV: this.alignV,
       divider: this.divider,
       flow: this.flow,
       glued: this.glued,
@@ -33,7 +50,7 @@ export class ButtonGroupComponent implements OnInit {
       wrap: this.wrap
     };
 
-    this.themeService.attachClasses(el, 'buttonGroup', props);
+    this.themeService.attachClasses(this.host, 'buttonGroup', props);
   }
 
 }

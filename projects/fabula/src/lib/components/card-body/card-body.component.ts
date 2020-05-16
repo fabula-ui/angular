@@ -1,15 +1,21 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'fab-card-body',
     templateUrl: './card-body.component.html',
 })
 export class CardBodyComponent implements OnInit {
+    host;
+    padding;
+
     constructor(
-        private elRef: ElementRef,
+        public elRef: ElementRef,
     ) { }
 
     ngOnInit() {
+        this.host = this.elRef.nativeElement;
+
+        this.padding = this.host.hasAttribute('padding');
         // const host = this.elRef.nativeElement;
         // const element = host.querySelector('.fab-card__body');
         // const children = [];

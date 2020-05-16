@@ -26,6 +26,8 @@ import { TooltipComponent } from './components/tooltip/tooltip.component';
 
 // Directives
 import { ColumnDirective } from './directives/column.directive';
+import { AlignDirective } from './directives/align.directive';
+import { FlexDirective } from './directives/flex.directive';
 import { MarginDirective } from './directives/margin.directive';
 import { PaddingDirective } from './directives/padding.directive';
 import { RowDirective } from './directives/row.directive';
@@ -60,7 +62,10 @@ import { ThemeService } from './services/theme.service';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { TextComponent } from './components/text/text.component';
 import { TextPartComponent } from './components/text-part/text-part.component';
-
+import { GeneralComponent } from './components/general-component/general-component.component';
+import { ContainerComponent } from './components/container/container.component';
+import { CardImageComponent } from './components/card-image/card-image.component';
+import { CardFooterComponent } from './components/card-footer/card-footer.component';
 
 @NgModule({
   declarations: [
@@ -71,8 +76,11 @@ import { TextPartComponent } from './components/text-part/text-part.component';
     ButtonGroupComponent,
     CardComponent,
     CardBodyComponent,
+    CardFooterComponent,
+    CardImageComponent,
     ColumnComponent,
     DropdownComponent,
+    GeneralComponent,
     InputComponent,
     InputGroupComponent,
     ListComponent,
@@ -82,8 +90,11 @@ import { TextPartComponent } from './components/text-part/text-part.component';
     TextPartComponent,
 
     // Directives
+    AlignDirective,
+    FlexDirective,
     MarginDirective,
-    PaddingDirective
+    PaddingDirective,
+    ContainerComponent,
     
     // // Components
     // AvatarComponent,
@@ -131,7 +142,9 @@ import { TextPartComponent } from './components/text-part/text-part.component';
     ButtonComponent,
     ButtonGroupComponent,
     CardComponent,
+    CardFooterComponent,
     CardBodyComponent,
+    CardImageComponent,
     ColumnComponent,
     DropdownComponent,
     InputComponent,
@@ -143,6 +156,8 @@ import { TextPartComponent } from './components/text-part/text-part.component';
     TextPartComponent,
 
     // Directives
+    AlignDirective,
+    FlexDirective,
     MarginDirective,
     PaddingDirective
     // Components

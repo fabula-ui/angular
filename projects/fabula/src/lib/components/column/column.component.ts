@@ -5,7 +5,7 @@ import { ThemeService } from '../../services/theme.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
-  selector: 'fab-column',
+  selector: 'fab-column, fab-col',
   templateUrl: './column.component.html',
   styleUrls: ['./column.component.css'],
 })

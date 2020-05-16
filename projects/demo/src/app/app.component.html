@@ -61,7 +61,7 @@
   </app-example>
 </app-example-block>
 
-<app-example-block title="Button">
+<app-example-block title="Button" [visible]="false">
 
   <app-example title="Border (clear)">
     <fab-button [border]="true" [clear]="true">Default</fab-button>
@@ -325,21 +325,25 @@
     <fab-row>
       <fab-column col="3">
         <fab-card>
-          <fab-card-body>
+          <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
+          <fab-card-body padding>
             <fab-text block bold size="lg">Card Title</fab-text>
             <fab-text aux block mb="1" size="sm">Card Subtitle</fab-text>
-            <fab-text block mb="1.5">
+            <fab-text block mb=".5">
               This is some text inside this card.<br>
               You can add whatever content in
               here.
             </fab-text>
-            <fab-button color="primary" [expand]="true">Button</fab-button>
           </fab-card-body>
+          <fab-card-footer padding>
+            <fab-button color="primary" [expand]="true">Button</fab-button>
+          </fab-card-footer>
         </fab-card>
       </fab-column>
 
       <fab-column col="9">
         <fab-card>
+          <fab-card-image height="200" src="http://placehold.it/1200x300"></fab-card-image>
           <fab-card-body>
             <div p="1">
               <fab-text block bold size="xxl">Card Title</fab-text>
@@ -383,12 +387,14 @@
                 </fab-row>
               </fab-list-item>
             </fab-list>
+          </fab-card-body>
 
-            <fab-button-group align-h="right" p="1">
+          <fab-card-footer padding>
+            <fab-button-group align-h="right" flex>
               <fab-button color="primary" [wide]="true">Confirm</fab-button>
               <fab-button color="light" [wide]="true">Cancel</fab-button>
             </fab-button-group>
-          </fab-card-body>
+          </fab-card-footer>
         </fab-card>
       </fab-column>
 
@@ -402,6 +408,7 @@
 
       <fab-column col="3">
         <fab-card>
+          <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
           <fab-card-body p="1">
             <fab-text bold size="lg">Card Title</fab-text>
             <fab-text aux mb="1">Card subtitle</fab-text>
@@ -412,6 +419,7 @@
 
       <fab-column col="3">
         <fab-card color="primary">
+          <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
           <fab-card-body p="1">
             <fab-text bold color="inherit" size="lg">Card Title</fab-text>
             <fab-text aux color="inherit" mb="1">Card subtitle</fab-text>
@@ -422,6 +430,7 @@
 
       <fab-column col="3">
         <fab-card color="secondary">
+          <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
           <fab-card-body p="1">
             <fab-text bold color="inherit" size="lg">Card Title</fab-text>
             <fab-text aux color="inherit" mb="1">Card subtitle</fab-text>
@@ -432,6 +441,7 @@
 
       <fab-column col="3">
         <fab-card color="cold">
+          <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
           <fab-card-body p="1">
             <fab-text bold color="inherit" size="lg">Card Title</fab-text>
             <fab-text aux color="inherit" mb="1">Card subtitle</fab-text>
@@ -439,6 +449,41 @@
           </fab-card-body>
         </fab-card>
       </fab-column>
+
+    </fab-row>
+
+  </app-example>
+
+  <app-example [block]="true" title="Glow">
+
+    <fab-row>
+
+      <fab-col col="3">
+        <fab-card>
+          <fab-card-body padding>
+            <fab-text bold size="lg">Card Title</fab-text>
+            <fab-text aux mb="1">Card subtitle</fab-text>
+            <fab-button color="primary" [expand]="true">Button</fab-button>
+          </fab-card-body>
+        </fab-card>
+      </fab-col>
+
+      <fab-col col="3">
+        <fab-card [glow]="false">
+          <fab-card-body padding>
+            <fab-text bold size="lg">
+              <fab-text-part>Card Title</fab-text-part>
+
+              <fab-text-part>
+                <fab-badge color="primary">New</fab-badge>
+              </fab-text-part>
+
+            </fab-text>
+            <fab-text aux mb="1">Card subtitle</fab-text>
+            <fab-button color="primary" [expand]="true">Button</fab-button>
+          </fab-card-body>
+        </fab-card>
+      </fab-col>
 
     </fab-row>
 
