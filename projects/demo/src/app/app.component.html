@@ -893,6 +893,28 @@
     </div>
   </app-example>
 
+  <app-example [block]="true" title="Layout (horizontal)">
+    <div flex>
+      <fab-tabs>
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs color="primary">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs active-border-color="#87FF7E" color="dark">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+    </div>
+  </app-example>
+
   <app-example [block]="true" title="Invert Color">
     <div flex>
       <fab-tabs color="primary" invert>
@@ -930,6 +952,28 @@
       </fab-tabs>
 
       <fab-tabs active-border-color="#87FF7E" col="3" stacked>
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+    </div>
+  </app-example>
+
+  <app-example [block]="true" title="Stacked (types)">
+    <div flex>
+      <fab-tabs col="3" stacked type="float">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs col="3" color="primary" stacked type="block">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs active-fill-color="#87FF7E" col="3" color="dark" stacked type="pill">
         <fab-tab [active]="true">Docs</fab-tab>
         <fab-tab>Components</fab-tab>
         <fab-tab>Showcase</fab-tab>
@@ -985,7 +1029,35 @@
         <fab-tab>Showcase</fab-tab>
       </fab-tabs>
 
-      <fab-tabs color="aux" type="float">
+      <fab-tabs active-fill-color="#FFA269" color="aux" type="float">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+    </div>
+  </app-example>
+
+  <app-example [block]="true" title="Type (pill)">
+    <div flex>
+      <fab-tabs type="pill">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs color="primary" type="pill">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs color="dark" type="pill">
+        <fab-tab [active]="true">Docs</fab-tab>
+        <fab-tab>Components</fab-tab>
+        <fab-tab>Showcase</fab-tab>
+      </fab-tabs>
+
+      <fab-tabs active-fill-color="#FFA269" color="aux" type="pill">
         <fab-tab [active]="true">Docs</fab-tab>
         <fab-tab>Components</fab-tab>
         <fab-tab>Showcase</fab-tab>
