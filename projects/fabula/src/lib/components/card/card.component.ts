@@ -21,12 +21,16 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const props = {
-      color: this.color,
-      glow: this.glow
-    };
+    let props;
 
     this.host = this.elRef.nativeElement;
+
+    props = {
+      color: this.color,
+      glow: this.glow,
+      padding: this.host.hasAttribute('padding')
+    };
+
     this.themeService.attachClasses(this.host, 'card', props);
   }
 

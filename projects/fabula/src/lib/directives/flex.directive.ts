@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 
 // Services
 import { ThemeService } from '../services/theme.service';
@@ -15,12 +15,12 @@ export class FlexDirective implements AfterViewInit {
     ) { }
 
     ngAfterViewInit() {
-        const host = this.elRef.nativeElement;
+        const element = this.elRef.nativeElement;
         const props = {
-            flex: this.flex
+            flex: element.hasAttribute('flex'),
         };
 
-        this.themeService.attachUtils(host, 'flex', props);
+        this.themeService.attachUtils(element, 'flex', props);
     }
 
 }

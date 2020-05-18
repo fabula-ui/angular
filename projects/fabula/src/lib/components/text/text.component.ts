@@ -1,9 +1,10 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 // Services
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'fab-text',
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss']
@@ -45,10 +46,6 @@ export class TextComponent implements OnInit {
     this.medium = this.host.hasAttribute('medium');
     this.semibold = this.host.hasAttribute('semibold');
 
-    if (!this.color && this.aux) {
-      this.color = 'aux';
-    }
-
     if (!this.weight && this.bold) {
       this.weight = '700';
     }
@@ -66,6 +63,7 @@ export class TextComponent implements OnInit {
 
     // Set props
     props = {
+      aux: this.aux,
       block: this.block,
       bold: this.bold,
       color: this.color,

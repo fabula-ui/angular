@@ -25,6 +25,7 @@ export class InputComponent implements OnInit {
 
     hasFocus = false;
     host;
+    props;
 
     constructor(
         private elRef: ElementRef,
@@ -32,17 +33,18 @@ export class InputComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const props = {
+        this.host = this.elRef.nativeElement;
+        this.props = {
             color: this.color,
             expand: this.expand,
+            glow: this.host.hasAttribute('glow'),
             has: this.has,
             message: this.message,
             messageColor: this.messageColor,
             size: this.size
         };
 
-        this.host = this.elRef.nativeElement;
-        this.themeService.attachClasses(this.host, 'input', props);
+        this.themeService.attachClasses(this.host, 'input', this.props);
     }
 
     onFocus(hasFocus: boolean) {

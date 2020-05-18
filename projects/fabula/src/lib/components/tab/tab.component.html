@@ -1,0 +1,12 @@
+<div class="fab-tab" [attr.data-active]="active">
+  <button (click)="handleClick()" *ngIf="!link">
+    {{test}}
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </button>
+
+  <a *ngIf="href" [href]="link" [target]="target">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </a>
+</div>
+
+<ng-template #content><ng-content></ng-content></ng-template>

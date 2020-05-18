@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
   @Input() striped = false;
 
   host;
-  
+
   constructor(
     public elRef: ElementRef,
     public themeService: ThemeService
@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
     props = {
       color: this.color,
       framework: 'angular',
-      padded: this.padded,
+      padding: this.host.hasAttribute('padding'),
       striped: this.striped
     };
 

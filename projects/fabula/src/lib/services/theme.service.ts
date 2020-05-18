@@ -17,7 +17,7 @@ export class ThemeService {
     setBaseTheme(options);
   }
 
-  attachClasses(host, componentName, props = {}) {
+  attachClasses(host, componentName: string, props = {}) {
     attachStyles({
       framework: 'angular',
       host,

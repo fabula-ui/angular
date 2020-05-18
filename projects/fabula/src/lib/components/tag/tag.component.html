@@ -1,0 +1,11 @@
+<div class="fab-tag-wrapper">
+  <div class="fab-tag" *ngIf="!link">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </div>
+
+  <a class="fab-tag" *ngIf="link" href="#">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </a>
+</div>
+
+<ng-template #content><ng-content></ng-content></ng-template>

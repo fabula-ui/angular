@@ -1,0 +1,6 @@
+<div class="fab-alert">
+  <fab-text color="inherit" semibold *ngIf="title">{{title}}</fab-text>
+  <fab-text color="inherit" semibold size="sm" *ngIf="text && !title">{{text}}</fab-text>
+  <fab-text [color]="!!color ? 'inherit' : ''" aux size="sm" *ngIf="text && title">{{text}}</fab-text>
+  <ng-content></ng-content>
+</div>

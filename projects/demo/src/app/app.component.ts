@@ -20,6 +20,7 @@ export class AppComponent {
       title: 'Dropdown Item 3'
     }
   ];
+  test = 'Testing';
   title = 'demo';
 
   constructor() {

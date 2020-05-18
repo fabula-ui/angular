@@ -4,7 +4,7 @@ import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 
 @Directive({
-    selector: '[align],[align-h],[align-v]'
+    selector: '[align],[al-h],[al-v],[align-h],[align-v]'
 })
 export class AlignDirective implements AfterViewInit {
     @Input('al') al: any;
