@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, AfterViewInit, Output, EventEmitter } from '@angular/core';
 
 // Services
 import { ThemeService } from '../../services/theme.service';
@@ -19,6 +19,9 @@ export class TabsComponent implements AfterViewInit, OnInit {
   @Input() expand: boolean;
   @Input() type: string;
 
+  @Output() onChangeTab = new EventEmitter();
+
+  activeTab;
   host;
   props;
 
@@ -29,7 +32,7 @@ export class TabsComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit() {
     this.tabComponents.forEach((tab: TabComponent) => {
-      // tab.clicked.subscribe((item) => console.log('Teste'));
+      tab.clicked.subscribe((item) => console.log('Teste'));
       tab.activeColor = this.props.activeColor;
       tab.activeBorderColor = this.props.activeBorderColor;
       tab.activeFillColor = this.props.activeFillColor;
@@ -63,5 +66,9 @@ export class TabsComponent implements AfterViewInit, OnInit {
 
   handleClick() {
     console.log('teste');
+  }
+
+  setActiveTab(tab) {
+    this.onChangeTab.emit(tab);
   }
 }

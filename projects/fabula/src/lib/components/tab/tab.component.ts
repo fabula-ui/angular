@@ -57,8 +57,6 @@ export class TabComponent implements AfterViewInit {
       type: this.type
     };
 
-    console.log(this.props);
-
     this.themeService.attachClasses(this.host, 'tab', this.props);
   }
 
