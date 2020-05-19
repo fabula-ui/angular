@@ -9,12 +9,14 @@ import { ExampleBlockComponent } from './components/example-block/example-block.
 
 // Test theme
 import testTheme from './testTheme';
+import { SegmentsComponent } from './components/segments/segments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExampleComponent,
-    ExampleBlockComponent
+    ExampleBlockComponent,
+    SegmentsComponent
   ],
   imports: [
     BrowserModule,

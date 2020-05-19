@@ -74,6 +74,10 @@ import { ThemeService } from './services/theme.service';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tab/tab.component';
 import { TabContentComponent } from './components/tab-content/tab-content.component';
+import { SegmentComponent } from './components/segment/segment.component';
+import { SegmentGroupComponent } from './components/segment-group/segment-group.component';
+import { SegmentsComponent } from './components/segments/segments.component';
+import { ParentComponent } from './components/parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +101,8 @@ import { TabContentComponent } from './components/tab-content/tab-content.compon
     ListComponent,
     ListItemComponent,
     RowComponent,
+    SegmentComponent,
+    SegmentsComponent,
     TabComponent,
     TabContentComponent,
     TabsComponent,
@@ -173,6 +179,8 @@ import { TabContentComponent } from './components/tab-content/tab-content.compon
     ListComponent,
     ListItemComponent,
     RowComponent,
+    SegmentComponent,
+    SegmentsComponent,
     TabComponent,
     TabContentComponent,
     TabsComponent,

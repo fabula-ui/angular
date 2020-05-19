@@ -1,0 +1,53 @@
+<app-example-block title="Segments">
+
+  <app-example [block]="true" title="Active Color">
+    <div flex>
+      <fab-segments>
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+
+      <fab-segments active-fill-color="primary">
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+
+      <fab-segments active-fill-color="dark" active-text-color="success">
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+    </div>
+  </app-example>
+
+  <app-example [block]="true" title="Color">
+    <div flex>
+      <fab-segments>
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+
+      <fab-segments color="primary">
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+
+      <fab-segments color="secondary">
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+
+      <fab-segments color="aux">
+        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment name="components">Components</fab-segment>
+        <fab-segment name="showcase">Showcase</fab-segment>
+      </fab-segments>
+    </div>
+  </app-example>
+
+</app-example-block>

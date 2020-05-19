@@ -1,4 +1,4 @@
-<div class="fab-tab" [attr.data-active]="active">
+<div class="fab-segment" [attr.data-active]="active">
   <button (click)="handleClick()" *ngIf="!link">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </button>

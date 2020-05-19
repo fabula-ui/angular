@@ -69,10 +69,6 @@ export class TabsComponent implements AfterViewInit, OnInit {
     this.themeService.attachClasses(this.host, 'tabs', this.props);
   }
 
-  handleClick() {
-    console.log('teste');
-  }
-
   setActiveTab(tab) {
     this.activeTab = tab;
     this.changeTab.emit(tab);
