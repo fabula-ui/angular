@@ -18,6 +18,7 @@ export class SegmentComponent implements OnInit {
   @Input() faded: boolean;
   @Input() invert: boolean;
   @Input() name: string;
+  @Input() rounded: boolean;
   @Input() scope: string;
   @Input() stacked: boolean;
   @Input() target: string;
@@ -42,13 +43,13 @@ export class SegmentComponent implements OnInit {
       activeTextColor: this.activeTextColor,
       color: this.color,
       expand: this.expand,
+      faded: this.faded,
       invert: this.invert,
+      rounded: this.rounded,
       stacked: this.stacked
     };
 
     if (this.active && this.scope && this.target) { this.toggleContent(); }
-
-    console.log('activeFillColor', this.activeFillColor);
 
     this.themeService.attachClasses(this.host, 'segment', this.props);
   }

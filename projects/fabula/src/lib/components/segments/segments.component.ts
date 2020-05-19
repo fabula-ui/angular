@@ -39,6 +39,7 @@ export class SegmentsComponent implements OnInit {
       child.expand = this.props.expand;
       child.faded = this.props.faded;
       child.invert = this.props.invert;
+      child.rounded = this.props.rounded;
       child.scope = this.scope;
       child.stacked = this.props.stacked;
 
@@ -60,6 +61,7 @@ export class SegmentsComponent implements OnInit {
       expand: this.expand,
       faded: this.host.hasAttribute('faded'),
       invert: this.host.hasAttribute('invert'),
+      rounded: this.host.hasAttribute('rounded'),
       stacked: this.host.hasAttribute('stacked'),
     };
 
