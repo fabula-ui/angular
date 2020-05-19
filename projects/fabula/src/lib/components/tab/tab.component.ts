@@ -9,7 +9,7 @@ import { ThemeService } from '../../services/theme.service';
   styleUrls: ['./tab.component.css']
 })
 export class TabComponent implements AfterViewInit {
-  @Input() active: boolean;
+  @Input() active = false;
   @Input('active-border-color') activeBorderColor: string;
   @Input('active-fill-color') activeFillColor: string;
   @Input('active-color') activeColor: string;
@@ -17,9 +17,13 @@ export class TabComponent implements AfterViewInit {
   @Input() expand: boolean;
   @Input() faded: boolean;
   @Input() invert: boolean;
+  @Input() name: string;
+  @Input() scope: string;
   @Input() stacked: boolean;
+  @Input() target: string;
   @Input() type: string;
-  @Output() clicked = new EventEmitter();
+
+  @Output() selectedTab = new EventEmitter();
 
   host;
   props;
@@ -29,19 +33,7 @@ export class TabComponent implements AfterViewInit {
     public themeService: ThemeService
   ) { }
 
-  ngAfterViewInit() {
-    // this.host = this.elRef.nativeElement;
-    // this.props = {
-    //   active: this.active,
-    //   activeBorderColor: this.activeBorderColor,
-    //   activeColor: this.activeColor,
-    //   expand: this.expand,
-    //   stacked: this.stacked,
-    //   type: this.type
-    // };
-
-    // this.themeService.attachClasses(this.host, 'tab', this.props);
-  }
+  ngAfterViewInit() {}
 
   childViewInit() {
     this.host = this.elRef.nativeElement;
@@ -57,11 +49,31 @@ export class TabComponent implements AfterViewInit {
       type: this.type
     };
 
+    if (this.active && this.scope && this.target) { this.toggleContent(); }
+
     this.themeService.attachClasses(this.host, 'tab', this.props);
   }
 
   handleClick() {
-    this.clicked.emit(true);
+    if (this.name) { this.selectedTab.emit(this.name); }
+    if (this.scope && this.target) { this.toggleContent(); }
+  }
+
+  listen(events) {
+    events.onChangeTab.subscribe(tab => {
+      this.active = tab === this.name;
+    });
+  }
+
+  toggleContent() {
+    const allOtherContent = document.querySelectorAll(`[data-scope='${this.scope}']:not(${this.target})`);
+    const targetContent = document.querySelector(`${this.target}[data-scope='${this.scope}']`);
+
+    allOtherContent.forEach(other => {
+      other.setAttribute('data-visible', 'false');
+    });
+
+    targetContent.setAttribute('data-visible', 'true');
   }
 
 }

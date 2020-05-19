@@ -73,6 +73,7 @@ import { FabulaService } from './services/fabula.service';
 import { ThemeService } from './services/theme.service';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tab/tab.component';
+import { TabContentComponent } from './components/tab-content/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { TabComponent } from './components/tab/tab.component';
     ListItemComponent,
     RowComponent,
     TabComponent,
+    TabContentComponent,
     TabsComponent,
     TagComponent,
     TagGroupComponent,
@@ -172,6 +174,7 @@ import { TabComponent } from './components/tab/tab.component';
     ListItemComponent,
     RowComponent,
     TabComponent,
+    TabContentComponent,
     TabsComponent,
     TagComponent,
     TagGroupComponent,

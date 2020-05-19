@@ -1,0 +1,3 @@
+.fab-tab-content[data-visible='false'] {
+    display: none;
+}

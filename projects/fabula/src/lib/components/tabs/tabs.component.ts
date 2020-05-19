@@ -17,9 +17,10 @@ export class TabsComponent implements AfterViewInit, OnInit {
   @Input('active-color') activeColor: string;
   @Input() color: string;
   @Input() expand: boolean;
+  @Input() scope: string;
   @Input() type: string;
 
-  @Output() onChangeTab = new EventEmitter();
+  @Output() changeTab = new EventEmitter();
 
   activeTab;
   host;
@@ -32,7 +33,7 @@ export class TabsComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit() {
     this.tabComponents.forEach((tab: TabComponent) => {
-      tab.clicked.subscribe((item) => console.log('Teste'));
+      tab.selectedTab.subscribe(tab => this.setActiveTab(tab));
       tab.activeColor = this.props.activeColor;
       tab.activeBorderColor = this.props.activeBorderColor;
       tab.activeFillColor = this.props.activeFillColor;
@@ -40,10 +41,14 @@ export class TabsComponent implements AfterViewInit, OnInit {
       tab.expand = this.props.expand;
       tab.faded = this.props.faded;
       tab.invert = this.props.invert;
+      tab.scope = this.scope;
       tab.stacked = this.props.stacked;
       tab.type = this.props.type;
 
       tab.childViewInit();
+      tab.listen({
+        onChangeTab: this.changeTab
+      });
     });
   }
 
@@ -69,6 +74,7 @@ export class TabsComponent implements AfterViewInit, OnInit {
   }
 
   setActiveTab(tab) {
-    this.onChangeTab.emit(tab);
+    this.activeTab = tab;
+    this.changeTab.emit(tab);
   }
 }

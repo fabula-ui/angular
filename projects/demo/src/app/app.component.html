@@ -940,9 +940,9 @@
   <app-example [block]="true" title="Stacked">
     <div flex>
       <fab-tabs>
-        <fab-tab [active]="true">Docs</fab-tab>
-        <fab-tab>Components</fab-tab>
-        <fab-tab>Showcase</fab-tab>
+        <fab-tab [active]="true" name="docs">Docs</fab-tab>
+        <fab-tab name="components">Components</fab-tab>
+        <fab-tab name="showcase">Showcase</fab-tab>
       </fab-tabs>
 
       <fab-tabs col="3" stacked>
@@ -974,9 +974,9 @@
       </fab-tabs>
 
       <fab-tabs active-fill-color="#87FF7E" col="3" color="dark" stacked type="pill">
-        <fab-tab [active]="true">Docs</fab-tab>
-        <fab-tab>Components</fab-tab>
-        <fab-tab>Showcase</fab-tab>
+        <fab-tab [active]="true" name="docs">Docs</fab-tab>
+        <fab-tab name="components">Components</fab-tab>
+        <fab-tab name="showcase">Showcase</fab-tab>
       </fab-tabs>
     </div>
   </app-example>
@@ -1058,11 +1058,29 @@
       </fab-tabs>
 
       <fab-tabs active-fill-color="#FFA269" color="aux" type="pill">
-        <fab-tab [active]="true">Docs</fab-tab>
-        <fab-tab>Components</fab-tab>
-        <fab-tab>Showcase</fab-tab>
+        <fab-tab [active]="true" name="docs">Docs</fab-tab>
+        <fab-tab name="components">Components</fab-tab>
+        <fab-tab name="showcase">Showcase</fab-tab>
       </fab-tabs>
     </div>
+  </app-example>
+
+  <app-example [block]="true" title="Tab Content">
+    <fab-tabs scope="tabs1">
+      <fab-tab [active]="true" name="docs" target="#docsContent">Docs</fab-tab>
+      <fab-tab name="components" target="#componentsContent">Components</fab-tab>
+      <fab-tab name="showcase" target="#showcaseContent">Showcase</fab-tab>
+    </fab-tabs>
+
+    <fab-tab-content id="docsContent" p="1.5" scope="tabs1">
+      Docs Content
+    </fab-tab-content>
+    <fab-tab-content id="componentsContent" p="1.5" scope="tabs1">
+      Components Content
+    </fab-tab-content>
+    <fab-tab-content id="showcaseContent" p="1.5" scope="tabs1">
+      Showcase Content
+    </fab-tab-content>
   </app-example>
 
 </app-example-block>
