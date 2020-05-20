@@ -81,7 +81,10 @@
   <app-example [block]="true" title="Rounded">
     <div flex>
       <fab-segments rounded>
-        <fab-segment [active]="true" name="docs">Docs</fab-segment>
+        <fab-segment [active]="true" name="docs">
+          <fab-icon name="airplay"></fab-icon>
+          <span>Docs</span>
+        </fab-segment>
         <fab-segment name="components">Components</fab-segment>
         <fab-segment name="showcase">Showcase</fab-segment>
       </fab-segments>
