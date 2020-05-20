@@ -342,83 +342,77 @@
 <app-example-block title="Card" [visible]="false">
 
   <app-example [block]="true" title="Examples">
-    <fab-row>
-      <fab-column col="3">
-        <fab-card>
-          <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
-          <fab-card-body padding>
-            <fab-text block bold size="lg">Card Title</fab-text>
-            <fab-text aux block mb="1" size="sm">Card Subtitle</fab-text>
-            <fab-text block mb=".5">
-              This is some text inside this card.<br>
-              You can add whatever content in
-              here.
-            </fab-text>
-          </fab-card-body>
-          <fab-card-footer padding>
-            <fab-button color="primary" [expand]="true">Button</fab-button>
-          </fab-card-footer>
-        </fab-card>
-      </fab-column>
+    <div row>
 
-      <fab-column col="9">
-        <fab-card>
-          <fab-card-image height="200" src="http://placehold.it/1200x300"></fab-card-image>
-          <fab-card-body>
-            <div p="1">
-              <fab-text block bold size="xxl">Card Title</fab-text>
-              <fab-text aux block>Card Subtitle</fab-text>
-            </div>
+      <fab-card col="3">
+        <fab-card-image height="200" src="http://placehold.it/400x150"></fab-card-image>
+        <fab-card-body padding>
+          <fab-text block bold size="lg">Card Title</fab-text>
+          <fab-text aux block mb="1" size="sm">Card Subtitle</fab-text>
+          <fab-text block mb=".5">
+            This is some text inside this card.<br>
+            You can add whatever content in
+            here.
+          </fab-text>
+        </fab-card-body>
+        <fab-card-footer padding>
+          <fab-button color="primary" [expand]="true">Button</fab-button>
+        </fab-card-footer>
+      </fab-card>
 
-            <fab-list [striped]="true">
-              <fab-list-item>
-                <fab-row>
-                  <fab-column width="15rem">
-                    <fab-text aux medium>Full name</fab-text>
-                  </fab-column>
 
-                  <fab-column grow="1">
-                    <fab-text>John Doe</fab-text>
-                  </fab-column>
-                </fab-row>
-              </fab-list-item>
+      <fab-card col="9">
+        <fab-card-image height="200" src="http://placehold.it/1200x300"></fab-card-image>
+        <fab-card-body>
+          <div p="1">
+            <fab-text block bold size="xxl">Card Title</fab-text>
+            <fab-text aux block>Card Subtitle</fab-text>
+          </div>
 
-              <fab-list-item>
-                <fab-row>
-                  <fab-column width="15rem">
-                    <fab-text aux medium>Email address</fab-text>
-                  </fab-column>
+          <fab-list padding [striped]="true">
+            <fab-list-item>
+              <div row>
+   
+                <fab-text aux col="3" medium>Full name</fab-text>
+                <fab-text col="9">John Doe</fab-text>
+         
+              </div>
+            </fab-list-item>
 
-                  <fab-column grow="1">
-                    <fab-text>johndoe@gmail.com</fab-text>
-                  </fab-column>
-                </fab-row>
-              </fab-list-item>
+            <fab-list-item>
+              <fab-row>
+                <fab-column width="15rem">
+                  <fab-text aux medium>Email address</fab-text>
+                </fab-column>
 
-              <fab-list-item>
-                <fab-row>
-                  <fab-column width="15rem">
-                    <fab-text aux medium>Attachments</fab-text>
-                  </fab-column>
+                <fab-column grow="1">
+                  <fab-text>johndoe@gmail.com</fab-text>
+                </fab-column>
+              </fab-row>
+            </fab-list-item>
 
-                  <fab-column grow="1">
-                    <fab-input placeholder="Add attachments"></fab-input>
-                  </fab-column>
-                </fab-row>
-              </fab-list-item>
-            </fab-list>
-          </fab-card-body>
+            <fab-list-item>
+              <fab-row>
+                <fab-column width="15rem">
+                  <fab-text aux medium>Attachments</fab-text>
+                </fab-column>
 
-          <fab-card-footer padding>
-            <fab-button-group align-h="right" flex>
-              <fab-button color="primary" [wide]="true">Confirm</fab-button>
-              <fab-button color="light" [wide]="true">Cancel</fab-button>
-            </fab-button-group>
-          </fab-card-footer>
-        </fab-card>
-      </fab-column>
+                <fab-column grow="1">
+                  <fab-input placeholder="Add attachments"></fab-input>
+                </fab-column>
+              </fab-row>
+            </fab-list-item>
+          </fab-list>
+        </fab-card-body>
 
-    </fab-row>
+        <fab-card-footer padding>
+          <fab-button-group align-h="right" flex>
+            <fab-button color="primary" [wide]="true">Confirm</fab-button>
+            <fab-button color="light" [wide]="true">Cancel</fab-button>
+          </fab-button-group>
+        </fab-card-footer>
+      </fab-card>
+    </div>
 
   </app-example>
 
@@ -676,7 +670,7 @@
   </app-example>
 </app-example-block>
 
-<app-example-block title="List" [visible]="false">
+<app-example-block title="List" [visible]="true">
   <div mb="1.5" row>
     <fab-card col="8" px="1">
       <fab-list>
