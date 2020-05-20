@@ -16,7 +16,9 @@ export class TabComponent implements AfterViewInit {
   @Input() color: string;
   @Input() expand: boolean;
   @Input() faded: boolean;
+  @Input() href: string;
   @Input() invert: boolean;
+  @Input() link: string;
   @Input() name: string;
   @Input() scope: string;
   @Input() stacked: boolean;

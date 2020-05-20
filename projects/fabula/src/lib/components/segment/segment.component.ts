@@ -16,7 +16,9 @@ export class SegmentComponent implements OnInit {
   @Input() color: string;
   @Input() expand: boolean;
   @Input() faded: boolean;
+  @Input() href: string;
   @Input() invert: boolean;
+  @Input() link: string;
   @Input() name: string;
   @Input() rounded: boolean;
   @Input() scope: string;

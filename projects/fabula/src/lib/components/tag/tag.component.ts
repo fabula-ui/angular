@@ -10,6 +10,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class TagComponent implements AfterViewInit, OnInit {
   @Input() color: string;
+  @Input() link: string;
   @Input() size: string;
 
   host;

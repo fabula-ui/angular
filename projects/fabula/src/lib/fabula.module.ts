@@ -29,12 +29,6 @@ import { TagGroupComponent } from './components/tag-group/tag-group.component';
 import { TextComponent } from './components/text/text.component';
 import { TextPartComponent } from './components/text-part/text-part.component';
 
-
-import { CollapseComponent } from './components/collapse/collapse.component';
-import { CollapseContentComponent } from './components/collapse-content/collapse-content.component';
-import { CollapseToggleComponent } from './components/collapse-toggle/collapse-toggle.component';
-import { TooltipComponent } from './components/tooltip/tooltip.component';
-
 // Directives
 import { ColumnDirective } from './directives/column.directive';
 import { AlignDirective } from './directives/align.directive';
@@ -44,40 +38,17 @@ import { MarginDirective } from './directives/margin.directive';
 import { PaddingDirective } from './directives/padding.directive';
 import { RowDirective } from './directives/row.directive';
 
-import { BlockDirective } from './directives/block.directive';
-import { CardBodyDirective } from './directives/card-body.directive';
-import { CardFooterDirective } from './directives/card-footer.directive';
-import { CardHeaderDirective } from './directives/card-header.directive';
-import { CardImageDirective } from './directives/card-image.directive';
-import { CardSubtitleDirective } from './directives/card-subtitle.directive';
-import { CardTextDirective } from './directives/card-text.directive';
-import { CardTitleDirective } from './directives/card-title.directive';
-import { ClearDirective } from './directives/clear.directive';
-import { DisabledDirective } from './directives/disabled.directive';
-import { ElementDirective } from './directives/element.directive';
-import { FixedHeightDirective } from './directives/fixed-height.directive';
-import { FloatDirective } from './directives/float.directive';
-import { InvertColorDirective } from './directives/invert-color.directive';
-import { OutlineDirective } from './directives/outline.directive';
-import { PlacementDirective } from './directives/placement.directive';
-import { SizeDirective } from './directives/size.directive';
-import { SubtitleDirective } from './directives/subtitle.directive';
-import { TitleDirective } from './directives/title.directive';
-import { TooltipDirective } from './directives/tooltip.directive';
-
 // Models
 import { IUserOptions } from './models/user-options.model';
 
 // Services
-import { FabulaService } from './services/fabula.service';
 import { ThemeService } from './services/theme.service';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tab/tab.component';
 import { TabContentComponent } from './components/tab-content/tab-content.component';
 import { SegmentComponent } from './components/segment/segment.component';
-import { SegmentGroupComponent } from './components/segment-group/segment-group.component';
 import { SegmentsComponent } from './components/segments/segments.component';
-import { ParentComponent } from './components/parent/parent.component';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -119,6 +90,7 @@ import { ParentComponent } from './components/parent/parent.component';
     MarginDirective,
     PaddingDirective,
     RowDirective,
+    IconComponent,
     // // Components
     // AvatarComponent,
     // BadgeComponent,
