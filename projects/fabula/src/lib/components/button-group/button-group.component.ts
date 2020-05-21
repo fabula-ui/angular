@@ -4,11 +4,13 @@ import {
   Input,
   OnInit
 } from '@angular/core';
+import { css } from 'emotion';
 
 // Component base
 import { GeneralComponent } from '../general-component/general-component.component';
 
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import ButtonGroupStyles from '@fabula/core/theme/styles/ButtonGroup';
 
 @Component({
   selector: 'fab-button-group',
@@ -25,16 +27,14 @@ export class ButtonGroupComponent extends GeneralComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-    private themeService: ThemeService,
   ) { 
     super(elRef);
   }
 
   ngOnInit() {
     super.ngOnInit();
-
     let props;
-    this.host = this.elRef.nativeElement;
+    let styles;
 
     props = {
       al: this.al,
@@ -50,7 +50,10 @@ export class ButtonGroupComponent extends GeneralComponent implements OnInit {
       wrap: this.wrap
     };
 
-    this.themeService.attachClasses(this.host, 'buttonGroup', props);
+    styles = css(ButtonGroupStyles({ framework: 'angular', props }));
+
+    this.host = this.elRef.nativeElement;
+    this.host.classList.add(css(styles));
   }
 
 }

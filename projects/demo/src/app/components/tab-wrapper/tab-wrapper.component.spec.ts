@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IconComponent } from './icon.component';
+import { TabWrapperComponent } from './tab-wrapper.component';
 
-describe('IconComponent', () => {
-  let component: IconComponent;
-  let fixture: ComponentFixture<IconComponent>;
+describe('TabWrapperComponent', () => {
+  let component: TabWrapperComponent;
+  let fixture: ComponentFixture<TabWrapperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IconComponent ]
+      declarations: [ TabWrapperComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IconComponent);
+    fixture = TestBed.createComponent(TabWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

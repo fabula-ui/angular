@@ -1,7 +1,8 @@
-import { Component, OnInit, ElementRef, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import TabStyles from '@fabula/core/theme/styles/Tab';
 
 @Component({
   selector: 'fab-tab',
@@ -32,14 +33,19 @@ export class TabComponent implements AfterViewInit {
 
   constructor(
     public elRef: ElementRef,
-    public themeService: ThemeService
   ) { }
 
   ngAfterViewInit() {}
 
   childViewInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
-    this.props = {
+
+    // Set props
+    props = {
       active: this.active,
       activeBorderColor: this.activeBorderColor,
       activeFillColor: this.activeFillColor,
@@ -51,9 +57,12 @@ export class TabComponent implements AfterViewInit {
       type: this.type
     };
 
+    // Toggle content
     if (this.active && this.scope && this.target) { this.toggleContent(); }
 
-    this.themeService.attachClasses(this.host, 'tab', this.props);
+    // Set and apply styles
+    styles = css(TabStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
   handleClick() {

@@ -2,11 +2,15 @@ import {
     Component,
     ElementRef,
     Input,
-    OnInit
+    OnInit,
+    QueryList,
+    ContentChildren
 } from '@angular/core';
+import { css } from 'emotion';
 
 // Styles
-import { ThemeService } from '../../services/theme.service';
+import ButtonStyles from '@fabula/core/theme/styles/Button';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'fab-button',
@@ -14,6 +18,8 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent implements OnInit {
+  @ContentChildren(IconComponent) iconComponents: QueryList<IconComponent>;
+  
   @Input() border = false;
   @Input() color: string;
   @Input() compact: boolean;
@@ -30,13 +36,24 @@ export class ButtonComponent implements OnInit {
   @Input() size: string;
   @Input() wide: boolean;
 
+  host;
+  props;
+
   constructor(
-    private elRef: ElementRef,
-    private themeService: ThemeService,
+    private elRef: ElementRef
   ) { }
 
+  ngAfterViewInit() {
+    this.iconComponents.forEach((icon: IconComponent) => {
+      icon.parentProps = this.props.colors;
+      icon.refreshStyles({
+        faded: this.props.faded,
+        fillColor: this.props.color
+      });
+    });
+  }
+
   ngOnInit() {
-    const el = this.elRef.nativeElement;
     const props = {
       border: this.border,
       clear: this.clear,
@@ -53,8 +70,12 @@ export class ButtonComponent implements OnInit {
       size: this.size,
       wide: this.wide
     };
+    const styles = css(ButtonStyles({ framework: 'angular', props }));
 
-    this.themeService.attachClasses(el, 'button', props);
+    this.host = this.elRef.nativeElement;
+    this.host.classList.add(styles);
+
+    this.props = props;
   }
 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import SegmentStyles from '@fabula/core/theme/styles/Segment';
 
 @Component({
   selector: 'fab-segment',
@@ -32,14 +33,19 @@ export class SegmentComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-    public themeService: ThemeService
   ) { }
 
   ngOnInit() {}
 
   childViewInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
-    this.props = {
+
+    // Set props
+    props = {
       activeColor: this.activeColor,
       activeFillColor: this.activeFillColor,
       activeTextColor: this.activeTextColor,
@@ -51,9 +57,12 @@ export class SegmentComponent implements OnInit {
       stacked: this.stacked
     };
 
+    // Toggle content
     if (this.active && this.scope && this.target) { this.toggleContent(); }
 
-    this.themeService.attachClasses(this.host, 'segment', this.props);
+    // Set and apply styles
+    styles = css(SegmentStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
   handleClick() {

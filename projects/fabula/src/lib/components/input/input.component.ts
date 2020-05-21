@@ -4,9 +4,10 @@ import {
     Input,
     OnInit
 } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import InputStyles from '@fabula/core/theme/styles/Input';
 
 @Component({
     selector: 'fab-input',
@@ -28,13 +29,18 @@ export class InputComponent implements OnInit {
     props;
 
     constructor(
-        private elRef: ElementRef,
-        private themeService: ThemeService,
+        private elRef: ElementRef
     ) { }
 
     ngOnInit() {
+        let props;
+        let styles;
+
+        // Get host element
         this.host = this.elRef.nativeElement;
-        this.props = {
+
+        // Set props
+        props = {
             color: this.color,
             expand: this.expand,
             glow: this.host.hasAttribute('glow'),
@@ -44,7 +50,9 @@ export class InputComponent implements OnInit {
             size: this.size
         };
 
-        this.themeService.attachClasses(this.host, 'input', this.props);
+        // Set and apply styles
+        styles = css(InputStyles({ framework: 'angular', props }));
+        this.host.classList.add(styles);
     }
 
     onFocus(hasFocus: boolean) {

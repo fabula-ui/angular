@@ -1,9 +1,9 @@
 const testTheme = {
     components: {
-        avatar: {
-            backgroundColor: 'blue'
+        card: {
+            
         }
-    }
+    },
 };
 
 export default testTheme;

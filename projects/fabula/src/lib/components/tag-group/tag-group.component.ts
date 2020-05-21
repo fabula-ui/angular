@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import TagGroupStyles from '@fabula/core/theme/styles/TagGroup';
+
 
 @Component({
   selector: 'fab-tag-group',
@@ -13,16 +15,22 @@ export class TagGroupComponent implements OnInit {
   props;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
 
-    this.props = {};
+    // Set props
+    props = {}
 
-    this.themeService.attachClasses(this.host, 'tagGroup', this.props);
+    // Set and apply styles
+    styles = css(TagGroupStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
 }

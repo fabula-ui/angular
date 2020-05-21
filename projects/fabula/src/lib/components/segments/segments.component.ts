@@ -1,8 +1,11 @@
 import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Components
 import { SegmentComponent } from '../segment/segment.component';
+
+// Styles
+import SegmentsStyles from '@fabula/core/theme/styles/Segments';
 
 @Component({
   selector: 'fab-segments',
@@ -27,7 +30,6 @@ export class SegmentsComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-    public themeService: ThemeService
   ) { }
 
   ngAfterViewInit() {
@@ -52,8 +54,14 @@ export class SegmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
-    this.props = {
+
+    // Set props
+    props = {
       activeColor: this.activeColor,
       activeFillColor: this.activeFillColor,
       activeTextColor: this.activeTextColor,
@@ -65,7 +73,12 @@ export class SegmentsComponent implements OnInit {
       stacked: this.host.hasAttribute('stacked'),
     };
 
-    this.themeService.attachClasses(this.host, 'segments', this.props);
+    // Set and apply styles
+    styles = css(SegmentsStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
+
+    // Pass props to component
+    this.props = props;
   }
 
   setActiveSegment(segment) {

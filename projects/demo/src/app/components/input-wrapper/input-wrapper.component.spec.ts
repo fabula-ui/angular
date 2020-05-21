@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SegmentsComponent } from './segments.component';
+import { InputWrapperComponent } from './input-wrapper.component';
 
-describe('SegmentsComponent', () => {
-  let component: SegmentsComponent;
-  let fixture: ComponentFixture<SegmentsComponent>;
+describe('InputWrapperComponent', () => {
+  let component: InputWrapperComponent;
+  let fixture: ComponentFixture<InputWrapperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SegmentsComponent ]
+      declarations: [ InputWrapperComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SegmentsComponent);
+    fixture = TestBed.createComponent(InputWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

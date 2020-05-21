@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, ElementRef, Renderer2, Renderer } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import BadgeStyles from '@fabula/core/theme/styles/Badge';
 
 @Component({
   selector: 'fab-badge',
@@ -9,7 +10,6 @@ import { ThemeService } from '../../services/theme.service';
   styles: []
 })
 export class BadgeComponent implements OnInit {
-  className;
   @Input() color: string;
   @Input('corner-style') cornerStyle = 'hard';
   @Input() icon = '';
@@ -17,19 +17,27 @@ export class BadgeComponent implements OnInit {
   @Input('placement-y') placementY = 'bottom';
   @Input() size = 'md';
 
+  className;
+  host;
+
   constructor(
-    public elRef: ElementRef,
-    private themeService: ThemeService,
+    public elRef: ElementRef
     ) { }
 
   ngOnInit() {
-    const el = this.elRef.nativeElement;
-    const props = {
-      color: this.color,
-      size: this.size
-    };
+    let props
+    let styles;
 
-    this.themeService.attachClasses(el, 'badge', props);
+    this.host = this.elRef.nativeElement;
+
+    props = {
+        color: this.color,
+        rounded: this.host.hasAttribute('rounded'),
+        size: this.size
+    }
+    
+    styles = css(BadgeStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
 }

@@ -1,7 +1,8 @@
 import { Component, ElementRef, Input, OnInit, AfterViewInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import TagStyles from '@fabula/core/theme/styles/Tag';
 
 @Component({
   selector: 'fab-tag',
@@ -17,21 +18,27 @@ export class TagComponent implements AfterViewInit, OnInit {
   props;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngAfterViewInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
 
-    this.props = {
+    // Set props
+    props = {
       anchor: !!this.host.querySelector('a'),
       button: !!this.host.querySelector('button'),
       color: this.color,
       size: this.size
     };
 
-    this.themeService.attachClasses(this.host, 'tag', this.props);
+    // Set and apply styles
+    styles = css(TagStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
   ngOnInit() {}

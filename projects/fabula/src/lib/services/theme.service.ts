@@ -35,19 +35,19 @@ export class ThemeService {
     });
   }
 
-  setComponents() {
-    const components = {};
+  // setComponents() {
+  //   const components = {};
 
-    for (const componentName in this.theme.components) {
-      if (this.theme.components.hasOwnProperty(componentName)) {
-        components[componentName] = {
-          ...this.theme.components[componentName],
-          ...this.options.theme.components[componentName]
-        };
-      }
-    }
+  //   for (const componentName in this.theme.components) {
+  //     if (this.theme.components.hasOwnProperty(componentName)) {
+  //       components[componentName] = {
+  //         ...this.theme.components[componentName],
+  //         ...this.options.theme.components[componentName]
+  //       };
+  //     }
+  //   }
 
-    return components;
-  }
+  //   return components;
+  // }
 
 }

@@ -1,12 +1,20 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import { ThemeService } from '../../services/theme.service';
+import { Component, OnInit, Input, ElementRef, AfterViewInit, ContentChildren, QueryList } from '@angular/core';
+import { css } from 'emotion';
+
+// Components
+import { IconComponent } from '../icon/icon.component';
+
+// Styles
+import AlertStyles from '@fabula/core/theme/styles/Alert';
 
 @Component({
   selector: 'fab-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css']
 })
-export class AlertComponent implements OnInit {
+export class AlertComponent implements AfterViewInit, OnInit {
+  @ContentChildren(IconComponent) iconComponents: QueryList<IconComponent>;
+  
   @Input() color: string;
   @Input() marker: string;
   @Input() text: string;
@@ -16,18 +24,33 @@ export class AlertComponent implements OnInit {
   props;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
+  ngAfterViewInit() {
+    this.iconComponents.forEach((icon: IconComponent) => {
+      icon.refreshStyles({
+        faded: this.props.faded,
+        fillColor: this.props.color
+      });
+    });
+  }
+
   ngOnInit() {
+    let props;
+
     this.host = this.elRef.nativeElement;
-    this.props = {
+
+    props = {
       color: this.color,
+      faded: this.host.hasAttribute('faded'),
       marker: this.marker
     };
 
-    this.themeService.attachClasses(this.host, 'alert', this.props);
+    const styles = css(AlertStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
+
+    this.props = props;
   }
 
 }

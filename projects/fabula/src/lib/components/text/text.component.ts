@@ -1,7 +1,8 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import TextStyles from '@fabula/core/theme/styles/Text';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -28,12 +29,12 @@ export class TextComponent implements OnInit {
   semibold;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
     let props;
+    let styles;
 
     this.host = this.elRef.nativeElement;
 
@@ -73,8 +74,10 @@ export class TextComponent implements OnInit {
       weight: this.weight
     };
 
+    styles = css(TextStyles({ framework: 'angular', props }));
+
     // Attach classes to host
-    this.themeService.attachClasses(this.host, 'text', props);
+    this.host.classList.add(styles);
   }
 
 }

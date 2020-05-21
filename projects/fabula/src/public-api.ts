@@ -3,12 +3,16 @@
  */
 
 // Components
+export * from './lib/components/alert/alert.component';
 export * from './lib/components/avatar/avatar.component';
 export * from './lib/components/badge/badge.component';
 export * from './lib/components/button/button.component';
 export * from './lib/components/button-group/button-group.component';
 export * from './lib/components/card/card.component';
 export * from './lib/components/card-body/card-body.component';
+export * from './lib/components/card-footer/card-footer.component';
+export * from './lib/components/card-image/card-image.component';
+export * from './lib/components/card-section/card-section.component';
 export * from './lib/components/column/column.component';
 export * from './lib/components/dropdown/dropdown.component';
 export * from './lib/components/general-component/general-component.component';
@@ -45,5 +49,8 @@ export * from './lib/models/user-options.model';
 export * from './lib/services/fabula.service';
 export * from './lib/services/theme.service';
 
-// Module
+// Modules
 export * from './lib/fabula.module';
+export * from './lib/modules/icons.module';
+export * from './lib/modules/theme.module';
+export * from './lib/modules/utils.module';

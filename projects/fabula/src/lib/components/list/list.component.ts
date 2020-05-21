@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, Input } from '@angular/core';
-import { ThemeService } from '../../services/theme.service';
+import { css } from 'emotion';
+
+// Styles
+import ListStyles from '@fabula/core/theme/styles/List';
 
 @Component({
   selector: 'fab-list',
@@ -14,13 +17,14 @@ export class ListComponent implements OnInit {
   host;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
     let props;
+    let styles;
 
+    // Get host element
     this.host = this.elRef.nativeElement;
 
     // Set props
@@ -31,8 +35,9 @@ export class ListComponent implements OnInit {
       striped: this.striped
     };
 
-    // Attach classes to host
-    this.themeService.attachClasses(this.host, 'list', props);
+    // Set and apply styles
+    styles = css(ListStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
 }

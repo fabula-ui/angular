@@ -4,9 +4,10 @@ import {
     Input,
     OnInit
 } from '@angular/core';
+import { css } from 'emotion';
 
 // Styles
-import { ThemeService } from '../../services/theme.service';
+import DropdownStyles from '@fabula/core/theme/styles/Dropdown';
 
 @Component({
     selector: 'fab-dropdown',
@@ -15,21 +16,27 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class DropdownComponent implements OnInit {
     @Input() items = [];
-    
+
     public dropdownToggle;
     public host;
     public isOpen = false;
 
     constructor(
-        private elRef: ElementRef,
-        private themeService: ThemeService,
+        private elRef: ElementRef
     ) { }
 
     ngOnInit() {
-        const props = {};
+        let props = {};
+        let styles;
 
+        // Get host element
         this.host = this.elRef.nativeElement;
-        this.themeService.attachClasses(this.host, 'dropdown', props);
+
+        // Set and apply styles
+        styles = css(DropdownStyles({ framework: 'angular', props }));
+        this.host.classList.add(styles);
+
+        // Set toggle
         this.setToggle();
     }
 

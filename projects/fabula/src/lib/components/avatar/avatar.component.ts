@@ -1,7 +1,8 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import AvatarStyles from '@fabula/core/theme/styles/Avatar';
 
 @Component({
   selector: 'fab-avatar',
@@ -15,18 +16,18 @@ export class AvatarComponent implements OnInit {
   @Input() size = 'md';
 
   constructor(
-    private elRef: ElementRef,
-    private themeService: ThemeService
+    private elRef: ElementRef
   ) { }
 
   ngOnInit() {
-    const el = this.elRef.nativeElement;
+    const host = this.elRef.nativeElement;
     const props = {
       color: this.color,
       size: this.size
     };
+    const styles = css(AvatarStyles({ framework: 'angular', props }));
 
-    this.themeService.attachClasses(el, 'avatar', props);
+    host.classList.add(styles);
   }
 
   get initials(): string {

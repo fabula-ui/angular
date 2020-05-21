@@ -1,7 +1,8 @@
-import { Component, ElementRef, OnInit, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Input } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import IconStyles from '@fabula/core/theme/styles/Icon';
 
 @Component({
   selector: 'fab-icon',
@@ -10,21 +11,43 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class IconComponent implements OnInit {
   @Input() name: string;
+  @Input() parentProps: {};
+
   host;
   props;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
-    this.props = {
+    
+    // Set props
+    props = {
       name: this.name
     };
 
-    this.themeService.attachClasses(this.host, 'icon', this.props);
+    // Set and apply styles
+    styles = css(IconStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
+
+    // Pass props to component
+    this.props = props;
+  }
+
+  refreshStyles(parentProps) {
+    let props = {
+      ...this.props,
+      ...parentProps
+    };
+    let styles = css(IconStyles({ framework: 'angular', props }));
+
+    this.host.classList.add(styles);
   }
 
 }

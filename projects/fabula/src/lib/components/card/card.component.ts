@@ -1,7 +1,7 @@
-import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+import CardStyles from '@fabula/core/theme/styles/Card';
 
 @Component({
   selector: 'fab-card',
@@ -14,14 +14,13 @@ export class CardComponent implements OnInit {
 
   host;
 
-  private element: any;
   constructor(
-    private elRef: ElementRef,
-    private themeService: ThemeService,
+    private elRef: ElementRef
   ) { }
 
   ngOnInit() {
     let props;
+    let styles;
 
     this.host = this.elRef.nativeElement;
 
@@ -30,8 +29,9 @@ export class CardComponent implements OnInit {
       glow: this.glow,
       padding: this.host.hasAttribute('padding')
     };
+    styles = css(CardStyles({ framework: 'angular', props }));
 
-    this.themeService.attachClasses(this.host, 'card', props);
+    this.host.classList.add(styles);
   }
 
 }

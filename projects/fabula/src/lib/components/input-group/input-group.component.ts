@@ -1,7 +1,8 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import InputGroupStyles from '@fabula/core/theme/styles/InputGroup';
 
 @Component({
   selector: 'fab-input-group',
@@ -17,18 +18,25 @@ export class InputGroupComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-    public themeService: ThemeService,
   ) { }
 
   ngOnInit() {
-    const props = {
+    let props;
+    let styles;
+
+    // Get host element
+    this.host = this.elRef.nativeElement;
+    
+    // Set props
+    props = {
       flow: this.flow,
       glued: this.glued,
       spacing: this.spacing
     };
 
-    this.host = this.elRef.nativeElement;
-    this.themeService.attachClasses(this.host, 'inputGroup', props);
+    // Set and apply styles
+    styles = css(InputGroupStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
 }

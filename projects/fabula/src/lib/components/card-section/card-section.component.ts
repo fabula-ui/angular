@@ -1,5 +1,8 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { ThemeService } from '../../services/theme.service';
+import { css } from 'emotion';
+
+// Styles
+import CardSectionStyles from '@fabula/core/theme/styles/CardSection';
 
 @Component({
   selector: 'fab-card-section',
@@ -13,22 +16,26 @@ export class CardSectionComponent implements OnInit {
   host;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
     let props;
-
+    let styles;
+    
+    // Get host element
     this.host = this.elRef.nativeElement;
 
+    // Set props
     props = {
       color: this.color,
       divider: this.divider,
       padding: this.host.hasAttribute('padding')
     };
 
-    this.themeService.attachClasses(this.host, 'cardSection', props);
+    // Set and apply styles
+    styles = css(CardSectionStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
   }
 
 }

@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { css } from 'emotion';
 
-// Servides
-import { ThemeService } from '../../services/theme.service';
+// Styles
+import CardFooterStyles from '@fabula/core/theme/styles/CardFooter';
 
 @Component({
   selector: 'fab-card-footer',
@@ -12,12 +13,12 @@ export class CardFooterComponent implements OnInit {
   host;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
     let props;
+    let styles;
 
     this.host = this.elRef.nativeElement;
 
@@ -25,7 +26,7 @@ export class CardFooterComponent implements OnInit {
       padding: this.host.hasAttribute('padding')
     };
 
-    this.themeService.attachClasses(this.host, 'cardFooter', props);
+    styles = css(CardFooterStyles({ framework: 'angular', props }));
   }
 
 }

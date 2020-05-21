@@ -1,0 +1,66 @@
+<app-example [block]="true" title="Icon">
+  <app-example-block title="Examples">
+    <fab-alert color="danger" faded text="This is an alert with an icon" title="Alert with icon">
+      <fab-icon name="alert-triangle"></fab-icon>
+    </fab-alert>
+    <fab-button-group>
+      <fab-button color="primary" [compact]="true">
+        <fab-icon name="bell"></fab-icon>
+        <span>Notifications</span>
+      </fab-button>
+
+      <fab-button color="aux" [compact]="true">
+        <span>Notifications</span>
+        <fab-icon name="bell"></fab-icon>
+      </fab-button>
+    </fab-button-group>
+
+    <fab-tag-group>
+      <fab-tag color="aux">
+        <fab-icon name="airplay"></fab-icon>
+        <span>Tag</span>
+      </fab-tag>
+    </fab-tag-group>
+
+    <fab-tabs>
+      <fab-tab [active]="true" name="docs">
+        <fab-icon name="file-text"></fab-icon>
+        <span>Docs</span>
+        <fab-badge color="primary" rounded>8</fab-badge>
+      </fab-tab>
+
+      <fab-tab name="components">
+        <fab-icon name="tool"></fab-icon>
+        <span>Components</span>
+        <fab-badge color="aux" rounded>1</fab-badge>
+      </fab-tab>
+
+      <fab-tab name="showcase">
+        <fab-icon name="monitor"></fab-icon>
+        <span>Showcase</span>
+        <fab-badge color="aux" rounded>4</fab-badge>
+      </fab-tab>
+    </fab-tabs>
+
+    <fab-tabs color="light">
+      <fab-tab [active]="true" name="docs">
+        <fab-icon name="file-text"></fab-icon>
+        <span>Docs</span>
+        <fab-badge color="success" rounded>8</fab-badge>
+      </fab-tab>
+
+      <fab-tab name="components">
+        <fab-icon name="tool"></fab-icon>
+        <span>Components</span>
+        <fab-badge color="aux" rounded>1</fab-badge>
+      </fab-tab>
+
+      <fab-tab name="showcase">
+        <fab-icon name="monitor"></fab-icon>
+        <span>Showcase</span>
+        <fab-badge color="aux" rounded>4</fab-badge>
+      </fab-tab>
+    </fab-tabs>
+
+  </app-example-block>
+</app-example>

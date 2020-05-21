@@ -1,8 +1,11 @@
 import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Components
 import { TabComponent } from '../tab/tab.component';
+
+// Styles
+import TabsStyles from '@fabula/core/theme/styles/Tabs';
 
 @Component({
   selector: 'fab-tabs',
@@ -28,7 +31,6 @@ export class TabsComponent implements AfterViewInit, OnInit {
 
   constructor(
     public elRef: ElementRef,
-    public themeService: ThemeService
   ) { }
 
   ngAfterViewInit() {
@@ -53,8 +55,14 @@ export class TabsComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
+    let props;
+    let styles;
+
+    // Get host element
     this.host = this.elRef.nativeElement;
-    this.props = {
+    
+    // Set props
+    props = {
       activeColor: this.activeColor,
       activeBorderColor: this.activeBorderColor,
       activeFillColor: this.activeFillColor,
@@ -66,7 +74,12 @@ export class TabsComponent implements AfterViewInit, OnInit {
       type: this.type
     };
 
-    this.themeService.attachClasses(this.host, 'tabs', this.props);
+    // Set and apply styles
+    styles = css(TabsStyles({ framework: 'angular', props }));
+    this.host.classList.add(styles);
+
+    // Pass props to component
+    this.props = props;
   }
 
   setActiveTab(tab) {
