@@ -10,6 +10,7 @@ import IconStyles from '@fabula/core/theme/styles/Icon';
   styleUrls: ['./icon.component.css']
 })
 export class IconComponent implements OnInit {
+  @Input() color = 'inherit';
   @Input() name: string;
   @Input() parentProps: {};
 

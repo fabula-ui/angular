@@ -1,0 +1,26 @@
+<app-example [block]="true" title="Modal">
+  <app-example-block title="Examples">
+
+    <fab-modal id="modal" [(open)]="modalIsOpen">
+      <fab-modal-header divider="bottom" title="Deactivate account"></fab-modal-header>
+      <fab-modal-body>
+        <fab-text mb="1.5" size="lg">
+          Are you sure you want to deactivate your account?<br>
+          All of your data will be permanantly removed.
+        </fab-text>
+      </fab-modal-body>
+      <fab-modal-footer al-h="right" color="light" flex>
+        <fab-button-group>
+          <fab-button (click)="closeModal()">Cancel</fab-button>
+          <fab-button color="danger" (click)="closeModal()">Deactivate</fab-button>
+        </fab-button-group>
+      </fab-modal-footer>
+    </fab-modal>
+
+    <fab-button color="primary" (click)="openModal()">
+      <fab-icon name="eye"></fab-icon>
+      <span>Open Modal</span>
+    </fab-button>
+
+  </app-example-block>
+</app-example>

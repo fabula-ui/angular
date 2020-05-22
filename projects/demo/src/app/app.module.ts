@@ -21,6 +21,11 @@ import {
   InputGroupComponent,
   ListComponent,
   ListItemComponent,
+  ModalComponent,
+  ModalBodyComponent,
+  ModalFooterComponent,
+  ModalHeaderComponent,
+  ModalSectionComponent,
   SegmentComponent,
   SegmentsComponent,
   TabComponent,
@@ -32,9 +37,11 @@ import {
   TextPartComponent,
 } from 'projects/fabula/src/public-api';
 
-import { ThemeModule } from 'projects/fabula/src/public-api';
-import { UtilsModule } from 'projects/fabula/src/public-api';
-import { IconsModule } from 'projects/fabula/src/public-api';
+import { 
+  IconsModule, 
+  ThemeModule, 
+  UtilsModule
+} from 'projects/fabula/src/public-api';
 
 // Demo components
 import { AlertWrapperComponent } from './components/alert-wrapper/alert-wrapper.component';
@@ -54,8 +61,10 @@ import testTheme from './testTheme';
 import { InputWrapperComponent } from './components/input-wrapper/input-wrapper.component';
 import { InputGroupWrapperComponent } from './components/input-group-wrapper/input-group-wrapper.component';
 import { ListWrapperComponent } from './components/list-wrapper/list-wrapper.component';
+import { ModalWrapperComponent } from './components/modal-wrapper/modal-wrapper.component';
 import { SegmentsWrapperComponent } from './components/segments-wrapper/segments-wrapper.component';
 import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.component';
+
 
 
 @NgModule({
@@ -76,6 +85,11 @@ import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.compon
     InputGroupComponent,
     ListComponent,
     ListItemComponent,
+    ModalComponent,
+    ModalBodyComponent,
+    ModalFooterComponent,
+    ModalHeaderComponent,
+    ModalSectionComponent,
     SegmentComponent,
     SegmentsComponent,
     TabComponent,
@@ -100,7 +114,8 @@ import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.compon
     InputGroupWrapperComponent,
     ListWrapperComponent,
     SegmentsWrapperComponent,
-    TabWrapperComponent
+    TabWrapperComponent,
+    ModalWrapperComponent
   ],
   imports: [
     BrowserModule,

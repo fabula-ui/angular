@@ -49,6 +49,12 @@ import { TabContentComponent } from './components/tab-content/tab-content.compon
 import { SegmentComponent } from './components/segment/segment.component';
 import { SegmentsComponent } from './components/segments/segments.component';
 import { IconComponent } from './components/icon/icon.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalHeaderComponent } from './components/modal-header/modal-header.component';
+import { ModalBodyComponent } from './components/modal-body/modal-body.component';
+import { ModalFooterComponent } from './components/modal-footer/modal-footer.component';
+import { ModalSectionComponent } from './components/modal-section/modal-section.component';
+import { TagInputComponent } from './components/tag-input/tag-input.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +97,12 @@ import { IconComponent } from './components/icon/icon.component';
     MarginDirective,
     PaddingDirective,
     RowDirective,
+    ModalComponent,
+    ModalHeaderComponent,
+    ModalBodyComponent,
+    ModalFooterComponent,
+    ModalSectionComponent,
+    TagInputComponent,
   ],
   entryComponents: [
     ColumnComponent,
