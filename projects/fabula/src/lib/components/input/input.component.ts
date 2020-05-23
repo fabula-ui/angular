@@ -29,7 +29,7 @@ export class InputComponent implements OnInit {
     props;
 
     constructor(
-        private elRef: ElementRef
+        public elRef: ElementRef
     ) { }
 
     ngOnInit() {

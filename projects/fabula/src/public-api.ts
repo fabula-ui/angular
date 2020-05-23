@@ -33,6 +33,7 @@ export * from './lib/components/tab-content/tab-content.component';
 export * from './lib/components/tabs/tabs.component';
 export * from './lib/components/tag/tag.component';
 export * from './lib/components/tag-group/tag-group.component';
+export * from './lib/components/tag-input/tag-input.component';
 export * from './lib/components/text/text.component';
 export * from './lib/components/text-part/text-part.component';
 

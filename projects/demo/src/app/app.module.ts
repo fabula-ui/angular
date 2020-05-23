@@ -33,6 +33,7 @@ import {
   TabsComponent,
   TagComponent,
   TagGroupComponent,
+  TagInputComponent,
   TextComponent,
   TextPartComponent,
 } from 'projects/fabula/src/public-api';
@@ -64,6 +65,9 @@ import { ListWrapperComponent } from './components/list-wrapper/list-wrapper.com
 import { ModalWrapperComponent } from './components/modal-wrapper/modal-wrapper.component';
 import { SegmentsWrapperComponent } from './components/segments-wrapper/segments-wrapper.component';
 import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.component';
+import { TagInputWrapperComponent } from './components/tag-input-wrapper/tag-input-wrapper.component';
+
+import { FormsModule }   from '@angular/forms';
 
 
 
@@ -97,6 +101,7 @@ import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.compon
     TabsComponent,
     TagComponent,
     TagGroupComponent,
+    TagInputComponent,
     TextComponent,
     TextPartComponent,
 
@@ -115,10 +120,12 @@ import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.compon
     ListWrapperComponent,
     SegmentsWrapperComponent,
     TabWrapperComponent,
-    ModalWrapperComponent
+    ModalWrapperComponent,
+    TagInputWrapperComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IconsModule,
     ThemeModule.forRoot({
       theme: testTheme

@@ -1,5 +1,5 @@
-<app-example [block]="true" title="Modal">
-  <app-example-block title="Examples">
+<app-example-block title="Modal" [visible]="false">
+  <app-example title="Examples">
 
     <fab-modal id="modal" [(open)]="modalIsOpen">
       <fab-modal-header divider="bottom" title="Deactivate account"></fab-modal-header>
@@ -22,5 +22,5 @@
       <span>Open Modal</span>
     </fab-button>
 
-  </app-example-block>
-</app-example>
+  </app-example>
+</app-example-block>
