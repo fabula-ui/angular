@@ -1,6 +1,9 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
+// Components
+import { InputComponent } from '../input/input.component';
+
 // Styles
 import TagInputStyles from '@fabula/core/theme/styles/TagInput';
 
@@ -10,7 +13,7 @@ import TagInputStyles from '@fabula/core/theme/styles/TagInput';
   templateUrl: './tag-input.component.html',
   styleUrls: ['./tag-input.component.css']
 })
-export class TagInputComponent implements OnInit {
+export class TagInputComponent extends InputComponent implements OnInit {
   @Input() tags = ['Angular'];
 
   focus = false;
@@ -21,11 +24,15 @@ export class TagInputComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef
-  ) { }
+  ) {
+    super(elRef);
+  }
 
   ngOnInit() {
     let props;
     let styles;
+
+    super.ngOnInit();
 
     // Get host element
     this.host = this.elRef.nativeElement;
@@ -37,7 +44,7 @@ export class TagInputComponent implements OnInit {
     styles = css(TagInputStyles({ framework: 'angular', props }));
     this.host.classList.add(styles);
   }
-  
+
   addTag() {
     this.inputStatus = 'clear';
     this.tags.push(this.tag);
@@ -67,7 +74,7 @@ export class TagInputComponent implements OnInit {
       } else {
         this.inputStatus = 'clear';
       }
-      
+
     }
   }
 

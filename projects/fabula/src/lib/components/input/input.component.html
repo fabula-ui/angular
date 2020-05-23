@@ -1,5 +1,5 @@
 <div class="fab-input-wrapper">
-  <div class="fab-input" [attr.data-focus]="hasFocus">
+  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus">
     <input class="fab-input__field" data-fab-component="input" [attr.placeholder]="placeholder" type="text"
       [disabled]="disabled" (blur)="onFocus(false)" (focus)="onFocus(true)">
   </div>
