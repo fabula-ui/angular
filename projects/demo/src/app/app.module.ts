@@ -38,9 +38,9 @@ import {
   TextPartComponent,
 } from 'projects/fabula/src/public-api';
 
-import { 
-  IconsModule, 
-  ThemeModule, 
+import {
+  IconsModule,
+  ThemeModule,
   UtilsModule
 } from 'projects/fabula/src/public-api';
 
@@ -67,7 +67,8 @@ import { SegmentsWrapperComponent } from './components/segments-wrapper/segments
 import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.component';
 import { TagInputWrapperComponent } from './components/tag-input-wrapper/tag-input-wrapper.component';
 
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ToastWrapperComponent } from './components/toast-wrapper/toast-wrapper.component';
 
 
 
@@ -121,7 +122,8 @@ import { FormsModule }   from '@angular/forms';
     SegmentsWrapperComponent,
     TabWrapperComponent,
     ModalWrapperComponent,
-    TagInputWrapperComponent
+    TagInputWrapperComponent,
+    ToastWrapperComponent
   ],
   imports: [
     BrowserModule,

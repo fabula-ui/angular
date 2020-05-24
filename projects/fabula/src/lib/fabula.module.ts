@@ -55,6 +55,7 @@ import { ModalBodyComponent } from './components/modal-body/modal-body.component
 import { ModalFooterComponent } from './components/modal-footer/modal-footer.component';
 import { ModalSectionComponent } from './components/modal-section/modal-section.component';
 import { TagInputComponent } from './components/tag-input/tag-input.component';
+import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { TagInputComponent } from './components/tag-input/tag-input.component';
     ModalFooterComponent,
     ModalSectionComponent,
     TagInputComponent,
+    ToastComponent,
   ],
   entryComponents: [
     ColumnComponent,

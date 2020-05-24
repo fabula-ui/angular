@@ -27,7 +27,7 @@ export class ButtonGroupComponent extends GeneralComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-  ) { 
+  ) {
     super(elRef);
   }
 
