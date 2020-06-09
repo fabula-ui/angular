@@ -1,8 +1,12 @@
 import { AfterViewInit,ComponentFactoryResolver, Directive, ElementRef, Input, Renderer2, ViewContainerRef } from '@angular/core';
+import { css } from 'emotion';
 
 // Services
 import { ThemeService } from '../services/theme.service';
 import { ColumnComponent } from '../components/column/column.component';
+
+// Styles
+import UtilsStyles from '@fabula/core/theme/utils';
 
 @Directive({
     selector: '[col],[col-down],[col-up],[col-on],[col-not-on]'
@@ -39,7 +43,7 @@ export class ColumnDirective implements AfterViewInit {
         this.renderer.insertBefore(parent, wrapper, element);
         this.renderer.appendChild(wrapper, element);
 
-        this.themeService.attachUtils(wrapper, 'column', props);
+        wrapper.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
 
 }

@@ -10,7 +10,7 @@ export class FloatDirective implements AfterViewInit {
     ngAfterViewInit() {
         const host = this.elRef.nativeElement;
 
-        host.setAttribute('data-float', host.getAttribute('float'));
+        // host.setAttribute('data-float', host.getAttribute('float'));
     }
 
 }

@@ -1,7 +1,12 @@
 import { AfterViewInit, Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { css } from 'emotion';
 
 // Services
 import { ThemeService } from '../services/theme.service';
+
+// Styles
+import UtilsStyles from '@fabula/core/theme/utils';
+
 
 @Directive({
     selector: '[grow]'
@@ -26,7 +31,8 @@ export class GrowDirective implements AfterViewInit {
         this.renderer.insertBefore(parent, wrapper, element);
         this.renderer.appendChild(wrapper, element);
 
-        this.themeService.attachUtils(wrapper, 'grow', props);
+        wrapper.classList.add(css(UtilsStyles({ framework: 'angular', props })));
+
     }
 
 }

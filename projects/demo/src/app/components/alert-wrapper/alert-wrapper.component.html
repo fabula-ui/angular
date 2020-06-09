@@ -1,19 +1,16 @@
-<app-example-block title="Alert" [visible]="false">
+<div mb="1" row>
+  <fab-alert col="4" text="Hey! Just a reminder that this is an alert!" title="Alert Title"></fab-alert>
+  <fab-alert col="4" text="Hey! Just a reminder that this is an alert!" title="Alert Title"></fab-alert>
+  <fab-alert col="4" text="Hey! Just a reminder that this is an alert!" title="Alert Title"></fab-alert>
+</div>
 
-  <app-example [block]="true">
-    <div mb="1.5" row>
-      <fab-alert col="6" text="Hey! Just a reminder that this is an alert!" title="Alert Title"></fab-alert>
-      <fab-alert col="6" color="danger" text="Hey! Just a reminder that this is an alert!"></fab-alert>
+<div row>
+  <fab-alert col="6" marker="primary" text="Hey! Just a reminder that this is an alert!" title="Alert Title">
+  </fab-alert>
+  <fab-alert col="6">
+    <div al-v="center" flex>
+      <fab-text grow="1" medium size="sm">Hey! This is a custom content for alert!</fab-text>
+      <fab-button color="primary" [compact]="true" size="xs">Close</fab-button>
     </div>
-
-    <div row>
-      <fab-alert col="6" marker="primary" text="Hey! Just a reminder that this is an alert!" title="Alert Title">
-      </fab-alert>
-      <fab-alert al-v="center" col="6" flex>
-        <fab-text grow="1" medium size="sm">Hey! This is a custom content for alert!</fab-text>
-        <fab-button color="primary" [compact]="true" size="xs">Close</fab-button>
-      </fab-alert>
-    </div>
-  </app-example>
-
-</app-example-block>
+  </fab-alert>
+</div>

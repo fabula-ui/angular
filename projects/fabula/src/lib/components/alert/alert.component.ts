@@ -9,11 +9,10 @@ import AlertStyles from '@fabula/core/theme/styles/Alert';
 
 @Component({
   selector: 'fab-alert',
-  templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.css']
+  templateUrl: './alert.component.html'
 })
 export class AlertComponent implements AfterViewInit, OnInit {
-  @ContentChildren(IconComponent) iconComponents: QueryList<IconComponent>;
+  // @ContentChildren(IconComponent) iconComponents: QueryList<IconComponent>;
   
   @Input() color: string;
   @Input() marker: string;
@@ -28,16 +27,17 @@ export class AlertComponent implements AfterViewInit, OnInit {
   ) { }
 
   ngAfterViewInit() {
-    this.iconComponents.forEach((icon: IconComponent) => {
-      icon.refreshStyles({
-        faded: this.props.faded,
-        fillColor: this.props.color
-      });
-    });
+    // this.iconComponents.forEach((icon: IconComponent) => {
+    //   icon.refreshStyles({
+    //     faded: this.props.faded,
+    //     fillColor: this.props.color
+    //   });
+    // });
   }
 
   ngOnInit() {
     let props;
+    let styles;
 
     this.host = this.elRef.nativeElement;
 
@@ -47,7 +47,8 @@ export class AlertComponent implements AfterViewInit, OnInit {
       marker: this.marker
     };
 
-    const styles = css(AlertStyles({ framework: 'angular', props }));
+    styles = css(AlertStyles({ framework: 'angular', props }));
+    console.log('styles', styles);
     this.host.classList.add(styles);
 
     this.props = props;

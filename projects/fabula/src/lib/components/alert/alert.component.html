@@ -1,11 +1,10 @@
-<div class="fab-alert">
-  <ng-content select="fab-icon"></ng-content>
-  <div class="fab-alert__stage">
-    <strong class="fab-alert__title" *ngIf="title">{{title}}</strong>
-    <span class="fab-alert__text" *ngIf="text">{{text}}</span>
-    <!-- <fab-text color="inherit" semibold *ngIf="title">{{title}}</fab-text> -->
-    <!-- <fab-text color="inherit" semibold size="sm" *ngIf="text && !title">{{text}}</fab-text> -->
-    <!-- <fab-text [color]="!!color ? 'inherit' : ''" aux size="sm" *ngIf="text && title">{{text}}</fab-text> -->
-    <ng-content></ng-content>
+<div class="fab-alert-wrapper">
+  <div class="fab-alert" data-fab-component="alert">
+    <ng-content select="fab-icon"></ng-content>
+    <div class="fab-alert__stage">
+      <strong class="fab-alert__title" *ngIf="title">{{title}}</strong>
+      <span class="fab-alert__text" *ngIf="text">{{text}}</span>
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>

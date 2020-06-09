@@ -1,9 +1,11 @@
 import { AfterViewInit, Directive, ElementRef, Input, Renderer2, TemplateRef, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import { css } from 'emotion';
 
 // Services
 import { ThemeService } from '../services/theme.service';
 
-import { RowComponent } from '../components/row/row.component';
+// Styles
+import UtilsStyles from '@fabula/core/theme/utils';
 
 @Directive({
     selector: '[row]'
@@ -27,9 +29,12 @@ export class RowDirective implements AfterViewInit {
         this.renderer.insertBefore(parent, wrapper, element);
         this.renderer.appendChild(wrapper, element);
 
-        const props = {};
+        const props = {
+            row: true
+        };
 
-        this.themeService.attachUtils(element, 'row', props);
+        // this.themeService.attachUtils(element, 'row', props);
+        element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
 
 }

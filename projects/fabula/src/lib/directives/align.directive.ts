@@ -1,7 +1,11 @@
 import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { css } from 'emotion';
 
 // Services
 import { ThemeService } from '../services/theme.service';
+
+// Styles
+import UtilsStyles from '@fabula/core/theme/utils';
 
 @Directive({
     selector: '[align],[al-h],[al-v],[align-h],[align-v]'
@@ -30,7 +34,7 @@ export class AlignDirective implements AfterViewInit {
             alignV: this.alignV
         };
 
-        this.themeService.attachUtils(host, 'align', props);
+        host.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
 
 }

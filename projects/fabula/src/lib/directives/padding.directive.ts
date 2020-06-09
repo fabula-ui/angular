@@ -32,7 +32,7 @@ export class PaddingDirective implements AfterViewInit {
             py: this.py
         };
 
-        this.themeService.attachUtils(host, 'padding', props);
+        // this.themeService.attachUtils(host, 'padding', props);
     }
 
 }

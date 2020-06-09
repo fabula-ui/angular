@@ -33,4 +33,8 @@ import { RowDirective } from '../directives/row.directive';
         RowDirective
     ]
 })
-export class UtilsModule { }
+export class UtilsModule {
+    constructor() {
+        console.log('UTILSMODULE');
+    }
+ }
