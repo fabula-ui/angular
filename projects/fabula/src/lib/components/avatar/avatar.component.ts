@@ -10,10 +10,13 @@ import AvatarStyles from '@fabula/core/theme/styles/Avatar';
 })
 export class AvatarComponent implements OnInit {
   @Input() color = '';
+  @Input() icon: string;
   @Input() image = '';
   @Input() rounded = false;
   @Input('show-initials') showInitials = '';
   @Input() size = 'md';
+
+  avatarIcon;
 
   constructor(
     private elRef: ElementRef
@@ -28,6 +31,8 @@ export class AvatarComponent implements OnInit {
     const styles = css(AvatarStyles({ framework: 'angular', props }));
 
     host.classList.add(styles);
+
+    this.avatarIcon = typeof this.icon === 'string' ? this.icon : 'image';
   }
 
   get initials(): string {

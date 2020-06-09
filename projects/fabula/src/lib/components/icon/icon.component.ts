@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Input, ViewChild, Renderer2 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { css } from 'emotion';
 
 // Styles
@@ -10,15 +11,19 @@ import IconStyles from '@fabula/core/theme/styles/Icon';
   styleUrls: ['./icon.component.css']
 })
 export class IconComponent implements OnInit {
-  @Input() color = 'inherit';
+  @Input() color = '';
   @Input() name: string;
-  @Input() parentProps: {};
+  @Input() props;
 
+  appended;
   host;
-  props;
+  svg;
+  svgObject;
 
   constructor(
-    public elRef: ElementRef
+    public elRef: ElementRef,
+    public renderer: Renderer2,
+    public sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -27,10 +32,12 @@ export class IconComponent implements OnInit {
 
     // Get host element
     this.host = this.elRef.nativeElement;
-    
+
     // Set props
     props = {
-      name: this.name
+      color: this.color,
+      name: this.name,
+      ...this.props,
     };
 
     // Set and apply styles
@@ -39,16 +46,31 @@ export class IconComponent implements OnInit {
 
     // Pass props to component
     this.props = props;
+
+    // Handle svg
+    this.handleSvg();
   }
 
-  refreshStyles(parentProps) {
-    let props = {
-      ...this.props,
-      ...parentProps
-    };
-    let styles = css(IconStyles({ framework: 'angular', props }));
+  handleLoad(e) {
+    const svgDocument = e.target.contentDocument;
+    const svgObject = svgDocument.querySelector('svg');
+    const svgWrapper = this.host.querySelector('.fab-icon__svg');
 
-    this.host.classList.add(styles);
+    if (svgObject) {
+      this.renderer.appendChild(svgWrapper, svgObject);
+    }
+  }
+
+  handleSvg() {
+    let url;
+
+    try {
+      url = require(`@fabula/core/icons/${this.name}.svg`);
+
+      this.svg = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    } catch (err) {
+      this.svg = null;
+    }
   }
 
 }

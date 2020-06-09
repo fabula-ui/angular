@@ -13,6 +13,7 @@ import TextStyles from '@fabula/core/theme/styles/Text';
 export class TextComponent implements OnInit {
   @Input() color: string;
   @Input('inherit-color') inheritColor: boolean;
+  @Input() props: any;
   @Input() size: string;
   @Input() weight: string;
 
@@ -71,7 +72,8 @@ export class TextComponent implements OnInit {
       flex: this.flex,
       italic: this.italic,
       size: this.size,
-      weight: this.weight
+      weight: this.weight,
+      ...this.props
     };
 
     styles = css(TextStyles({ framework: 'angular', props }));

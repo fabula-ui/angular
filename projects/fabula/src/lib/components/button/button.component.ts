@@ -27,7 +27,7 @@ export class ButtonComponent implements OnInit {
   @Input() disabled: boolean;
   @Input() expand: boolean;
   @Input() faded: boolean;
-  @Input() glow = true;
+  @Input() glow = false;
   @Input() gradient: boolean;
   @Input() invert: boolean;
   @Input() loading: string;
@@ -43,15 +43,7 @@ export class ButtonComponent implements OnInit {
     private elRef: ElementRef
   ) { }
 
-  ngAfterViewInit() {
-    this.iconComponents.forEach((icon: IconComponent) => {
-      icon.parentProps = this.props.colors;
-      icon.refreshStyles({
-        faded: this.props.faded,
-        fillColor: this.props.color
-      });
-    });
-  }
+  ngAfterViewInit() {}
 
   ngOnInit() {
     const props = {
