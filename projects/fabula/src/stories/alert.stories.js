@@ -16,8 +16,18 @@ import {
 
 // Demo wrappers
 import { AlertWrapperComponent } from '../../../demo/src/app/components/alert-wrapper/alert-wrapper.component';
+import { AlertClearWrapper } from './wrappers/alert/clear/alert-clear.wrapper';
 import { AlertColorsWrapper } from './wrappers/alert/colors/alert-colors.wrapper';
 import { AlertCustomContentWrapper } from './wrappers/alert/custom-content/alert-custom-content.wrapper';
+import { AlertFadedWrapper } from './wrappers/alert/faded/alert-faded.wrapper';
+import { AlertGlowWrapper } from './wrappers/alert/glow/alert-glow.wrapper';
+import { AlertIconsWrapper } from './wrappers/alert/icons/alert-icons.wrapper';
+import { AlertIconColorsWrapper } from './wrappers/alert/icon-colors/alert-icon-colors.wrapper';
+import { AlertInvertWrapper } from './wrappers/alert/invert/alert-invert.wrapper';
+import { AlertMarkerWrapper } from './wrappers/alert/marker/alert-marker.wrapper';
+import { AlertOutlineWrapper } from './wrappers/alert/outline/alert-outline.wrapper';
+import { AlertTextColorWrapper } from './wrappers/alert/text-color/alert-text-color.wrapper';
+import { AlertTitleColorWrapper } from './wrappers/alert/title-color/alert-title-color.wrapper';
 
 export default {
     decorators: [
@@ -45,16 +55,52 @@ export default {
 
 export const Examples = () => ({
     component: AlertWrapperComponent,
-    props: {
-        text: 'Hello Button',
-        title: 'Alert'
-    },
 });
 
-export const Colors = () => ({
+export const Clear = () => ({
+    component: AlertClearWrapper,
+});
+
+export const Color = () => ({
     component: AlertColorsWrapper,
 });
 
 export const CustomContent = () => ({
     component: AlertCustomContentWrapper,
+});
+
+export const Faded = () => ({
+    component: AlertFadedWrapper,
+});
+
+export const Glow = () => ({
+    component: AlertGlowWrapper,
+});
+
+export const Icons = () => ({
+    component: AlertIconsWrapper,
+});
+
+export const IconColors = () => ({
+    component: AlertIconColorsWrapper,
+});
+
+export const Invert = () => ({
+    component: AlertInvertWrapper,
+});
+
+export const Marker = () => ({
+    component: AlertMarkerWrapper,
+});
+
+export const Outline = () => ({
+    component: AlertOutlineWrapper,
+});
+
+export const TextColor = () => ({
+    component: AlertTextColorWrapper,
+});
+
+export const TitleColor = () => ({
+    component: AlertTitleColorWrapper,
 });

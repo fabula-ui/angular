@@ -1,8 +1,5 @@
-import { Component, OnInit, Input, ElementRef, AfterViewInit, ContentChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { css } from 'emotion';
-
-// Components
-import { IconComponent } from '../icon/icon.component';
 
 // Styles
 import AlertStyles from '@fabula/core/theme/styles/Alert';
@@ -11,13 +8,19 @@ import AlertStyles from '@fabula/core/theme/styles/Alert';
   selector: 'fab-alert',
   templateUrl: './alert.component.html'
 })
-export class AlertComponent implements AfterViewInit, OnInit {
+export class AlertComponent implements OnInit {
+  @Input() clear = false;
   @Input() color: string;
+  @Input() faded = false;
   @Input() glow = false;
   @Input() icon: any;
+  @Input() invert: boolean;
   @Input() marker: string;
+  @Input() outline = false;
   @Input() text: string;
+  @Input() textColor: string;
   @Input() title: string;
+  @Input() titleColor: string;
 
   host;
   props;
@@ -26,15 +29,6 @@ export class AlertComponent implements AfterViewInit, OnInit {
     public elRef: ElementRef
   ) {}
 
-  ngAfterViewInit() {
-    // this.iconComponents.forEach((icon: IconComponent) => {
-    //   icon.refreshStyles({
-    //     faded: this.props.faded,
-    //     fillColor: this.props.color
-    //   });
-    // });
-  }
-
   ngOnInit() {
     let props;
     let styles;
@@ -42,10 +36,15 @@ export class AlertComponent implements AfterViewInit, OnInit {
     this.host = this.elRef.nativeElement;
 
     props = {
+      clear: this.clear,
       color: this.color,
-      faded: this.host.hasAttribute('faded'),
+      faded: this.faded,
       glow: this.glow,
-      marker: this.marker
+      invert: this.invert,
+      marker: this.marker,
+      outline: this.outline,
+      textColor: this.textColor,
+      titleColor: this.titleColor
     };
 
     styles = css(AlertStyles({ framework: 'angular', props }));
@@ -56,7 +55,6 @@ export class AlertComponent implements AfterViewInit, OnInit {
 
   // Methods
   isObject(subject) {
-    console.log(subject, typeof subject);
     return typeof subject === 'object';
   }
 
