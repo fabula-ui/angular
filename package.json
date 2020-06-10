@@ -9,7 +9,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "storybook": "start-storybook"
+    "jest:integration": "jest -c integration/jest.config.js",
+    "test:integration": "start-server-and-test storybook:ci http-get://localhost:8008 jest:integration",
+    "test:integration:update": "start-server-and-test storybook:ci http-get://localhost:8008 jest:integration -- -u",
+    "storybook": "start-storybook -p 8008",
+    "storybook:ci": "start-storybook -p 8008 --ci"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +50,9 @@
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^26.0.1",
+    "jest-image-snapshot": "^4.0.2",
+    "jest-puppeteer": "^4.4.0",
     "karma": "~4.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
@@ -53,7 +60,9 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "puppeteer": "^3.3.0",
     "sass-loader": "7.3.1",
+    "start-server-and-test": "^1.11.0",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
