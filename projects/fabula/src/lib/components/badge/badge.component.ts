@@ -11,10 +11,13 @@ import BadgeStyles from '@fabula/core/theme/styles/Badge';
 })
 export class BadgeComponent implements OnInit {
   @Input() circle = false;
+  @Input() clear = false;
   @Input() color: string;
-  @Input('corner-style') cornerStyle = 'hard';
+  @Input() faded = false;
   @Input() icon = '';
+  @Input() invert = false;
   @Input() label = '';
+  @Input() outline = false;
   @Input() placement = '';
   @Input() placementX = '';
   @Input() placementY = '';
@@ -36,7 +39,11 @@ export class BadgeComponent implements OnInit {
 
     props = {
       circle: this.circle,
+      clear: this.clear,
       color: this.color,
+      faded: this.faded,
+      invert: this.invert,
+      outline: this.outline,
       placement: this.placement,
       rounded: this.rounded,
       size: this.size
