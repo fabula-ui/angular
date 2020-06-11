@@ -9,9 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "jest:integration": "jest -c integration/jest.config.js",
-    "test:integration": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:integration",
-    "test:integration:update": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:integration -- -u",
+    "jest:ui": "jest -c integration/jest.config.js",
+    "test:ui": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:ui",
+    "test:ui:update": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:ui -- -u",
     "storybook": "start-storybook -p 8008",
     "storybook:ci": "start-storybook -p 8008 --ci"
   },
