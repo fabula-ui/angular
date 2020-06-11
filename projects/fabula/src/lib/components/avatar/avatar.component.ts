@@ -1,6 +1,9 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { css } from 'emotion';
 
+// Methods
+import getInitials from '@fabula/core/theme/methods/misc/getInitials';
+
 // Styles
 import AvatarStyles from '@fabula/core/theme/styles/Avatar';
 
@@ -9,11 +12,12 @@ import AvatarStyles from '@fabula/core/theme/styles/Avatar';
   templateUrl: './avatar.component.html'
 })
 export class AvatarComponent implements OnInit {
+  @Input() adaptColor = false;
   @Input() color = '';
   @Input() icon: string;
   @Input() image = '';
   @Input() rounded = false;
-  @Input('show-initials') showInitials = '';
+  @Input() showInitials = '';
   @Input() size = 'md';
 
   avatarIcon;
@@ -25,26 +29,20 @@ export class AvatarComponent implements OnInit {
   ngOnInit() {
     const host = this.elRef.nativeElement;
     const props = {
+      adaptColor: this.adaptColor,
       color: this.color,
+      rounded: this.rounded,
       size: this.size
     };
     const styles = css(AvatarStyles({ framework: 'angular', props }));
 
-    host.classList.add(styles);
-
     this.avatarIcon = typeof this.icon === 'string' ? this.icon : 'image';
+
+    host.classList.add(styles);
   }
 
   get initials(): string {
-    const words = this.showInitials.split(' ');
-
-    if (words.length > 1) {
-      return `${words[0].slice(0, 1)}${words[1].slice(0,1)}`;
-    } else if (words.length === 1) {
-      return this.showInitials.slice(0, 2);
-    } else {
-      return '';
-    }
+    return getInitials(this.showInitials);
   }
 
 }

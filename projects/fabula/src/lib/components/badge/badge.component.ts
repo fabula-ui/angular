@@ -10,11 +10,15 @@ import BadgeStyles from '@fabula/core/theme/styles/Badge';
   styles: []
 })
 export class BadgeComponent implements OnInit {
+  @Input() circle = false;
   @Input() color: string;
   @Input('corner-style') cornerStyle = 'hard';
   @Input() icon = '';
-  @Input('placement-x') placementX = 'right';
-  @Input('placement-y') placementY = 'bottom';
+  @Input() label = '';
+  @Input() placement = '';
+  @Input() placementX = '';
+  @Input() placementY = '';
+  @Input() rounded = false;
   @Input() size = 'md';
 
   className;
@@ -22,7 +26,7 @@ export class BadgeComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef
-    ) { }
+  ) { }
 
   ngOnInit() {
     let props
@@ -31,11 +35,13 @@ export class BadgeComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     props = {
-        color: this.color,
-        rounded: this.host.hasAttribute('rounded'),
-        size: this.size
+      circle: this.circle,
+      color: this.color,
+      placement: this.placement,
+      rounded: this.rounded,
+      size: this.size
     }
-    
+
     styles = css(BadgeStyles({ framework: 'angular', props }));
     this.host.classList.add(styles);
   }
