@@ -63,3 +63,4 @@ export const Invert = () => ({ component: ButtonInvertWrapper });
 export const Outline = () => ({ component: ButtonOutlineWrapper });
 export const Rounded = () => ({ component: ButtonRoundedWrapper });
 export const Size = () => ({ component: ButtonSizeWrapper });
+export const ExternalBadge = () => ({ component: ButtonExternalBadgeWrapper });
