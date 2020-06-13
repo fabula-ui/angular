@@ -1,6 +1,8 @@
 import { Injectable, Inject, Input } from '@angular/core';
+import { css } from 'emotion';
 
 // Default theme
+import reset from '@fabula/core/styles/common/reset';
 import DefaultTheme, { attachUtils, setBaseTheme } from '@fabula/core/theme';
 
 // Models
@@ -13,18 +15,11 @@ export class ThemeService {
   @Input() theme = DefaultTheme;
 
   constructor(@Inject('UserOptions') private options: IUserOptions) {
-    console.log('setBaseTheme');
+    document.body.classList.add(css(reset));
     setBaseTheme(options);
   }
 
-  attachClasses(host, componentName: string, props = {}) {
-    // attachStyles({
-    //   framework: 'angular',
-    //   host,
-    //   componentName,
-    //   props
-    // });
-  }
+  attachClasses(host, componentName: string, props = {}) {}
 
   attachUtils(host, utilName, props = {}) {
     attachUtils({
