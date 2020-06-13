@@ -6,18 +6,16 @@ import {
 } from '@angular/core';
 import { css } from 'emotion';
 
-// Component base
-import { GeneralComponent } from '../general-component/general-component.component';
-
 // Styles
-import ButtonGroupStyles from '@fabula/core/theme/styles/ButtonGroup';
+import ButtonGroupStyles from '@fabula/core/styles/components/button-group/button-group';
 
 @Component({
   selector: 'fab-button-group',
   templateUrl: './button-group.component.html'
 })
-export class ButtonGroupComponent extends GeneralComponent implements OnInit {
+export class ButtonGroupComponent implements OnInit {
   @Input() divider = true;
+  @Input() dividerColor = '';
   @Input() flow = 'horizontal';
   @Input() glued = false;
   @Input() spacing: string;
@@ -27,23 +25,15 @@ export class ButtonGroupComponent extends GeneralComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-  ) {
-    super(elRef);
-  }
+  ) {}
 
   ngOnInit() {
-    super.ngOnInit();
     let props;
     let styles;
 
     props = {
-      al: this.al,
-      alH: this.alH,
-      alV: this.alV,
-      align: this.align,
-      alignH: this.alignH,
-      alignV: this.alignV,
       divider: this.divider,
+      dividerColor: this.dividerColor,
       flow: this.flow,
       glued: this.glued,
       spacing: this.spacing,
