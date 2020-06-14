@@ -12,6 +12,7 @@ import CardSectionStyles from '@fabula/core/theme/styles/CardSection';
 export class CardSectionComponent implements OnInit {
   @Input() color: string;
   @Input() divider: string;
+  @Input() padding: any;
 
   host;
 
@@ -22,7 +23,7 @@ export class CardSectionComponent implements OnInit {
   ngOnInit() {
     let props;
     let styles;
-    
+
     // Get host element
     this.host = this.elRef.nativeElement;
 
@@ -30,7 +31,7 @@ export class CardSectionComponent implements OnInit {
     props = {
       color: this.color,
       divider: this.divider,
-      padding: this.host.hasAttribute('padding')
+      padding: this.padding
     };
 
     // Set and apply styles

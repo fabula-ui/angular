@@ -10,6 +10,7 @@ import CardImageStyles from '@fabula/core/theme/styles/CardImage';
   styleUrls: ['./card-image.component.css']
 })
 export class CardImageComponent implements OnInit {
+  @Input() adaptColor = false;
   @Input() color: string;
   @Input() height: any;
   @Input() src: string;
@@ -27,6 +28,7 @@ export class CardImageComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     props = {
+      adaptColor: this.adaptColor,
       color: this.color,
       cover: this.host.hasAttribute('cover'),
       height: this.height

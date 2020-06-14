@@ -11,7 +11,7 @@ import ListStyles from '@fabula/core/theme/styles/List';
 })
 export class ListComponent implements OnInit {
   @Input() color: string;
-  @Input() padded = true;
+  @Input() padding: any;
   @Input() striped = false;
 
   host;
@@ -30,8 +30,7 @@ export class ListComponent implements OnInit {
     // Set props
     props = {
       color: this.color,
-      framework: 'angular',
-      padding: this.host.hasAttribute('padding'),
+      padding: this.padding,
       striped: this.striped
     };
 

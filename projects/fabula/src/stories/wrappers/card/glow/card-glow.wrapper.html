@@ -1,0 +1,100 @@
+<div row>
+  <fab-card col="3">
+    <fab-card-image height="200"></fab-card-image>
+    <fab-card-section divider="top" [padding]="true">
+      <fab-text size="lg" strong>
+        <strong mr=".5">Card Title</strong>
+        <fab-badge color="primary">New</fab-badge>
+      </fab-text>
+      <fab-text aux flex mb="1" size="sm" span>Card subtitle</fab-text>
+      <fab-text block mb="1">This is some text inside this card. You can add whatever content in here.</fab-text>
+    </fab-card-section>
+    <fab-card-section divider="top" [padding]="true">
+      <fab-button color="primary" [expand]="true">Card Button</fab-button>
+    </fab-card-section>
+  </fab-card>
+  
+  <fab-card col="9">
+    <fab-card-image height="120"></fab-card-image>
+    <fab-card-section [padding]="true">
+      <fab-text block size="xl" weight="600">Card Title</fab-text>
+      <fab-text aux block>Card subtitle</fab-text>
+    </fab-card-section>
+    <fab-card-section>
+      <fab-list [padding]="true" [striped]="true">
+        <fab-list-item flex>
+          <div flex flow="v" grow="1">
+            <fab-text size="lg" weight="600">
+              <span mr=".5">Full-stack Engineer</span>
+              <fab-badge color="#E3FFD9">Full-time</fab-badge>
+            </fab-text>
+            <fab-text aux>Google</fab-text>
+          </div>
+          <div alItems="end" justContent="start" flex flow="v">
+            <fab-tag-group mb=".5">
+              <fab-tag>Angular</fab-tag>
+              <fab-tag>Engineering</fab-tag>
+              <fab-tag>Node</fab-tag>
+            </fab-tag-group>
+
+            <fab-text aux>
+              <fab-icon mr=".5" name="clock"></fab-icon>
+              <span>2 hours</span>
+            </fab-text>
+          </div>
+        </fab-list-item>
+
+        <fab-list-item flex>
+          <div flex flow="v" grow="1">
+            <fab-text size="lg" weight="600">
+              <fab-text mr=".5">Frontend Developer</fab-text>
+              <fab-badge color="#FFECD9">Part-time</fab-badge>
+            </fab-text>
+            <fab-text aux>Amazon</fab-text>
+          </div>
+          <div alItems="end" justContent="start" flex flow="v">
+            <fab-tag-group mb=".5">
+              <fab-tag>Angular</fab-tag>
+              <fab-tag>Engineering</fab-tag>
+              <fab-tag>Node</fab-tag>
+            </fab-tag-group>
+
+            <fab-text aux>
+              <fab-icon mr=".5" name="clock"></fab-icon>
+              <span>2 hours</span>
+            </fab-text>
+          </div>
+        </fab-list-item>
+
+        <fab-list-item flex>
+          <div flex flow="v" grow="1">
+            <fab-text size="lg" weight="600">
+              <fab-text mr=".5">Backend Developer</fab-text>
+              <fab-badge color="#FFECD9" mr=".5">Part-time</fab-badge>
+              <fab-badge color="#D9E9FF">Remote</fab-badge>
+            </fab-text>
+            <fab-text aux>Netflix</fab-text>
+          </div>
+          <div alItems="end" justContent="start" flex flow="v">
+            <fab-tag-group mb=".5">
+              <fab-tag>Angular</fab-tag>
+              <fab-tag>Engineering</fab-tag>
+              <fab-tag>Node</fab-tag>
+            </fab-tag-group>
+
+            <fab-text aux>
+              <fab-icon mr=".5" name="clock"></fab-icon>
+              <span>2 hours</span>
+            </fab-text>
+          </div>
+        </fab-list-item>
+      </fab-list>
+    </fab-card-section>
+    <fab-card-section alH="right" flex [padding]="true">
+      <fab-button-group>
+        <fab-button color="primary" [wide]="true">Confirm</fab-button>
+        <fab-button color="light" [wide]="true">Cancel</fab-button>
+      </fab-button-group>
+    </fab-card-section>
+  </fab-card>
+</div>

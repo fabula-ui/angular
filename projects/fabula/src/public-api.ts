@@ -39,8 +39,10 @@ export * from './lib/components/text-part/text-part.component';
 
 // Directives
 export * from './lib/directives/align.directive';
+export * from './lib/directives/block.directive';
 export * from './lib/directives/column.directive';
 export * from './lib/directives/flex.directive';
+export * from './lib/directives/flow.directive';
 export * from './lib/directives/grow.directive';
 export * from './lib/directives/margin.directive';
 export * from './lib/directives/padding.directive';

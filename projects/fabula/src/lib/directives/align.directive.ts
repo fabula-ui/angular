@@ -8,15 +8,15 @@ import { ThemeService } from '../services/theme.service';
 import UtilsStyles from '@fabula/core/theme/utils';
 
 @Directive({
-    selector: '[align],[al-h],[al-v],[align-h],[align-v]'
+    selector: '[align],[alH],[alV],[alignH],[alignV]'
 })
 export class AlignDirective implements AfterViewInit {
     @Input('al') al: any;
-    @Input('al-h') alH: any;
-    @Input('al-v') alV: any;
+    @Input('alH') alH: any;
+    @Input('alV') alV: any;
     @Input() align: any;
-    @Input('align-h') alignH: any;
-    @Input('align-v') alignV: any;
+    @Input('alignH') alignH: any;
+    @Input('alignV') alignV: any;
 
     constructor(
         private elRef: ElementRef,
