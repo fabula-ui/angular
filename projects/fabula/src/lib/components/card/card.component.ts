@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { css } from 'emotion';
 
-import CardStyles from '@fabula/core/theme/styles/Card';
+import CardStyles from '@fabula/core/styles/components/card/card';
 
 @Component({
   selector: 'fab-card',
@@ -10,7 +10,7 @@ import CardStyles from '@fabula/core/theme/styles/Card';
 export class CardComponent implements OnInit {
   @Input() color: string;
   @Input() flow = 'vertical';
-  @Input() glow = !this.color;
+  @Input() glow = false;
 
   host;
 

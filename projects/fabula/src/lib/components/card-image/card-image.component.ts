@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import CardImageStyles from '@fabula/core/theme/styles/CardImage';
+import CardImageStyles from '@fabula/core/styles/components/card-image/card-image';
 
 @Component({
   selector: 'fab-card-image',
