@@ -78,16 +78,6 @@ export class TagInputComponent extends InputComponent implements OnInit {
     }
   }
 
-  // handleTag() {
-  //   if (!this.tag) {
-  //     setTimeout(() => {
-  //       this.tagIsEmpty = true;
-  //     }, 150);
-  //   } else {
-  //     this.tagIsEmpty = false;
-  //   }
-  // }
-
   removeLastTag() {
     this.tags.pop();
   }
