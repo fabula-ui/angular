@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import AlertStyles from '@fabula/core/theme/styles/Alert';
+import AlertStyles from '@fabula/core/styles/components/alert/alert';
 
 @Component({
   selector: 'fab-alert',
@@ -47,7 +47,7 @@ export class AlertComponent implements OnInit {
       titleColor: this.titleColor
     };
 
-    styles = css(AlertStyles({ framework: 'angular', props }));
+    // styles = css(AlertStyles({ framework: 'angular', props }));
     this.host.classList.add(styles);
 
     this.props = props;

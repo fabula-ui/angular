@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlertComponent } from './alert.component';
-import { IconComponent } from '../icon/icon.component';
-import { TextComponent } from '../text/text.component';
+import { AlertComponent } from '../../../projects/fabula/src/lib/components/alert/alert.component';
 
 describe('AlertComponent', () => {
   let component: AlertComponent;
@@ -10,11 +8,7 @@ describe('AlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AlertComponent,
-        IconComponent,
-        TextComponent
-      ],
+      declarations: [ AlertComponent ]
     })
     .compileComponents();
   }));
