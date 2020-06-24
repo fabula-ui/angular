@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -9,6 +9,7 @@ import AlertStyles from '@fabula/core/styles/components/alert/alert';
   templateUrl: './alert.component.html'
 })
 export class AlertComponent implements OnInit {
+  @Input() border: string;
   @Input() clear = false;
   @Input() color: string;
   @Input() faded = false;
@@ -21,6 +22,8 @@ export class AlertComponent implements OnInit {
   @Input() textColor: string;
   @Input() title: string;
   @Input() titleColor: string;
+
+  @Output() close: EventEmitter<any> = new EventEmitter();
 
   host;
   props;
@@ -36,6 +39,7 @@ export class AlertComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     props = {
+      border: this.border,
       clear: this.clear,
       color: this.color,
       faded: this.faded,
@@ -54,6 +58,10 @@ export class AlertComponent implements OnInit {
   }
 
   // Methods
+  handleClose() {
+    this.close.emit();
+  }
+
   isObject(subject) {
     return typeof subject === 'object';
   }

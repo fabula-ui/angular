@@ -7,6 +7,7 @@ import {
     AvatarComponent,
     ButtonComponent,
     ButtonGroupComponent,
+    CloseButtonComponent,
     IconsModule,
     TextComponent,
     ThemeModule,
@@ -16,7 +17,9 @@ import {
 
 // Demo wrappers
 import { AlertWrapperComponent } from '../../../demo/src/app/components/alert-wrapper/alert-wrapper.component';
+import { AlertBorderWrapper } from './wrappers/alert/border/alert-border.wrapper';
 import { AlertClearWrapper } from './wrappers/alert/clear/alert-clear.wrapper';
+import { AlertCloseButtonWrapper } from './wrappers/alert/close-button/alert-close-button.wrapper';
 import { AlertColorsWrapper } from './wrappers/alert/colors/alert-colors.wrapper';
 import { AlertCustomContentWrapper } from './wrappers/alert/custom-content/alert-custom-content.wrapper';
 import { AlertFadedWrapper } from './wrappers/alert/faded/alert-faded.wrapper';
@@ -37,6 +40,7 @@ export default {
                 AvatarComponent,
                 ButtonComponent,
                 ButtonGroupComponent,
+                CloseButtonComponent,
                 TextComponent
             ],
             imports: [
@@ -55,6 +59,14 @@ export default {
 
 export const Examples = () => ({
     component: AlertWrapperComponent,
+});
+
+export const Border = () => ({
+    component: AlertBorderWrapper,
+});
+
+export const CloseButton = () => ({
+    component: AlertCloseButtonWrapper,
 });
 
 export const Clear = () => ({

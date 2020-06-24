@@ -3,12 +3,19 @@
     <ng-content select="fab-icon"></ng-content>
     <fab-icon *ngIf="icon" [name]="icon.name" [props]="icon"></fab-icon>
     <div class="fab-alert__stage">
-      <strong class="fab-alert__title" *ngIf="title && !isObject(title)">{{title}}</strong>
-      <span class="fab-alert__text" *ngIf="text && !isObject(text)">{{text}}</span>
+      <div class="fab-alert__title"  *ngIf="title">
+        <fab-text color="inherit" *ngIf="!isObject(title)">{{title}}</fab-text>
+        <fab-text color="inherit" [props]="title" *ngIf="isObject(title)"></fab-text>
+      </div>
 
-      <fab-text [props]="title" *ngIf="title && isObject(title)"></fab-text>
-      <fab-text [props]="text" *ngIf="text && isObject(text)"></fab-text>
+      <div class="fab-alert__text"  *ngIf="text">
+        <fab-text color="inherit" *ngIf="!isObject(text)">{{text}}</fab-text>
+        <fab-text color="inherit" [props]="text" *ngIf="isObject(text)"></fab-text>
+      </div>
+      
       <ng-content></ng-content>
     </div>
+
+    <fab-close-button *ngIf="close" onClick={handleClose} [parentColor]="color" size="sm"></fab-close-button>
   </div>
 </div>

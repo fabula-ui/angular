@@ -15,6 +15,7 @@ import { CardBodyComponent } from './components/card-body/card-body.component';
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
 import { CardImageComponent } from './components/card-image/card-image.component';
 import { CardSectionComponent } from './components/card-section/card-section.component';
+import { CloseButtonComponent } from './components/close-button/close-button.component';
 import { ContainerComponent } from './components/container/container.component';
 import { ColumnComponent } from './components/column/column.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
@@ -70,6 +71,7 @@ import { ToastComponent } from './components/toast/toast.component';
     CardFooterComponent,
     CardSectionComponent,
     CardImageComponent,
+    CloseButtonComponent,
     ColumnComponent,
     ContainerComponent,
     DropdownComponent,
@@ -126,6 +128,7 @@ import { ToastComponent } from './components/toast/toast.component';
     CardBodyComponent,
     CardImageComponent,
     CardSectionComponent,
+    CloseButtonComponent,
     ColumnComponent,
     ContainerComponent,
     DropdownComponent,

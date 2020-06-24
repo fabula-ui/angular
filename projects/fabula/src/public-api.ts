@@ -13,6 +13,7 @@ export * from './lib/components/card-body/card-body.component';
 export * from './lib/components/card-footer/card-footer.component';
 export * from './lib/components/card-image/card-image.component';
 export * from './lib/components/card-section/card-section.component';
+export * from './lib/components/close-button/close-button.component';
 export * from './lib/components/column/column.component';
 export * from './lib/components/dropdown/dropdown.component';
 export * from './lib/components/general-component/general-component.component';
