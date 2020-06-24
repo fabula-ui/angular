@@ -31,7 +31,7 @@ export class ColumnComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     // Attach classes to host
-    this.themeService.attachClasses(this.host, 'column', props);
+    // this.themeService.attachClasses(this.host, 'column', props);
   }
 
 }

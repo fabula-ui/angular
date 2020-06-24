@@ -36,10 +36,10 @@ export class RowComponent extends GeneralComponent implements OnInit {
       pt: this.pt,
       px: this.px,
       py: this.py,
-    }
+    };
 
     // Attach classes to host
-    this.themeService.attachClasses(this.host, 'row', props);
+    // this.themeService.attachClasses(this.host, 'row', props);
   }
 
 }

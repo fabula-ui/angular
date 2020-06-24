@@ -47,7 +47,7 @@ export class AlertComponent implements OnInit {
       titleColor: this.titleColor
     };
 
-    // styles = css(AlertStyles({ framework: 'angular', props }));
+    styles = css(AlertStyles({ framework: 'angular', props }));
     this.host.classList.add(styles);
 
     this.props = props;
