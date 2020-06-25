@@ -11,7 +11,8 @@ import CloseButtonStyles from '@fabula/core/styles/components/close-button/close
 export class CloseButtonComponent implements OnInit {
     @Input() color: string;
     @Input() parentColor: string;
-    @Output() click: EventEmitter<any> = new EventEmitter();
+    @Output() close: EventEmitter<any> = new EventEmitter();
+    @Input() size: string;
 
     host;
 
@@ -28,7 +29,8 @@ export class CloseButtonComponent implements OnInit {
 
         // Set props
         props = {
-            color: this.color || this.parentColor
+            color: this.color || this.parentColor,
+            size: this.size
         };
 
         // Set and apply styles
@@ -37,6 +39,6 @@ export class CloseButtonComponent implements OnInit {
     }
 
     handleClick() {
-        this.click.emit();
+        this.close.emit();
     }
 }

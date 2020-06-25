@@ -16,6 +16,6 @@
       <ng-content></ng-content>
     </div>
 
-    <fab-close-button *ngIf="closeButton" onClick="handleClose()" [parentColor]="color" size="sm"></fab-close-button>
+    <fab-close-button *ngIf="closeButton" (close)="handleClose()" [parentColor]="color" size="sm"></fab-close-button>
   </div>
 </div>

@@ -65,12 +65,12 @@ export const Border = () => ({
     component: AlertBorderWrapper,
 });
 
-export const CloseButton = () => ({
-    component: AlertCloseButtonWrapper,
-});
-
 export const Clear = () => ({
     component: AlertClearWrapper,
+});
+
+export const CloseButton = () => ({
+    component: AlertCloseButtonWrapper,
 });
 
 export const Color = () => ({
