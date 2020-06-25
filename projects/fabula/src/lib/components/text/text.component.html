@@ -2,5 +2,12 @@
   <ng-container *ngIf="props">
     <span>{{props.content}}</span>
   </ng-container>
-  <ng-content></ng-content>
+
+  <span *ngIf="!props">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </span>
 </div>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
