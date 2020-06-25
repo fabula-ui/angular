@@ -1,7 +1,8 @@
 <div class="fab-alert-wrapper">
   <div class="fab-alert" data-fab-component="alert">
     <ng-content select="fab-icon"></ng-content>
-    <fab-icon *ngIf="icon" [name]="icon.name" [props]="icon"></fab-icon>
+    <fab-icon *ngIf="!!icon && isObject(icon)" [name]="icon.name" [props]="icon"></fab-icon>
+    <fab-icon *ngIf="!!icon && !isObject(icon)" [name]="icon"></fab-icon>
     <div class="fab-alert__stage">
       <div class="fab-alert__title"  *ngIf="title">
         <fab-text color="inherit" *ngIf="!isObject(title)">{{title}}</fab-text>

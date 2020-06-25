@@ -19,9 +19,9 @@ export class AlertComponent implements OnInit {
   @Input() invert: boolean;
   @Input() marker: string;
   @Input() outline = false;
-  @Input() text: string;
+  @Input() text: any;
   @Input() textColor: string;
-  @Input() title: string;
+  @Input() title: any;
   @Input() titleColor: string;
 
   @Output() close: EventEmitter<any> = new EventEmitter();
