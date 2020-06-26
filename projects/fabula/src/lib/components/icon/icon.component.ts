@@ -15,7 +15,7 @@ export class IconComponent implements OnInit {
   @Input() name: string;
   @Input() props;
 
-  appended;
+  appended = false;
   host;
   svg;
   svgObject;
@@ -58,6 +58,7 @@ export class IconComponent implements OnInit {
 
     if (svgObject) {
       this.renderer.appendChild(svgWrapper, svgObject);
+      this.appended = true;
     }
   }
 

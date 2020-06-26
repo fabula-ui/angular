@@ -1,5 +1,5 @@
 <span class="fab-icon" [attr.data-color]="color" [attr.data-name]="name">
     <i class="fab-icon__svg"></i>
-    <object class="fab-icon__object" xmlns="http://www.w3.org/2000/svg" [data]="svg" type="image/svg+xml" (load)="handleLoad($event)" *ngIf="svg">Unsupported by browser</object>
+    <object class="fab-icon__object" xmlns="http://www.w3.org/2000/svg" [data]="svg" type="image/svg+xml" (load)="handleLoad($event)" *ngIf="!appended">Unsupported by browser</object>
     <ng-content></ng-content>
 </span>
