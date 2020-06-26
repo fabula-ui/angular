@@ -2,15 +2,12 @@ import {
     Component,
     ElementRef,
     Input,
-    OnInit,
-    QueryList,
-    ContentChildren
+    OnInit
 } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
 import ButtonStyles from '@fabula/core/theme/styles/Button';
-import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'fab-button',
@@ -18,12 +15,11 @@ import { IconComponent } from '../icon/icon.component';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent implements OnInit {
-  @ContentChildren(IconComponent) iconComponents: QueryList<IconComponent>;
-  
   @Input() border = false;
+  @Input() circle: boolean;
+  @Input() clear: boolean;
   @Input() color: string;
   @Input() compact: boolean;
-  @Input() clear: boolean;
   @Input() disabled: boolean;
   @Input() expand: boolean;
   @Input() faded: boolean;
@@ -48,6 +44,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
     const props = {
       border: this.border,
+      circle: this.circle,
       clear: this.clear,
       color: this.color,
       compact: this.compact,

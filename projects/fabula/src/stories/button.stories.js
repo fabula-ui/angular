@@ -13,6 +13,7 @@ import {
 } from '../public-api';
 
 // Wrappers
+import { ButtonCircleWrapper } from './wrappers/button/circle/button-circle.wrapper';
 import { ButtonClearWrapper } from './wrappers/button/clear/button-clear.wrapper';
 import { ButtonColorWrapper } from './wrappers/button/color/button-color.wrapper';
 import { ButtonCompactWideWrapper } from './wrappers/button/compact-wide/button-compact-wide.wrapper';
@@ -51,6 +52,7 @@ export default {
 }
 
 // Stories
+export const Circle = () => ({ component: ButtonCircleWrapper });
 export const Clear = () => ({ component: ButtonClearWrapper });
 export const Color = () => ({ component: ButtonColorWrapper });
 export const CompactVsWide = () => ({ component: ButtonCompactWideWrapper });
