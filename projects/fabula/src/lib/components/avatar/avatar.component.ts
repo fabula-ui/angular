@@ -14,7 +14,7 @@ import AvatarStyles from '@fabula/core/styles/components/avatar/avatar';
 export class AvatarComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color = '';
-  @Input() icon = 'image';
+  @Input() icon: any = 'image';
   @Input() image = '';
   @Input() rounded = false;
   @Input() showInitials = '';
