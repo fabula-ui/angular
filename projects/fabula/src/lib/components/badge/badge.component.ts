@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ElementRef, Renderer2, Renderer } from '@angu
 import { css } from 'emotion';
 
 // Styles
-import BadgeStyles from '@fabula/core/theme/styles/Badge';
+import BadgeStyles from '@fabula/core/styles/components/badge/badge';
 
 @Component({
   selector: 'fab-badge',
