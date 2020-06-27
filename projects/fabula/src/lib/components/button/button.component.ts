@@ -7,7 +7,7 @@ import {
 import { css } from 'emotion';
 
 // Styles
-import ButtonStyles from '@fabula/core/theme/styles/Button';
+import ButtonStyles from '@fabula/core/styles/components/button/button';
 
 @Component({
   selector: 'fab-button',
