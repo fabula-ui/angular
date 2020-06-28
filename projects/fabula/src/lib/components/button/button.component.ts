@@ -27,6 +27,7 @@ export class ButtonComponent implements OnInit {
   @Input() gradient: boolean;
   @Input() invert: boolean;
   @Input() loading: string;
+  @Input() label: string;
   @Input() outline: boolean;
   @Input() rounded: boolean;
   @Input() size: string;
