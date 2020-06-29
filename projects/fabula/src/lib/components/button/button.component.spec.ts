@@ -8,7 +8,7 @@ import { ButtonComponent } from './button.component';
 })
 class ButtonLabelComponent { }
 
-describe('Avatar Component', () => {
+describe('Button Component', () => {
     let component: ButtonComponent;
     let fixture: ComponentFixture<ButtonComponent>;
 
