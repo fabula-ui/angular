@@ -13,8 +13,10 @@ export class CardImageComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color: string;
   @Input() height: any;
+  @Input() layout: string;
   @Input() src: string;
-  
+  @Input() width: string;
+
   host;
 
   constructor(
@@ -31,7 +33,9 @@ export class CardImageComponent implements OnInit {
       adaptColor: this.adaptColor,
       color: this.color,
       cover: this.host.hasAttribute('cover'),
-      height: this.height
+      height: this.height,
+      layout: this.layout,
+      width: this.width
     };
     styles = css(CardImageStyles({ framework: 'angular', props }));
 

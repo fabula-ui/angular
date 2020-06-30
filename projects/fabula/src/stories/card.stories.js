@@ -24,6 +24,7 @@ import {
 import { CardExamplesWrapper } from './wrappers/card/examples/card-examples.wrapper';
 import { CardColorWrapper } from './wrappers/card/color/card-color.wrapper';
 import { CardGlowWrapper } from './wrappers/card/glow/card-glow.wrapper';
+import { CardLayoutWrapper } from './wrappers/card/layout/card-layout.wrapper';
 
 // Module init
 export default {
@@ -60,3 +61,4 @@ export default {
 export const Examples = () => ({ component: CardExamplesWrapper });
 export const Color = () => ({ component: CardColorWrapper });
 export const Glow = () => ({ component: CardGlowWrapper });
+export const Layout = () => ({ component: CardLayoutWrapper });

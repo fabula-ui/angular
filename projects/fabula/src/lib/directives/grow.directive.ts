@@ -22,16 +22,11 @@ export class GrowDirective implements AfterViewInit {
 
     ngAfterViewInit() {
         const element = this.elRef.nativeElement;
-        const parent = element.parentNode;
-        const wrapper = document.createElement('div');
         const props = {
             grow: this.grow
         };
 
-        this.renderer.insertBefore(parent, wrapper, element);
-        this.renderer.appendChild(wrapper, element);
-
-        wrapper.classList.add(css(UtilsStyles({ framework: 'angular', props })));
+        element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
 
     }
 

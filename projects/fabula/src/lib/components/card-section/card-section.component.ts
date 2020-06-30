@@ -12,6 +12,7 @@ import CardSectionStyles from '@fabula/core/styles/components/card-section/card-
 export class CardSectionComponent implements OnInit {
   @Input() color: string;
   @Input() divider: string;
+  @Input() layout = 'vertical';
   @Input() padding: any;
 
   host;
@@ -31,6 +32,7 @@ export class CardSectionComponent implements OnInit {
     props = {
       color: this.color,
       divider: this.divider,
+      layout: this.layout,
       padding: this.padding
     };
 
