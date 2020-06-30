@@ -23,8 +23,6 @@ export class FlowDirective implements AfterViewInit {
             flow: this.flow,
         };
 
-        console.log('flow', this.flow);
-
         element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
 }
