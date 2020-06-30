@@ -12,8 +12,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "jest:ui": "jest -c tests/ui/jest.config.js",
+    "jest:ui:update": "jest -c tests/ui/jest.config.js --updateSnapshot",
     "test:ui": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:ui",
-    "test:ui:update": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:ui -- -u",
+    "test:ui:update": "PORT=8008 start-server-and-test storybook:ci http-get://localhost:8008 jest:ui:update",
     "storybook": "start-storybook -p 8008",
     "storybook:ci": "start-storybook -p 8008 --ci"
   },
