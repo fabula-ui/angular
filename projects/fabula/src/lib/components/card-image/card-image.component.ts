@@ -6,8 +6,7 @@ import CardImageStyles from '@fabula/core/styles/components/card-image/card-imag
 
 @Component({
   selector: 'fab-card-image',
-  templateUrl: './card-image.component.html',
-  styleUrls: ['./card-image.component.css']
+  templateUrl: './card-image.component.html'
 })
 export class CardImageComponent implements OnInit {
   @Input() adaptColor = false;

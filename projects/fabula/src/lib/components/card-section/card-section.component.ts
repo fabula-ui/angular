@@ -6,8 +6,7 @@ import CardSectionStyles from '@fabula/core/styles/components/card-section/card-
 
 @Component({
   selector: 'fab-card-section',
-  templateUrl: './card-section.component.html',
-  styleUrls: ['./card-section.component.css']
+  templateUrl: './card-section.component.html'
 })
 export class CardSectionComponent implements OnInit {
   @Input() color: string;
