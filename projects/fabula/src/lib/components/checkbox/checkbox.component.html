@@ -1,0 +1,13 @@
+<div class="fab-checkbox-wrapper" [attr.data-checked]="checked" [attr.data-disabled]="disabled" [attr.data-focus]="focus" [attr.data-indeterminate]="indeterminate">
+    <div class="fab-checkbox" (click)="handleChange()"></div>
+    <label class="fab-checkbox__label">
+        <input
+            [checked]="checked"
+            [disabled]="disabled"
+            [indeterminate]="indeterminate"
+            (change)="handleChange($event)"
+            type="checkbox">
+        {{label}}
+        <ng-content></ng-content>
+    </label>
+</div>
