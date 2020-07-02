@@ -12,8 +12,6 @@ import {
   ButtonComponent,
   ButtonGroupComponent,
   CardComponent,
-  CardBodyComponent,
-  CardFooterComponent,
   CardImageComponent,
   CardSectionComponent,
   DropdownComponent,
@@ -81,8 +79,6 @@ import { ToastWrapperComponent } from './components/toast-wrapper/toast-wrapper.
     ButtonComponent,
     ButtonGroupComponent,
     CardComponent,
-    CardBodyComponent,
-    CardFooterComponent,
     CardImageComponent,
     CardSectionComponent,
     DropdownComponent,
@@ -133,9 +129,6 @@ import { ToastWrapperComponent } from './components/toast-wrapper/toast-wrapper.
       theme: testTheme
     }),
     UtilsModule
-    // FabulaModule.forRoot({
-    //   theme: testTheme
-    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,8 +9,6 @@ export * from './lib/components/badge/badge.component';
 export * from './lib/components/button/button.component';
 export * from './lib/components/button-group/button-group.component';
 export * from './lib/components/card/card.component';
-export * from './lib/components/card-body/card-body.component';
-export * from './lib/components/card-footer/card-footer.component';
 export * from './lib/components/card-image/card-image.component';
 export * from './lib/components/card-section/card-section.component';
 export * from './lib/components/close-button/close-button.component';

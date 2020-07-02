@@ -11,8 +11,6 @@ import { BadgeComponent } from './components/badge/badge.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonGroupComponent } from './components/button-group/button-group.component';
 import { CardComponent } from './components/card/card.component';
-import { CardBodyComponent } from './components/card-body/card-body.component';
-import { CardFooterComponent } from './components/card-footer/card-footer.component';
 import { CardImageComponent } from './components/card-image/card-image.component';
 import { CardSectionComponent } from './components/card-section/card-section.component';
 import { CloseButtonComponent } from './components/close-button/close-button.component';
@@ -67,8 +65,6 @@ import { ToastComponent } from './components/toast/toast.component';
     ButtonComponent,
     ButtonGroupComponent,
     CardComponent,
-    CardBodyComponent,
-    CardFooterComponent,
     CardSectionComponent,
     CardImageComponent,
     CloseButtonComponent,
@@ -124,8 +120,6 @@ import { ToastComponent } from './components/toast/toast.component';
     ButtonComponent,
     ButtonGroupComponent,
     CardComponent,
-    CardFooterComponent,
-    CardBodyComponent,
     CardImageComponent,
     CardSectionComponent,
     CloseButtonComponent,

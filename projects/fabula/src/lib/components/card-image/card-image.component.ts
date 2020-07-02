@@ -12,6 +12,7 @@ export class CardImageComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color: string;
   @Input() height: any;
+  @Input() icon: string;
   @Input() layout: string;
   @Input() src: string;
   @Input() width: string;
@@ -33,6 +34,7 @@ export class CardImageComponent implements OnInit {
       color: this.color,
       cover: this.host.hasAttribute('cover'),
       height: this.height,
+      icon: this.icon,
       layout: this.layout,
       width: this.width
     };

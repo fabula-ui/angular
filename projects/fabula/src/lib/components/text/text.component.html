@@ -3,9 +3,9 @@
     <span>{{props.content}}</span>
   </ng-container>
 
-  <span *ngIf="!props">
+  <ng-container *ngIf="!props">
     <ng-content *ngTemplateOutlet="content"></ng-content>
-  </span>
+  </ng-container>
 </div>
 
 <ng-template #content>

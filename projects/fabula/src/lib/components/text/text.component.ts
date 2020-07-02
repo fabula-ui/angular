@@ -28,6 +28,7 @@ export class TextComponent implements OnInit {
   italic;
   medium;
   semibold;
+  strong;
 
   constructor(
     public elRef: ElementRef
@@ -47,8 +48,9 @@ export class TextComponent implements OnInit {
     this.italic = this.host.hasAttribute('italic');
     this.medium = this.host.hasAttribute('medium');
     this.semibold = this.host.hasAttribute('semibold');
+    this.strong = this.host.hasAttribute('strong');
 
-    if (!this.weight && this.bold) {
+    if (!this.weight && (this.bold || this.strong)) {
       this.weight = '700';
     }
 

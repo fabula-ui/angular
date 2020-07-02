@@ -4,6 +4,11 @@ import { css } from 'emotion';
 // Styles
 import TagStyles from '@fabula/core/theme/styles/Tag';
 
+interface Placement {
+  x: string;
+  y: string;
+}
+
 @Component({
   selector: 'fab-tag',
   templateUrl: './tag.component.html',
@@ -12,6 +17,7 @@ import TagStyles from '@fabula/core/theme/styles/Tag';
 export class TagComponent implements AfterViewInit, OnInit {
   @Input() color: string;
   @Input() link: string;
+  @Input() placement: Placement;
   @Input() size: string;
 
   host;
@@ -33,6 +39,7 @@ export class TagComponent implements AfterViewInit, OnInit {
       anchor: !!this.host.querySelector('a'),
       button: !!this.host.querySelector('button'),
       color: this.color,
+      placement: this.placement,
       size: this.size
     };
 
