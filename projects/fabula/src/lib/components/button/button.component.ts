@@ -29,15 +29,15 @@ export class ButtonComponent implements OnInit {
   @Input() loading: string;
   @Input() label: string;
   @Input() outline: boolean;
+  @Input() props: any;
   @Input() rounded: boolean;
   @Input() size: string;
   @Input() wide: boolean;
 
   host;
-  props;
 
   constructor(
-    private elRef: ElementRef
+    public elRef: ElementRef
   ) { }
 
   ngAfterViewInit() {}
@@ -58,14 +58,13 @@ export class ButtonComponent implements OnInit {
       outline: this.outline,
       rounded: this.rounded,
       size: this.size,
-      wide: this.wide
+      wide: this.wide,
+      ...this.props
     };
     const styles = css(ButtonStyles({ framework: 'angular', props }));
 
     this.host = this.elRef.nativeElement;
     this.host.classList.add(styles);
-
-    this.props = props;
   }
 
 }

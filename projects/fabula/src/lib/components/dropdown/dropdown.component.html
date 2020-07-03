@@ -1,14 +1,5 @@
-<div class="fab-dropdown" [attr.data-open]="isOpen">
-    <ng-content select="[dropdown-toggle]"></ng-content>
-    <div class="fab-dropdown__menu">
-        <ng-content select="[dropdown-menu]" #dropdownMenu></ng-content>
-        <fab-list *ngIf="items && items.length">
-            <fab-list-item *ngFor="let item of items" [button]="true">
-                <button class="fab-dropdown__item">
-                    <fab-text *ngIf="item.title">{{item.title}}</fab-text>
-                    <fab-text aux *ngIf="item.title" size="sm">{{item.subtitle}}</fab-text>
-                </button>
-            </fab-list-item>
-        </fab-list>
+<div class="fab-dropdown-wrapper">
+    <div class="fab-dropdown" [attr.data-open]="open">
+        <ng-content></ng-content>
     </div>
 </div>

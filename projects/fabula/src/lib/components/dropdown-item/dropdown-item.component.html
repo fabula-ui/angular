@@ -1,0 +1,16 @@
+<div class="fab-dropdown-item fab-list-item" [attr.data-button]="!!button || !!click || !!parentClick">
+  <ng-container *ngIf="!!button || !!click || !!parentClick">
+    <button class="fab-button fab-dropdown-item__button" (click)="handleClick()" [disabled]="!open">
+      <span class="fab-dropdown-item__label" *ngIf="label">{{label}}</span>
+      <ng-content *ngTemplateOutlet="content"></ng-content>
+    </button>
+  </ng-container>
+  <ng-container *ngIf="!button && !click && !parentClick">
+    <span class="fab-dropdown-item__label" *ngIf="label">{{label}}</span>
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </ng-container>
+</div>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

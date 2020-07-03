@@ -1,0 +1,8 @@
+<div class="fab-dropdown-toggle" (click)="handleClick()">
+  <fab-button [props]="buttonProps" *ngIf="label">
+    <span class="fab-dropdown-toggle__icon" *ngIf="icon"></span>
+    <span class="fab-dropdown-toggle__label">{{label}}</span>
+    <span class="fab-dropdown-toggle__chevron"></span>
+  </fab-button>
+  <ng-content></ng-content>
+</div>

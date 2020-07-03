@@ -15,6 +15,9 @@ export * from './lib/components/checkbox/checkbox.component';
 export * from './lib/components/close-button/close-button.component';
 export * from './lib/components/column/column.component';
 export * from './lib/components/dropdown/dropdown.component';
+export * from './lib/components/dropdown-item/dropdown-item.component';
+export * from './lib/components/dropdown-menu/dropdown-menu.component';
+export * from './lib/components/dropdown-toggle/dropdown-toggle.component';
 export * from './lib/components/general-component/general-component.component';
 export * from './lib/components/input/input.component';
 export * from './lib/components/input-group/input-group.component';
@@ -59,6 +62,7 @@ export * from './lib/services/theme.service';
 
 // Modules
 export * from './lib/fabula.module';
+export * from './lib/modules/dropdown.module';
 export * from './lib/modules/icons.module';
 export * from './lib/modules/theme.module';
 export * from './lib/modules/utils.module';

@@ -1,0 +1,6 @@
+<div class="fab-dropdown-menu-wrapper">
+    <div class="fab-dropdown-menu fab-list" [attr.data-open]="open">
+        <fab-dropdown-item *ngFor="let item of items"></fab-dropdown-item>
+        <ng-content></ng-content>
+    </div>
+</div>

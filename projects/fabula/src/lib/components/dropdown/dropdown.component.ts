@@ -2,28 +2,48 @@ import {
     Component,
     ElementRef,
     Input,
-    OnInit
+    OnInit,
+    ContentChildren,
+    QueryList,
+    ContentChild,
+    AfterViewInit,
+    Output,
+    EventEmitter
 } from '@angular/core';
 import { css } from 'emotion';
 
+// Components
+import { DropdownMenuComponent } from '../dropdown-menu/dropdown-menu.component';
+import { DropdownToggleComponent } from '../dropdown-toggle/dropdown-toggle.component';
+
 // Styles
-import DropdownStyles from '@fabula/core/theme/styles/Dropdown';
+import DropdownStyles from '@fabula/core/styles/components/dropdown/dropdown';
 
 @Component({
     selector: 'fab-dropdown',
-    styleUrls: ['dropdown.component.scss'],
     templateUrl: './dropdown.component.html',
 })
-export class DropdownComponent implements OnInit {
-    @Input() items = [];
+export class DropdownComponent implements AfterViewInit, OnInit {
+    @ContentChild(DropdownMenuComponent) dropdownMenu: DropdownMenuComponent;
+    @ContentChild(DropdownToggleComponent) dropdownToggle: DropdownToggleComponent;
 
-    public dropdownToggle;
-    public host;
-    public isOpen = false;
+    @Input() direction = 'down';
+    @Input() open = false;
+
+    @Output() toggle: EventEmitter<any> = new EventEmitter();
+
+    host;
 
     constructor(
         private elRef: ElementRef
     ) { }
+
+    ngAfterViewInit() {
+        this.dropdownMenu.listen({
+            toggle: this.toggle
+        });
+        this.dropdownToggle.toggle.subscribe(tab => this.handleToggle());
+    }
 
     ngOnInit() {
         let props = {};
@@ -36,22 +56,18 @@ export class DropdownComponent implements OnInit {
         styles = css(DropdownStyles({ framework: 'angular', props }));
         this.host.classList.add(styles);
 
-        // Set toggle
-        this.setToggle();
+        // Event Listener
+        // document.addEventListener('click', this.handleClick);
     }
 
-    setToggle() {
-        this.dropdownToggle = this.host.querySelector('[dropdown-toggle]');
-        this.dropdownToggle.querySelector('[data-fab-component]').setAttribute('data-dropdown-toggle', true);
-
-        this.dropdownToggle.addEventListener('click', () => {
-            this.toggle();
-        });
+    handleClick(e) {
+        // if (!this.host.contains(e.target) && this.open) {
+        //     this.toggle();
+        // }
     }
 
-    toggle() {
-        this.isOpen = !this.isOpen;
-        this.dropdownToggle.querySelector('[data-fab-component]').setAttribute('data-active', this.isOpen);
+    handleToggle() {
+        this.open = !this.open;
+        this.toggle.emit(this.open);
     }
-
 }
