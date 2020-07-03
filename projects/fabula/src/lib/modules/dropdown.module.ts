@@ -9,6 +9,8 @@ import { DropdownMenuComponent } from '../components/dropdown-menu/dropdown-menu
 import { DropdownToggleComponent } from '../components/dropdown-toggle/dropdown-toggle.component';
 import { ButtonComponent } from '../components/button/button.component';
 import { DropdownComponent } from '../components/dropdown/dropdown.component';
+import { ListComponent } from '../components/list/list.component';
+import { ListItemComponent } from '../components/list-item/list-item.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,9 @@ import { DropdownComponent } from '../components/dropdown/dropdown.component';
         DropdownComponent,
         DropdownItemComponent,
         DropdownMenuComponent,
-        DropdownToggleComponent
+        DropdownToggleComponent,
+        ListComponent,
+        ListItemComponent
     ],
     imports: [CommonModule],
     exports: [
@@ -24,7 +28,9 @@ import { DropdownComponent } from '../components/dropdown/dropdown.component';
         DropdownComponent,
         DropdownItemComponent,
         DropdownMenuComponent,
-        DropdownToggleComponent
+        DropdownToggleComponent,
+        ListComponent,
+        ListItemComponent
     ]
 })
 export class DropdownModule { }

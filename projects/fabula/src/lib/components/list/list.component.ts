@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import ListStyles from '@fabula/core/theme/styles/List';
+import ListStyles from '@fabula/core/styles/components/list/list';
 
 @Component({
   selector: 'fab-list',
@@ -11,7 +11,9 @@ import ListStyles from '@fabula/core/theme/styles/List';
 })
 export class ListComponent implements OnInit {
   @Input() color: string;
+  @Input() divider = true;
   @Input() padding: any;
+  @Input() props: any;
   @Input() striped = false;
 
   host;
@@ -21,21 +23,16 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let props;
     let styles;
 
     // Get host element
     this.host = this.elRef.nativeElement;
 
-    // Set props
-    props = {
-      color: this.color,
-      padding: this.padding,
-      striped: this.striped
-    };
-
     // Set and apply styles
-    styles = css(ListStyles({ framework: 'angular', props }));
+    styles = css(ListStyles({ framework: 'angular', props: {
+      ...this,
+      ...this.props
+    } }));
     this.host.classList.add(styles);
   }
 

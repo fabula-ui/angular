@@ -39,10 +39,16 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     ) { }
 
     ngAfterViewInit() {
-        this.dropdownMenu.listen({
-            toggle: this.toggle
-        });
-        this.dropdownToggle.toggle.subscribe(tab => this.handleToggle());
+        if (this.dropdownMenu) {
+            this.dropdownMenu.direction = this.direction;
+            this.dropdownMenu.listen({ toggle: this.toggle });
+            this.dropdownMenu.closed.subscribe(() => this.handleToggle());
+            this.dropdownMenu.ngOnInit();
+        }
+
+        if (this.dropdownToggle) {
+            this.dropdownToggle.toggle.subscribe(() => this.handleToggle());
+        }
     }
 
     ngOnInit() {
@@ -57,13 +63,13 @@ export class DropdownComponent implements AfterViewInit, OnInit {
         this.host.classList.add(styles);
 
         // Event Listener
-        // document.addEventListener('click', this.handleClick);
+        document.addEventListener('click', e => this.handleClick(e));
     }
 
     handleClick(e) {
-        // if (!this.host.contains(e.target) && this.open) {
-        //     this.toggle();
-        // }
+        if (!this.host.contains(e.target) && this.open) {
+            this.handleToggle();
+        }
     }
 
     handleToggle() {

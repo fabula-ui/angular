@@ -11,4 +11,8 @@ export class DropdownExamplesWrapper implements OnInit {
     ngOnInit() {
     }
 
+    handleClick() {
+        console.log('Clicked');
+    }
+
 }

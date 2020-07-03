@@ -60,7 +60,7 @@ export class TabsComponent implements AfterViewInit, OnInit {
 
     // Get host element
     this.host = this.elRef.nativeElement;
-    
+
     // Set props
     props = {
       activeColor: this.activeColor,

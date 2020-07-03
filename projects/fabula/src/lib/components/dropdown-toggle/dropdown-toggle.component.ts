@@ -47,6 +47,6 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
     }
 
     handleClick() {
-        this.toggle.emit();
+        this.toggle.emit(true);
     }
 }
