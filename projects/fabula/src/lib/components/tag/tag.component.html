@@ -1,4 +1,4 @@
-<div class="fab-tag-wrapper" [attr.data-placement-x]="placement.x" [attr.data-placement-y]="placement.y">
+<div class="fab-tag-wrapper" [attr.data-placement-x]="placement && placement.x" [attr.data-placement-y]="placement && placement.y">
   <div class="fab-tag" *ngIf="!link">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </div>
