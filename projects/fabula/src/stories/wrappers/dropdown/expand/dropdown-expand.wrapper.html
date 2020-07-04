@@ -1,0 +1,16 @@
+<div flex>
+  <fab-dropdown mr="1">
+    <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Button"></fab-dropdown-toggle>
+    <fab-dropdown-menu [clickToClose]="true"
+      [items]="[{ button: true, label: 'Extra-small label', size: 'xs' }, { button: true, label: 'Small label' }, { button: true, label: 'Medium label', size: 'md' }, { button: true, label: 'Large label', size: 'lg' }, { button: true, label: 'Extra-large label', size: 'xl' }]"
+      (clickItem)="handleClick()">
+    </fab-dropdown-menu>
+  </fab-dropdown>
+
+  <fab-dropdown mr="1">
+    <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Dropdown Toggle"></fab-dropdown-toggle>
+    <fab-dropdown-menu [clickToClose]="true" [divider]="false"
+      [items]="[{ button: true, color: '', label: 'Default' }, { button: true, color: 'primary', label: 'Primary' }, { button: true, color: 'secondary', label: 'Secondary' }, { button: true, color: 'success', label: 'Success' }, { button: true, color: 'danger', label: 'Danger' }]"
+      (clickItem)="handleClick()"></fab-dropdown-menu>
+  </fab-dropdown>
+</div>

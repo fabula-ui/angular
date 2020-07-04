@@ -61,6 +61,7 @@ export class ButtonComponent implements OnInit {
       wide: this.wide,
       ...this.props
     };
+
     const styles = css(ButtonStyles({ framework: 'angular', props }));
 
     this.host = this.elRef.nativeElement;

@@ -1,4 +1,5 @@
 import {
+    AfterViewInit,
     Component,
     ElementRef,
     Input,
@@ -19,20 +20,26 @@ import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dro
     selector: 'fab-dropdown-item',
     templateUrl: './dropdown-item.component.html',
 })
-export class DropdownItemComponent extends ButtonComponent implements OnInit {
+export class DropdownItemComponent extends ButtonComponent implements AfterViewInit, OnInit {
     @Input() button = false;
     @Input() clickToClose = false;
-    @Input() item: any;
+    @Input() item: any = { button: false };
     @Input() label: string;
+    @Input() listItem = false;
     @Input() size = 'sm';
 
     @Output() clicked = new EventEmitter();
 
     buttonProps;
     host;
+    listItemProps;
 
     constructor(public elRef: ElementRef) {
         super(elRef);
+    }
+
+    ngAfterViewInit() {
+        this.init();
     }
 
     ngOnInit() {
@@ -44,15 +51,21 @@ export class DropdownItemComponent extends ButtonComponent implements OnInit {
         // Set and apply styles
         styles = css(DropdownItemStyles({ framework: 'angular', props: this }));
         this.host.classList.add(styles);
-
-        // Set button props
-        this.buttonProps = {
-            ...this,
-            ...this.item
-        };
     }
 
     handleClick() {
         this.clicked.emit();
+    }
+
+    init() {
+        // Set props
+        this.buttonProps = {
+            ...this,
+            ...this.item,
+        };
+        this.listItemProps = {
+            ...this,
+            ...this.item,
+        };
     }
 }

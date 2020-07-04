@@ -28,6 +28,7 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     @ContentChild(DropdownToggleComponent) dropdownToggle: DropdownToggleComponent;
 
     @Input() direction = 'down';
+    @Input() expand = false;
     @Input() open = false;
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -59,7 +60,7 @@ export class DropdownComponent implements AfterViewInit, OnInit {
         this.host = this.elRef.nativeElement;
 
         // Set and apply styles
-        styles = css(DropdownStyles({ framework: 'angular', props }));
+        styles = css(DropdownStyles({ framework: 'angular', props: this }));
         this.host.classList.add(styles);
 
         // Event Listener

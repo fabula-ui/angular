@@ -1,7 +1,8 @@
 import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../services/theme.service';
+// Styles
+import UtilsStyles from '@fabula/core/theme/utils';
 
 @Directive({
     selector: '[p],[pb],[pl],[pr],[pt],[px],[py]'
@@ -17,7 +18,6 @@ export class PaddingDirective implements AfterViewInit {
 
     constructor(
         private elRef: ElementRef,
-        private themeService: ThemeService
     ) { }
 
     ngAfterViewInit() {
@@ -32,7 +32,9 @@ export class PaddingDirective implements AfterViewInit {
             py: this.py
         };
 
-        // this.themeService.attachUtils(host, 'padding', props);
+        console.log('padding');
+
+        host.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
 
 }

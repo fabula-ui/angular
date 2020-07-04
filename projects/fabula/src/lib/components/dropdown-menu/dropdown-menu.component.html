@@ -1,14 +1,13 @@
 <div class="fab-dropdown-menu-wrapper">
   <div class="fab-dropdown-menu" [attr.data-open]="open">
-    <ng-container *ngIf="items">
+    <ng-container *ngIf="items || list">
       <fab-list [props]="listProps">
-        <fab-list-item *ngFor="let item of items" data-dropdown-item>
-          <fab-dropdown-item [item]="item"></fab-dropdown-item>
-        </fab-list-item>
+        <fab-dropdown-item *ngFor="let item of items" [item]="item" data-list-item></fab-dropdown-item>
+        <ng-content *ngTemplateOutlet="content"></ng-content>
       </fab-list>
     </ng-container>
 
-    <ng-container *ngIf="!items">
+    <ng-container *ngIf="!items && !list">
       <ng-content *ngTemplateOutlet="content"></ng-content>
     </ng-container>
   </div>

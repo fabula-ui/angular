@@ -31,6 +31,7 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
     @Input() clickToClose = false;
     @Input() direction: string;
     @Input() items: Array<any>;
+    @Input() list = false;
     @Input() toggle: any;
 
     @Output() clickItem: EventEmitter<any> = new EventEmitter();
@@ -53,6 +54,11 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
 
                 this.clickItem.emit();
             });
+
+            if (this.color && !item.color) { item.color = this.color; }
+            if (this.list) { item.listItem = true; }
+
+            item.init();
         });
     }
 
@@ -67,7 +73,10 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
         this.host.classList.add(dropdownMenuStyles);
 
         // Set list props
-        this.listProps = this;
+        this.listProps = {
+            padding: true,
+            ...this,
+        };
     }
 
     // Listeners
