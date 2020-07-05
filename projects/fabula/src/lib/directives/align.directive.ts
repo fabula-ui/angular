@@ -33,8 +33,9 @@ export class AlignDirective implements AfterViewInit {
             alignH: this.alignH,
             alignV: this.alignV
         };
+        const angularElement = !!host.querySelector('[data-fab-component]') || !!host.querySelector('[data-fab-wrapper]');
 
-        host.classList.add(css(UtilsStyles({ framework: 'angular', props })));
+        host.classList.add(css(UtilsStyles({ angularElement, framework: 'angular', props })));
     }
 
 }

@@ -21,14 +21,15 @@ export class FlexDirective implements AfterViewInit {
     ) { }
 
     ngAfterViewInit() {
-        const element = this.elRef.nativeElement;
+        const host = this.elRef.nativeElement;
+        const angularElement = !!host.querySelector('[data-fab-component]') || !!host.querySelector('[data-fab-wrapper]');
         const props = {
             alItems: this.alItems,
-            flex: element.hasAttribute('flex'),
+            flex: host.hasAttribute('flex'),
             flow: this.flow,
             justContent: this.justContent
         };
 
-        element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
+        host.classList.add(css(UtilsStyles({ angularElement, framework: 'angular', props })));
     }
 }

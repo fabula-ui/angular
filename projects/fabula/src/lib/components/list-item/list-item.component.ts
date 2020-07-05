@@ -7,6 +7,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
   @Input() button = false;
+  @Input() color: string;
   @Input() props: any;
 
   host;

@@ -11,6 +11,7 @@ import { css } from 'emotion';
 
 // Components
 import { ButtonComponent } from '../button/button.component';
+import { ListItemComponent } from '../list-item/list-item.component';
 
 // Styles
 import ButtonStyles from '@fabula/core/styles/components/button/button';
@@ -20,7 +21,7 @@ import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dro
     selector: 'fab-dropdown-item',
     templateUrl: './dropdown-item.component.html',
 })
-export class DropdownItemComponent extends ButtonComponent implements AfterViewInit, OnInit {
+export class DropdownItemComponent extends ListItemComponent implements AfterViewInit, OnInit {
     @Input() button = false;
     @Input() clickToClose = false;
     @Input() item: any = { button: false };

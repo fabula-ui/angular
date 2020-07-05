@@ -21,12 +21,13 @@ export class GrowDirective implements AfterViewInit {
     ) { }
 
     ngAfterViewInit() {
-        const element = this.elRef.nativeElement;
+        const host = this.elRef.nativeElement;
+        const angularElement = !!host.querySelector('[data-fab-component]') || !!host.querySelector('[data-fab-wrapper]');
         const props = {
             grow: this.grow
         };
 
-        element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
+        host.classList.add(css(UtilsStyles({ angularElement, framework: 'angular', props })));
 
     }
 
