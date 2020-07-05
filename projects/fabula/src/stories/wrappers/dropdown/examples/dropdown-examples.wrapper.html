@@ -13,4 +13,11 @@
       [items]="[{ button: true, color: '', label: 'Default' }, { button: true, color: 'primary', label: 'Primary' }, { button: true, color: 'secondary', label: 'Secondary' }, { button: true, color: 'success', label: 'Success' }, { button: true, color: 'danger', label: 'Danger' }]"
       (clickItem)="handleClick()"></fab-dropdown-menu>
   </fab-dropdown>
+
+  <fab-dropdown mr="1">
+    <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Dropdown Toggle"></fab-dropdown-toggle>
+    <fab-dropdown-menu [clickToClose]="true" [divider]="false"
+      [items]="[{ color: '', label: 'Default' }, { color: 'primary', label: 'Primary' }, { color: 'secondary', label: 'Secondary' }, { color: 'success', label: 'Success' }, { color: 'danger', label: 'Danger' }]"
+      (clickItem)="handleClick()"></fab-dropdown-menu>
+  </fab-dropdown>
 </div>

@@ -26,7 +26,8 @@ import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dro
     templateUrl: './dropdown-menu.component.html',
 })
 export class DropdownMenuComponent extends ListComponent implements AfterViewInit, OnInit {
-    @ViewChildren(DropdownItemComponent) dropdownItems: QueryList<DropdownItemComponent>;
+    @ContentChildren(DropdownItemComponent) dropdownItems: QueryList<DropdownItemComponent>;
+    @ViewChildren(DropdownItemComponent) dropdownItemsList: QueryList<DropdownItemComponent>;
 
     @Input() clickToClose = false;
     @Input() direction: string;
@@ -46,20 +47,8 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
     }
 
     ngAfterViewInit() {
-        this.dropdownItems.forEach((item: DropdownItemComponent) => {
-            item.clicked.subscribe(() => {
-                if (this.clickToClose) {
-                    this.closed.emit();
-                }
-
-                this.clickItem.emit();
-            });
-
-            if (this.color && !item.color) { item.color = this.color; }
-            if (this.list) { item.listItem = true; }
-
-            item.init();
-        });
+        this.dropdownItems.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
+        this.dropdownItemsList.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
     }
 
     ngOnInit() {
@@ -77,6 +66,22 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
             padding: true,
             ...this,
         };
+    }
+
+    // Methods
+    handleDropdownItem(item) {
+        item.clicked.subscribe(() => {
+            if (this.clickToClose || item.clickToClose) {
+                this.closed.emit();
+            }
+
+            this.clickItem.emit();
+        });
+
+        if (this.color && !item.color) { item.color = this.color; }
+        if (this.list) { item.listItem = true; }
+
+        item.init();
     }
 
     // Listeners

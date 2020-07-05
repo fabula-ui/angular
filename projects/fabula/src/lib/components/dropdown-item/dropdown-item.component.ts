@@ -14,7 +14,6 @@ import { ButtonComponent } from '../button/button.component';
 import { ListItemComponent } from '../list-item/list-item.component';
 
 // Styles
-import ButtonStyles from '@fabula/core/styles/components/button/button';
 import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dropdown-item';
 
 @Component({
@@ -33,7 +32,6 @@ export class DropdownItemComponent extends ListItemComponent implements AfterVie
 
     buttonProps;
     host;
-    listItemProps;
 
     constructor(public elRef: ElementRef) {
         super(elRef);
@@ -41,6 +39,7 @@ export class DropdownItemComponent extends ListItemComponent implements AfterVie
 
     ngAfterViewInit() {
         this.init();
+        super.ngOnInit();
     }
 
     ngOnInit() {
@@ -61,10 +60,6 @@ export class DropdownItemComponent extends ListItemComponent implements AfterVie
     init() {
         // Set props
         this.buttonProps = {
-            ...this,
-            ...this.item,
-        };
-        this.listItemProps = {
             ...this,
             ...this.item,
         };

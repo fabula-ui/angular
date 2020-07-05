@@ -74,6 +74,7 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     }
 
     handleToggle() {
+        console.log('closed');
         this.open = !this.open;
         this.toggle.emit(this.open);
     }

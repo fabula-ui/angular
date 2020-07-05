@@ -16,6 +16,7 @@ interface Placement {
 })
 export class TagComponent implements AfterViewInit, OnInit {
   @Input() color: string;
+  @Input() faded = false;
   @Input() link: string;
   @Input() placement: Placement;
   @Input() size: string;
@@ -39,6 +40,7 @@ export class TagComponent implements AfterViewInit, OnInit {
       anchor: !!this.host.querySelector('a'),
       button: !!this.host.querySelector('button'),
       color: this.color,
+      faded: this.faded,
       placement: this.placement,
       size: this.size
     };
