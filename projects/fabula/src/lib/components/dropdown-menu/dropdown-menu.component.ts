@@ -26,8 +26,8 @@ import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dro
     templateUrl: './dropdown-menu.component.html',
 })
 export class DropdownMenuComponent extends ListComponent implements AfterViewInit, OnInit {
-    @ContentChildren(DropdownItemComponent) dropdownItems: QueryList<DropdownItemComponent>;
-    @ViewChildren(DropdownItemComponent) dropdownItemsList: QueryList<DropdownItemComponent>;
+    @ContentChildren(DropdownItemComponent) dynamicChildren: QueryList<DropdownItemComponent>;
+    @ViewChildren(DropdownItemComponent) children: QueryList<DropdownItemComponent>;
 
     @Input() clickToClose = false;
     @Input() direction: string;
@@ -48,8 +48,8 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
     }
 
     ngAfterViewInit() {
-        this.dropdownItems.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
-        this.dropdownItemsList.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
+        this.children.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
+        this.dynamicChildren.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
     }
 
     ngOnInit() {

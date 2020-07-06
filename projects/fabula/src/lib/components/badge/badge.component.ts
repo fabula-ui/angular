@@ -13,10 +13,12 @@ export class BadgeComponent implements OnInit {
   @Input() circle = false;
   @Input() clear = false;
   @Input() color: string;
+  @Input() darken = false;
   @Input() faded = false;
   @Input() icon = '';
   @Input() invert = false;
   @Input() label = '';
+  @Input() lighten = false;
   @Input() outline = false;
   @Input() placement = '';
   @Input() placementX = '';
@@ -25,32 +27,16 @@ export class BadgeComponent implements OnInit {
   @Input() size = 'md';
 
   className;
-  host;
 
   constructor(
     public elRef: ElementRef
   ) { }
 
   ngOnInit() {
-    let props
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(BadgeStyles({ framework: 'angular', props: this }));
 
-    this.host = this.elRef.nativeElement;
-
-    props = {
-      circle: this.circle,
-      clear: this.clear,
-      color: this.color,
-      faded: this.faded,
-      invert: this.invert,
-      outline: this.outline,
-      placement: this.placement,
-      rounded: this.rounded,
-      size: this.size
-    }
-
-    styles = css(BadgeStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
 }

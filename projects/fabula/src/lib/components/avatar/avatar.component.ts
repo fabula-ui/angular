@@ -14,8 +14,10 @@ import AvatarStyles from '@fabula/core/styles/components/avatar/avatar';
 export class AvatarComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color = '';
+  @Input() darken = false;
   @Input() icon: any = 'image';
   @Input() image = '';
+  @Input() lighten = false;
   @Input() rounded = false;
   @Input() showInitials = '';
   @Input() size = 'md';
@@ -28,13 +30,7 @@ export class AvatarComponent implements OnInit {
 
   ngOnInit() {
     const host = this.elRef.nativeElement;
-    const props = {
-      adaptColor: this.adaptColor,
-      color: this.color,
-      rounded: this.rounded,
-      size: this.size
-    };
-    const styles = css(AvatarStyles({ framework: 'angular', props }));
+    const styles = css(AvatarStyles({ framework: 'angular', props: this }));
 
     host.classList.add(styles);
   }

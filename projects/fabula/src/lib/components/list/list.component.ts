@@ -1,8 +1,9 @@
-import { Component, ElementRef, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, OnInit, Input, QueryList, ContentChildren, ViewChildren } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
 import ListStyles from '@fabula/core/styles/components/list/list';
+import { ListItemComponent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'fab-list',
@@ -10,6 +11,9 @@ import ListStyles from '@fabula/core/styles/components/list/list';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  @ContentChildren(ListItemComponent) dynamicChildren: QueryList<ListItemComponent>;
+  @ViewChildren(ListItemComponent) chidren: QueryList<ListItemComponent>;
+
   @Input() color: string;
   @Input() divider = true;
   @Input() padding: any;
@@ -22,6 +26,11 @@ export class ListComponent implements OnInit {
     public elRef: ElementRef
   ) { }
 
+  ngAfterViewInit() {
+    this.chidren.forEach((item: ListItemComponent) => { this.handleItem(item); });
+    this.dynamicChildren.forEach((item: ListItemComponent) => { this.handleItem(item); });
+  }
+
   ngOnInit() {
     let styles;
 
@@ -29,11 +38,20 @@ export class ListComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     // Set and apply styles
-    styles = css(ListStyles({ framework: 'angular', props: {
-      ...this,
-      ...this.props
-    } }));
+    styles = css(ListStyles({
+      framework: 'angular', props: {
+        ...this,
+        ...this.props
+      }
+    }));
     this.host.classList.add(styles);
+  }
+
+  // Methods
+  handleItem(item) {
+    if (this.color && !item.color) { item.color = this.color; }
+
+    item.ngOnInit();
   }
 
 }
