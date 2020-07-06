@@ -19,8 +19,10 @@ import DropdownToggleStyles from '@fabula/core/styles/components/dropdown-toggle
     templateUrl: './dropdown-toggle.component.html',
 })
 export class DropdownToggleComponent extends ButtonComponent implements OnInit {
+    @Input() direction: string;
     @Input() icon: string;
     @Input() label: string;
+    @Input() open = false;
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
 

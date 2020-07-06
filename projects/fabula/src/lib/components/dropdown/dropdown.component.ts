@@ -48,7 +48,10 @@ export class DropdownComponent implements AfterViewInit, OnInit {
         }
 
         if (this.dropdownToggle) {
+            this.dropdownToggle.direction = this.direction;
             this.dropdownToggle.toggle.subscribe(() => this.handleToggle());
+
+            if (this.expand) { this.dropdownToggle.expand = true; }
         }
     }
 
@@ -74,8 +77,8 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     }
 
     handleToggle() {
-        console.log('closed');
         this.open = !this.open;
+        this.dropdownToggle.open = this.open;
         this.toggle.emit(this.open);
     }
 }
