@@ -1,5 +1,5 @@
 <div class="fab-dropdown-menu-wrapper">
-  <div class="fab-dropdown-menu" [attr.data-open]="open">
+  <div class="fab-dropdown-menu" [attr.data-direction]="direction" [attr.data-open]="open">
     <ng-container *ngIf="items || list">
       <fab-list [props]="listProps">
         <fab-dropdown-item *ngFor="let item of items" [item]="item" list-item></fab-dropdown-item>
