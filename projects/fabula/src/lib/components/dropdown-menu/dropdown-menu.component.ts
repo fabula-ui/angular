@@ -33,6 +33,7 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
     @Input() direction: string;
     @Input() items: Array<any>;
     @Input() list = false;
+    @Input() padding = true;
     @Input() size: string;
     @Input() toggle: any;
 
@@ -83,7 +84,12 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
         if (this.list) { item.listItem = true; }
         if (this.size) { item.size = this.size; }
 
+        item.divider = this.divider;
+        item.padding = this.padding;
+        item.striped = this.striped;
+
         item.init();
+        item.ngAfterViewInit();
     }
 
     // Listeners

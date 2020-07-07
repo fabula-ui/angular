@@ -50,6 +50,9 @@ export class ListComponent implements OnInit {
   // Methods
   handleItem(item) {
     if (this.color && !item.color) { item.color = this.color; }
+    item.divider = this.divider;
+    item.padding = this.padding;
+    item.striped = this.striped;
 
     item.ngOnInit();
   }
