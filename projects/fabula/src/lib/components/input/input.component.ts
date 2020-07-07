@@ -25,9 +25,11 @@ export class InputComponent implements OnInit {
     @Input() iconStart: any;
     @Input() message: string;
     @Input() messageColor: string;
+    @Input() passwordToggle = false;
     @Input() placeholder = '';
     @Input() size: string;
     @Input() status: string;
+    @Input() textarea = false;
     @Input() type = 'text';
 
     focus = false;
@@ -43,8 +45,18 @@ export class InputComponent implements OnInit {
         host.classList.add(styles);
     }
 
+    // Methods
+
     handleFocus(hasFocus: boolean) {
         this.focus = hasFocus;
+    }
+
+    isObject(subject) {
+        return typeof subject === 'object';
+    }
+
+    toggleType() {
+        this.type = this.type === 'text' ? 'password' : 'text';
     }
 
 }

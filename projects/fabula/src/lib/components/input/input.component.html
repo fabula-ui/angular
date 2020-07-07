@@ -1,26 +1,26 @@
 <div class="fab-input-wrapper" data-fab-wrapper="input">
   <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="focus">
-    <div class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart"></div>
+    <span class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart"></span>
 
     <input class="fab-input__field" [disabled]="disabled" (blur)="handleFocus(false)" (focus)="handleFocus(true)"
-      [attr.placeholder]="placeholder" [attr.type]="inputType" data-fab-component="input" *ngIf="!textarea">
+      [attr.placeholder]="placeholder" [attr.type]="type" data-fab-component="input" *ngIf="!textarea">
 
-    <textarea class="fab-input__field" [disabled]="disabled" [attr.placeholder]="placeholder" [attr.type]="inputType"
+    <textarea class="fab-input__field" [disabled]="disabled" [attr.placeholder]="placeholder" [attr.type]="type"
       (blur)="handleFocus(false)" (focus)="handleFocus(true)" data-fab-component="input" *ngIf="textarea"></textarea>
 
-    <div class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle"></div>
+    <span class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle"></span>
 
-    <button class="fab-input__password-toggle" (click)="toggleType()" *ngIf="passwordToggle">
-      <div class="fab-input__icon"></div>
+    <button class="fab-input__password-toggle" (click)="toggleType()" [attr.data-toggled]="type === 'text'" *ngIf="passwordToggle">
+      <span class="fab-input__icon"></span>
     </button>
+
+    <div className="fab-input__elements">
+      <ng-content></ng-content>
+    </div>
   </div>
 
-  <!-- <div className="fab-input__message" *ngIf="message">
-    {typeof message === 'object' && <Text size="sm" {...message}>{message.text}</Text>}
-    {typeof message === 'string' && <Text size="sm">{message}</Text>}
-  </div> -->
-
-  <div className="fab-input__elements">
-    <ng-content></ng-content>
+  <div class="fab-input__message" *ngIf="message">
+    <span *ngIf="isObject(message)">{{message.text}}</span>
+    <span *ngIf="!isObject(message)">{{message}}</span>
   </div>
 </div>
