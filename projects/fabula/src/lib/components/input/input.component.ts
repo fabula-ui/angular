@@ -7,7 +7,7 @@ import {
 import { css } from 'emotion';
 
 // Styles
-import InputStyles from '@fabula/core/theme/styles/Input';
+import InputStyles from '@fabula/core/styles/components/input/input';
 
 @Component({
     selector: 'fab-input',
@@ -17,46 +17,34 @@ import InputStyles from '@fabula/core/theme/styles/Input';
 export class InputComponent implements OnInit {
     @Input() color = '';
     @Input() disabled = false;
-    @Input() expand: boolean;
+    @Input() expand = false;
+    @Input() glow = false;
     @Input() has: string;
+    @Input() icon: string;
+    @Input() iconEnd: any;
+    @Input() iconStart: any;
     @Input() message: string;
-    @Input('message-color') messageColor: string;
+    @Input() messageColor: string;
     @Input() placeholder = '';
     @Input() size: string;
+    @Input() status: string;
+    @Input() type = 'text';
 
-    hasFocus = false;
-    host;
-    props;
+    focus = false;
 
     constructor(
         public elRef: ElementRef
     ) { }
 
     ngOnInit() {
-        let props;
-        let styles;
+        const host = this.elRef.nativeElement;
+        const styles = css(InputStyles({ framework: 'angular', props: this }));
 
-        // Get host element
-        this.host = this.elRef.nativeElement;
-
-        // Set props
-        props = {
-            color: this.color,
-            expand: this.expand,
-            glow: this.host.hasAttribute('glow'),
-            has: this.has,
-            message: this.message,
-            messageColor: this.messageColor,
-            size: this.size
-        };
-
-        // Set and apply styles
-        styles = css(InputStyles({ framework: 'angular', props }));
-        this.host.classList.add(styles);
+        host.classList.add(styles);
     }
 
-    onFocus(hasFocus: boolean) {
-        this.hasFocus = hasFocus;
+    handleFocus(hasFocus: boolean) {
+        this.focus = hasFocus;
     }
 
 }
