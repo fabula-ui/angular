@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import InputGroupStyles from '@fabula/core/theme/styles/InputGroup';
+import InputGroupStyles from '@fabula/core/styles/components/input-group/input-group';
 
 @Component({
   selector: 'fab-input-group',
