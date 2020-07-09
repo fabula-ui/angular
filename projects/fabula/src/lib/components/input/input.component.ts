@@ -27,6 +27,8 @@ export class InputComponent implements OnInit {
     @Input() messageColor: string;
     @Input() passwordToggle = false;
     @Input() placeholder = '';
+    @Input() props: any;
+    @Input() rounded = false;
     @Input() size: string;
     @Input() status: string;
     @Input() textarea = false;
@@ -40,7 +42,12 @@ export class InputComponent implements OnInit {
 
     ngOnInit() {
         const host = this.elRef.nativeElement;
-        const styles = css(InputStyles({ framework: 'angular', props: this }));
+        const styles = css(InputStyles({
+            framework: 'angular', props: {
+                ...this,
+                ...this.props
+            }
+        }));
 
         host.classList.add(styles);
     }

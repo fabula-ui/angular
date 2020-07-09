@@ -1,8 +1,8 @@
 import {
-    Component,
-    ElementRef,
-    Input,
-    OnInit
+  Component,
+  ElementRef,
+  Input,
+  OnInit
 } from '@angular/core';
 import { css } from 'emotion';
 
@@ -19,12 +19,13 @@ export class ButtonComponent implements OnInit {
   @Input() circle: boolean;
   @Input() clear: boolean;
   @Input() color: string;
-  @Input() compact: boolean;
+  @Input() compact = false;
   @Input() disabled: boolean;
   @Input() expand: boolean;
   @Input() faded: boolean;
   @Input() glow = false;
   @Input() gradient: boolean;
+  @Input() icon: string;
   @Input() invert: boolean;
   @Input() loading: string;
   @Input() label: string;
@@ -40,32 +41,20 @@ export class ButtonComponent implements OnInit {
     public elRef: ElementRef
   ) { }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() { }
 
   ngOnInit() {
-    const props = {
-      border: this.border,
-      circle: this.circle,
-      clear: this.clear,
-      color: this.color,
-      compact: this.compact,
-      expand: this.expand,
-      faded: this.faded,
-      glow: this.glow,
-      gradient: this.gradient,
-      invert: this.invert,
-      loading: this.loading,
-      outline: this.outline,
-      rounded: this.rounded,
-      size: this.size,
-      wide: this.wide,
-      ...this.props
-    };
-
-    const styles = css(ButtonStyles({ framework: 'angular', props }));
+    const styles = css(ButtonStyles({
+      framework: 'angular', props: {
+        ...this,
+        ...this.props
+      }
+    }));
 
     this.host = this.elRef.nativeElement;
     this.host.classList.add(styles);
+
+    if (this.props && this.props.icon) { this.icon = this.props.icon; }
   }
 
 }

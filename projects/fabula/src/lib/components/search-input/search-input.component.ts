@@ -14,15 +14,16 @@ import SearchInputStyles from '@fabula/core/styles/components/search-input/searc
 
 @Component({
     selector: 'fab-search-input',
-    templateUrl: './input.component.html',
+    templateUrl: './search-input.component.html',
 })
 export class SearchInputComponent extends InputComponent implements OnInit {
+    @Input() button: any;
     @Input() placeholder = 'Search...';
 
     focus = false;
     inputProps;
 
-    constructor(public elRef: ElementRef) { 
+    constructor(public elRef: ElementRef) {
         super(elRef);
     }
 

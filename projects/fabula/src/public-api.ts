@@ -29,6 +29,7 @@ export * from './lib/components/modal-footer/modal-footer.component';
 export * from './lib/components/modal-header/modal-header.component';
 export * from './lib/components/modal-section/modal-section.component';
 export * from './lib/components/row/row.component';
+export * from './lib/components/search-input/search-input.component';
 export * from './lib/components/segment/segment.component';
 export * from './lib/components/segments/segments.component';
 export * from './lib/components/tab/tab.component';
