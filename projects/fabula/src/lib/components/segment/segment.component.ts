@@ -6,21 +6,24 @@ import SegmentStyles from '@fabula/core/theme/styles/Segment';
 
 @Component({
   selector: 'fab-segment',
-  templateUrl: './segment.component.html',
-  styleUrls: ['./segment.component.css']
+  templateUrl: './segment.component.html'
 })
 export class SegmentComponent implements OnInit {
   @Input() active = false;
   @Input() activeColor: string;
   @Input() activeFillColor: string;
   @Input() activeTextColor: string;
+  @Input() clear: boolean;
   @Input() color: string;
   @Input() expand: boolean;
   @Input() faded: boolean;
   @Input() href: string;
+  @Input() inactiveFillColor: string;
+  @Input() inactiveTextColor: string;
   @Input() invert: boolean;
   @Input() link: string;
   @Input() name: string;
+  @Input() outline: boolean;
   @Input() rounded: boolean;
   @Input() scope: string;
   @Input() stacked: boolean;
@@ -58,16 +61,16 @@ export class SegmentComponent implements OnInit {
     };
 
     // Toggle content
-    if (this.active && this.scope && this.target) { this.toggleContent(); }
+    // if (this.active && this.scope) { this.toggleContent(); }
 
     // Set and apply styles
-    styles = css(SegmentStyles({ framework: 'angular', props }));
+    styles = css(SegmentStyles({ framework: 'angular', props: this }));
     this.host.classList.add(styles);
   }
 
   handleClick() {
     if (this.name) { this.selectedSegment.emit(this.name); }
-    if (this.scope && this.target) { this.toggleContent(); }
+    // if (this.name && this.scope) { this.toggleContent(); }
   }
 
   listen(events) {
@@ -75,16 +78,4 @@ export class SegmentComponent implements OnInit {
       this.active = segment === this.name;
     });
   }
-
-  toggleContent() {
-    const allOtherContent = document.querySelectorAll(`[data-scope='${this.scope}']:not(${this.target})`);
-    const targetContent = document.querySelector(`${this.target}[data-scope='${this.scope}']`);
-
-    allOtherContent.forEach(other => {
-      other.setAttribute('data-visible', 'false');
-    });
-
-    targetContent.setAttribute('data-visible', 'true');
-  }
-
 }

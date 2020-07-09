@@ -9,24 +9,30 @@ import SegmentsStyles from '@fabula/core/theme/styles/Segments';
 
 @Component({
   selector: 'fab-segments',
-  templateUrl: './segments.component.html',
-  styleUrls: ['./segments.component.css']
+  templateUrl: './segments.component.html'
 })
 export class SegmentsComponent implements OnInit {
   @ContentChildren(SegmentComponent) segmentComponents: QueryList<SegmentComponent>;
 
   @Input() activeColor: string;
-  @Input('active-fill-color') activeFillColor: string;
-  @Input('active-text-color') activeTextColor: string;
+  @Input() activeFillColor: string;
+  @Input() activeSegment: string;
+  @Input() activeTextColor: string;
+  @Input() clear = false;
   @Input() color: string;
-  @Input() expand: boolean;
+  @Input() expand = false;
+  @Input() faded = false;
+  @Input() inactiveFillColor: string;
+  @Input() inactiveTextColor: string;
+  @Input() invert = false;
+  @Input() outline = false;
+  @Input() rounded = false;
   @Input() scope: string;
+  @Input() stacked = false;
 
   @Output() changeSegment = new EventEmitter();
 
-  activeSegment;
   host;
-  props;
 
   constructor(
     public elRef: ElementRef,
@@ -34,56 +40,60 @@ export class SegmentsComponent implements OnInit {
 
   ngAfterViewInit() {
     this.segmentComponents.forEach((child: SegmentComponent) => {
-      child.activeColor = this.props.activeColor;
-      child.activeFillColor = this.props.activeFillColor;
-      child.activeTextColor = this.props.activeTextColor;
-      child.color = this.props.color;
-      child.expand = this.props.expand;
-      child.faded = this.props.faded;
-      child.invert = this.props.invert;
-      child.rounded = this.props.rounded;
+      child.activeColor = this.activeColor;
+      child.activeFillColor = this.activeFillColor;
+      child.activeTextColor = this.activeTextColor;
+      child.color = this.color;
+      child.clear = this.clear;
+      child.expand = this.expand;
+      child.faded = this.faded;
+      child.inactiveFillColor = this.inactiveFillColor;
+      child.inactiveTextColor = this.inactiveTextColor;
+      child.invert = this.invert;
+      child.outline = this.outline;
+      child.rounded = this.rounded;
       child.scope = this.scope;
-      child.stacked = this.props.stacked;
+      child.stacked = this.stacked;
 
       child.selectedSegment.subscribe(tab => this.setActiveSegment(tab));
       child.childViewInit();
       child.listen({
         onChangeSegment: this.changeSegment
       });
+
+      if (this.activeSegment) { this.changeSegment.emit(this.activeSegment); }
     });
+
+    if (this.activeSegment && this.scope) { this.toggleContent(); }
   }
 
   ngOnInit() {
-    let props;
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(SegmentsStyles({ framework: 'angular', props: this }));
 
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set props
-    props = {
-      activeColor: this.activeColor,
-      activeFillColor: this.activeFillColor,
-      activeTextColor: this.activeTextColor,
-      color: this.color,
-      expand: this.expand,
-      faded: this.host.hasAttribute('faded'),
-      invert: this.host.hasAttribute('invert'),
-      rounded: this.host.hasAttribute('rounded'),
-      stacked: this.host.hasAttribute('stacked'),
-    };
-
-    // Set and apply styles
-    styles = css(SegmentsStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
-
-    // Pass props to component
-    this.props = props;
+    host.classList.add(styles);
   }
 
   setActiveSegment(segment) {
     this.activeSegment = segment;
     this.changeSegment.emit(segment);
+    if (this.activeSegment && this.scope) { this.toggleContent(); }
   }
+
+  toggleContent() {
+    const allOtherContent = document.querySelectorAll(`[data-segment-scope='${this.scope}']:not([data-segment-name='${this.activeSegment}'])`);
+    const targetContent = document.querySelector(`[data-segment-scope='${this.scope}'][data-segment-name='${this.activeSegment}']`);
+
+    if (allOtherContent.length) {
+      allOtherContent.forEach(other => {
+        other.setAttribute('data-segment-is-active', 'false');
+      });
+    }
+
+    if (targetContent) {
+      targetContent.setAttribute('data-segment-is-active', 'true');
+    }
+  }
+
 
 }

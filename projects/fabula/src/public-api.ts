@@ -65,5 +65,6 @@ export * from './lib/services/theme.service';
 export * from './lib/fabula.module';
 export * from './lib/modules/dropdown.module';
 export * from './lib/modules/icons.module';
+export * from './lib/modules/segments.module';
 export * from './lib/modules/theme.module';
 export * from './lib/modules/utils.module';
