@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, Input, Output, EventEmitter } from '@ang
 import { css } from 'emotion';
 
 // Styles
-import SegmentStyles from '@fabula/core/theme/styles/Segment';
+import SegmentStyles from '@fabula/core/styles/components/segment/segment';
 
 @Component({
   selector: 'fab-segment',

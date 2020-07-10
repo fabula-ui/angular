@@ -5,7 +5,7 @@ import { css } from 'emotion';
 import { SegmentComponent } from '../segment/segment.component';
 
 // Styles
-import SegmentsStyles from '@fabula/core/theme/styles/Segments';
+import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
 
 @Component({
   selector: 'fab-segments',
