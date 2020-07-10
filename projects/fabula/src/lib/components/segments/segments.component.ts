@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
@@ -11,7 +11,7 @@ import SegmentsStyles from '@fabula/core/theme/styles/Segments';
   selector: 'fab-segments',
   templateUrl: './segments.component.html'
 })
-export class SegmentsComponent implements OnInit {
+export class SegmentsComponent implements AfterViewInit, OnInit {
   @ContentChildren(SegmentComponent) segmentComponents: QueryList<SegmentComponent>;
 
   @Input() activeColor: string;
@@ -55,7 +55,7 @@ export class SegmentsComponent implements OnInit {
       child.scope = this.scope;
       child.stacked = this.stacked;
 
-      child.selectedSegment.subscribe(tab => this.setActiveSegment(tab));
+      child.selectedSegment.subscribe(tab => this.handleActiveSegment(tab));
       child.childViewInit();
       child.listen({
         onChangeSegment: this.changeSegment
@@ -74,24 +74,26 @@ export class SegmentsComponent implements OnInit {
     host.classList.add(styles);
   }
 
-  setActiveSegment(segment) {
+  handleActiveSegment(segment) {
     this.activeSegment = segment;
     this.changeSegment.emit(segment);
-    if (this.activeSegment && this.scope) { this.toggleContent(); }
+    if (segment && this.scope) { this.toggleContent(); }
   }
 
   toggleContent() {
-    const allOtherContent = document.querySelectorAll(`[data-segment-scope='${this.scope}']:not([data-segment-name='${this.activeSegment}'])`);
-    const targetContent = document.querySelector(`[data-segment-scope='${this.scope}'][data-segment-name='${this.activeSegment}']`);
+    const allOtherContent =
+      document.querySelectorAll(`.fab-segment-content[data-scope='${this.scope}']:not([data-name='${this.activeSegment}'])`);
+    const targetContent =
+      document.querySelector(`.fab-segment-content[data-scope='${this.scope}'][data-name='${this.activeSegment}']`);
 
     if (allOtherContent.length) {
       allOtherContent.forEach(other => {
-        other.setAttribute('data-segment-is-active', 'false');
+        other.setAttribute('data-active', 'false');
       });
     }
 
     if (targetContent) {
-      targetContent.setAttribute('data-segment-is-active', 'true');
+      targetContent.setAttribute('data-active', 'true');
     }
   }
 

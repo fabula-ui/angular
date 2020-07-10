@@ -31,9 +31,6 @@ export class SegmentComponent implements OnInit {
 
   @Output() selectedSegment = new EventEmitter();
 
-  host;
-  props;
-
   constructor(
     public elRef: ElementRef,
   ) { }
@@ -41,36 +38,14 @@ export class SegmentComponent implements OnInit {
   ngOnInit() {}
 
   childViewInit() {
-    let props;
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(SegmentStyles({ framework: 'angular', props: this }));
 
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set props
-    props = {
-      activeColor: this.activeColor,
-      activeFillColor: this.activeFillColor,
-      activeTextColor: this.activeTextColor,
-      color: this.color,
-      expand: this.expand,
-      faded: this.faded,
-      invert: this.invert,
-      rounded: this.rounded,
-      stacked: this.stacked
-    };
-
-    // Toggle content
-    // if (this.active && this.scope) { this.toggleContent(); }
-
-    // Set and apply styles
-    styles = css(SegmentStyles({ framework: 'angular', props: this }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
   handleClick() {
     if (this.name) { this.selectedSegment.emit(this.name); }
-    // if (this.name && this.scope) { this.toggleContent(); }
   }
 
   listen(events) {
