@@ -9,6 +9,7 @@ import { TooltipComponent } from '../components/tooltip/tooltip.component';
 export class TooltipDirective implements AfterViewInit {
     @Input() tooltip: any;
 
+    componentRef;
     left;
     top;
 
@@ -27,7 +28,6 @@ export class TooltipDirective implements AfterViewInit {
         }
 
         this.handleTooltip();
-        this.createTooltip();
 
         // host.setAttribute('data-size', host.getAttribute('size'));
     }
@@ -39,26 +39,35 @@ export class TooltipDirective implements AfterViewInit {
         document.body.append(portal);
     }
 
-    createTooltip() {
-        const componentRef = this.resolver.resolveComponentFactory(TooltipComponent).create(this.injector);
+    createTooltip(host) {
+        const coords = this.getCoords(host);
+        this.componentRef = this.resolver.resolveComponentFactory(TooltipComponent).create(this.injector);
+        this.componentRef.instance.color = this.tooltip.color;
+        this.componentRef.instance.label = this.tooltip.label;
         const portal = document.querySelector('.fab-tooltip-portal');
 
         // attach component to the appRef so that so that it will be dirty checked.
-        this.appRef.attachView(componentRef.hostView);
+        this.appRef.attachView(this.componentRef.hostView);
 
         // get DOM element from component
-        const element = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+        const element = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 
-        element.style.position = 'absolute';
-        element.style.left = `${this.left}px`;
-        element.style.top = `${this.top}px`;
+        element.setAttribute('data-placement', this.tooltip.placement);
+        element.setAttribute('data-ready', 'true');
+        element.style.left = `${coords.left}px`;
+        element.style.top = `${coords.top}px`;
+
         portal.appendChild(element);
 
-        return componentRef;
+        return this.componentRef;
     }
 
-    handleTooltip() {
-        const host = this.elRef.nativeElement;
+    destroyTooltip() {
+        this.appRef.detachView(this.componentRef.hostView);
+        this.componentRef.destroy();
+    }
+
+    getCoords(host) {
         const height = host.offsetHeight;
         const width = host.offsetWidth;
         const x = host.offsetLeft;
@@ -80,10 +89,21 @@ export class TooltipDirective implements AfterViewInit {
             top = y;
         }
 
-        console.log(left, top);
+        return { left, top };
+    }
 
-        this.left = left;
-        this.top = top;
+    handleTooltip() {
+        const host = this.elRef.nativeElement;
+        const component = host.querySelector('[data-fab-component]');
+        const target = component || host;
+
+        target.addEventListener('mouseover', () => {
+            this.createTooltip(target);
+        });
+
+        target.addEventListener('mouseout', () => {
+            this.destroyTooltip();
+        });
     }
 
 }
