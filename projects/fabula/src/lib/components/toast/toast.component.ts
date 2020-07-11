@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-toast',
+  selector: 'fab-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.css']
 })
