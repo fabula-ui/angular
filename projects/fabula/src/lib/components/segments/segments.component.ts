@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit, forwardRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
@@ -6,13 +6,14 @@ import { SegmentComponent } from '../segment/segment.component';
 
 // Styles
 import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
+import { SelectorComponent } from '../selector/selector.component';
 
 @Component({
   selector: 'fab-segments',
   templateUrl: './segments.component.html'
 })
 export class SegmentsComponent implements AfterViewInit, OnInit {
-  @ContentChildren(SegmentComponent) segmentComponents: QueryList<SegmentComponent>;
+  @ContentChildren(SelectorComponent) childComponents: QueryList<SelectorComponent>;
 
   @Input() activeColor: string;
   @Input() activeFillColor: string;
@@ -39,7 +40,7 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
   ) { }
 
   ngAfterViewInit() {
-    this.segmentComponents.forEach((child: SegmentComponent) => {
+    this.childComponents.forEach((child: SegmentComponent) => {
       child.activeColor = this.activeColor;
       child.activeFillColor = this.activeFillColor;
       child.activeTextColor = this.activeTextColor;
@@ -96,6 +97,4 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
       targetContent.setAttribute('data-active', 'true');
     }
   }
-
-
 }
