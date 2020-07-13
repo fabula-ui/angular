@@ -3,6 +3,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
+    CardComponent,
     IconsModule,
     TabsModule,
     ThemeModule,
@@ -27,7 +28,9 @@ import { TabsStackedWrapper } from './wrappers/tabs/stacked/tabs-stacked.wrapper
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [],
+            declarations: [
+                CardComponent
+            ],
             imports: [
                 BrowserModule,
                 IconsModule,

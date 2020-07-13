@@ -14,7 +14,6 @@ import TabsStyles from '@fabula/core/styles/components/tabs/tabs';
 })
 export class TabsComponent extends SegmentsComponent implements AfterViewInit, OnInit {
   @ContentChildren(TabComponent) tabComponents: QueryList<TabComponent>;
-  @Input() type: string;
 
   constructor(public elRef: ElementRef) {
     super(elRef);
@@ -25,8 +24,6 @@ export class TabsComponent extends SegmentsComponent implements AfterViewInit, O
 
     this.tabComponents.forEach((child: TabComponent) => {
       if (!child.type) { child.type = this.type; }
-
-      child.childViewInit();
     });
   }
 

@@ -26,10 +26,12 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
   @Input() inactiveFillColor: string;
   @Input() inactiveTextColor: string;
   @Input() invert = false;
+  @Input() layout = 'horizontal';
   @Input() outline = false;
   @Input() rounded = false;
   @Input() scope: string;
   @Input() stacked = false;
+  @Input() type: string;
 
   @Output() changeSegment = new EventEmitter();
 
@@ -51,10 +53,12 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
       child.inactiveFillColor = this.inactiveFillColor;
       child.inactiveTextColor = this.inactiveTextColor;
       child.invert = this.invert;
+      child.layout = this.layout;
       child.outline = this.outline;
       child.rounded = this.rounded;
       child.scope = this.scope;
       child.stacked = this.stacked;
+      child.type = this.type;
 
       child.selectedSegment.subscribe(tab => this.handleActiveSegment(tab));
       child.childViewInit();
