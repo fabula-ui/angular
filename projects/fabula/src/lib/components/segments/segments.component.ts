@@ -15,9 +15,9 @@ import { SelectorComponent } from '../selector/selector.component';
 export class SegmentsComponent implements AfterViewInit, OnInit {
   @ContentChildren(SelectorComponent) childComponents: QueryList<SelectorComponent>;
 
+  @Input() active: string;
   @Input() activeColor: string;
   @Input() activeFillColor: string;
-  @Input() activeSegment: string;
   @Input() activeTextColor: string;
   @Input() clear = false;
   @Input() color: string;
@@ -66,10 +66,10 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
         onChangeSegment: this.changeSegment
       });
 
-      if (this.activeSegment) { this.changeSegment.emit(this.activeSegment); }
+      if (this.active) { this.changeSegment.emit(this.active); }
     });
 
-    if (this.activeSegment && this.scope) { this.toggleContent(); }
+    if (this.active && this.scope) { this.toggleContent(); }
   }
 
   ngOnInit() {
@@ -80,16 +80,16 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
   }
 
   handleActiveSegment(segment) {
-    this.activeSegment = segment;
+    this.active = segment;
     this.changeSegment.emit(segment);
     if (segment && this.scope) { this.toggleContent(); }
   }
 
   toggleContent() {
     const allOtherContent =
-      document.querySelectorAll(`.fab-segment-content[data-scope='${this.scope}']:not([data-name='${this.activeSegment}'])`);
+      document.querySelectorAll(`.fab-content[data-scope='${this.scope}']:not([data-name='${this.active}'])`);
     const targetContent =
-      document.querySelector(`.fab-segment-content[data-scope='${this.scope}'][data-name='${this.activeSegment}']`);
+      document.querySelector(`.fab-content[data-scope='${this.scope}'][data-name='${this.active}']`);
 
     if (allOtherContent.length) {
       allOtherContent.forEach(other => {

@@ -6,6 +6,7 @@ import {
     CardComponent,
     IconsModule,
     TabsModule,
+    TextComponent,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -15,6 +16,7 @@ import {
 import { TabsExamplesWrapper } from './wrappers/tabs/examples/tabs-examples.wrapper';
 import { TabsBlockWrapper } from './wrappers/tabs/block/tabs-block.wrapper';
 import { TabsColorWrapper } from './wrappers/tabs/color/tabs-color.wrapper';
+import { TabsContentWrapper } from './wrappers/tabs/content/tabs-content.wrapper';
 import { TabsExpandWrapper } from './wrappers/tabs/expand/tabs-expand.wrapper';
 import { TabsFadedWrapper } from './wrappers/tabs/faded/tabs-faded.wrapper';
 import { TabsFloatWrapper } from './wrappers/tabs/float/tabs-float.wrapper';
@@ -29,7 +31,8 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                CardComponent
+                CardComponent,
+                TextComponent
             ],
             imports: [
                 BrowserModule,
@@ -50,6 +53,7 @@ export default {
 export const Examples = () => ({ component: TabsExamplesWrapper });
 export const Block = () => ({ component: TabsBlockWrapper });
 export const Color = () => ({ component: TabsColorWrapper });
+export const Content = () => ({ component: TabsContentWrapper });
 export const Expand = () => ({ component: TabsExpandWrapper });
 export const Faded = () => ({ component: TabsFadedWrapper });
 export const Float = () => ({ component: TabsFloatWrapper });

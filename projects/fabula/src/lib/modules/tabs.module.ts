@@ -8,6 +8,7 @@ import { SegmentComponent } from '../components/segment/segment.component';
 import { SegmentsComponent } from '../components/segments/segments.component';
 import { TabComponent } from '../components/tab/tab.component';
 import { TabsComponent } from '../components/tabs/tabs.component';
+import { TabContentComponent } from '../components/tab-content/tab-content.component';
 import { SelectorComponent } from '../components/selector/selector.component';
 
 @NgModule({
@@ -16,14 +17,16 @@ import { SelectorComponent } from '../components/selector/selector.component';
         SegmentsComponent,
         SelectorComponent,
         TabComponent,
-        TabsComponent
+        TabsComponent,
+        TabContentComponent
     ],
     entryComponents: [
         SegmentComponent,
         SegmentsComponent,
         SelectorComponent,
         TabComponent,
-        TabsComponent
+        TabsComponent,
+        TabContentComponent
     ],
     imports: [CommonModule],
     exports: [
@@ -31,7 +34,8 @@ import { SelectorComponent } from '../components/selector/selector.component';
         SegmentsComponent,
         SelectorComponent,
         TabComponent,
-        TabsComponent
+        TabsComponent,
+        TabContentComponent
     ]
 })
 export class TabsModule { }

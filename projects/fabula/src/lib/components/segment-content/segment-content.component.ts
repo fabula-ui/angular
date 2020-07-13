@@ -1,6 +1,9 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
+// Components
+import { ContentComponent } from '../content/content.component';
+
 // Styles
 import SegmentContentStyles from '@fabula/core/styles/components/segment-content/segment-content';
 
@@ -8,20 +11,13 @@ import SegmentContentStyles from '@fabula/core/styles/components/segment-content
   selector: 'fab-segment-content',
   templateUrl: './segment-content.component.html',
 })
-export class SegmentContentComponent implements OnInit {
-  @Input() active = false;
-  @Input() name: string;
-  @Input() scope: string;
-
-  constructor(
-    public elRef: ElementRef
-  ) { }
+export class SegmentContentComponent extends ContentComponent implements OnInit {
+  constructor(public elRef: ElementRef) { 
+    super(elRef);
+  }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(SegmentContentStyles({ framework: 'angular', props: this }));
-
-    host.classList.add(styles);
+    super.ngOnInit();
   }
 
 }
