@@ -16,6 +16,9 @@ import {
 
 // Wrappers
 import { TooltipColorWrapper } from './wrappers/tooltip/color/tooltip-color.wrapper';
+import { TooltipLabelWrapper } from './wrappers/tooltip/label/tooltip-label.wrapper';
+import { TooltipOffsetWrapper } from './wrappers/tooltip/offset/tooltip-offset.wrapper';
+import { TooltipPlacementWrapper } from './wrappers/tooltip/placement/tooltip-placement.wrapper';
 
 // Module init
 export default {
@@ -44,3 +47,6 @@ export default {
 
 // Stories
 export const Color = () => ({ component: TooltipColorWrapper });
+export const Label = () => ({ component: TooltipLabelWrapper });
+export const Offset = () => ({ component: TooltipOffsetWrapper });
+export const Placement = () => ({ component: TooltipPlacementWrapper });

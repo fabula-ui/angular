@@ -11,7 +11,8 @@ import TooltipStyles from '@fabula/core/styles/components/tooltip/tooltip';
 export class TooltipComponent implements AfterViewInit {
   @Input() color: string;
   @Input() label: string;
-  @Input() placement: string;
+  @Input() offset: any;
+  @Input() placement = 'top';
 
   constructor(public elRef: ElementRef) { }
 
@@ -20,10 +21,6 @@ export class TooltipComponent implements AfterViewInit {
     const styles = css(TooltipStyles({ framework: 'angular', props: this }));
 
     host.classList.add(styles);
-  }
-
-
-  ngOnInit() {
   }
 
 }

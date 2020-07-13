@@ -4,10 +4,14 @@ import { AfterViewInit, Directive, ElementRef, Input, ComponentFactoryResolver, 
 import { TooltipComponent } from '../components/tooltip/tooltip.component';
 
 @Directive({
-    selector: '[tooltip]'
+    selector: '[tooltip],[tooltipColor],[tooltipLabel],[tooltipOffset],[tooltipPlacement]'
 })
 export class TooltipDirective implements AfterViewInit {
     @Input() tooltip: any;
+    @Input() tooltipColor: string;
+    @Input() tooltipLabel: string;
+    @Input() tooltipOffset: any;
+    @Input() tooltipPlacement: string;
 
     componentRef;
     left;
@@ -28,8 +32,6 @@ export class TooltipDirective implements AfterViewInit {
         }
 
         this.handleTooltip();
-
-        // host.setAttribute('data-size', host.getAttribute('size'));
     }
 
     createPortal() {
@@ -41,18 +43,21 @@ export class TooltipDirective implements AfterViewInit {
 
     createTooltip(host) {
         const coords = this.getCoords(host);
+        let element;
+        let portal;
+
         this.componentRef = this.resolver.resolveComponentFactory(TooltipComponent).create(this.injector);
         this.componentRef.instance.color = this.tooltip.color;
         this.componentRef.instance.label = this.tooltip.label;
-        const portal = document.querySelector('.fab-tooltip-portal');
+        this.componentRef.instance.offset = this.tooltip.offset;
+        this.componentRef.instance.placement = this.tooltip.placement || 'top';
 
-        // attach component to the appRef so that so that it will be dirty checked.
         this.appRef.attachView(this.componentRef.hostView);
 
-        // get DOM element from component
-        const element = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+        element = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+        portal = document.querySelector('.fab-tooltip-portal');
 
-        element.setAttribute('data-placement', this.tooltip.placement);
+        element.setAttribute('data-placement', this.tooltip.placement || 'top');
         element.setAttribute('data-ready', 'true');
         element.style.left = `${coords.left}px`;
         element.style.top = `${coords.top}px`;
