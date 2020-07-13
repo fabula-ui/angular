@@ -13,6 +13,7 @@ export class SelectorComponent {
     @Input() color: string;
     @Input() expand: boolean;
     @Input() faded: boolean;
+    @Input() float = false;
     @Input() href: string;
     @Input() inactiveFillColor: string;
     @Input() inactiveTextColor: string;
@@ -24,6 +25,7 @@ export class SelectorComponent {
     @Input() scope: string;
     @Input() stacked: boolean;
     @Input() target: string;
+    @Input() type: string;
 
     @Output() selectedSegment = new EventEmitter();
 

@@ -3,6 +3,7 @@ import { css } from 'emotion';
 
 // Components
 import { SegmentsComponent } from '../segments/segments.component';
+import { TabComponent } from '../tab/tab.component';
 
 // Styles
 import TabsStyles from '@fabula/core/styles/components/tabs/tabs';
@@ -12,12 +13,21 @@ import TabsStyles from '@fabula/core/styles/components/tabs/tabs';
   templateUrl: './tabs.component.html'
 })
 export class TabsComponent extends SegmentsComponent implements AfterViewInit, OnInit {
+  @ContentChildren(TabComponent) tabComponents: QueryList<TabComponent>;
+  @Input() type: string;
+
   constructor(public elRef: ElementRef) {
     super(elRef);
   }
 
   ngAfterViewInit() {
     super.ngAfterViewInit();
+
+    this.tabComponents.forEach((child: TabComponent) => {
+      if (!child.type) { child.type = this.type; }
+
+      child.childViewInit();
+    });
   }
 
   ngOnInit() {

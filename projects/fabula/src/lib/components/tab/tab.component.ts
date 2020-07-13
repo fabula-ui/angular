@@ -12,6 +12,8 @@ import { SelectorComponent } from '../selector/selector.component';
   templateUrl: './tab.component.html'
 })
 export class TabComponent extends SelectorComponent {
+  @Input() type: string;
+  
   constructor(
     public elRef: ElementRef,
   ) {

@@ -19,7 +19,7 @@ export class FlexDirective implements AfterViewInit {
 
     ngAfterViewInit() {
         const host = this.elRef.nativeElement;
-        const angularElement = !!host.querySelector('[data-fab-component]') || !!host.querySelector('[data-fab-wrapper]');
+        const angularElement = !!host.children[0].hasAttribute('data-fab-component') || !!host.children[0].hasAttribute('data-fab-wrapper');
         const props = {
             alItems: this.alItems,
             flex: host.hasAttribute('flex'),
