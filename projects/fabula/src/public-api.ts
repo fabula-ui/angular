@@ -21,6 +21,7 @@ export * from './lib/components/dropdown-toggle/dropdown-toggle.component';
 export * from './lib/components/general-component/general-component.component';
 export * from './lib/components/input/input.component';
 export * from './lib/components/input-group/input-group.component';
+export * from './lib/components/link/link.component';
 export * from './lib/components/list/list.component';
 export * from './lib/components/list-item/list-item.component';
 export * from './lib/components/modal/modal.component';
@@ -63,10 +64,12 @@ export * from './lib/services/theme.service';
 
 // Modules
 export * from './lib/fabula.module';
+export * from './lib/modules/button.module';
 export * from './lib/modules/dropdown.module';
 export * from './lib/modules/icons.module';
 export * from './lib/modules/segments.module';
 export * from './lib/modules/tabs.module';
 export * from './lib/modules/theme.module';
+export * from './lib/modules/toast.module';
 export * from './lib/modules/tooltip.module';
 export * from './lib/modules/utils.module';
