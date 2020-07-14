@@ -3,6 +3,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
+    ButtonGroupComponent,
     ButtonModule,
     IconsModule,
     ThemeModule,
@@ -20,12 +21,15 @@ import { ToastGlowWrapper } from './wrappers/toast/glow/toast-glow.wrapper';
 import { ToastIconsWrapper } from './wrappers/toast/icons/toast-icons.wrapper';
 import { ToastLinksWrapper } from './wrappers/toast/links/toast-links.wrapper';
 import { ToastOutlineWrapper } from './wrappers/toast/outline/toast-outline.wrapper';
+import { ToastStacksWrapper } from './wrappers/toast/stacks/toast-stacks.wrapper';
 
 // Module init
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [],
+            declarations: [
+                ButtonGroupComponent
+            ],
             imports: [
                 BrowserModule,
                 ButtonModule,
@@ -51,3 +55,4 @@ export const Glow = () => ({ component: ToastGlowWrapper });
 export const Icons = () => ({ component: ToastIconsWrapper });
 export const Links = () => ({ component: ToastLinksWrapper });
 export const Outline = () => ({ component: ToastOutlineWrapper });
+export const Stacks = () => ({ component: ToastStacksWrapper });

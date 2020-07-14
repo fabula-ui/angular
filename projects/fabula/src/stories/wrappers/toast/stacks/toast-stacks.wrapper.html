@@ -1,0 +1,13 @@
+<fab-button-group>
+    <fab-button [border]="true" clear="true" color="primary" (click)="addToast('topLeft')">Top Left</fab-button>
+    <fab-button [border]="true" clear="true" color="primary" (click)="addToast('topCenter')">Top Center</fab-button>
+    <fab-button [border]="true" clear="true" color="primary" (click)="addToast('topRight')">Top Right</fab-button>
+</fab-button-group>
+
+<fab-button-group>
+    <fab-button [border]="true" clear="true" color="primary" (click)="addToast('bottomLeft')">Bottom Left</fab-button>
+    <fab-button [border]="true" clear="true" color="primary" (click)="addToast('bottomCenter')">Bottom Center</fab-button>
+    <fab-button [border]="true" clear="true" color="primary" (click)="addToast('bottomRight')">Bottom Right</fab-button>
+</fab-button-group>
+
+<fab-toast-portal></fab-toast-portal>

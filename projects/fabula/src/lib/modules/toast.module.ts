@@ -12,15 +12,24 @@ import { ToastComponent } from '../components/toast/toast.component';
 import { ButtonModule } from '../modules/button.module';
 import { InnerIconModule } from '../modules/inner-icon.module';
 
+// Services
+import { ToastService } from '../services/toast.service';
+import { ToastStackComponent } from '../components/toast-stack/toast-stack.component';
+import { ToastPortalComponent } from '../components/toast-portal/toast-portal.component';
+
 @NgModule({
     declarations: [
         LinkComponent,
         ToastComponent,
+        ToastPortalComponent,
+        ToastStackComponent
     ],
     entryComponents: [
         LinkComponent,
         InnerIconComponent,
-        ToastComponent
+        ToastComponent,
+        ToastPortalComponent,
+        ToastStackComponent
     ],
     imports: [
         ButtonModule,
@@ -29,7 +38,12 @@ import { InnerIconModule } from '../modules/inner-icon.module';
     ],
     exports: [
         LinkComponent,
-        ToastComponent
+        ToastComponent,
+        ToastPortalComponent,
+        ToastStackComponent
+    ],
+    providers: [
+        ToastService
     ]
 })
 export class ToastModule { }
