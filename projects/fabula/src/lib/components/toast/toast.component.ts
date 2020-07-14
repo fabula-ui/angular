@@ -18,6 +18,7 @@ export class ToastComponent implements OnInit {
   @Input() link: any;
   @Input() message: string;
   @Input() outline: boolean;
+  @Input() stacked = false;
 
   iconProps;
 
