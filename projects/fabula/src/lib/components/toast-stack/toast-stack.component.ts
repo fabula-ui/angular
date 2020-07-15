@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import ToastStackStyles from '@fabula/core/theme/styles/ToastStack';
+import ToastStackStyles from '@fabula/core/styles/components/toast-stack/toast-stack';
 
 @Component({
   selector: 'fab-toast-stack',
@@ -19,6 +19,10 @@ export class ToastStackComponent implements OnInit {
     const styles = css(ToastStackStyles({ framework: 'angular', props: this }));
 
     host.classList.add(styles);
+  }
+
+  get visibleToasts() {
+    return this.toasts.filter(toast => !toast.hidden);
   }
 
 }

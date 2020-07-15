@@ -8,6 +8,7 @@ export class ToastService {
     portal = false;
     stacks = {
         default: {
+            hideDelay: 2000,
             placement: {
                 x: 'right',
                 y: 'bottom'
@@ -16,13 +17,7 @@ export class ToastService {
         }
     };
 
-    componentRef;
-
-    constructor(
-        private appRef: ApplicationRef,
-        private injector: Injector,
-        private resolver: ComponentFactoryResolver
-    ) {}
+    constructor() { }
 
     createStack(params) {
         const { name, placement } = params;
@@ -45,6 +40,29 @@ export class ToastService {
         }
     }
 
+    handleToast(toast, stackName) {
+        const stack = this.stacks[stackName];
+        const index = stack.toasts.length - 1;
+        const delay = toast.hideDelay || stack.hideDelay;
+        let duration;
+        let toastEl;
+        let transitionDuration;
+
+        setTimeout(() => {
+            toastEl = document.querySelector('.fab-toast-wrapper');
+            duration = window.getComputedStyle(toastEl).transitionDuration;
+            transitionDuration = (duration.indexOf('ms') > -1) ? parseFloat(duration) : parseFloat(duration) * 1000;
+
+            setTimeout(() => {
+                stack.toasts[index].hiding = true;
+            }, delay);
+
+            setTimeout(() => {
+                stack.toasts[index].hidden = true;
+            }, delay + transitionDuration + 1);
+        }, 1);
+    }
+
     showToast(params) {
         const { stack, ...rest } = params;
 
@@ -53,5 +71,7 @@ export class ToastService {
         } else {
             this.stacks.default.toasts.push({ ...rest });
         }
+
+        this.handleToast({ ...rest }, stack);
     }
 }

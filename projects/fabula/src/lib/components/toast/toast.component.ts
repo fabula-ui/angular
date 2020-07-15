@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -8,12 +8,13 @@ import ToastStyles from '@fabula/core/styles/components/toast/toast';
   selector: 'fab-toast',
   templateUrl: './toast.component.html'
 })
-export class ToastComponent implements OnInit {
+export class ToastComponent implements AfterViewInit {
   @Input() clear: boolean;
   @Input() closeButton: any;
   @Input() color: string;
   @Input() faded: boolean;
   @Input() glow: boolean;
+  @Input() hiding = false;
   @Input() icon: any;
   @Input() link: any;
   @Input() message: string;
@@ -24,9 +25,15 @@ export class ToastComponent implements OnInit {
 
   constructor(public elRef: ElementRef) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     const host = this.elRef.nativeElement;
-    const styles = css(ToastStyles({ framework: 'angular', props: this }));
+    const height = host.offsetHeight;
+    const styles = css(ToastStyles({
+      framework: 'angular', props: {
+        ...this,
+        height
+      }
+    }));
 
     host.classList.add(styles);
 

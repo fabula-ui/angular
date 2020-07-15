@@ -28,8 +28,6 @@ export class ToastStacksWrapper implements OnInit {
             message: 'Here is an example of a toast component working...',
             stack
         });
-
-        console.log('stacks', this.toastService.stacks);
     }
 
     createStacks() {
