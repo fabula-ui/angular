@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -8,19 +8,19 @@ import InnerIconStyles from '@fabula/core/styles/components/inner-icon/inner-ico
     selector: 'fab-inner-icon',
     templateUrl: './inner-icon.component.html'
 })
-export class InnerIconComponent implements OnInit {
+export class InnerIconComponent implements AfterViewInit {
     @Input() color: string;
     @Input() icon: any;
     @Input() parentProps: any; 
 
     constructor(public elRef: ElementRef) {}
 
-    ngOnInit() {
+    ngAfterViewInit() {
         const host = this.elRef.nativeElement;
         const styles = css(InnerIconStyles({
             framework: 'angular', props: {
                 parentProps: this.parentProps,
-                ...this.icon
+                ...this.icon,
             }
         }));
 
