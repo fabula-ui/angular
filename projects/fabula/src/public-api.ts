@@ -61,6 +61,7 @@ export * from './lib/models/user-options.model';
 
 // Services
 export * from './lib/services/fabula.service';
+export * from './lib/services/modal.service';
 export * from './lib/services/theme.service';
 export * from './lib/services/toast.service';
 

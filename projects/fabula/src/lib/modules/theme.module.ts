@@ -13,7 +13,8 @@ import { ThemeService } from '../services/theme.service';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  exports: []
+  exports: [],
+  providers: [ThemeService]
 })
 export class ThemeModule {
   static forRoot(options?: IUserOptions): ModuleWithProviders {

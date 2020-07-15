@@ -63,8 +63,6 @@ export class TooltipDirective implements AfterViewInit {
         element.style.top = `${coords.top}px`;
 
         portal.appendChild(element);
-
-        return this.componentRef;
     }
 
     destroyTooltip() {

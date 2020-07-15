@@ -4,7 +4,6 @@ import { Injectable, ApplicationRef, Injector, ComponentFactoryResolver, Embedde
     providedIn: 'root',
 })
 export class ToastService {
-    test = 'Teste';
     portal = false;
     stacks = {
         default: {

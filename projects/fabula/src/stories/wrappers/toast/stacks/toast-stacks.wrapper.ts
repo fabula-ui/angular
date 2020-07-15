@@ -7,10 +7,7 @@ import { ToastService } from '../../../../public-api';
     templateUrl: './toast-stacks.wrapper.html'
 })
 export class ToastStacksWrapper implements OnInit {
-    test: string;
-    constructor(private toastService: ToastService) {
-        this.test = toastService.test;
-    }
+    constructor(private toastService: ToastService) {}
 
     ngOnInit() {
         this.createStacks();
