@@ -16,6 +16,7 @@ export class ToastService {
             toasts: []
         }
     };
+    transitionDuration;
 
     constructor() { }
 
@@ -40,38 +41,45 @@ export class ToastService {
         }
     }
 
-    handleToast(toast, stackName) {
+    handleToast(stackName) {
         const stack = this.stacks[stackName];
         const index = stack.toasts.length - 1;
+        const toast = stack.toasts[index];
         const delay = toast.hideDelay || stack.hideDelay;
-        let duration;
-        let toastEl;
-        let transitionDuration;
 
         setTimeout(() => {
+            this.hideToast({ index, stack });
+        }, delay);
+    }
+
+    hideToast(params) {
+        const { index, stack } = params;
+
+        let duration;
+        let toastEl;
+
+        if (!this.transitionDuration) {
             toastEl = document.querySelector('.fab-toast-wrapper');
             duration = window.getComputedStyle(toastEl).transitionDuration;
-            transitionDuration = (duration.indexOf('ms') > -1) ? parseFloat(duration) : parseFloat(duration) * 1000;
+            this.transitionDuration = (duration.indexOf('ms') > -1) ? parseFloat(duration) : parseFloat(duration) * 1000;
+        }
 
-            setTimeout(() => {
-                stack.toasts[index].hiding = true;
-            }, delay);
+        stack.toasts[index].hiding = true;
 
-            setTimeout(() => {
-                stack.toasts[index].hidden = true;
-            }, delay + transitionDuration + 1);
-        }, 1);
+        setTimeout(() => {
+            stack.toasts[index].hidden = true;
+        }, this.transitionDuration + 1);
     }
 
     showToast(params) {
         const { stack, ...rest } = params;
 
         if (this.stacks[stack]) {
-            this.stacks[stack].toasts.push({ ...rest });
+            this.stacks[stack].toasts.push({ ...rest, stack });
         } else {
-            this.stacks.default.toasts.push({ ...rest });
+            this.stacks.default.toasts.push({ ...rest, stack });
         }
 
-        this.handleToast({ ...rest }, stack);
+        this.handleToast(stack);
     }
 }

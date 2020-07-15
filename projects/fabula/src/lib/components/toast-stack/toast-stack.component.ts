@@ -22,7 +22,13 @@ export class ToastStackComponent implements OnInit {
   }
 
   get visibleToasts() {
-    return this.toasts.filter(toast => !toast.hidden);
+    const toasts = this.toasts.map((toast, index) => {
+      toast.index = index;
+
+      return toast;
+    });
+
+    return toasts.filter(toast => !toast.hidden);
   }
 
 }

@@ -1,6 +1,6 @@
-<div class="fab-toast-wrapper" data-fab-wrapper="toast" [attr.data-hiding]="hiding" [attr.data-stacked]="stacked" [style]="{ height: height }">
+<div class="fab-toast-wrapper" data-fab-wrapper="toast" [attr.data-hidden]="hidden" [attr.data-hiding]="hiding" [attr.data-stacked]="stacked" [style]="{ height: height }">
   <div class="fab-toast" data-fab-component="toast">
-    <fab-inner-icon [color]="color" [icon]="iconProps" *ngIf="icon"></fab-inner-icon>
+    <fab-inner-icon [color]="color" [icon]="iconProps" *ngIf="icon && iconProps"></fab-inner-icon>
     <span class="fab-toast__icon"></span>
     <span class="fab-toast__message" *ngIf="message">{{message}}</span>
     <ng-content></ng-content>

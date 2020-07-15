@@ -3,6 +3,7 @@ import { css } from 'emotion';
 
 // Styles
 import ToastStyles from '@fabula/core/styles/components/toast/toast';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'fab-toast',
@@ -16,14 +17,19 @@ export class ToastComponent implements AfterViewInit {
   @Input() glow: boolean;
   @Input() hiding = false;
   @Input() icon: any;
+  @Input() index: any;
   @Input() link: any;
   @Input() message: string;
   @Input() outline: boolean;
+  @Input() stack: string;
   @Input() stacked = false;
 
   iconProps;
 
-  constructor(public elRef: ElementRef) { }
+  constructor(
+    public elRef: ElementRef,
+    public toastService: ToastService
+  ) { }
 
   ngAfterViewInit() {
     const host = this.elRef.nativeElement;
@@ -49,6 +55,15 @@ export class ToastComponent implements AfterViewInit {
         name: this.icon,
       }
     }
+  }
+
+  hideToast() {
+    const stack = this.toastService.stacks[this.stack];
+    
+    this.toastService.hideToast({
+      index: this.index,
+      stack
+    });
   }
 
 }
