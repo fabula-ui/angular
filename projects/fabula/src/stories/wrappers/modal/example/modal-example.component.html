@@ -1,3 +1,18 @@
 <fab-modal>
-    Teste...
+    <fab-modal-header divider="bottom">
+        <fab-text block size="lg" weight="700">Deactivate Account</fab-text>
+        <fab-text aux size="sm">Modal Subtitle</fab-text>
+    </fab-modal-header>
+    <fab-modal-body>
+        <fab-text block mb=".25">
+            Are you sure you want to <fab-text color="danger">deactivate</fab-text> your account?
+        </fab-text>
+        <fab-text block mb="1">All of your data will be permanently <fab-text color="danger" weight="600">removed</fab-text>.</fab-text>
+    </fab-modal-body>
+    <fab-modal-footer alH="end" color="light" flex>
+        <fab-button-group>
+            <fab-button [border]="true" [glow]="true" (click)="closeModal()">Cancel</fab-button>
+            <fab-button [border]="true" color="danger" [glow]="true" (click)="closeModal()">Deactivate</fab-button>
+        </fab-button-group>
+    </fab-modal-footer>
 </fab-modal>

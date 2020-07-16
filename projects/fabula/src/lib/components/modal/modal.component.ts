@@ -4,9 +4,11 @@ import { css } from 'emotion';
 // Components
 import { ModalHeaderComponent } from '../modal-header/modal-header.component';
 
-// Styles
-import ModalStyles from '@fabula/core/theme/styles/Modal';
+// Services
 import { ModalService } from '../../services/modal.service';
+
+// Styles
+import ModalStyles from '@fabula/core/styles/components/modal/modal';
 
 @Component({
   selector: 'fab-modal',
@@ -17,7 +19,7 @@ export class ModalComponent implements AfterViewInit, OnInit {
 
   @Input() glow = true;
   @Input() open = true;
- 
+
   @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   appended = false;
@@ -28,7 +30,6 @@ export class ModalComponent implements AfterViewInit, OnInit {
   constructor(
     public elRef: ElementRef,
     private modalService: ModalService,
-    private renderer: Renderer2,
   ) {}
 
   ngAfterViewInit() {
@@ -37,8 +38,7 @@ export class ModalComponent implements AfterViewInit, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('changes', changes);
-    if (this.init &&!this.open) {
+    if (this.init && !this.open) {
       this.handleClose();
     }
   }
@@ -56,7 +56,7 @@ export class ModalComponent implements AfterViewInit, OnInit {
     };
 
     // Set and apply styles
-    styles = css(ModalStyles({ framework: 'angular', props }));
+    styles = css(ModalStyles({ framework: 'angular', props: this }));
     this.host.classList.add(styles);
   }
 

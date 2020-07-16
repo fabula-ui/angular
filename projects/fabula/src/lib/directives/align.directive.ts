@@ -20,7 +20,6 @@ export class AlignDirective implements AfterViewInit {
 
     constructor(
         private elRef: ElementRef,
-        private themeService: ThemeService
     ) { }
 
     ngAfterViewInit() {

@@ -6,10 +6,8 @@ import { ModalSectionComponent } from '../modal-section/modal-section.component'
 @Component({
   selector: 'fab-modal-footer',
   templateUrl: './modal-footer.component.html',
-  styleUrls: ['./modal-footer.component.css']
 })
 export class ModalFooterComponent extends ModalSectionComponent implements OnInit {
-
   constructor(
     public elRef: ElementRef
   ) {
@@ -19,5 +17,4 @@ export class ModalFooterComponent extends ModalSectionComponent implements OnIni
   ngOnInit() {
     super.ngOnInit();
   }
-
 }

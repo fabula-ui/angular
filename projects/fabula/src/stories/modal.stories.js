@@ -4,7 +4,14 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     ButtonComponent,
+    ButtonGroupComponent,
+    CloseButtonComponent,
     ModalComponent,
+    ModalBodyComponent,
+    ModalFooterComponent,
+    ModalHeaderComponent,
+    ModalSectionComponent,
+    TextComponent,
     ThemeModule,
     UtilsModule
 } from '../public-api';
@@ -19,12 +26,21 @@ export default {
         moduleMetadata({
             declarations: [
                 ButtonComponent,
+                ButtonGroupComponent,
+                CloseButtonComponent,
                 ModalComponent,
+                ModalBodyComponent,
                 ModalExampleComponent,
+                ModalFooterComponent,
+                ModalHeaderComponent,
+                ModalSectionComponent,
+                TextComponent,
             ],
             entryComponents: [
+                CloseButtonComponent,
                 ModalComponent,
-                ModalExampleComponent
+                ModalExampleComponent,
+                ModalSectionComponent,
             ],
             imports: [
                 BrowserModule,
