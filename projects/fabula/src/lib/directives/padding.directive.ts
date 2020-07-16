@@ -16,12 +16,11 @@ export class PaddingDirective implements AfterViewInit {
     @Input() px: any;
     @Input() py: any;
 
-    constructor(
-        private elRef: ElementRef,
-    ) { }
+    constructor(private elRef: ElementRef) { }
 
     ngAfterViewInit() {
         const host = this.elRef.nativeElement;
+        const angularElement = !!host.children[0].hasAttribute('data-fab-component') || !!host.children[0].hasAttribute('data-fab-wrapper');
         const props = {
             p: this.p,
             pb: this.pb,
@@ -32,9 +31,7 @@ export class PaddingDirective implements AfterViewInit {
             py: this.py
         };
 
-        console.log('padding');
-
-        host.classList.add(css(UtilsStyles({ framework: 'angular', props })));
+        host.classList.add(css(UtilsStyles({ angularElement, framework: 'angular', props })));
     }
 
 }

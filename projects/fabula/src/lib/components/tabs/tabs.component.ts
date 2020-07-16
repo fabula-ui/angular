@@ -14,6 +14,7 @@ import TabsStyles from '@fabula/core/styles/components/tabs/tabs';
 })
 export class TabsComponent extends SegmentsComponent implements AfterViewInit, OnInit {
   @ContentChildren(TabComponent) tabComponents: QueryList<TabComponent>;
+  @Input() props: any;
 
   constructor(public elRef: ElementRef) {
     super(elRef);
@@ -29,7 +30,12 @@ export class TabsComponent extends SegmentsComponent implements AfterViewInit, O
 
   ngOnInit() {
     const host = this.elRef.nativeElement;
-    const styles = css(TabsStyles({ framework: 'angular', props: this }));
+    const styles = css(TabsStyles({
+      framework: 'angular', props: {
+        ...this,
+        ...this.props
+      }
+    }));
 
     host.classList.add(styles);
   }

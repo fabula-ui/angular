@@ -63,7 +63,7 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
       child.selectedSegment.subscribe(tab => this.handleActiveSegment(tab));
       child.childViewInit();
       child.listen({
-        onChangeSegment: this.changeSegment
+        onChangeSelector: this.changeSegment
       });
 
       if (this.active) { this.changeSegment.emit(this.active); }

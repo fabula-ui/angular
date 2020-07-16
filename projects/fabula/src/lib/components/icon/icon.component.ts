@@ -7,8 +7,7 @@ import IconStyles from '@fabula/core/theme/styles/Icon';
 
 @Component({
   selector: 'fab-icon',
-  templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.css']
+  templateUrl: './icon.component.html'
 })
 export class IconComponent implements OnInit {
   @Input() color = '';

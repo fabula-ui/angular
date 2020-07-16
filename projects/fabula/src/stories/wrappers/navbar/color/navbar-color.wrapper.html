@@ -1,0 +1,15 @@
+<app-navbar-example></app-navbar-example>
+<app-navbar-example color="primary" logo="fabula-logo-white.svg" [signInProps]="{color: 'primary', invert: true}"
+    [signUpProps]="{color: 'white'}" [socialProps]="{color: 'white'}">
+</app-navbar-example>
+
+<app-navbar-example color="secondary" logo="fabula-logo-white.svg" [socialProps]="{ color: 'white' }"
+    [signInProps]="{ color: 'secondary', invert: true }" [signUpProps]="{ color: 'white' }"></app-navbar-example>
+<app-navbar-example color="dark" logo="fabula-logo-white.svg" [socialProps]="{ color: 'white' }"
+    [signInProps]="{ color: 'primary' }" [signUpProps]="{ color: 'white' }"
+    [tabsProps]="{ activeBorderColor: 'primary' }"></app-navbar-example>
+<app-navbar-example color="light" [signInProps]="{ color: 'primary' }" [signUpProps]="{ color: 'dark' }"
+    [socialProps]="{ color: 'dark' }" [tabsProps]="{ activeBorderColor: 'primary' }"></app-navbar-example>
+<app-navbar-example color="#674C88" logo="fabula-logo-white.svg" [socialProps]="{ color: 'white' }"
+    [signInProps]="{ color: '#6FD367' }" [signUpProps]="{ color: 'white' }"
+    [tabsProps]="{ activeBorderColor: '#6FD367' }"></app-navbar-example>

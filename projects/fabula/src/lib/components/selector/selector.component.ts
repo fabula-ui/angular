@@ -39,7 +39,7 @@ export class SelectorComponent {
     }
 
     listen(events) {
-        events.onChangeSegment.subscribe(segment => {
+        events.onChangeSelector.subscribe(segment => {
             this.active = segment === this.name;
         });
     }

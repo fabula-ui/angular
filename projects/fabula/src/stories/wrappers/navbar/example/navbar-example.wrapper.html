@@ -1,0 +1,24 @@
+<fab-navbar [color]="color" [height]="height" px="2">
+    <fab-navbar-logo [src]="logoSrc"></fab-navbar-logo>
+    <fab-navbar-tabs alignment="center" [color]="color" [expand]="true" [props]="tabsProps">
+        <fab-tab [active]="true" name="docs">Docs</fab-tab>
+        <fab-tab name="components">Components</fab-tab>
+        <fab-tab name="showcase">Showcase</fab-tab>
+        <fab-tab name="store">Store</fab-tab>
+    </fab-navbar-tabs>
+
+    <fab-navbar-section placement="right">
+        <fab-button-group mr="1">
+            <fab-button [clear]="true" [compact]="true" [glow]="false" [props]="socialProps">
+                <fab-icon name="github" *ngIf="init"></fab-icon>
+            </fab-button>
+            <fab-button [clear]="true" [compact]="true" [glow]="false" [props]="socialProps">
+                <fab-icon name="twitter" *ngIf="init"></fab-icon>
+            </fab-button>
+        </fab-button-group>
+        <fab-button-group spacing="0">
+            <fab-button color="primary" [props]="signInProps">Sign In</fab-button>
+            <fab-button [clear]="true" color="primary" [props]="signUpProps">Sign Up</fab-button>
+        </fab-button-group>
+    </fab-navbar-section>
+</fab-navbar>

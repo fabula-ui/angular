@@ -13,11 +13,9 @@ import { SelectorComponent } from '../selector/selector.component';
 export class SegmentComponent extends SelectorComponent {
   constructor(
     public elRef: ElementRef,
-  ) {
-    super(elRef);
-   }
+  ) { super(elRef); }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   childViewInit() {
     const host = this.elRef.nativeElement;
