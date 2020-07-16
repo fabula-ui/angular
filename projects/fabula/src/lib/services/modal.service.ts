@@ -5,6 +5,8 @@ import { Injectable, ApplicationRef, Injector, ComponentFactoryResolver, Embedde
 })
 export class ModalService {
     componentRef;
+    modalIsOpen = false;
+    transitionDuration;
 
     constructor(
         private appRef: ApplicationRef,
@@ -17,6 +19,21 @@ export class ModalService {
         portal.classList.add('fab-modal-portal');
 
         document.body.append(portal);
+    }
+
+    closeModal() {
+        let duration;
+        let modalEl;
+        let transitionDuration;
+
+        modalEl = document.querySelector('.fab-modal');
+        duration = window.getComputedStyle(modalEl).transitionDuration;
+        transitionDuration = (duration.indexOf('ms') > -1) ? parseFloat(duration) : parseFloat(duration) * 1000;
+
+        setTimeout(() => {
+            this.appRef.detachView(this.componentRef.hostView);
+            this.componentRef.destroy();
+        }, transitionDuration + 1);
     }
 
     openModal(component, params) {
@@ -33,7 +50,7 @@ export class ModalService {
         this.appRef.attachView(this.componentRef.hostView);
 
         element = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
-        
+
         portal.appendChild(element);
     }
 }

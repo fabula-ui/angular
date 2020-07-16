@@ -6,36 +6,38 @@ import { ModalHeaderComponent } from '../modal-header/modal-header.component';
 
 // Styles
 import ModalStyles from '@fabula/core/theme/styles/Modal';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'fab-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements AfterViewInit, OnInit {
   @ContentChild(ModalHeaderComponent) modalHeader: ModalHeaderComponent;
 
   @Input() glow = true;
-  @Input() open = false;
+  @Input() open = true;
  
   @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   appended = false;
   host;
   init;
-  isClosing;
+  isClosing = false;
 
   constructor(
     public elRef: ElementRef,
+    private modalService: ModalService,
     private renderer: Renderer2,
   ) {}
 
   ngAfterViewInit() {
-    this.modalHeader.clickedClose.subscribe(tab => this.closeModal());
+    if (this.modalHeader) { this.modalHeader.clickedClose.subscribe(() => this.closeModal()); }
     this.init = true;
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log('changes', changes);
     if (this.init &&!this.open) {
       this.handleClose();
     }
@@ -48,9 +50,6 @@ export class ModalComponent implements AfterViewInit, OnInit {
     // Get host element
     this.host = this.elRef.nativeElement;
 
-    // Attach to body
-    // this.renderer.appendChild(document.body, this.host);
-
     // Set props
     props = {
       glow: this.glow
@@ -62,8 +61,9 @@ export class ModalComponent implements AfterViewInit, OnInit {
   }
 
   closeModal() {
+    this.modalService.closeModal();
     this.isClosing = true;
-    this.emitClose();
+    // this.emitClose();
   }
 
   emitClose() {

@@ -4,6 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     ButtonComponent,
+    ModalComponent,
     ThemeModule,
     UtilsModule
 } from '../public-api';
@@ -18,9 +19,11 @@ export default {
         moduleMetadata({
             declarations: [
                 ButtonComponent,
-                ModalExampleComponent
+                ModalComponent,
+                ModalExampleComponent,
             ],
             entryComponents: [
+                ModalComponent,
                 ModalExampleComponent
             ],
             imports: [
