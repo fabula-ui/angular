@@ -20,6 +20,7 @@ export class ButtonComponent implements OnInit {
   @Input() clear: boolean;
   @Input() color: string;
   @Input() compact = false;
+  @Input() darken: boolean;
   @Input() disabled: boolean;
   @Input() expand: boolean;
   @Input() faded: boolean;
@@ -27,6 +28,7 @@ export class ButtonComponent implements OnInit {
   @Input() gradient: boolean;
   @Input() icon: string;
   @Input() invert: boolean;
+  @Input() lighten: boolean;
   @Input() loading: string;
   @Input() label: string;
   @Input() outline: boolean;

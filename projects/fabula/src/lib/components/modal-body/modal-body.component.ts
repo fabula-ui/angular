@@ -6,7 +6,6 @@ import { ModalSectionComponent } from '../modal-section/modal-section.component'
 @Component({
   selector: 'fab-modal-body',
   templateUrl: './modal-body.component.html',
-  styleUrls: ['./modal-body.component.css']
 })
 export class ModalBodyComponent extends ModalSectionComponent implements OnInit {
 

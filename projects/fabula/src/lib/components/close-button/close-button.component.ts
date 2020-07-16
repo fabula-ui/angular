@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, Input, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -8,19 +8,21 @@ import CloseButtonStyles from '@fabula/core/styles/components/close-button/close
     selector: 'fab-close-button',
     templateUrl: './close-button.component.html'
 })
-export class CloseButtonComponent implements OnInit {
+export class CloseButtonComponent implements AfterViewInit {
     @Input() color: string;
     @Input() parentColor: string;
-    @Output() close: EventEmitter<any> = new EventEmitter();
     @Input() size: string;
+
+    @Output() close: EventEmitter<any> = new EventEmitter();
 
     host;
 
     constructor(
+        public cdRef: ChangeDetectorRef,
         public elRef: ElementRef
     ) { }
 
-    ngOnInit() {
+    ngAfterViewInit() {
         let props;
         let styles;
 
@@ -36,6 +38,12 @@ export class CloseButtonComponent implements OnInit {
         // Set and apply styles
         styles = css(CloseButtonStyles({ framework: 'angular', props }));
         this.host.classList.add(styles);
+
+        this.cdRef.detectChanges();
+    }
+
+    ngOnInit() {
+        
     }
 
     handleClick() {

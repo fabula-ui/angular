@@ -17,8 +17,10 @@ import {
 } from '../public-api';
 
 // Wrappers
+import { ModalColorWrapper } from './wrappers/modal/color/modal-color.wrapper';
 import { ModalExampleComponent } from './wrappers/modal/example/modal-example.component';
 import { ModalExamplesWrapper } from './wrappers/modal/examples/modal-examples.wrapper';
+import { ModalSizeWrapper } from './wrappers/modal/size/modal-size.wrapper';
 
 // Module init
 export default {
@@ -57,3 +59,5 @@ export default {
 
 // Stories
 export const Examples = () => ({ component: ModalExamplesWrapper });
+export const Color = () => ({ component: ModalColorWrapper });
+export const Size = () => ({ component: ModalSizeWrapper });

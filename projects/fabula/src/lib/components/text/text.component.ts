@@ -12,7 +12,6 @@ import TextStyles from '@fabula/core/theme/styles/Text';
 })
 export class TextComponent implements OnInit {
   @Input() color: string;
-  @Input('inherit-color') inheritColor: boolean;
   @Input() props: any;
   @Input() size: string;
   @Input() weight: string;

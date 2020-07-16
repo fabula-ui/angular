@@ -2,41 +2,26 @@ import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import ModalSectionStyles from '@fabula/core/theme/styles/ModalSection';
+import ModalSectionStyles from '@fabula/core/styles/components/modal-section/modal-section';
 
 @Component({
   selector: 'fab-modal-section',
-  templateUrl: './modal-section.component.html',
-  styleUrls: ['./modal-section.component.css']
+  templateUrl: './modal-section.component.html'
 })
 export class ModalSectionComponent implements OnInit {
+  @Input() adaptColor: boolean;
   @Input() color: string;
   @Input() divider: string;
-  @Input('divider-color') dividerColor: string;
-
-  host;
+  @Input('dividerColor') dividerColor: string;
+  @Input() parentColor: string;
   
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
-    let props;
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(ModalSectionStyles({ framework: 'angular', props: this }));
 
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set props
-    props = {
-      color: this.color,
-      divider: this.divider,
-      dividerColor: this.dividerColor
-    };
-
-    // Set and apply styles
-    styles = css(ModalSectionStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
 }

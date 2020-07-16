@@ -1,8 +1,11 @@
-import { Component, OnInit, ElementRef, Renderer2, Input, ContentChild, AfterViewInit, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, Input, ContentChild, AfterViewInit, Output, EventEmitter, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
+import { ModalBodyComponent } from '../modal-body/modal-body.component';
+import { ModalFooterComponent } from '../modal-footer/modal-footer.component';
 import { ModalHeaderComponent } from '../modal-header/modal-header.component';
+import { ModalSectionComponent } from '../modal-section/modal-section.component';
 
 // Services
 import { ModalService } from '../../services/modal.service';
@@ -14,74 +17,55 @@ import ModalStyles from '@fabula/core/styles/components/modal/modal';
   selector: 'fab-modal',
   templateUrl: './modal.component.html',
 })
-export class ModalComponent implements AfterViewInit, OnInit {
+export class ModalComponent implements AfterViewInit {
+  @ContentChild(ModalBodyComponent) modalBody: ModalBodyComponent;
+  @ContentChild(ModalFooterComponent) modalFooter: ModalFooterComponent;
   @ContentChild(ModalHeaderComponent) modalHeader: ModalHeaderComponent;
+  @ContentChild(ModalSectionComponent) modalSection: ModalSectionComponent;
 
+  @Input() color: string;
   @Input() glow = true;
   @Input() open = true;
+  @Input() size: string;
 
-  @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  appended = false;
-  host;
   init;
-  isClosing = false;
 
   constructor(
     public elRef: ElementRef,
     private modalService: ModalService,
-  ) {}
+  ) { }
 
   ngAfterViewInit() {
-    if (this.modalHeader) { this.modalHeader.clickedClose.subscribe(() => this.closeModal()); }
-    this.init = true;
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.init && !this.open) {
-      this.handleClose();
-    }
-  }
-
-  ngOnInit() {
-    let props;
+    const host = this.elRef.nativeElement;
     let styles;
 
-    // Get host element
-    this.host = this.elRef.nativeElement;
+    if (this.modalBody) {
+      this.modalBody.parentColor = this.color;
+      this.modalBody.ngOnInit();
+    }
 
-    // Set props
-    props = {
-      glow: this.glow
-    };
+    if (this.modalFooter) {
+      this.modalFooter.parentColor = this.color;
+      this.modalFooter.ngOnInit();
+    }
 
-    // Set and apply styles
+    if (this.modalHeader) {
+      this.modalHeader.clickedClose.subscribe(() => this.closeModal());
+      this.modalHeader.parentColor = this.color;
+      this.modalHeader.ngAfterViewInit();
+    }
+
+    if (this.modalSection) {
+      this.modalSection.parentColor = this.color;
+      this.modalSection.ngOnInit();
+    }
+
     styles = css(ModalStyles({ framework: 'angular', props: this }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
   closeModal() {
     this.modalService.closeModal();
-    this.isClosing = true;
-    // this.emitClose();
-  }
-
-  emitClose() {
-    setTimeout(() => {
-      this.isClosing = false;
-      this.open = false;
-      this.openChange.emit(this.open);
-    }, 250);
-  }
-
-  handleClose() {
-    if (!this.isClosing) {
-      console.log('don\'t close, do animation first');
-      this.open = true;
-      this.closeModal();
-    } else {
-      
-    }
   }
 
 }
