@@ -3,6 +3,7 @@ import { css } from 'emotion';
 
 // Styles
 import AlertStyles from '@fabula/core/styles/components/alert/alert';
+import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitionDuration';
 
 @Component({
   selector: 'fab-alert',
@@ -23,44 +24,37 @@ export class AlertComponent implements OnInit {
   @Input() textColor: string;
   @Input() title: any;
   @Input() titleColor: string;
+  @Input() visible = true;
 
   @Output() close: EventEmitter<any> = new EventEmitter();
 
+  closing;
   host;
   props;
 
-  constructor(
-    public elRef: ElementRef
-  ) {}
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
-    let props;
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(AlertStyles({ framework: 'angular', props: this }));
 
-    this.host = this.elRef.nativeElement;
-
-    props = {
-      border: this.border,
-      clear: this.clear,
-      color: this.color,
-      faded: this.faded,
-      glow: this.glow,
-      invert: this.invert,
-      marker: this.marker,
-      outline: this.outline,
-      textColor: this.textColor,
-      titleColor: this.titleColor
-    };
-
-    styles = css(AlertStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
-
-    this.props = props;
+    host.classList.add(styles);
+    this.host = host;
+    this.props = this;
   }
 
   // Methods
-  handleClose() {
-    this.close.emit();
+  closeAlert() {
+    const transitionDuration = getTransitionDuration(this.host.querySelector('.fab-alert'));
+
+    this.closing = true;
+
+    setTimeout(() => {
+      this.close.emit();
+
+      this.closing = false;
+      this.visible = false;
+    }, transitionDuration + 1);
   }
 
   isObject(subject) {

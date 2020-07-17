@@ -68,6 +68,7 @@ export * from './lib/services/toast.service';
 
 // Modules
 export * from './lib/fabula.module';
+export * from './lib/modules/alert.module';
 export * from './lib/modules/button.module';
 export * from './lib/modules/dropdown.module';
 export * from './lib/modules/icons.module';
