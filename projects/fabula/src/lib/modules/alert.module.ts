@@ -6,25 +6,24 @@ import { CommonModule } from '@angular/common';
 // Components
 import { AlertComponent } from '../components/alert/alert.component';
 import { CloseButtonComponent } from '../components/close-button/close-button.component';
-import { TextComponent } from '../components/text/text.component';
 
 // Modules
 import { InnerIconModule } from '../modules/inner-icon.module';
+import { TextModule } from '../modules/text.module';
 
 @NgModule({
     declarations: [
         AlertComponent,
-        CloseButtonComponent,
-        TextComponent
+        CloseButtonComponent
     ],
     entryComponents: [
         AlertComponent,
-        CloseButtonComponent,
-        TextComponent
+        CloseButtonComponent
     ],
     imports: [
         CommonModule,
-        InnerIconModule
+        InnerIconModule,
+        TextModule
     ],
     exports: [
         AlertComponent

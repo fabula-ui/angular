@@ -22,7 +22,7 @@ export class AvatarComponent implements OnInit {
   @Input() showInitials = '';
   @Input() size = 'md';
 
-  avatarIcon;
+  props;
 
   constructor(
     private elRef: ElementRef
@@ -33,16 +33,10 @@ export class AvatarComponent implements OnInit {
     const styles = css(AvatarStyles({ framework: 'angular', props: this }));
 
     host.classList.add(styles);
-  }
-
-  // Methods
-  
-  isObject(subject) {
-    return typeof subject === 'object';
+    this.props = this;
   }
 
   // Getters
-
   get initials(): string {
     return getInitials(this.showInitials);
   }

@@ -69,12 +69,14 @@ export * from './lib/services/toast.service';
 // Modules
 export * from './lib/fabula.module';
 export * from './lib/modules/alert.module';
+export * from './lib/modules/avatar.module';
 export * from './lib/modules/button.module';
 export * from './lib/modules/dropdown.module';
 export * from './lib/modules/icons.module';
 export * from './lib/modules/navbar.module';
 export * from './lib/modules/segments.module';
 export * from './lib/modules/tabs.module';
+export * from './lib/modules/text.module';
 export * from './lib/modules/theme.module';
 export * from './lib/modules/toast.module';
 export * from './lib/modules/tooltip.module';

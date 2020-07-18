@@ -1,18 +1,16 @@
 <div class="fab-alert-wrapper" *ngIf="visible">
   <div class="fab-alert" [attr.data-closing]="closing" [attr.data-title]="!!title" data-fab-component="alert">
-    <ng-content select="fab-icon"></ng-content>
-    <fab-inner-icon [icon]="icon" [parentProps]="props"></fab-inner-icon>
+    <ng-content select="fab-inner-icon"></ng-content>
+    <fab-inner-icon [icon]="icon" [parentProps]="props" *ngIf="icon"></fab-inner-icon>
     <div class="fab-alert__stage">
       <div class="fab-alert__title"  *ngIf="title">
         <fab-text color="inherit" *ngIf="!isObject(title)">{{title}}</fab-text>
         <fab-text color="inherit" [props]="title" *ngIf="isObject(title)"></fab-text>
       </div>
-
       <div class="fab-alert__text"  *ngIf="text">
         <fab-text color="inherit" *ngIf="!isObject(text)">{{text}}</fab-text>
         <fab-text color="inherit" [props]="text" *ngIf="isObject(text)"></fab-text>
       </div>
-      
       <ng-content></ng-content>
     </div>
 
