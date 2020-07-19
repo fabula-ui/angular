@@ -11,36 +11,18 @@ import CardImageStyles from '@fabula/core/styles/components/card-image/card-imag
 export class CardImageComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color: string;
+  @Input() cover = false;
   @Input() height: any;
   @Input() icon: string;
   @Input() layout: string;
   @Input() src: string;
-  @Input() width: string;
+  @Input() width: any;
 
-  host;
-
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    this.host = this.elRef.nativeElement;
-
-    props = {
-      adaptColor: this.adaptColor,
-      color: this.color,
-      cover: this.host.hasAttribute('cover'),
-      height: this.height,
-      icon: this.icon,
-      layout: this.layout,
-      width: this.width
-    };
-    styles = css(CardImageStyles({ framework: 'angular', props }));
-
-    this.host.classList.add(styles);
+    const host = this.elRef.nativeElement;
+    const styles = css(CardImageStyles({ framework: 'angular', props: this }));
+    host.classList.add(styles);
   }
-
 }

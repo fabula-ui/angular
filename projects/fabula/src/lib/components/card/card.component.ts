@@ -18,13 +18,10 @@ export class CardComponent implements AfterViewInit, OnInit {
 
   @Input() color: string;
   @Input() glow = false;
-  @Input() layout = 'vertical';
+  @Input() layout = 'v';
+  @Input() padding = false;
 
-  host;
-
-  constructor(
-    private elRef: ElementRef
-  ) { }
+  constructor(private elRef: ElementRef) { }
 
   ngAfterViewInit() {
     this.cardImageComponents.forEach((child: CardImageComponent) => {
@@ -39,20 +36,8 @@ export class CardComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    this.host = this.elRef.nativeElement;
-
-    props = {
-      color: this.color,
-      glow: this.glow,
-      layout: this.layout,
-      padding: this.host.hasAttribute('padding')
-    };
-    styles = css(CardStyles({ framework: 'angular', props }));
-
-    this.host.classList.add(styles);
+    const host = this.elRef.nativeElement;
+    const styles = css(CardStyles({ framework: 'angular', props: this }));
+    host.classList.add(styles);
   }
-
 }
