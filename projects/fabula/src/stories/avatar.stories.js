@@ -5,6 +5,7 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     AvatarModule,
     BadgeComponent,
+    IconsModule,
     TextComponent,
     ThemeModule,
     ThemeService,
@@ -19,6 +20,7 @@ import { AvatarExternalBadgeWrapper } from './wrappers/avatar/external-badge/ava
 import { AvatarRoundedWrapper } from './wrappers/avatar/rounded/avatar-rounded.wrapper';
 import { AvatarShowInitialsWrapper } from './wrappers/avatar/show-initials/avatar-show-initials.wrapper';
 import { AvatarSizeWrapper } from './wrappers/avatar/size/avatar-size.wrapper';
+import {  } from '../lib/modules/icons.module';
 
 export default {
     decorators: [
@@ -30,6 +32,7 @@ export default {
             imports: [
                 AvatarModule,
                 BrowserModule,
+                IconsModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

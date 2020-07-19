@@ -1,9 +1,14 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 import { css } from 'emotion';
 
+// Methods
+import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitionDuration';
+
+// Models
+import { Icon } from '../../models/icon.model';
+
 // Styles
 import AlertStyles from '@fabula/core/styles/components/alert/alert';
-import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitionDuration';
 
 @Component({
   selector: 'fab-alert',
@@ -16,13 +21,13 @@ export class AlertComponent implements OnInit {
   @Input() color: string;
   @Input() faded = false;
   @Input() glow = false;
-  @Input() icon: any;
+  @Input() icon: Icon;
   @Input() invert: boolean;
   @Input() marker: string;
   @Input() outline = false;
-  @Input() text: any;
+  @Input() text: string;
   @Input() textColor: string;
-  @Input() title: any;
+  @Input() title: string;
   @Input() titleColor: string;
   @Input() visible = true;
 

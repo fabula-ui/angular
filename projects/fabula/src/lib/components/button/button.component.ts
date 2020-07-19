@@ -39,11 +39,7 @@ export class ButtonComponent implements OnInit {
 
   host;
 
-  constructor(
-    public elRef: ElementRef
-  ) { }
-
-  ngAfterViewInit() { }
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
     const styles = css(ButtonStyles({
@@ -57,6 +53,6 @@ export class ButtonComponent implements OnInit {
     this.host.classList.add(styles);
 
     if (this.props && this.props.icon) { this.icon = this.props.icon; }
+    if (!this.props) { this.props = this; }
   }
-
 }

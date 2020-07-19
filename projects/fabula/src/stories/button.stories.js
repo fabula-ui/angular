@@ -4,8 +4,8 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     BadgeComponent,
-    ButtonComponent,
     ButtonGroupComponent,
+    ButtonModule,
     IconsModule,
     ThemeModule,
     ThemeService,
@@ -34,11 +34,11 @@ export default {
         moduleMetadata({
             declarations: [
                 BadgeComponent,
-                ButtonComponent,
                 ButtonGroupComponent
             ],
             imports: [
                 BrowserModule,
+                ButtonModule,
                 IconsModule,
                 ThemeModule.forRoot(),
                 UtilsModule

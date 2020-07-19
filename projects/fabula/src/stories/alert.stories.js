@@ -5,7 +5,7 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     AlertModule,
     AvatarModule,
-    ButtonComponent,
+    ButtonModule,
     ButtonGroupComponent,
     IconsModule,
     TextModule,
@@ -35,13 +35,13 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                ButtonComponent,
                 ButtonGroupComponent
             ],
             imports: [
                 AlertModule,
                 AvatarModule,
                 BrowserModule,
+                ButtonModule,
                 IconsModule,
                 TextModule,
                 ThemeModule.forRoot(),

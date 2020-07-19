@@ -1,6 +1,6 @@
 <div class="fab-button-wrapper" [attr.data-border]="border" [attr.data-circle]="!!circle || !!icon" [attr.data-expand]="true" [attr.data-outline]="outline" data-fab-wrapper="button">
   <button class="fab-button" [disabled]="disabled" data-fab-component="button">
-    <span class="fab-button__icon" *ngIf="icon"></span>
+    <fab-inner-icon *ngIf="icon" [icon]="icon" [parentProps]="props"></fab-inner-icon>
     <ng-container *ngIf="!icon && (label || props && props.label)">{{label || props && props.label}}</ng-container>
     <ng-content></ng-content>
   </button>

@@ -9,7 +9,6 @@ import { CloseButtonComponent } from '../components/close-button/close-button.co
 
 // Modules
 import { InnerIconModule } from '../modules/inner-icon.module';
-import { TextModule } from '../modules/text.module';
 
 @NgModule({
     declarations: [
@@ -23,7 +22,6 @@ import { TextModule } from '../modules/text.module';
     imports: [
         CommonModule,
         InnerIconModule,
-        TextModule
     ],
     exports: [
         AlertComponent

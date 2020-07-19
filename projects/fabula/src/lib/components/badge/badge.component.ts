@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ElementRef, Renderer2, Renderer } from '@angular/core';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -15,7 +15,7 @@ export class BadgeComponent implements OnInit {
   @Input() color: string;
   @Input() darken = false;
   @Input() faded = false;
-  @Input() icon = '';
+  @Input() glow = false;
   @Input() invert = false;
   @Input() label = '';
   @Input() lighten = false;
@@ -26,11 +26,7 @@ export class BadgeComponent implements OnInit {
   @Input() rounded = false;
   @Input() size = 'md';
 
-  className;
-
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
     const host = this.elRef.nativeElement;
