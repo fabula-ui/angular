@@ -15,7 +15,8 @@ import AlertStyles from '@fabula/core/styles/components/alert/alert';
   templateUrl: './alert.component.html'
 })
 export class AlertComponent implements OnInit {
-  @Input() border: string;
+  @Input() border = true;
+  @Input() borderColor: string;
   @Input() clear = false;
   @Input() closeButton = false;
   @Input() color: string;
