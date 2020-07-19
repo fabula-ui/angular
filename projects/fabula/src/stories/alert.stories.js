@@ -15,7 +15,7 @@ import {
 } from '../public-api';
 
 // Demo wrappers
-import { AlertWrapperComponent } from '../../../demo/src/app/components/alert-wrapper/alert-wrapper.component';
+import { AlertExamplesWrapper } from './wrappers/alert/examples/alert-examples.wrapper';
 import { AlertBorderWrapper } from './wrappers/alert/border/alert-border.wrapper';
 import { AlertClearWrapper } from './wrappers/alert/clear/alert-clear.wrapper';
 import { AlertCloseButtonWrapper } from './wrappers/alert/close-button/alert-close-button.wrapper';
@@ -56,7 +56,7 @@ export default {
 }
 
 export const Examples = () => ({
-    component: AlertWrapperComponent,
+    component: AlertExamplesWrapper,
 });
 
 export const Border = () => ({
