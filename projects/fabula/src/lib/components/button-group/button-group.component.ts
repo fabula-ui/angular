@@ -14,6 +14,7 @@ import ButtonGroupStyles from '@fabula/core/styles/components/button-group/butto
   templateUrl: './button-group.component.html'
 })
 export class ButtonGroupComponent implements OnInit {
+  @Input() color: string;
   @Input() divider = true;
   @Input() dividerColor = '';
   @Input() flow = 'horizontal';
@@ -21,29 +22,12 @@ export class ButtonGroupComponent implements OnInit {
   @Input() spacing: string;
   @Input() wrap = true;
 
-  host;
-
-  constructor(
-    public elRef: ElementRef,
-  ) {}
+  constructor(public elRef: ElementRef) {}
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    props = {
-      divider: this.divider,
-      dividerColor: this.dividerColor,
-      flow: this.flow,
-      glued: this.glued,
-      spacing: this.spacing,
-      wrap: this.wrap
-    };
-
-    styles = css(ButtonGroupStyles({ framework: 'angular', props }));
-
-    this.host = this.elRef.nativeElement;
-    this.host.classList.add(css(styles));
+    const styles = css(ButtonGroupStyles({ framework: 'angular', props: this }));
+    const host = this.elRef.nativeElement;
+    host.classList.add(css(styles));
   }
 
 }
