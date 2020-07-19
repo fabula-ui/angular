@@ -17,37 +17,18 @@ export class CheckboxComponent implements OnInit {
   @Input() indeterminate = false;
   @Input() label: string;
   @Input() rounded = false;
-  @Input() size: string;
+  @Input() size = 'md';
 
   @Output() change: EventEmitter<any> = new EventEmitter();
   @Output() check: EventEmitter<any> = new EventEmitter();
   @Output() uncheck: EventEmitter<any> = new EventEmitter();
 
-  host;
-
-  constructor(
-    private elRef: ElementRef
-  ) { }
+  constructor(private elRef: ElementRef) { }
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    this.host = this.elRef.nativeElement;
-
-    props = {
-      activeColor: this.activeColor,
-      checked: this.checked,
-      color: this.color,
-      disabled: this.disabled,
-      inactiveColor: this.inactiveColor,
-      indeterminate: this.indeterminate,
-      rounded: this.rounded,
-      size: this.size
-    };
-    styles = css(CheckboxStyles({ framework: 'angular', props }));
-
-    this.host.classList.add(styles);
+    const host = this.elRef.nativeElement;
+    const styles = css(CheckboxStyles({ framework: 'angular', props: this }));
+    host.classList.add(styles);
   }
 
   // Methods
@@ -63,13 +44,7 @@ export class CheckboxComponent implements OnInit {
   handleEvents() {
     this.change.emit();
 
-    if (this.checked) {
-      this.check.emit();
-    }
-
-    if (!this.checked) {
-      this.uncheck.emit();
-    }
+    if (this.checked) { this.check.emit(); }
+    if (!this.checked) { this.uncheck.emit(); }
   }
-
 }
