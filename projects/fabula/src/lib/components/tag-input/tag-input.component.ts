@@ -16,7 +16,7 @@ import TagInputStyles from '@fabula/core/theme/styles/TagInput';
 export class TagInputComponent extends InputComponent implements OnInit {
   @Input() tags = ['Angular'];
 
-  focus = false;
+  hasFocus = false;
   inputStatus = 'clear';
   host;
   tag;
@@ -53,7 +53,7 @@ export class TagInputComponent extends InputComponent implements OnInit {
   }
 
   handleBlur() {
-    this.focus = false;
+    this.hasFocus = false;
   }
 
   handleChange(e) {
@@ -62,7 +62,7 @@ export class TagInputComponent extends InputComponent implements OnInit {
   }
 
   handleFocus() {
-    this.focus = true;
+    this.hasFocus = true;
   }
 
   handleKeypress(e) {

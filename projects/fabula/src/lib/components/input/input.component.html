@@ -1,5 +1,5 @@
 <div class="fab-input-wrapper" data-fab-wrapper="input">
-  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="focus">
+  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus">
     <span class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart"></span>
 
     <input class="fab-input__field" [disabled]="disabled" (blur)="handleFocus(false)" (focus)="handleFocus(true)"
@@ -10,7 +10,8 @@
 
     <span class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle"></span>
 
-    <button class="fab-input__password-toggle" (click)="toggleType()" [attr.data-toggled]="type === 'text'" *ngIf="passwordToggle">
+    <button class="fab-input__password-toggle" (click)="toggleType()" [attr.data-toggled]="type === 'text'"
+      *ngIf="passwordToggle">
       <span class="fab-input__icon"></span>
     </button>
 

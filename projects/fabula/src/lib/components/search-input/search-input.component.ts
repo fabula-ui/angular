@@ -20,7 +20,7 @@ export class SearchInputComponent extends InputComponent implements OnInit {
     @Input() button: any;
     @Input() placeholder = 'Search...';
 
-    focus = false;
+    hasFocus = false;
     inputProps;
 
     constructor(public elRef: ElementRef) {

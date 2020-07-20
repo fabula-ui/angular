@@ -1,8 +1,10 @@
 import {
     Component,
     ElementRef,
+    EventEmitter,
     Input,
-    OnInit
+    OnInit,
+    Output
 } from '@angular/core';
 import { css } from 'emotion';
 
@@ -20,7 +22,7 @@ export class InputComponent implements OnInit {
     @Input() expand = false;
     @Input() glow = false;
     @Input() has: string;
-    @Input() icon: string;
+    @Input() icon: any;
     @Input() iconEnd: any;
     @Input() iconStart: any;
     @Input() message: string;
@@ -29,12 +31,13 @@ export class InputComponent implements OnInit {
     @Input() placeholder = '';
     @Input() props: any;
     @Input() rounded = false;
-    @Input() size: string;
+    @Input() size = 'md';
     @Input() status: string;
     @Input() textarea = false;
     @Input() type = 'text';
 
-    focus = false;
+    hasFocus = false;
+    host;
 
     constructor(
         public elRef: ElementRef
@@ -50,12 +53,12 @@ export class InputComponent implements OnInit {
         }));
 
         host.classList.add(styles);
+        this.host = host;
     }
 
     // Methods
-
     handleFocus(hasFocus: boolean) {
-        this.focus = hasFocus;
+        this.hasFocus = hasFocus;
     }
 
     isObject(subject) {
