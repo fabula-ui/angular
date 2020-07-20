@@ -1,9 +1,9 @@
-<button class="fab-dropdown-item" (click)="handleClick()" *ngIf="item.button || button">
+<button class="fab-dropdown-item" data-fab-component="dropdownItem" (click)="handleClick()" *ngIf="item.button || button">
   {{item && item.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </button>
 
-<div class="fab-dropdown-item" *ngIf="!item.button && !button">
+<div class="fab-dropdown-item" data-fab-component="dropdownItem" *ngIf="!item.button && !button">
   {{item && item.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </div>

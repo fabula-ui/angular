@@ -20,19 +20,24 @@ export class DropdownItemComponent implements AfterViewInit {
     @Input() button = false;
     @Input() color: string;
     @Input() clickToClose = false;
+    @Input() invert = false;
     @Input() item: any = { button: false };
     @Input() label: string;
-    @Input() listItem = false;
     @Input() parentColor: string;
     @Input() size: string;
 
     @Output() clicked = new EventEmitter();
 
-    constructor(public elRef: ElementRef) {}
+    constructor(public elRef: ElementRef) { }
 
     ngAfterViewInit() {
         const host = this.elRef.nativeElement;
-        const styles = css(DropdownItemStyles({ framework: 'angular', props: this }));
+        const styles = css(DropdownItemStyles({
+            framework: 'angular', props: {
+                ...this,
+                ...this.item
+            }
+        }));
         host.classList.add(styles);
     }
 

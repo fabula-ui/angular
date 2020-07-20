@@ -9,14 +9,13 @@ import {
     ContentChildren,
     QueryList,
     ViewChildren,
-    AfterContentInit,
-    forwardRef
 } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
+import { DividerComponent } from '../divider/divider.component';
+import { DropdownHeaderComponent } from '../dropdown-header/dropdown-header.component';
 import { DropdownItemComponent } from '../dropdown-item/dropdown-item.component';
-import { ListComponent } from '../list/list.component';
 
 // Styles
 import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dropdown-menu';
@@ -26,29 +25,33 @@ import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dro
     templateUrl: './dropdown-menu.component.html',
 })
 export class DropdownMenuComponent implements AfterViewInit, OnInit {
-    @ContentChildren(DropdownItemComponent) dynamicChildren: QueryList<DropdownItemComponent>;
-    @ViewChildren(DropdownItemComponent) children: QueryList<DropdownItemComponent>;
+    @ContentChildren(DropdownHeaderComponent) contentHeader: QueryList<DropdownHeaderComponent>;
+    @ContentChildren(DropdownItemComponent) contentItems: QueryList<DropdownItemComponent>;
+    @ContentChildren(DividerComponent) divider: QueryList<DividerComponent>;
+    @ViewChildren(DropdownHeaderComponent) viewHeader: QueryList<DropdownHeaderComponent>;
+    @ViewChildren(DropdownItemComponent) viewItems: QueryList<DropdownItemComponent>;
 
+    @Input() alignment: string;
     @Input() clickToClose = false;
     @Input() color: string;
     @Input() direction: string;
     @Input() items: Array<any>;
     @Input() padding = true;
     @Input() size: string;
-    @Input() toggle: any;
 
     @Output() clickItem: EventEmitter<any> = new EventEmitter();
     @Output() closed: EventEmitter<any> = new EventEmitter();
 
-    host;
-    listProps;
     open = false;
 
     constructor(public elRef: ElementRef) {}
 
     ngAfterViewInit() {
-        this.children.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
-        this.dynamicChildren.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
+        this.contentHeader.forEach((header: DropdownHeaderComponent) => { this.handleDropdownHeader(header); });
+        this.contentItems.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
+        this.divider.forEach((divider: DividerComponent) => { this.handleDivider(divider); });
+        this.viewHeader.forEach((header: DropdownHeaderComponent) => { this.handleDropdownHeader(header); });
+        this.viewItems.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
     }
 
     ngOnInit() {
@@ -59,6 +62,18 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
     }
 
     // Methods
+    handleDivider(divider) {
+        if (this.color) { divider.parentColor = this.color; }
+        
+        divider.ngAfterViewInit();
+    }
+
+    handleDropdownHeader(header) {
+        if (this.color) { header.parentColor = this.color; }
+        
+        header.ngAfterViewInit();
+    }
+
     handleDropdownItem(item) {
         item.clicked.subscribe(() => {
             if (this.clickToClose || item.clickToClose) {

@@ -1,0 +1,11 @@
+<div>
+  <fab-dropdown mr="5">
+      <fab-dropdown-toggle color="primary" icon="arrow-left" [compact]="true" label="Left"></fab-dropdown-toggle>
+      <fab-dropdown-menu [clickToClose]="true" [items]="[{ button: true, label: 'Dropdown Item 1' }, { button: true, label: 'Dropdown Item 2' }, { button: true, label: 'Dropdown Item 3' }]" (click)="handleClick()"></fab-dropdown-menu>
+  </fab-dropdown>
+
+  <fab-dropdown alignment="right">
+      <fab-dropdown-toggle color="primary" icon="arrow-right" [compact]="true" label="Right"></fab-dropdown-toggle>
+      <fab-dropdown-menu [clickToClose]="true" [items]="[{ button: true, label: 'Dropdown Item 1' }, { button: true, label: 'Dropdown Item 2' }, { button: true, label: 'Dropdown Item 3' }]" (click)="handleClick()"></fab-dropdown-menu>
+  </fab-dropdown>
+</div>

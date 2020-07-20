@@ -25,27 +25,20 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
     @Input() open = false;
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
-
-    buttonProps;
-    host;
+    
+    props;
 
     constructor(public elRef: ElementRef) {
         super(elRef);
     }
 
     ngOnInit() {
-        let props = {};
-        let styles;
+        const host = this.elRef.nativeElement;
+        const styles = css(DropdownToggleStyles({ framework: 'angular', props: this }));
+        host.classList.add(styles);
 
-        // Get host element
-        this.host = this.elRef.nativeElement;
-
-        // Set and apply styles
-        styles = css(DropdownToggleStyles({ framework: 'angular', props: this }));
-        this.host.classList.add(styles);
-
-        // Set button props
-        this.buttonProps = this;
+        // Set props
+        this.props = this;
     }
 
     handleClick() {

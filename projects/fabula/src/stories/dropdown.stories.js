@@ -3,8 +3,11 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
+    BadgeComponent,
     DropdownModule,
     IconsModule,
+    ListComponent,
+    ListItemComponent,
     TagComponent,
     TextComponent,
     ThemeModule,
@@ -14,6 +17,7 @@ import {
 
 // Wrappers
 import { DropdownColorWrapper } from './wrappers/dropdown/color/dropdown-color.wrapper';
+import { DropdownAlignmentWrapper } from './wrappers/dropdown/alignment/dropdown-alignment.wrapper';
 import { DropdownCustomContentWrapper } from './wrappers/dropdown/custom-content/dropdown-custom-content.wrapper';
 import { DropdownDirectionWrapper } from './wrappers/dropdown/direction/dropdown-direction.wrapper';
 import { DropdownExpandWrapper } from './wrappers/dropdown/expand/dropdown-expand.wrapper';
@@ -26,6 +30,9 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
+                BadgeComponent,
+                ListComponent,
+                ListItemComponent,
                 TagComponent,
                 TextComponent
             ],
@@ -46,6 +53,7 @@ export default {
 
 // Stories
 export const Examples = () => ({ component: DropdownExamplesWrapper });
+export const Alignment = () => ({ component: DropdownAlignmentWrapper });
 export const Color = () => ({ component: DropdownColorWrapper });
 export const CustomContent = () => ({ component: DropdownCustomContentWrapper });
 export const Direction = () => ({ component: DropdownDirectionWrapper });

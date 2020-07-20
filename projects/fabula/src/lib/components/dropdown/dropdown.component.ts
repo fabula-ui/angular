@@ -3,8 +3,6 @@ import {
     ElementRef,
     Input,
     OnInit,
-    ContentChildren,
-    QueryList,
     ContentChild,
     AfterViewInit,
     Output,
@@ -27,6 +25,7 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     @ContentChild(DropdownMenuComponent) dropdownMenu: DropdownMenuComponent;
     @ContentChild(DropdownToggleComponent) dropdownToggle: DropdownToggleComponent;
 
+    @Input() alignment = 'left';
     @Input() direction = 'down';
     @Input() expand = false;
     @Input() open = false;
@@ -35,12 +34,11 @@ export class DropdownComponent implements AfterViewInit, OnInit {
 
     host;
 
-    constructor(
-        private elRef: ElementRef
-    ) { }
+    constructor(private elRef: ElementRef) { }
 
     ngAfterViewInit() {
         if (this.dropdownMenu) {
+            this.dropdownMenu.alignment = this.alignment;
             this.dropdownMenu.direction = this.direction;
             this.dropdownMenu.listen({ toggle: this.toggle });
             this.dropdownMenu.closed.subscribe(() => this.handleToggle());
@@ -56,24 +54,19 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     }
 
     ngOnInit() {
-        let props = {};
-        let styles;
-
-        // Get host element
-        this.host = this.elRef.nativeElement;
-
-        // Set and apply styles
-        styles = css(DropdownStyles({ framework: 'angular', props: this }));
-        this.host.classList.add(styles);
+        const host = this.elRef.nativeElement;
+        const styles = css(DropdownStyles({ framework: 'angular', props: this }));
+        
+        host.classList.add(styles);
+        this.host = host;
 
         // Event Listener
         document.addEventListener('click', e => this.handleClick(e));
     }
 
+    // Methods
     handleClick(e) {
-        if (!this.host.contains(e.target) && this.open) {
-            this.handleToggle();
-        }
+        if (!this.host.contains(e.target) && this.open) { this.handleToggle(); }
     }
 
     handleToggle() {

@@ -1,76 +1,74 @@
-<div row>
-  <div col="4">
-    <fab-dropdown [expand]="true">
-      <fab-dropdown-toggle color="primary" icon="map-pin" label="Dropdown Toggle"></fab-dropdown-toggle>
-      <fab-dropdown-menu>
-        <fab-list [padding]="true" [striped]="true">
-          <fab-list-item>
-            <div alV="center" flex>
-              <fab-text grow="1" weight="600">List Item 1</fab-text>
-              <fab-tag color="success">
-                <fab-icon name="check"></fab-icon>
-                <strong>Done</strong>
-              </fab-tag>
-            </div>
-          </fab-list-item>
-
-          <fab-list-item alV="center" flex>
-            <fab-text grow="1" weight="600">List Item 2</fab-text>
-            <fab-tag color="danger">
-              <fab-icon name="alert-triangle"></fab-icon>
+<div flex>
+  <fab-dropdown mr="1">
+    <fab-dropdown-toggle color="primary" icon="map-pin" label="Dropdown Toggle" [wide]="true"></fab-dropdown-toggle>
+    <fab-dropdown-menu [padding]="false">
+      <fab-list [padding]="true" [striped]="true">
+        <fab-list-item>
+          <div alV="center" flex>
+            <fab-text grow="1" weight="600">List Item 1</fab-text>
+            <fab-tag color="success">
+              <fab-icon name="check"></fab-icon>
               <strong>Done</strong>
             </fab-tag>
-          </fab-list-item>
+          </div>
+        </fab-list-item>
 
-          <fab-list-item alV="center" flex>
-            <fab-text grow="1" weight="600">List Item 3</fab-text>
-            <fab-tag color="hot">
-              <fab-icon name="sun"></fab-icon>
-              <strong>Hot</strong>
-            </fab-tag>
-          </fab-list-item>
+        <fab-list-item alV="center" flex>
+          <fab-text grow="1" weight="600">List Item 2</fab-text>
+          <fab-tag color="danger">
+            <fab-icon name="alert-triangle"></fab-icon>
+            <strong>Done</strong>
+          </fab-tag>
+        </fab-list-item>
 
-          <fab-list-item alV="center" flex>
-            <fab-text grow="1" weight="600">List Item 4</fab-text>
-            <fab-tag color="warning">
-              <fab-icon name="clock"></fab-icon>
-              <strong>Waiting</strong>
-            </fab-tag>
-          </fab-list-item>
-        </fab-list>
-      </fab-dropdown-menu>
-    </fab-dropdown>
-  </div>
+        <fab-list-item alV="center" flex>
+          <fab-text grow="1" weight="600">List Item 3</fab-text>
+          <fab-tag color="hot">
+            <fab-icon name="sun"></fab-icon>
+            <strong>Hot</strong>
+          </fab-tag>
+        </fab-list-item>
 
-  <fab-dropdown col="4" [expand]="true">
-    <fab-dropdown-toggle color="primary" icon="map-pin" label="Dropdown Toggle">
+        <fab-list-item alV="center" flex>
+          <fab-text grow="1" weight="600">List Item 4</fab-text>
+          <fab-tag color="warning">
+            <fab-icon name="clock"></fab-icon>
+            <strong>Waiting</strong>
+          </fab-tag>
+        </fab-list-item>
+      </fab-list>
+    </fab-dropdown-menu>
+  </fab-dropdown>
+
+  <fab-dropdown>
+    <fab-dropdown-toggle color="primary" icon="map-pin" label="Dropdown Toggle" [wide]="true">
     </fab-dropdown-toggle>
-    <fab-dropdown-menu [list]="true">
-      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex list-item>
+    <fab-dropdown-menu [padding]="false">
+      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex>
         <fab-text grow="1" weight="600">List Item 1</fab-text>
         <fab-tag color="success">
           <fab-icon name="check"></fab-icon>
           <strong>Tag 1</strong>
         </fab-tag>
       </fab-dropdown-item>
-
-      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex list-item>
+      <fab-divider></fab-divider>
+      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex>
         <fab-text grow="1" weight="600">List Item 2</fab-text>
         <fab-tag color="danger">
           <fab-icon name="alert-triangle"></fab-icon>
           <strong>Tag 2</strong>
         </fab-tag>
       </fab-dropdown-item>
-
-      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex list-item>
+      <fab-divider></fab-divider>
+      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex>
         <fab-text grow="1" weight="600">List Item 3</fab-text>
         <fab-tag color="hot">
           <fab-icon name="sun"></fab-icon>
           <strong>Tag 3</strong>
         </fab-tag>
       </fab-dropdown-item>
-
-      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex list-item>
+      <fab-divider></fab-divider>
+      <fab-dropdown-item alV="center" [button]="true" [clickToClose]="true" flex>
         <fab-text grow="1" weight="600">List Item 4</fab-text>
         <fab-tag color="warning">
           <fab-icon name="clock"></fab-icon>
