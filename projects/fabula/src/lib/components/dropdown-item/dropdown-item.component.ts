@@ -41,6 +41,7 @@ export class DropdownItemComponent implements AfterViewInit {
         host.classList.add(styles);
     }
 
+    // Methods
     handleClick() {
         this.clicked.emit();
     }

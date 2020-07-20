@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Input, QueryList, ContentChildren, ViewChildren } from '@angular/core';
+import { Component, ElementRef, OnInit, Input, QueryList, ContentChildren, ViewChildren, Output, EventEmitter } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -11,50 +11,47 @@ import { ListItemComponent } from '../list-item/list-item.component';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  @ContentChildren(ListItemComponent) dynamicChildren: QueryList<ListItemComponent>;
-  @ViewChildren(ListItemComponent) chidren: QueryList<ListItemComponent>;
+  @ContentChildren(ListItemComponent) contentItems: QueryList<ListItemComponent>;
+  @ViewChildren(ListItemComponent) viewItems: QueryList<ListItemComponent>;
 
   @Input() color: string;
   @Input() divider = true;
-  @Input() padding: any;
+  @Input() padding = false;
   @Input() props: any;
   @Input() striped = false;
 
-  host;
+  @Output() clickItem: EventEmitter<any> = new EventEmitter();
 
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngAfterViewInit() {
-    this.chidren.forEach((item: ListItemComponent) => { this.handleItem(item); });
-    this.dynamicChildren.forEach((item: ListItemComponent) => { this.handleItem(item); });
+    this.contentItems.forEach((item: ListItemComponent) => { this.handleItem(item); });
+    this.viewItems.forEach((item: ListItemComponent) => { this.handleItem(item); });
   }
 
   ngOnInit() {
-    let styles;
-
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set and apply styles
-    styles = css(ListStyles({
+    const host = this.elRef.nativeElement;
+    const styles = css(ListStyles({
       framework: 'angular', props: {
         ...this,
         ...this.props
       }
     }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
   // Methods
   handleItem(item) {
     if (this.color && !item.color) { item.color = this.color; }
+
+    item.clicked.subscribe(() => {
+      this.clickItem.emit();
+    });
+
     item.divider = this.divider;
     item.padding = this.padding;
     item.striped = this.striped;
 
     item.ngOnInit();
   }
-
 }

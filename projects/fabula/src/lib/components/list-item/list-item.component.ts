@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -12,29 +12,32 @@ import ListItemStyles from '@fabula/core/styles/components/list-item/list-item';
 export class ListItemComponent implements OnInit {
   @Input() button = false;
   @Input() color: string;
+  @Input() divider: boolean;
   @Input() item: any = { button: false };
+  @Input() link: string;
+  @Input() padding: boolean;
   @Input() props: any;
+  @Input() target = '_blank';
 
-  host;
+  @Output() clicked = new EventEmitter();
 
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(ListItemStyles({
+      framework: 'angular', props: {
+        ...this,
+        ...this.item,
+        ...this.props,
+      }
+    }));
 
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set and apply styles
-    styles = css(ListItemStyles({ framework: 'angular', props: {
-      ...this,
-      ...this.item,
-      ...this.props
-    } }));
-
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
+  // Methods
+  handleClick() {
+    this.clicked.emit();
+  }
 }
