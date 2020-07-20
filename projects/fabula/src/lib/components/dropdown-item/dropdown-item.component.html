@@ -1,16 +1,11 @@
-<div class="fab-dropdown-item fab-list-item" [attr.data-button]="!!item.button || button" data-fab-component="dropdown-item">
-  <ng-container *ngIf="item.button || button">
-    <fab-button (click)="handleClick()" [color]="item.color || color" [compact]="true" [expand]="true" [props]="buttonProps"
-      data-dropdown-item *ngIf="buttonProps">
-      <span class="fab-dropdown-item__label" *ngIf="label">{{label}}</span>
-      <ng-content *ngTemplateOutlet="content"></ng-content>
-    </fab-button>
-  </ng-container>
+<button class="fab-dropdown-item" (click)="handleClick()" *ngIf="item.button || button">
+  {{item && item.label || label}}
+  <ng-content *ngTemplateOutlet="content"></ng-content>
+</button>
 
-  <ng-container *ngIf="!item.button && !button">
-    <span class="fab-dropdown-item__label" *ngIf="item && item.label || label">{{item && item.label || label}}</span>
-    <ng-content *ngTemplateOutlet="content"></ng-content>
-  </ng-container>
+<div class="fab-dropdown-item" *ngIf="!item.button && !button">
+  {{item && item.label || label}}
+  <ng-content *ngTemplateOutlet="content"></ng-content>
 </div>
 
 <ng-template #content>

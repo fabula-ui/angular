@@ -7,14 +7,15 @@ import { CommonModule } from '@angular/common';
 import { DropdownItemComponent } from '../components/dropdown-item/dropdown-item.component';
 import { DropdownMenuComponent } from '../components/dropdown-menu/dropdown-menu.component';
 import { DropdownToggleComponent } from '../components/dropdown-toggle/dropdown-toggle.component';
-import { ButtonComponent } from '../components/button/button.component';
 import { DropdownComponent } from '../components/dropdown/dropdown.component';
 import { ListComponent } from '../components/list/list.component';
 import { ListItemComponent } from '../components/list-item/list-item.component';
 
+// Modules
+import { ButtonModule } from './button.module';
+
 @NgModule({
     declarations: [
-        ButtonComponent,
         DropdownComponent,
         DropdownItemComponent,
         DropdownMenuComponent,
@@ -22,9 +23,11 @@ import { ListItemComponent } from '../components/list-item/list-item.component';
         ListComponent,
         ListItemComponent
     ],
-    imports: [CommonModule],
+    imports: [
+        ButtonModule,
+        CommonModule,
+    ],
     exports: [
-        ButtonComponent,
         DropdownComponent,
         DropdownItemComponent,
         DropdownMenuComponent,

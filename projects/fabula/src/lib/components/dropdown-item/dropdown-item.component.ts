@@ -9,10 +9,6 @@ import {
 } from '@angular/core';
 import { css } from 'emotion';
 
-// Components
-import { ButtonComponent } from '../button/button.component';
-import { ListItemComponent } from '../list-item/list-item.component';
-
 // Styles
 import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dropdown-item';
 
@@ -20,48 +16,27 @@ import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dro
     selector: 'fab-dropdown-item',
     templateUrl: './dropdown-item.component.html',
 })
-export class DropdownItemComponent extends ListItemComponent implements AfterViewInit, OnInit {
+export class DropdownItemComponent implements AfterViewInit {
     @Input() button = false;
+    @Input() color: string;
     @Input() clickToClose = false;
     @Input() item: any = { button: false };
     @Input() label: string;
     @Input() listItem = false;
-    @Input() size = 'sm';
+    @Input() parentColor: string;
+    @Input() size: string;
 
     @Output() clicked = new EventEmitter();
 
-    buttonProps;
-    host;
-
-    constructor(public elRef: ElementRef) {
-        super(elRef);
-    }
+    constructor(public elRef: ElementRef) {}
 
     ngAfterViewInit() {
-        this.init();
-        super.ngOnInit();
-    }
-
-    ngOnInit() {
-        let styles;
-
-        // Get host element
-        this.host = this.elRef.nativeElement;
-
-        // Set and apply styles
-        styles = css(DropdownItemStyles({ framework: 'angular', props: this }));
-        this.host.classList.add(styles);
+        const host = this.elRef.nativeElement;
+        const styles = css(DropdownItemStyles({ framework: 'angular', props: this }));
+        host.classList.add(styles);
     }
 
     handleClick() {
         this.clicked.emit();
-    }
-
-    init() {
-        // Set props
-        this.buttonProps = {
-            ...this,
-            ...this.item,
-        };
     }
 }

@@ -25,14 +25,14 @@ import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dro
     selector: 'fab-dropdown-menu',
     templateUrl: './dropdown-menu.component.html',
 })
-export class DropdownMenuComponent extends ListComponent implements AfterViewInit, OnInit {
+export class DropdownMenuComponent implements AfterViewInit, OnInit {
     @ContentChildren(DropdownItemComponent) dynamicChildren: QueryList<DropdownItemComponent>;
     @ViewChildren(DropdownItemComponent) children: QueryList<DropdownItemComponent>;
 
     @Input() clickToClose = false;
+    @Input() color: string;
     @Input() direction: string;
     @Input() items: Array<any>;
-    @Input() list = false;
     @Input() padding = true;
     @Input() size: string;
     @Input() toggle: any;
@@ -44,9 +44,7 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
     listProps;
     open = false;
 
-    constructor(public elRef: ElementRef) {
-        super(elRef);
-    }
+    constructor(public elRef: ElementRef) {}
 
     ngAfterViewInit() {
         this.children.forEach((item: DropdownItemComponent) => { this.handleDropdownItem(item); });
@@ -54,20 +52,10 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
     }
 
     ngOnInit() {
-        let dropdownMenuStyles;
+        const host = this.elRef.nativeElement;
+        const styles = css(DropdownMenuStyles({ framework: 'angular', props: this }));
 
-        // Get host element
-        this.host = this.elRef.nativeElement;
-
-        // Set and apply styles
-        dropdownMenuStyles = css(DropdownMenuStyles({ framework: 'angular', props: this }));
-        this.host.classList.add(dropdownMenuStyles);
-
-        // Set list props
-        this.listProps = {
-            padding: true,
-            ...this,
-        };
+        host.classList.add(styles);
     }
 
     // Methods
@@ -80,15 +68,11 @@ export class DropdownMenuComponent extends ListComponent implements AfterViewIni
             this.clickItem.emit();
         });
 
-        if (this.color && !item.color) { item.color = this.color; }
-        if (this.list) { item.listItem = true; }
-        if (this.size) { item.size = this.size; }
+        if (this.color) { item.parentColor = this.color; }
+        if (this.size && !item.size) { item.size = this.size; }
 
-        item.divider = this.divider;
         item.padding = this.padding;
-        item.striped = this.striped;
 
-        item.init();
         item.ngAfterViewInit();
     }
 
