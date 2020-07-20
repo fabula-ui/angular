@@ -38,7 +38,10 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
         host.classList.add(styles);
 
         // Set props
-        this.props = this;
+        this.props = {
+            ...this,
+            label: ''
+        };
     }
 
     handleClick() {

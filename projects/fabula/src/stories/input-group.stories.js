@@ -3,6 +3,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
+    ButtonModule,
     DropdownModule,
     InputComponent,
     InputGroupComponent,
@@ -34,6 +35,7 @@ export default {
             ],
             imports: [
                 BrowserModule,
+                ButtonModule,
                 DropdownModule,
                 IconsModule,
                 ThemeModule.forRoot(),
