@@ -17,14 +17,12 @@ export class ToastStackComponent implements OnInit {
   ngOnInit() {
     const host = this.elRef.nativeElement;
     const styles = css(ToastStackStyles({ framework: 'angular', props: this }));
-
     host.classList.add(styles);
   }
 
   get visibleToasts() {
     const toasts = this.toasts.map((toast, index) => {
       toast.index = index;
-
       return toast;
     });
 

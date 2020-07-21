@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, ElementRef, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -25,6 +25,7 @@ export class ToastComponent implements AfterViewInit {
   @Input() stacked = false;
 
   iconProps;
+  props;
 
   constructor(
     public elRef: ElementRef,
@@ -55,15 +56,16 @@ export class ToastComponent implements AfterViewInit {
         name: this.icon,
       }
     }
+
+    this.props = this;
   }
 
   hideToast() {
     const stack = this.toastService.stacks[this.stack];
-    
+
     this.toastService.hideToast({
       index: this.index,
       stack
     });
   }
-
 }
