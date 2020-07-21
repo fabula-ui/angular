@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SegmentComponent } from '../components/segment/segment.component';
 import { SegmentContentComponent } from '../components/segment-content/segment-content.component';
 import { SegmentsComponent } from '../components/segments/segments.component';
+import { SelectorComponent } from '../components/selector/selector.component';
 
 // Directives
 import { SegmentsDirective } from '../directives/segments.directive';
@@ -16,7 +17,11 @@ import { SegmentsDirective } from '../directives/segments.directive';
         SegmentComponent,
         SegmentContentComponent,
         SegmentsComponent,
-        SegmentsDirective
+        SegmentsDirective,
+        SelectorComponent
+    ],
+    entryComponents: [
+        SelectorComponent
     ],
     imports: [CommonModule],
     exports: [

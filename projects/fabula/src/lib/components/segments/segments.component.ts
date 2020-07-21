@@ -3,10 +3,10 @@ import { css } from 'emotion';
 
 // Components
 import { SegmentComponent } from '../segment/segment.component';
+import { SelectorComponent } from '../selector/selector.component';
 
 // Styles
 import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
-import { SelectorComponent } from '../selector/selector.component';
 
 @Component({
   selector: 'fab-segments',
@@ -35,11 +35,7 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
 
   @Output() changeSegment = new EventEmitter();
 
-  host;
-
-  constructor(
-    public elRef: ElementRef,
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngAfterViewInit() {
     this.childComponents.forEach((child: SegmentComponent) => {
@@ -61,6 +57,7 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
       child.type = this.type;
 
       child.selectedSegment.subscribe(tab => this.handleActiveSegment(tab));
+
       child.childViewInit();
       child.listen({
         onChangeSelector: this.changeSegment

@@ -21,5 +21,4 @@ export class ContentComponent implements OnInit {
 
     host.classList.add(styles);
   }
-
 }

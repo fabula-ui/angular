@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -11,16 +11,11 @@ import { SelectorComponent } from '../selector/selector.component';
   templateUrl: './segment.component.html'
 })
 export class SegmentComponent extends SelectorComponent {
-  constructor(
-    public elRef: ElementRef,
-  ) { super(elRef); }
-
-  ngOnInit() { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   childViewInit() {
     const host = this.elRef.nativeElement;
     const styles = css(SegmentStyles({ framework: 'angular', props: this }));
-
     host.classList.add(styles);
   }
 }
