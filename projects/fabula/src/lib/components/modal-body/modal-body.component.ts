@@ -9,14 +9,11 @@ import { ModalSectionComponent } from '../modal-section/modal-section.component'
 })
 export class ModalBodyComponent extends ModalSectionComponent implements OnInit {
 
-  constructor(
-    public elRef: ElementRef
-  ) { 
+  constructor(public elRef: ElementRef) { 
     super(elRef);
   }
 
   ngOnInit() {
     super.ngOnInit();
   }
-
 }

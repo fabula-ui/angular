@@ -10,13 +10,11 @@ import { CloseButtonComponent } from '../close-button/close-button.component';
 
 @Component({
   selector: 'fab-modal-header',
-  templateUrl: './modal-header.component.html',
-  styleUrls: ['./modal-header.component.css']
+  templateUrl: './modal-header.component.html'
 })
 export class ModalHeaderComponent extends ModalSectionComponent implements AfterViewInit {
-  @Input() subtitle: string;
-  @Input() title: string;
   @Output() clickedClose = new EventEmitter();
+
   @ViewChild(CloseButtonComponent) closeButton: CloseButtonComponent;
 
   init = false;
@@ -46,5 +44,4 @@ export class ModalHeaderComponent extends ModalSectionComponent implements After
   closeModal() {
     this.clickedClose.emit(true);
   }
-
 }

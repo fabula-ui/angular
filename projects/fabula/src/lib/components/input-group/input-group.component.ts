@@ -6,8 +6,7 @@ import InputGroupStyles from '@fabula/core/styles/components/input-group/input-g
 
 @Component({
   selector: 'fab-input-group',
-  templateUrl: './input-group.component.html',
-  styleUrls: ['./input-group.component.scss']
+  templateUrl: './input-group.component.html'
 })
 export class InputGroupComponent implements OnInit {
   @Input() flow = 'horizontal';

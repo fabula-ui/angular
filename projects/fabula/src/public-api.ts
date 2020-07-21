@@ -75,6 +75,7 @@ export * from './lib/modules/card.module';
 export * from './lib/modules/dropdown.module';
 export * from './lib/modules/icons.module';
 export * from './lib/modules/list.module';
+export * from './lib/modules/modal.module';
 export * from './lib/modules/navbar.module';
 export * from './lib/modules/segments.module';
 export * from './lib/modules/tabs.module';

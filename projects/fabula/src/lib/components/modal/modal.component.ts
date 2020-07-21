@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2, Input, ContentChild, AfterViewInit, Output, EventEmitter, SimpleChanges, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, Input, ContentChild, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
@@ -26,9 +26,7 @@ export class ModalComponent implements AfterViewInit {
   @Input() color: string;
   @Input() glow = true;
   @Input() open = true;
-  @Input() size: string;
-
-  init;
+  @Input() size = 'lg';
 
   constructor(
     public elRef: ElementRef,
@@ -67,5 +65,4 @@ export class ModalComponent implements AfterViewInit {
   closeModal() {
     this.modalService.closeModal();
   }
-
 }

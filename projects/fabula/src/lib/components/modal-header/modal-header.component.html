@@ -1,8 +1,6 @@
 <div class="fab-modal-header fab-modal-section" *ngIf="init">
   <div class="fab-modal-header__content">
     <ng-content></ng-content>
-    <strong class="fab-modal-header__title" *ngIf="title">{{title}}</strong>
-    <span class="fab-modal-header__title" *ngIf="subtitle">{{subtitle}}</span>
   </div>
   <fab-close-button [color]="color || parentColor" (click)="closeModal()"></fab-close-button>
 </div>
