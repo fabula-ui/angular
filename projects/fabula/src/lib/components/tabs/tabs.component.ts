@@ -16,9 +16,7 @@ export class TabsComponent extends SegmentsComponent implements AfterViewInit, O
   @ContentChildren(TabComponent) tabComponents: QueryList<TabComponent>;
   @Input() props: any;
 
-  constructor(public elRef: ElementRef) {
-    super(elRef);
-  }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {
     super.ngAfterViewInit();

@@ -13,7 +13,6 @@ export class SelectorComponent {
     @Input() color: string;
     @Input() expand: boolean;
     @Input() faded: boolean;
-    @Input() float = false;
     @Input() href: string;
     @Input() inactiveFillColor: string;
     @Input() inactiveTextColor: string;
@@ -30,9 +29,7 @@ export class SelectorComponent {
 
     @Output() selectedSegment = new EventEmitter();
 
-    constructor(
-        public elRef: ElementRef,
-    ) { }
+    constructor(public elRef: ElementRef) { }
 
     handleClick() {
         if (this.name) { this.selectedSegment.emit(this.name); }

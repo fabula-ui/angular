@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
@@ -15,17 +15,11 @@ import TabStyles from '@fabula/core/styles/components/tab/tab';
 export class TabComponent extends SelectorComponent {
   @Input() type: string;
   
-  constructor(
-    public elRef: ElementRef,
-  ) {
-    super(elRef);
-  }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   childViewInit() {
     const host = this.elRef.nativeElement;
     const styles = css(TabStyles({ framework: 'angular', props: this }));
-    
     host.classList.add(styles);
   }
-
 }
