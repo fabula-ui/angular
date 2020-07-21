@@ -12,31 +12,13 @@ import InputGroupStyles from '@fabula/core/styles/components/input-group/input-g
 export class InputGroupComponent implements OnInit {
   @Input() flow = 'horizontal';
   @Input() glued = false;
-  @Input() spacing: string;
+  @Input() spacing: any;
 
-  host;
-
-  constructor(
-    public elRef: ElementRef,
-  ) { }
+  constructor(public elRef: ElementRef) { }
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    // Get host element
-    this.host = this.elRef.nativeElement;
-    
-    // Set props
-    props = {
-      flow: this.flow,
-      glued: this.glued,
-      spacing: this.spacing
-    };
-
-    // Set and apply styles
-    styles = css(InputGroupStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
+    const host = this.elRef.nativeElement;
+    const styles = css(InputGroupStyles({ framework: 'angular', props: this }));
+    host.classList.add(styles);
   }
-
 }
