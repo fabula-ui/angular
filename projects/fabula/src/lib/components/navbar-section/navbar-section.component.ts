@@ -10,7 +10,7 @@ import NavbarSectionStyles from '@fabula/core/styles/components/navbar-section/n
 })
 export class NavbarSectionComponent implements AfterViewInit {
   @Input() alignment: string;
-  @Input() expand: boolean;
+  @Input() expand = false;
   
   constructor(public elRef: ElementRef) {}
 
