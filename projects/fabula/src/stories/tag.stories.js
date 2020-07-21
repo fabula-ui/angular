@@ -4,8 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     IconsModule,
-    TagComponent,
-    TagGroupComponent,
+    TagModule,
     TextComponent,
     ThemeModule,
     ThemeService,
@@ -28,13 +27,12 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                TagComponent,
-                TagGroupComponent,
                 TextComponent
             ],
             imports: [
                 BrowserModule,
                 IconsModule,
+                TagModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

@@ -4,8 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     IconsModule,
-    TagComponent,
-    TagGroupComponent,
+    TagModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -19,13 +18,10 @@ import { TagGroupSpacingWrapper } from './wrappers/tag-group/spacing/tag-group-s
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                TagComponent,
-                TagGroupComponent
-            ],
             imports: [
                 BrowserModule,
                 IconsModule,
+                TagModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

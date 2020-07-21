@@ -81,6 +81,7 @@ export * from './lib/modules/navbar.module';
 export * from './lib/modules/search-input.module';
 export * from './lib/modules/segments.module';
 export * from './lib/modules/tabs.module';
+export * from './lib/modules/tag.module';
 export * from './lib/modules/text.module';
 export * from './lib/modules/theme.module';
 export * from './lib/modules/toast.module';
