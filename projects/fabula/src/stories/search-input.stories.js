@@ -3,10 +3,9 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    ButtonComponent,
-    InputComponent,
+    ButtonModule,
     IconsModule,
-    SearchInputComponent,
+    SearchInputModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -25,14 +24,12 @@ import { SearchInputSizeWrapper } from './wrappers/search-input/size/search-inpu
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                ButtonComponent,
-                InputComponent,
-                SearchInputComponent,
-            ],
+            declarations: [],
             imports: [
                 BrowserModule,
+                ButtonModule,
                 IconsModule,
+                SearchInputModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

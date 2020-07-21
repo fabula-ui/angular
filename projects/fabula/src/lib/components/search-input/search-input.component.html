@@ -1,12 +1,8 @@
 <div class="fab-search-input-wrapper">
   <div class="fab-search-input">
     <fab-input [iconStart]="{ name: 'search' }" [placeholder]="placeholder" [props]="inputProps">
-      <fab-button color="primary" [compact]="true" [props]="button" *ngIf="button">
-        <span *ngIf="!button.label && !button.icon">Search</span>
-      </fab-button>
+      <fab-button [hidden]="!button"></fab-button>
       <ng-content></ng-content>
     </fab-input>
-
-    <!-- {!!autocomplete && <DropdownMenu clickToClose={true} items={[{ button: true, label: 'Item 1' }, { button: true, label: 'Item 2' }, { button: true, label: 'Item 3' }]} onChange={setAutocompleIsOpen} open={autocompleteIsOpen}></DropdownMenu>} -->
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="fab-button-wrapper" [attr.data-border]="border" [attr.data-circle]="!!circle || !!icon" [attr.data-expand]="true" [attr.data-outline]="outline" data-fab-wrapper="button">
+<div class="fab-button-wrapper" [attr.data-border]="border" [attr.data-circle]="!!circle || !!icon" [attr.data-expand]="true" [attr.data-outline]="outline" [attr.data-rounded]="rounded" data-fab-wrapper="button">
   <button class="fab-button" [disabled]="disabled" data-fab-component="button">
     <fab-inner-icon *ngIf="icon" [icon]="icon" [parentProps]="props"></fab-inner-icon>
     <ng-container *ngIf="!icon && (label || props && props.label)">{{label || props && props.label}}</ng-container>

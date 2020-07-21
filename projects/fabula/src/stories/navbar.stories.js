@@ -3,7 +3,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    ButtonComponent,
+    ButtonModule,
     ButtonGroupComponent,
     IconsModule,
     NavbarModule,
@@ -24,7 +24,6 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                ButtonComponent,
                 ButtonGroupComponent,
                 NavbarExampleWrapper,
                 TextComponent,
@@ -34,6 +33,7 @@ export default {
             ],
             imports: [
                 BrowserModule,
+                ButtonModule,
                 IconsModule,
                 NavbarModule,
                 TabsModule,

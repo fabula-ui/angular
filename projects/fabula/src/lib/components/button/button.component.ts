@@ -2,7 +2,8 @@ import {
   Component,
   ElementRef,
   Input,
-  OnInit
+  OnInit,
+  AfterViewInit
 } from '@angular/core';
 import { css } from 'emotion';
 
@@ -14,7 +15,7 @@ import ButtonStyles from '@fabula/core/styles/components/button/button';
   styleUrls: ['button.component.scss'],
   templateUrl: './button.component.html',
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent implements AfterViewInit {
   @Input() border = false;
   @Input() circle: boolean;
   @Input() clear: boolean;
@@ -41,18 +42,19 @@ export class ButtonComponent implements OnInit {
 
   constructor(public elRef: ElementRef) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     const styles = css(ButtonStyles({
       framework: 'angular', props: {
         ...this,
         ...this.props
       }
     }));
-
-    this.host = this.elRef.nativeElement;
-    this.host.classList.add(styles);
+    const host = this.elRef.nativeElement;
+    host.classList.add(styles);
 
     if (this.props && this.props.icon) { this.icon = this.props.icon; }
     if (!this.props) { this.props = this; }
+
+    this.host = host;
   }
 }
