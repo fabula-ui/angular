@@ -15,6 +15,7 @@ export class TextComponent implements OnInit {
   @Input() props: any;
   @Input() size: string;
   @Input() weight: string;
+  @Input() wrap = true;
 
   @ViewChild('component') component: ElementRef;
 
