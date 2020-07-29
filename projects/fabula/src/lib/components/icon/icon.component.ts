@@ -47,7 +47,7 @@ export class IconComponent implements OnInit {
     this.props = props;
 
     // Handle svg
-    this.handleSvg();
+    // this.handleSvg();
   }
 
   handleLoad(e) {
