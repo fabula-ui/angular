@@ -1,7 +1,7 @@
 {
-  "name": "fabula-lib-angular",
+  "name": "@fabula/angular",
   "description": "Fabula UI Angular library",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration hmr",

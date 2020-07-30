@@ -5,7 +5,7 @@ import { css } from 'emotion';
 import { InputComponent } from '../input/input.component';
 
 // Styles
-import TagInputStyles from '@fabula/core/theme/styles/TagInput';
+import TagInputStyles from '@fabula/core/styles/components/tag-input/tag-input';
 
 
 @Component({

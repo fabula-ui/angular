@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } fr
 import { css } from 'emotion';
 
 // Styles
-import TextStyles from '@fabula/core/theme/styles/Text';
+import TextStyles from '@fabula/core/styles/components/text/text';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
