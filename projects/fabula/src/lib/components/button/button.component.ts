@@ -27,7 +27,6 @@ export class ButtonComponent implements AfterViewInit {
   @Input() faded: boolean;
   @Input() glow = false;
   @Input() gradient: boolean;
-  @Input() icon: string;
   @Input() invert: boolean;
   @Input() lighten: boolean;
   @Input() loading: string;
@@ -52,9 +51,7 @@ export class ButtonComponent implements AfterViewInit {
     const host = this.elRef.nativeElement;
     host.classList.add(styles);
 
-    if (this.props && this.props.icon) { this.icon = this.props.icon; }
     if (!this.props) { this.props = this; }
-
     this.host = host;
   }
 }

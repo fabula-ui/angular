@@ -13,7 +13,7 @@ export class CardSectionComponent implements OnInit {
   @Input() divider: string;
   @Input() expand = false;
   @Input() layout = 'vertical';
-  @Input() padding: any;
+  @Input() padding;
 
   host;
 
@@ -22,24 +22,10 @@ export class CardSectionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let props;
-    let styles;
+    const host = this.elRef.nativeElement;
+    const styles = css(CardSectionStyles({ framework: 'angular', props: this }));
 
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set props
-    props = {
-      color: this.color,
-      divider: this.divider,
-      expand: this.expand,
-      layout: this.layout,
-      padding: this.padding
-    };
-
-    // Set and apply styles
-    styles = css(CardSectionStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
   }
 
 }

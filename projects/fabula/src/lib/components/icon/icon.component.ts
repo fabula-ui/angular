@@ -1,76 +1,38 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Input, ViewChild, Renderer2 } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Component, ElementRef, OnInit, Input, Renderer2 } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import IconStyles from '@fabula/core/theme/styles/Icon';
+import IconStyles from '@fabula/core/styles/components/icon/icon';
 
 @Component({
   selector: 'fab-icon',
   templateUrl: './icon.component.html'
 })
 export class IconComponent implements OnInit {
-  @Input() color = '';
+  @Input() color: string;
   @Input() name: string;
   @Input() props;
+  @Input() size = 'md';
 
-  appended = false;
   host;
-  svg;
-  svgObject;
 
   constructor(
-    public elRef: ElementRef,
-    public renderer: Renderer2,
-    public sanitizer: DomSanitizer
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    // Get host element
-    this.host = this.elRef.nativeElement;
-
-    // Set props
-    props = {
+    const host = this.elRef.nativeElement;
+    const props = {
       color: this.color,
       name: this.name,
+      size: this.size,
       ...this.props,
     };
+    const styles = css(IconStyles({ framework: 'angular', props }));
 
-    // Set and apply styles
-    styles = css(IconStyles({ framework: 'angular', props }));
-    this.host.classList.add(styles);
+    host.classList.add(styles);
 
     // Pass props to component
     this.props = props;
-
-    // Handle svg
-    // this.handleSvg();
   }
-
-  handleLoad(e) {
-    const svgDocument = e.target.contentDocument;
-    const svgObject = svgDocument.querySelector('svg');
-    const svgWrapper = this.host.querySelector('.fab-icon__svg');
-
-    if (svgObject) {
-      this.renderer.appendChild(svgWrapper, svgObject);
-      this.appended = true;
-    }
-  }
-
-  handleSvg() {
-    let url;
-
-    try {
-      url = require(`@fabula/core/icons/${this.name}.svg`);
-
-      this.svg = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    } catch (err) {
-      this.svg = null;
-    }
-  }
-
 }

@@ -30,6 +30,7 @@ export class AlertComponent implements OnInit {
   @Input() textColor: string;
   @Input() title: string;
   @Input() titleColor: string;
+  @Input() type: string;
   @Input() visible = true;
 
   @Output() close: EventEmitter<any> = new EventEmitter();
@@ -47,6 +48,8 @@ export class AlertComponent implements OnInit {
     host.classList.add(styles);
     this.host = host;
     this.props = this;
+
+    if (this.type) { this.handleType(); }
   }
 
   // Methods
@@ -61,6 +64,34 @@ export class AlertComponent implements OnInit {
       this.closing = false;
       this.visible = false;
     }, transitionDuration + 1);
+  }
+
+  handleType() {
+    switch (this.type) {
+      case 'danger':
+        this.icon = {
+          color: 'danger',
+          name: 'alert-triangle'
+        };
+        break;
+      case 'success':
+        this.icon = {
+          color: 'success',
+          name: 'check'
+        };
+        break;
+      case 'warning':
+        this.icon = {
+          color: 'warning',
+          name: 'check'
+        };
+        break;
+      default:
+        this.icon = {
+          color: 'cold',
+          name: 'info'
+        };
+    }
   }
 
   isObject(subject) {

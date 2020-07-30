@@ -30,6 +30,7 @@ import { AlertMarkerWrapper } from './wrappers/alert/marker/alert-marker.wrapper
 import { AlertOutlineWrapper } from './wrappers/alert/outline/alert-outline.wrapper';
 import { AlertTextColorWrapper } from './wrappers/alert/text-color/alert-text-color.wrapper';
 import { AlertTitleColorWrapper } from './wrappers/alert/title-color/alert-title-color.wrapper';
+import { AlertTypeWrapper } from './wrappers/alert/type/alert-type.wrapper';
 
 export default {
     decorators: [
@@ -113,4 +114,8 @@ export const TextColor = () => ({
 
 export const TitleColor = () => ({
     component: AlertTitleColorWrapper,
+});
+
+export const Type = () => ({
+    component: AlertTypeWrapper,
 });

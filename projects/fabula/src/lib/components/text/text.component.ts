@@ -75,6 +75,7 @@ export class TextComponent implements OnInit {
       italic: this.italic,
       size: this.size,
       weight: this.weight,
+      wrap: this.wrap,
       ...this.props
     };
 

@@ -25,7 +25,7 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
     @Input() open = false;
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
-    
+
     props;
 
     constructor(public elRef: ElementRef) {
@@ -40,6 +40,7 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
         // Set props
         this.props = {
             ...this,
+            icon: '',
             label: ''
         };
     }
