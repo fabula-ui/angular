@@ -17,8 +17,8 @@ export class ButtonGroupComponent implements OnInit {
   @Input() color: string;
   @Input() divider = true;
   @Input() dividerColor = '';
-  @Input() flow = 'horizontal';
   @Input() glued = false;
+  @Input() layout = 'horizontal';
   @Input() spacing: string;
   @Input() wrap = true;
 
