@@ -1,11 +1,15 @@
-<div class="fab-button-wrapper" [attr.data-border]="border" [attr.data-circle]="!!circle || !!icon" [attr.data-expand]="true" [attr.data-outline]="outline" [attr.data-rounded]="rounded" data-fab-wrapper="button">
+<div class="fab-button-wrapper" [attr.data-border]="border" [attr.data-circle]="!!circle || !!icon" [attr.data-disabled]="disabled" [attr.data-expand]="true" [attr.data-outline]="outline" [attr.data-rounded]="rounded" data-fab-wrapper="button">
   <button class="fab-button" [disabled]="disabled" data-fab-component="button" *ngIf="!href">
     <ng-container *ngIf="!icon && (label || props && props.label)">{{label || props && props.label}}</ng-container>
-    <ng-content></ng-content>
+    <ng-content *ngTemplateOutlet="content"></ng-content>
   </button>
 
-  <a class="fab-button" [attr.href]="href" [attr.target]="target" [disabled]="disabled" data-fab-component="button" *ngIf="href">
+  <a class="fab-button" [attr.href]="href" [attr.target]="target" data-fab-component="button" *ngIf="href">
     <ng-container *ngIf="!icon && (label || props && props.label)">{{label || props && props.label}}</ng-container>
-    <ng-content></ng-content>
-  </button>
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </a>
 </div>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

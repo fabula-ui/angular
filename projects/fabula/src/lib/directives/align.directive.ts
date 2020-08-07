@@ -5,7 +5,7 @@ import { css } from 'emotion';
 import { ThemeService } from '../services/theme.service';
 
 // Styles
-import UtilsStyles from '@fabula/core/theme/utils';
+import UtilsStyles from '@fabula/core/styles/utils/utils';
 
 @Directive({
     selector: '[align],[alH],[alV],[alignH],[alignV]'

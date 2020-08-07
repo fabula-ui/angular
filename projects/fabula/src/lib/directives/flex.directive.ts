@@ -2,7 +2,7 @@ import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
-import UtilsStyles from '@fabula/core/theme/utils';
+import UtilsStyles from '@fabula/core/styles/utils/utils';
 
 @Directive({
     selector: '[alItems], [flex], [flow], [justContent]'

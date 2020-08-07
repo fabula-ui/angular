@@ -6,7 +6,7 @@ import { ThemeService } from '../services/theme.service';
 import { ColumnComponent } from '../components/column/column.component';
 
 // Styles
-import UtilsStyles from '@fabula/core/theme/utils';
+import UtilsStyles from '@fabula/core/styles/utils/utils';
 
 @Directive({
     selector: '[col],[col-down],[col-up],[col-on],[col-not-on]'
