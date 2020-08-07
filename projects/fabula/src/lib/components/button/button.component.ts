@@ -27,6 +27,7 @@ export class ButtonComponent implements AfterViewInit {
   @Input() faded: boolean;
   @Input() glow = false;
   @Input() gradient: boolean;
+  @Input() href: string;
   @Input() invert: boolean;
   @Input() lighten: boolean;
   @Input() loading: string;
@@ -35,6 +36,7 @@ export class ButtonComponent implements AfterViewInit {
   @Input() props: any;
   @Input() rounded: boolean;
   @Input() size: string;
+  @Input() target: string;
   @Input() wide: boolean;
 
   host;
