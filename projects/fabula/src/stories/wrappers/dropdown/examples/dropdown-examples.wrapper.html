@@ -1,6 +1,6 @@
 <div flex>
     <fab-dropdown mb="1" mr="1">
-        <fab-dropdown-toggle color="primary" icon="map-pin" compact={true} label="Button"></fab-dropdown-toggle>
+        <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Button"></fab-dropdown-toggle>
         <fab-dropdown-menu [clickToClose]="true" (clickItem)="handleClick()">
             <fab-dropdown-header>
                 <fab-icon mr=".3" name="database"></fab-icon>
