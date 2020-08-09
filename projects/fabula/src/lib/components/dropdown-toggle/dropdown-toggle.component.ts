@@ -22,7 +22,7 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
     @Input() direction: string;
     @Input() icon: string;
     @Input() label: string;
-    @Input() open = false;
+    @Input() isOpen = false;
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
 

@@ -1,4 +1,4 @@
-<div class="fab-dropdown-toggle" (click)="handleClick()" [attr.data-direction]="direction" [attr.data-open]="open">
+<div class="fab-dropdown-toggle" (click)="handleClick()" [attr.data-direction]="direction" [attr.data-open]="isOpen">
   <fab-button [props]="props" *ngIf="label">
     <fab-inner-icon *ngIf="icon" [icon]="icon" [parentProps]="props"></fab-inner-icon>
     <ng-content></ng-content>

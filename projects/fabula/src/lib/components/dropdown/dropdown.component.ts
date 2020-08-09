@@ -28,8 +28,10 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     @Input() alignment = 'left';
     @Input() direction = 'down';
     @Input() expand = false;
-    @Input() open = false;
+    @Input() isOpen = false;
 
+    @Output() close: EventEmitter<any> = new EventEmitter();
+    @Output() open: EventEmitter<any> = new EventEmitter();
     @Output() toggle: EventEmitter<any> = new EventEmitter();
 
     host;
@@ -56,7 +58,7 @@ export class DropdownComponent implements AfterViewInit, OnInit {
     ngOnInit() {
         const host = this.elRef.nativeElement;
         const styles = css(DropdownStyles({ framework: 'angular', props: this }));
-        
+
         host.classList.add(styles);
         this.host = host;
 
@@ -66,12 +68,15 @@ export class DropdownComponent implements AfterViewInit, OnInit {
 
     // Methods
     handleClick(e) {
-        if (!this.host.contains(e.target) && this.open) { this.handleToggle(); }
+        if (!this.host.contains(e.target) && this.isOpen) { this.handleToggle(); }
     }
 
     handleToggle() {
-        this.open = !this.open;
-        this.dropdownToggle.open = this.open;
-        this.toggle.emit(this.open);
+        this.isOpen = !this.isOpen;
+        this.dropdownToggle.isOpen = this.isOpen;
+        this.toggle.emit(this.isOpen);
+
+        if (!this.isOpen) { this.close.emit(); }
+        if (this.isOpen) { this.open.emit(); }
     }
 }

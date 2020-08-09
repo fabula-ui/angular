@@ -15,4 +15,16 @@ export class DropdownExamplesWrapper implements OnInit {
         console.log('Clicked');
     }
 
+    handleClose() {
+        alert('close');
+    }
+
+    handleOpen() {
+        alert('open');
+    }
+
+    handleToggle() {
+        alert('toggle');
+    }
+
 }

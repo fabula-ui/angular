@@ -1,5 +1,5 @@
 <div flex>
-    <fab-dropdown mb="1" mr="1">
+    <fab-dropdown mb="1" mr="1" (open)="handleOpen()">
         <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Button"></fab-dropdown-toggle>
         <fab-dropdown-menu [clickToClose]="true" (clickItem)="handleClick()">
             <fab-dropdown-header>
@@ -28,7 +28,7 @@
         </fab-dropdown-menu>
     </fab-dropdown>
 
-    <fab-dropdown mb="1" mr="1">
+    <fab-dropdown mb="1" mr="1" (close)="handleClose()">
         <fab-dropdown-toggle color="primary" icon="map-pin" compact={true} label="Button"></fab-dropdown-toggle>
         <fab-dropdown-menu [clickToClose]="true" (clickItem)="handleClick()" color="primary">
             <fab-dropdown-header>
@@ -57,7 +57,7 @@
         </fab-dropdown-menu>
     </fab-dropdown>
 
-    <fab-dropdown>
+    <fab-dropdown (toggle)="handleToggle()">
         <fab-dropdown-toggle color="primary" icon="map-pin" compact={true} label="Dropdown Toggle">
         </fab-dropdown-toggle>
         <fab-dropdown-menu [clickToClose]="true" divider={false}

@@ -42,7 +42,7 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
     @Output() clickItem: EventEmitter<any> = new EventEmitter();
     @Output() closed: EventEmitter<any> = new EventEmitter();
 
-    open = false;
+    isOpen = false;
 
     constructor(public elRef: ElementRef) {}
 
@@ -64,13 +64,13 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
     // Methods
     handleDivider(divider) {
         if (this.color) { divider.parentColor = this.color; }
-        
+
         divider.ngAfterViewInit();
     }
 
     handleDropdownHeader(header) {
         if (this.color) { header.parentColor = this.color; }
-        
+
         header.ngAfterViewInit();
     }
 
@@ -93,8 +93,8 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
 
     // Listeners
     listen(events) {
-        events.toggle.subscribe(open => {
-            this.open = open;
+        events.toggle.subscribe(isOpen => {
+            this.isOpen = isOpen;
         });
     }
 }
