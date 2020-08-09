@@ -16,6 +16,7 @@ export class CheckboxComponent implements OnInit {
   @Input() inactiveColor: string;
   @Input() indeterminate = false;
   @Input() label: string;
+  @Input() readOnly = false;
   @Input() rounded = false;
   @Input() size = 'md';
 
@@ -33,7 +34,7 @@ export class CheckboxComponent implements OnInit {
 
   // Methods
   handleChange(e) {
-    if (!this.disabled) {
+    if (!this.disabled && !this.readOnly) {
       this.checked = !!e ? e.target.checked : !this.checked;
       this.indeterminate = !!e ? e.target.indeterminate : false;
     }
