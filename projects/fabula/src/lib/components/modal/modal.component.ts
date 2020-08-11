@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ContentChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, ContentChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
@@ -25,8 +25,11 @@ export class ModalComponent implements AfterViewInit {
 
   @Input() color: string;
   @Input() glow = true;
-  @Input() open = true;
+  @Input() isOpen = true;
   @Input() size = 'lg';
+
+  @Output() close: EventEmitter<any> = new EventEmitter();
+  @Output() open: EventEmitter<any> = new EventEmitter();
 
   constructor(
     public elRef: ElementRef,
@@ -60,9 +63,12 @@ export class ModalComponent implements AfterViewInit {
 
     styles = css(ModalStyles({ framework: 'angular', props: this }));
     host.classList.add(styles);
+
+    this.open.emit();
   }
 
   closeModal() {
     this.modalService.closeModal();
+    this.close.emit();
   }
 }
