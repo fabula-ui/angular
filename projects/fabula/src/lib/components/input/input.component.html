@@ -1,5 +1,5 @@
 <div class="fab-input-wrapper" data-fab-wrapper="input">
-  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus">
+  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus" [attr.data-textarea]="!!textarea">
     <span class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart"></span>
 
     <input class="fab-input__field" [disabled]="disabled" (blur)="handleFocus(false)" (focus)="handleFocus(true)"

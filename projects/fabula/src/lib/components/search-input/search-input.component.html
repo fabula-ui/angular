@@ -1,7 +1,9 @@
 <div class="fab-search-input-wrapper">
   <div class="fab-search-input">
     <fab-input [iconStart]="{ name: 'search' }" [placeholder]="placeholder" [props]="inputProps">
-      <fab-button [hidden]="!button"></fab-button>
+      <fab-button [hidden]="!button">
+        <fab-inner-icon *ngIf="button && button.icon" [icon]="button.icon" [parentProps]="button"></fab-inner-icon>
+      </fab-button>
       <ng-content></ng-content>
     </fab-input>
   </div>
