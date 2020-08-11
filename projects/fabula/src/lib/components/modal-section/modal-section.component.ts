@@ -11,8 +11,11 @@ import ModalSectionStyles from '@fabula/core/styles/components/modal-section/mod
 export class ModalSectionComponent implements OnInit {
   @Input() adaptColor: boolean;
   @Input() color: string;
+  @Input() darken: boolean;
   @Input() divider: string;
   @Input() dividerColor: string;
+  @Input() lighten: boolean;
+  @Input() padding = true;
   @Input() parentColor: string;
   
   constructor(public elRef: ElementRef) { }
