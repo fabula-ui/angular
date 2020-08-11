@@ -13,8 +13,8 @@ export class ListItemComponent implements OnInit {
   @Input() button = false;
   @Input() color: string;
   @Input() divider: boolean;
+  @Input() href: string;
   @Input() item: any = { button: false };
-  @Input() link: string;
   @Input() padding: boolean;
   @Input() props: any;
   @Input() target = '_blank';
