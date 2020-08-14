@@ -1,10 +1,10 @@
-<button class="fab-dropdown-item" data-fab-component="dropdownItem" (click)="handleClick()" *ngIf="item.button || button">
-  {{item && item.label || label}}
+<button class="fab-dropdown-item" data-fab-component="dropdownItem" (click)="handleClick()" *ngIf="props.button || button">
+  {{props && props.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </button>
 
-<div class="fab-dropdown-item" data-fab-component="dropdownItem" *ngIf="!item.button && !button">
-  {{item && item.label || label}}
+<div class="fab-dropdown-item" data-fab-component="dropdownItem" *ngIf="!props.button && !button">
+  {{props && props.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </div>
 

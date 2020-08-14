@@ -1,7 +1,7 @@
 <div flex>
     <fab-dropdown mb="1" mr="1" (open)="handleOpen()">
         <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Button"></fab-dropdown-toggle>
-        <fab-dropdown-menu [clickToClose]="true" (clickItem)="handleClick()">
+        <fab-dropdown-menu [clickToClose]="true" (clickItem)="handleClick()" [items]="items">
             <fab-dropdown-header>
                 <fab-icon mr=".3" name="database"></fab-icon>
                 <span>Dropdown Header</span>
@@ -57,11 +57,16 @@
         </fab-dropdown-menu>
     </fab-dropdown>
 
-    <fab-dropdown (toggle)="handleToggle()">
+    <fab-dropdown mb="1" mr="1" (toggle)="handleToggle()">
         <fab-dropdown-toggle color="primary" icon="map-pin" compact={true} label="Dropdown Toggle">
         </fab-dropdown-toggle>
         <fab-dropdown-menu [clickToClose]="true" divider={false}
             [items]="[{ color: '', label: 'Default' }, { color: 'primary', label: 'Primary' }, { color: 'secondary', label: 'Secondary' }, { color: 'success', label: 'Success' }, { color: 'danger', label: 'Danger' }]">
         </fab-dropdown-menu>
+    </fab-dropdown>
+
+    <fab-dropdown (open)="handleOpen()">
+        <fab-dropdown-toggle color="primary" icon="map-pin" [compact]="true" label="Button"></fab-dropdown-toggle>
+        <fab-dropdown-menu (clickItem)="handleClick()" [items]="items"></fab-dropdown-menu>
     </fab-dropdown>
 </div>

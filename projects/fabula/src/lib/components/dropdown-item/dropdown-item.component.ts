@@ -21,9 +21,9 @@ export class DropdownItemComponent implements AfterViewInit {
     @Input() color: string;
     @Input() clickToClose = false;
     @Input() invert = false;
-    @Input() item: any = { button: false };
     @Input() label: string;
     @Input() parentColor: string;
+    @Input() props: any = { button: false };
     @Input() size: string;
 
     @Output() clicked = new EventEmitter();
@@ -35,10 +35,15 @@ export class DropdownItemComponent implements AfterViewInit {
         const styles = css(DropdownItemStyles({
             framework: 'angular', props: {
                 ...this,
-                ...this.item
+                ...this.props
             }
         }));
         host.classList.add(styles);
+
+        if (this.props && this.props.clickToClose || this.clickToClose) {
+            this.button = true;
+            this.props.button = true;
+        }
     }
 
     // Methods

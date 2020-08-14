@@ -5,6 +5,18 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './dropdown-examples.wrapper.html'
 })
 export class DropdownExamplesWrapper implements OnInit {
+    items = [
+        {
+            clickToClose: true,
+            label: 'Dropdown Item 1'
+        },
+        {
+            label: 'Dropdown Item 2'
+        },
+        {
+            label: 'Dropdown Item 3'
+        }
+    ]
 
     constructor() { }
 
