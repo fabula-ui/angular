@@ -23,8 +23,8 @@ export class TextComponent implements OnInit {
   block;
   bold;
   flex;
-  hasChildren;
   host;
+  inline;
   italic;
   medium;
   semibold;
@@ -45,6 +45,7 @@ export class TextComponent implements OnInit {
     this.block = this.host.hasAttribute('block');
     this.bold = this.host.hasAttribute('bold');
     this.flex = this.host.hasAttribute('flex');
+    this.inline = this.host.hasAttribute('inline');
     this.italic = this.host.hasAttribute('italic');
     this.medium = this.host.hasAttribute('medium');
     this.semibold = this.host.hasAttribute('semibold');
@@ -62,9 +63,6 @@ export class TextComponent implements OnInit {
       this.weight = '500';
     }
 
-    // Has children
-    this.hasChildren = this.host.querySelector('.fab-text').children.length > 1;
-
     // Set props
     props = {
       aux: this.aux,
@@ -72,6 +70,7 @@ export class TextComponent implements OnInit {
       bold: this.bold,
       color: this.color,
       flex: this.flex,
+      inline: this.inline,
       italic: this.italic,
       size: this.size,
       weight: this.weight,
