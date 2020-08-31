@@ -72,8 +72,6 @@ export class ToastStacksWrapper implements OnInit {
                 }
             }
         ]);
-
-        console.log('stacks', this.toastService.stacks);
     }
 
 }
