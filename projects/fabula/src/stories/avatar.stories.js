@@ -13,7 +13,7 @@ import {
 } from '../public-api';
 
 // Wrappers
-import { AvatarAdaptColorWrapper } from './wrappers/avatar/adapt-color/avatar-adapt-color.wrapper';
+import { AvatarExampleWrapper } from './wrappers/avatar/example/avatar-example.wrapper';
 import { AvatarColorWrapper } from './wrappers/avatar/color/avatar-color.wrapper';
 import { AvatarCustomIconWrapper } from './wrappers/avatar/custom-icon/avatar-custom-icon.wrapper';
 import { AvatarExternalBadgeWrapper } from './wrappers/avatar/external-badge/avatar-external-badge.wrapper';
@@ -44,8 +44,8 @@ export default {
     title: 'Avatar'
 }
 
-export const AdaptColor = () => ({
-    component: AvatarAdaptColorWrapper,
+export const Example = () => ({
+    component: AvatarExampleWrapper,
 });
 
 export const Color = () => ({

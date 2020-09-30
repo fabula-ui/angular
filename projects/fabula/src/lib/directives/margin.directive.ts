@@ -1,9 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../services/theme.service';
-
 // Styles
 import UtilsStyles from '@fabula/core/styles/utils/utils';
 
@@ -20,8 +17,7 @@ export class MarginDirective implements AfterViewInit {
     @Input() my: any;
 
     constructor(
-        private elRef: ElementRef,
-        private themeService: ThemeService
+        private elRef: ElementRef
     ) { }
 
     ngAfterViewInit() {
@@ -37,9 +33,6 @@ export class MarginDirective implements AfterViewInit {
         };
 
         host.classList.add(css(UtilsStyles({ framework: 'angular', props })));
-
-        // this.themeService.attachUtils(host, 'margin', props);
-        // host.setAttribute('data-float', host.getAttribute('float'));
     }
 
 }

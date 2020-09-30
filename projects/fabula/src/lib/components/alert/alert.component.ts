@@ -12,6 +12,7 @@ import AlertStyles from '@fabula/core/styles/components/alert/alert';
 
 @Component({
   selector: 'fab-alert',
+  styleUrls: ['./alert.component.scss'],
   templateUrl: './alert.component.html'
 })
 export class AlertComponent implements OnInit {
@@ -83,7 +84,7 @@ export class AlertComponent implements OnInit {
       case 'warning':
         this.icon = {
           color: 'warning',
-          name: 'check'
+          name: 'alert-circle'
         };
         break;
       default:

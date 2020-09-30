@@ -1,4 +1,5 @@
 import {
+  APP_INITIALIZER,
   NgModule,
   ModuleWithProviders
 } from '@angular/core';
@@ -22,6 +23,12 @@ export class ThemeModule {
       ngModule: ThemeModule,
       providers: [
         ThemeService,
+        {
+          provide: APP_INITIALIZER,
+          useFactory: (service: ThemeService) => () => service.init(),
+          deps: [ThemeService],
+          multi: true
+        },
         {
           provide: 'UserOptions',
           useValue: options

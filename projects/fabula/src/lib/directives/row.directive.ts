@@ -16,7 +16,6 @@ export class RowDirective implements AfterViewInit {
     constructor(
         private elRef: ElementRef,
         private renderer: Renderer2,
-        private themeService: ThemeService,
     ) { }
 
     ngAfterViewInit() {
@@ -33,7 +32,6 @@ export class RowDirective implements AfterViewInit {
             row: true
         };
 
-        // this.themeService.attachUtils(element, 'row', props);
         element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
 

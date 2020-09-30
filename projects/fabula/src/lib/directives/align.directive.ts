@@ -1,9 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
-// Services
-import { ThemeService } from '../services/theme.service';
-
 // Styles
 import UtilsStyles from '@fabula/core/styles/utils/utils';
 

@@ -1,9 +1,5 @@
-import { AfterViewInit,ComponentFactoryResolver, Directive, ElementRef, Input, Renderer2, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ComponentFactoryResolver, Directive, ElementRef, Input, Renderer2, ViewContainerRef } from '@angular/core';
 import { css } from 'emotion';
-
-// Services
-import { ThemeService } from '../services/theme.service';
-import { ColumnComponent } from '../components/column/column.component';
 
 // Styles
 import UtilsStyles from '@fabula/core/styles/utils/utils';
@@ -23,7 +19,6 @@ export class ColumnDirective implements AfterViewInit {
         private elRef: ElementRef,
         private renderer: Renderer2,
         private target: ViewContainerRef,
-        private themeService: ThemeService
     ) { }
 
     ngAfterViewInit() {

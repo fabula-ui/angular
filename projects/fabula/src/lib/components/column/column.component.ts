@@ -1,8 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
-
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'fab-column, fab-col',
@@ -17,8 +14,7 @@ export class ColumnComponent implements OnInit {
   host;
 
   constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
+    public elRef: ElementRef
   ) { }
 
   ngOnInit() {
@@ -31,7 +27,6 @@ export class ColumnComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     // Attach classes to host
-    // this.themeService.attachClasses(this.host, 'column', props);
   }
 
 }

@@ -3,9 +3,6 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 // Components
 import { GeneralComponent } from '../general-component/general-component.component';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
-
 @Component({
   selector: 'fab-row',
   templateUrl: './row.component.html',
@@ -16,7 +13,6 @@ export class RowComponent extends GeneralComponent implements OnInit {
 
   constructor(
     public elRef: ElementRef,
-    public themeService: ThemeService
   ) {
     super(elRef);
   }
@@ -39,7 +35,6 @@ export class RowComponent extends GeneralComponent implements OnInit {
     };
 
     // Attach classes to host
-    // this.themeService.attachClasses(this.host, 'row', props);
   }
 
 }

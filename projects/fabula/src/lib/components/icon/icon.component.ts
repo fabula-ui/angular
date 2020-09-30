@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Input, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration hmr",
+    "start": "start-storybook -p 8008",
     "build": "ng build",
     "test": "jest",
     "test:ci": "jest --runInBand",
