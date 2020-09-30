@@ -18,6 +18,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { ColumnComponent } from './components/column/column.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { GeneralComponent } from './components/general-component/general-component.component';
+import { HeadingComponent } from './components/heading/heading.component';
 import { IconComponent } from './components/icon/icon.component';
 import { InputComponent } from './components/input/input.component';
 import { InputGroupComponent } from './components/input-group/input-group.component';
@@ -73,6 +74,7 @@ import { ThemeService } from './services/theme.service';
     ContainerComponent,
     DropdownComponent,
     GeneralComponent,
+    HeadingComponent,
     IconComponent,
     InputComponent,
     InputGroupComponent,

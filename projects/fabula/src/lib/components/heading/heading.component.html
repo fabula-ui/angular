@@ -1,0 +1,8 @@
+<h1 class="fab-heading" *ngIf="level == 1"><ng-content *ngTemplateOutlet="content"></ng-content></h1>
+<h2 class="fab-heading" *ngIf="level == 2"><ng-content *ngTemplateOutlet="content"></ng-content></h2>
+<h3 class="fab-heading" *ngIf="level == 3"><ng-content *ngTemplateOutlet="content"></ng-content></h3>
+<h4 class="fab-heading" *ngIf="level == 4"><ng-content *ngTemplateOutlet="content"></ng-content></h4>
+<h5 class="fab-heading" *ngIf="level == 5"><ng-content *ngTemplateOutlet="content"></ng-content></h5>
+<h6 class="fab-heading" *ngIf="level == 6"><ng-content *ngTemplateOutlet="content"></ng-content></h6>
+
+<ng-template #content><ng-content></ng-content></ng-template>

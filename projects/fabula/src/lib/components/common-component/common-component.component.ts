@@ -1,29 +1,39 @@
-import { Component, ElementRef, OnChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges } from '@angular/core';
 import { css } from 'emotion';
 
 @Component({
   selector: 'fab-component'
 })
 export class CommonComponent implements OnChanges {
+  @Input() props: any;
+
+  host;
   styles;
+
   constructor(public elRef: ElementRef) { }
 
   ngOnChanges() {
     if (this.styles) { this.refreshStyles(); }
   }
 
-  initStyles() {
-    const host = this.elRef.nativeElement;
-    const styles = css(this.styles({ framework: 'angular', props: this }));
+  applyStyles() {
+    const styles = css(this.styles({
+      framework: 'angular', props: {
+        ...this,
+        ...this.props
+      }
+    }));
 
-    host.classList.add(styles);
+    this.host = this.elRef.nativeElement;
+    this.host.classList.add(styles);
+  }
+
+  initStyles() {
+    this.applyStyles();
   }
 
   refreshStyles() {
-    const host = this.elRef.nativeElement;
-    const styles = css(this.styles({ framework: 'angular', props: this }));
-
-    host.classList = '';
-    host.classList.add(styles);
+    this.host.classList = '';
+    this.applyStyles();
   }
 }

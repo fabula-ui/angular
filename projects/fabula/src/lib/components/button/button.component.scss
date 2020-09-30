@@ -1,4 +1,6 @@
 :host {
+    display: inline-block;
+    
     &[ng-reflect-expand='true'] {
         width: 100%;
     }

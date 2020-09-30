@@ -1,11 +1,12 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   Input,
-  OnInit,
-  AfterViewInit
 } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import ButtonStyles from '@fabula/core/styles/components/button/button';
@@ -15,7 +16,7 @@ import ButtonStyles from '@fabula/core/styles/components/button/button';
   styleUrls: ['button.component.scss'],
   templateUrl: './button.component.html',
 })
-export class ButtonComponent implements AfterViewInit {
+export class ButtonComponent extends CommonComponent implements AfterViewInit {
   @Input() border = false;
   @Input() circle: boolean;
   @Input() clear: boolean;
@@ -33,7 +34,6 @@ export class ButtonComponent implements AfterViewInit {
   @Input() loading: string;
   @Input() label: string;
   @Input() outline: boolean;
-  @Input() props: any;
   @Input() rounded: boolean;
   @Input() size: string;
   @Input() target: string;
@@ -41,19 +41,12 @@ export class ButtonComponent implements AfterViewInit {
 
   host;
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {
-    const styles = css(ButtonStyles({
-      framework: 'angular', props: {
-        ...this,
-        ...this.props
-      }
-    }));
-    const host = this.elRef.nativeElement;
-    host.classList.add(styles);
-
+    this.host = this.elRef.nativeElement;
+    this.styles = ButtonStyles;
     if (!this.props) { this.props = this; }
-    this.host = host;
+    this.initStyles();
   }
 }

@@ -1,0 +1,20 @@
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
+
+// Styles
+import ElementStyles from '@fabula/core/styles/components/element/element';
+
+@Component({
+  selector: 'fab-element',
+  templateUrl: './element.component.html'
+})
+export class ElementComponent extends CommonComponent implements OnInit {
+  constructor(public elRef: ElementRef) {super(elRef);}
+
+  ngOnInit() {
+    this.styles = ElementStyles;
+    this.initStyles();
+  }
+}

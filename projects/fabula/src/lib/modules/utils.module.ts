@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// Components
-import { WrapperComponent } from '../components/wrapper/wrapper.component';
-
 // Directives
 import { AlignDirective } from '../directives/align.directive';
 import { BlockDirective } from '../directives/block.directive';
@@ -17,9 +14,6 @@ import { RowDirective } from '../directives/row.directive';
 
 @NgModule({
     declarations: [
-        // Components
-        WrapperComponent,
-
         // Directives
         AlignDirective,
         BlockDirective,
@@ -35,9 +29,6 @@ import { RowDirective } from '../directives/row.directive';
         CommonModule,
     ],
     exports: [
-        // Components
-        WrapperComponent,
-
         // Directives
         AlignDirective,
         BlockDirective,

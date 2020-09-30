@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
@@ -12,11 +11,13 @@ import AvatarStyles from '@fabula/core/styles/components/avatar/avatar';
 
 @Component({
   selector: 'fab-avatar',
+  styleUrls: ['./avatar.component.scss'],
   templateUrl: './avatar.component.html'
 })
 export class AvatarComponent extends CommonComponent implements OnInit {
   @Input() color = '';
   @Input() darken = false;
+  @Input() faded = false;
   @Input() icon: any = 'image';
   @Input() image = '';
   @Input() lighten = false;
