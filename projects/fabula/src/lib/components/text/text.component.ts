@@ -11,6 +11,7 @@ import TextStyles from '@fabula/core/styles/components/text/text';
   styleUrls: ['./text.component.scss']
 })
 export class TextComponent implements OnInit {
+  @Input() aux;
   @Input() color: string;
   @Input() props: any;
   @Input() size: string;
@@ -19,7 +20,6 @@ export class TextComponent implements OnInit {
 
   @ViewChild('component') component: ElementRef;
 
-  aux;
   block;
   bold;
   flex;
@@ -41,7 +41,6 @@ export class TextComponent implements OnInit {
     this.host = this.elRef.nativeElement;
 
     // Get attributes
-    this.aux = this.host.hasAttribute('aux');
     this.block = this.host.hasAttribute('block');
     this.bold = this.host.hasAttribute('bold');
     this.flex = this.host.hasAttribute('flex');
@@ -65,7 +64,7 @@ export class TextComponent implements OnInit {
 
     // Set props
     props = {
-      aux: this.aux,
+      aux: this.host.hasAttribute('aux') || this.aux,
       block: this.block,
       bold: this.bold,
       color: this.color,

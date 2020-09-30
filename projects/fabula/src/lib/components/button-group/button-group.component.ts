@@ -2,7 +2,8 @@ import {
   Component,
   ElementRef,
   Input,
-  OnInit
+  OnInit,
+  ViewEncapsulation
 } from '@angular/core';
 import { css } from 'emotion';
 
@@ -11,7 +12,9 @@ import ButtonGroupStyles from '@fabula/core/styles/components/button-group/butto
 
 @Component({
   selector: 'fab-button-group',
-  templateUrl: './button-group.component.html'
+  styleUrls: ['./button-group.component.scss'],
+  templateUrl: './button-group.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class ButtonGroupComponent implements OnInit {
   @Input() color: string;

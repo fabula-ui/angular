@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
@@ -12,6 +12,9 @@ import WrapperStyles from '@fabula/core/styles/components/wrapper/wrapper';
     templateUrl: './wrapper.component.html'
 })
 export class WrapperComponent extends CommonComponent implements OnInit {
+    @Input() bgColor: string;
+    @Input() color: string;
+    
     constructor(public elRef: ElementRef) {
         super(elRef);
         this.styles = WrapperStyles;

@@ -1,8 +1,17 @@
-<div class="fab-dropdown-toggle" (click)="handleClick()" [attr.data-direction]="direction" [attr.data-open]="isOpen">
-  <fab-button [props]="props" *ngIf="label">
-    <fab-inner-icon *ngIf="icon" [icon]="icon" [parentProps]="props"></fab-inner-icon>
+<div
+  class="fab-dropdown-toggle"
+  (click)="handleClick()"
+  [attr.data-direction]="direction"
+  [attr.data-open]="isOpen"
+>
+  <fab-button [props]="props">
+    <fab-inner-icon
+      *ngIf="icon"
+      [icon]="icon"
+      [parentProps]="props"
+    ></fab-inner-icon>
     <ng-content></ng-content>
-    <span class="fab-dropdown-toggle__label">{{label}}</span>
+    {{ label }}
     <span class="fab-dropdown-toggle__chevron"></span>
   </fab-button>
 </div>

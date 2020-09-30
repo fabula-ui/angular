@@ -52,7 +52,7 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: DropdownExamplesWrapper });
+export const Example = () => ({ component: DropdownExamplesWrapper });
 export const Alignment = () => ({ component: DropdownAlignmentWrapper });
 export const Color = () => ({ component: DropdownColorWrapper });
 export const CustomContent = () => ({ component: DropdownCustomContentWrapper });

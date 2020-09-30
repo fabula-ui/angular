@@ -5,13 +5,16 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonModule,
     ButtonGroupComponent,
+    DropdownModule,
     ThemeModule,
     ThemeService,
-    UtilsModule
+    UtilsModule,
+    WrapperModule
 } from '../public-api';
 
 // Wrappers
-import { ButtonGroupFlowWrapper } from './wrappers/button-group/flow/button-group-flow.wrapper';
+import { ButtonGroupExampleWrapper } from './wrappers/button-group/example/button-group-example.wrapper';
+import { ButtonGroupColorWrapper } from './wrappers/button-group/color/button-group-color.wrapper';
 import { ButtonGroupGluedWrapper } from './wrappers/button-group/glued/button-group-glued.wrapper';
 import { ButtonGroupSpacedWrapper } from './wrappers/button-group/spaced/button-group-spaced.wrapper';
 
@@ -25,8 +28,10 @@ export default {
             imports: [
                 BrowserModule,
                 ButtonModule,
+                DropdownModule,
                 ThemeModule.forRoot(),
-                UtilsModule
+                UtilsModule,
+                WrapperModule
             ],
             providers: [
                 ThemeService
@@ -37,6 +42,7 @@ export default {
 }
 
 // Stories
-export const Flow = () => ({ component: ButtonGroupFlowWrapper });
+export const Example = () => ({ component: ButtonGroupExampleWrapper });
+export const Color = () => ({ component: ButtonGroupColorWrapper });
 export const Glued = () => ({ component: ButtonGroupGluedWrapper });
 export const Spaced = () => ({ component: ButtonGroupSpacedWrapper });

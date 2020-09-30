@@ -11,6 +11,7 @@ import { GrowDirective } from '../directives/grow.directive';
 import { MarginDirective } from '../directives/margin.directive';
 import { PaddingDirective } from '../directives/padding.directive';
 import { RowDirective } from '../directives/row.directive';
+import { SizeDirective } from '../directives/size.directive';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { RowDirective } from '../directives/row.directive';
         GrowDirective,
         MarginDirective,
         PaddingDirective,
-        RowDirective
+        RowDirective,
+        SizeDirective
     ],
     imports: [
         CommonModule,
@@ -38,7 +40,8 @@ import { RowDirective } from '../directives/row.directive';
         GrowDirective,
         MarginDirective,
         PaddingDirective,
-        RowDirective
+        RowDirective,
+        SizeDirective
     ]
 })
 export class UtilsModule {}

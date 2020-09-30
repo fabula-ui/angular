@@ -10,6 +10,7 @@ import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
 
 @Component({
   selector: 'fab-segments',
+  styleUrls: ['./segments.component.scss'],
   templateUrl: './segments.component.html'
 })
 export class SegmentsComponent implements AfterViewInit, OnInit {
