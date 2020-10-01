@@ -1,126 +1,27 @@
-<div mb="2" row>
-  <fab-card col="3">
-    <fab-card-image height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block size="lg"><strong>Card Title</strong></fab-text>
-      <fab-text aux block size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section divider="top" [padding]="true">
-      <fab-button color="primary" [expand]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
+<fab-row mb="1">
+  <fab-column col="3">
+    <app-card-example></app-card-example>
+  </fab-column>
 
-  <fab-card col="3" color="primary">
-    <fab-card-image [adaptColor]="true" color="primary" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="primary" divider="top" [padding]="true">
-      <fab-button color="primary" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
+  <fab-column col="3">
+    <app-card-example color="primary"></app-card-example>
+  </fab-column>
 
-  <fab-card col="3" color="secondary">
-    <fab-card-image [adaptColor]="true" color="secondary" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="secondary" divider="top" [padding]="true">
-      <fab-button color="secondary" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
+  <fab-column col="3">
+    <app-card-example color="lavender"></app-card-example>
+  </fab-column>
 
-  <fab-card col="3" color="success">
-    <fab-card-image [adaptColor]="true" color="success" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="success" divider="top" [padding]="true">
-      <fab-button color="success" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-</div>
+  <fab-column col="3">
+    <app-card-example color="hot"></app-card-example>
+  </fab-column>
+</fab-row>
 
-<div mb="2" row>
-  <fab-card col="3" color="danger">
-    <fab-card-image [adaptColor]="true" color="danger" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="danger" divider="top" [padding]="true">
-      <fab-button color="danger" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
+<fab-row>
+  <fab-column col="3">
+    <app-card-example color="aux"></app-card-example>
+  </fab-column>
 
-  <fab-card col="3" color="warning">
-    <fab-card-image [adaptColor]="true" color="warning" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="warning" divider="top" [padding]="true">
-      <fab-button color="warning" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-
-  <fab-card col="3" color="hot">
-    <fab-card-image [adaptColor]="true" color="hot" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="hot" divider="top" [padding]="true">
-      <fab-button color="hot" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-
-  <fab-card col="3" color="cold">
-    <fab-card-image [adaptColor]="true" color="cold" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="cold" divider="top" [padding]="true">
-      <fab-button color="cold" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-</div>
-
-<div row mb="2">
-  <fab-card col="3" color="dark">
-    <fab-card-image [adaptColor]="true" color="dark" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="dark" divider="top" [padding]="true">
-      <fab-button color="dark" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-
-  <fab-card col="3" color="light">
-    <fab-card-image [adaptColor]="true" color="light" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="light" divider="top" [padding]="true">
-      <fab-button color="light" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-
-  <fab-card col="3" color="aux">
-    <fab-card-image [adaptColor]="true" color="aux" height="120"></fab-card-image>
-    <fab-card-section [padding]="true">
-      <fab-text block color="inherit" size="lg" strong><strong>Card Title</strong></fab-text>
-      <fab-text aux block color="inherit" size="sm">Card subtitle</fab-text>
-    </fab-card-section>
-    <fab-card-section color="aux" divider="top" [padding]="true">
-      <fab-button color="aux" [expand]="true" [invert]="true">Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-</div>
+  <fab-column col="3">
+    <app-card-example color="dark"></app-card-example>
+  </fab-column>
+</fab-row>

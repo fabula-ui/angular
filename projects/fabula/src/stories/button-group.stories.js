@@ -15,8 +15,8 @@ import {
 // Wrappers
 import { ButtonGroupExampleWrapper } from './wrappers/button-group/example/button-group-example.wrapper';
 import { ButtonGroupColorWrapper } from './wrappers/button-group/color/button-group-color.wrapper';
-import { ButtonGroupGluedWrapper } from './wrappers/button-group/glued/button-group-glued.wrapper';
-import { ButtonGroupSpacedWrapper } from './wrappers/button-group/spaced/button-group-spaced.wrapper';
+import { ButtonGroupLayoutWrapper } from './wrappers/button-group/layout/button-group-layout.wrapper';
+import { ButtonGroupExternalDropdownWrapper } from './wrappers/button-group/external-dropdown/button-group-external-dropdown.wrapper';
 
 // Module init
 export default {
@@ -44,5 +44,5 @@ export default {
 // Stories
 export const Example = () => ({ component: ButtonGroupExampleWrapper });
 export const Color = () => ({ component: ButtonGroupColorWrapper });
-export const Glued = () => ({ component: ButtonGroupGluedWrapper });
-export const Spaced = () => ({ component: ButtonGroupSpacedWrapper });
+export const Layout = () => ({ component: ButtonGroupLayoutWrapper });
+export const ExternalDropdown = () => ({ component: ButtonGroupExternalDropdownWrapper });

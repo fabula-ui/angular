@@ -9,6 +9,8 @@ import {
     CardComponent,
     CardImageComponent,
     CardSectionComponent,
+    GridModule,
+    HelpersModule,
     IconsModule,
     ListComponent,
     ListItemComponent,
@@ -20,8 +22,11 @@ import {
     UtilsModule
 } from '../public-api';
 
+// Examples
+import { CardExample } from './examples/card/example/card.example';
+
 // Wrappers
-import { CardExamplesWrapper } from './wrappers/card/examples/card-examples.wrapper';
+import { CardExampleWrapper } from './wrappers/card/example/card-example.wrapper';
 import { CardColorWrapper } from './wrappers/card/color/card-color.wrapper';
 import { CardGlowWrapper } from './wrappers/card/glow/card-glow.wrapper';
 import { CardLayoutWrapper } from './wrappers/card/layout/card-layout.wrapper';
@@ -34,6 +39,7 @@ export default {
                 BadgeComponent,
                 ButtonGroupComponent,
                 CardComponent,
+                CardExample,
                 CardImageComponent,
                 CardSectionComponent,
                 ListComponent,
@@ -42,9 +48,14 @@ export default {
                 TagGroupComponent,
                 TextComponent,
             ],
+            entryComponents: [
+                CardExample
+            ],
             imports: [
                 BrowserModule,
                 ButtonModule,
+                GridModule,
+                HelpersModule,
                 IconsModule,
                 ThemeModule.forRoot(),
                 UtilsModule
@@ -58,7 +69,7 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: CardExamplesWrapper });
-export const Color = () => ({ component: CardColorWrapper });
+export const Example = () => ({ component: CardExampleWrapper });
+export const PropColor = () => ({ component: CardColorWrapper });
 export const Glow = () => ({ component: CardGlowWrapper });
 export const Layout = () => ({ component: CardLayoutWrapper });

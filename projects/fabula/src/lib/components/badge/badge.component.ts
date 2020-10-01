@@ -1,15 +1,15 @@
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
-import { css } from 'emotion';
 
 // Styles
 import BadgeStyles from '@fabula/core/styles/components/badge/badge';
+import { CommonComponent } from '../common-component/common-component.component';
 
 @Component({
   selector: 'fab-badge',
   templateUrl: './badge.component.html',
-  styles: []
+  styleUrls: ['./badge.component.scss']
 })
-export class BadgeComponent implements OnInit {
+export class BadgeComponent extends CommonComponent implements OnInit {
   @Input() circle = false;
   @Input() clear = false;
   @Input() color: string;
@@ -26,13 +26,11 @@ export class BadgeComponent implements OnInit {
   @Input() rounded = false;
   @Input() size = 'md';
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(BadgeStyles({ framework: 'angular', props: this }));
-
-    host.classList.add(styles);
+    this.styles = BadgeStyles;
+    this.initStyles();
   }
 
 }

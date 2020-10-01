@@ -12,9 +12,11 @@ export class CardImageComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color: string;
   @Input() cover = false;
+  @Input() darken = false;
   @Input() height: any;
   @Input() icon: string;
   @Input() layout: string;
+  @Input() lighten = false;
   @Input() src: string;
   @Input() width: any;
 

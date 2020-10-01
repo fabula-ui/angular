@@ -1,0 +1,63 @@
+<fab-row>
+  <fab-column col="3">
+    <fab-card>
+      <fab-card-image height="200"></fab-card-image>
+      <fab-card-section divider="top" [padding]="true">
+        <fab-text size="lg">
+          <fab-text [inline]="true" mr=".5" [strong]="true"
+            >Card Title</fab-text
+          >
+          <fab-badge color="primary">New</fab-badge>
+        </fab-text>
+        <fab-text [aux]="true" mb="1" size="sm">Card subtitle</fab-text>
+        <fab-text mb="1"
+          >This is some text inside this card. You can add whatever content in
+          here.</fab-text
+        >
+      </fab-card-section>
+      <fab-card-section divider="top" [padding]="true">
+        <fab-button color="primary" [expand]="true">Card Button</fab-button>
+      </fab-card-section>
+    </fab-card>
+  </fab-column>
+
+  <fab-column col="9">
+    <fab-card>
+      <fab-card-image height="120"></fab-card-image>
+      <fab-card-section [padding]="true">
+        <fab-text [inline]="true" size="xl" weight="600">Card Title</fab-text>
+        <fab-text [aux]="true">Card subtitle</fab-text>
+      </fab-card-section>
+      <fab-card-section>
+        <fab-list [padding]="true" [striped]="true">
+          <fab-list-item [flex]="true" *ngFor="let item of items; let i = index">
+            <fab-wrapper grow="1">
+              <fab-text size="lg" weight="600">
+                <fab-text [inline]="true">List Item {{i + 1}}</fab-text>
+                <fab-badge [color]="badge.color" ml=".5" *ngFor="let badge of item.badges; let badgeIndex = index">{{badge.label}}</fab-badge>
+              </fab-text>
+              <fab-text [aux]="true" [inline]="true">List item subtitle</fab-text>
+            </fab-wrapper>
+            <fab-wrapper alH="end" direction="column" [flex]="true">
+              <fab-tag-group mb=".5">
+                <fab-tag>Tag 1</fab-tag>
+                <fab-tag>Tag 2</fab-tag>
+                <fab-tag>Tag 3</fab-tag>
+              </fab-tag-group>
+              <fab-text alH="end" alV="center" [aux]="true" [flex]="true">
+                <fab-icon mr=".5" name="clock"></fab-icon>
+                <span>2 hours</span>
+              </fab-text>
+            </fab-wrapper>
+          </fab-list-item>
+        </fab-list>
+      </fab-card-section>
+      <fab-card-section [padding]="true">
+        <fab-wrapper alH="right" [flex]="true" width="100%">
+          <fab-button color="primary" mr="1" [wide]="true">Confirm</fab-button>
+          <fab-button color="light" [wide]="true">Cancel</fab-button>
+        </fab-wrapper>
+      </fab-card-section>
+    </fab-card>
+  </fab-column>
+</fab-row>

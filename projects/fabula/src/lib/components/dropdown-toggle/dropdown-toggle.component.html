@@ -10,8 +10,7 @@
       [icon]="icon"
       [parentProps]="props"
     ></fab-inner-icon>
-    <ng-content></ng-content>
-    {{ label }}
+    <span class="fab-dropdown-toggle__label"><ng-content></ng-content>{{ label }}</span>
     <span class="fab-dropdown-toggle__chevron"></span>
   </fab-button>
 </div>

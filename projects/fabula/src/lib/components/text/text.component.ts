@@ -5,16 +5,17 @@ import { css } from 'emotion';
 import TextStyles from '@fabula/core/styles/components/text/text';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: 'fab-text',
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss']
 })
 export class TextComponent implements OnInit {
-  @Input() aux;
+  @Input() aux: boolean;
   @Input() color: string;
+  @Input() inline = false;
   @Input() props: any;
   @Input() size: string;
+  @Input() strong: boolean;
   @Input() weight: string;
   @Input() wrap = true;
 
@@ -24,11 +25,9 @@ export class TextComponent implements OnInit {
   bold;
   flex;
   host;
-  inline;
   italic;
   medium;
   semibold;
-  strong;
 
   constructor(
     public elRef: ElementRef
@@ -48,7 +47,6 @@ export class TextComponent implements OnInit {
     this.italic = this.host.hasAttribute('italic');
     this.medium = this.host.hasAttribute('medium');
     this.semibold = this.host.hasAttribute('semibold');
-    this.strong = this.host.hasAttribute('strong');
 
     if (!this.weight && (this.bold || this.strong)) {
       this.weight = '700';
@@ -64,7 +62,7 @@ export class TextComponent implements OnInit {
 
     // Set props
     props = {
-      aux: this.host.hasAttribute('aux') || this.aux,
+      aux: this.aux,
       block: this.block,
       bold: this.bold,
       color: this.color,
@@ -77,7 +75,12 @@ export class TextComponent implements OnInit {
       ...this.props
     };
 
-    styles = css(TextStyles({ framework: 'angular', props }));
+    styles = css(TextStyles({
+      framework: 'angular', props: {
+        ...props,
+        ...this
+      }
+    }));
 
     // Attach classes to host
     this.host.classList.add(styles);

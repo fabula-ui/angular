@@ -5,8 +5,9 @@ import { css } from 'emotion';
   selector: 'fab-component'
 })
 export class CommonComponent implements OnChanges {
-  @Input() props: any;
+  @Input() props: any = {};
 
+  additionalStyles;
   host;
   styles;
 
@@ -16,8 +17,8 @@ export class CommonComponent implements OnChanges {
     if (this.styles) { this.refreshStyles(); }
   }
 
-  applyStyles() {
-    const styles = css(this.styles({
+  applyStyles(stylesFn) {
+    const styles = css(stylesFn({
       framework: 'angular', props: {
         ...this,
         ...this.props
@@ -29,11 +30,12 @@ export class CommonComponent implements OnChanges {
   }
 
   initStyles() {
-    this.applyStyles();
+    if (this.additionalStyles) { this.applyStyles(this.additionalStyles); }
+    if (this.styles) { this.applyStyles(this.styles); }
   }
 
   refreshStyles() {
     this.host.classList = '';
-    this.applyStyles();
+    this.initStyles();
   }
 }
