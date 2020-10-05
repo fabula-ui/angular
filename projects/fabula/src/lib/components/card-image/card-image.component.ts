@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, Input } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import CardImageStyles from '@fabula/core/styles/components/card-image/card-image';
@@ -8,11 +10,12 @@ import CardImageStyles from '@fabula/core/styles/components/card-image/card-imag
   selector: 'fab-card-image',
   templateUrl: './card-image.component.html'
 })
-export class CardImageComponent implements OnInit {
+export class CardImageComponent extends CommonComponent implements OnInit {
   @Input() adaptColor = false;
   @Input() color: string;
   @Input() cover = false;
   @Input() darken = false;
+  @Input() faded = false;
   @Input() height: any;
   @Input() icon: string;
   @Input() layout: string;
@@ -20,11 +23,10 @@ export class CardImageComponent implements OnInit {
   @Input() src: string;
   @Input() width: any;
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(CardImageStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = CardImageStyles;
+    this.initStyles();
   }
 }

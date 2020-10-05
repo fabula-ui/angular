@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CardExample {
     @Input() color: string;
+    @Input() glow = false;
     constructor() { }
 }

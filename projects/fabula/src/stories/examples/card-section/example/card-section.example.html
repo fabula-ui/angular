@@ -1,0 +1,9 @@
+<fab-card [width]="width">
+  <fab-card-section [color]="color" [faded]="faded" [padding]="true">
+    <fab-text size="lg"><strong>Card Title</strong></fab-text>
+    <fab-text [aux]="true" [color]="color ? 'inherit' : ''" size="sm">Card subtitle</fab-text>
+  </fab-card-section>
+  <fab-card-section [color]="color" [darken]="darken" [divider]="divider" [lighten]="lighten" [padding]="true">
+    <fab-button [color]="color || 'primary'" [expand]="true" [invert]="!!color">Button</fab-button>
+  </fab-card-section>
+</fab-card>

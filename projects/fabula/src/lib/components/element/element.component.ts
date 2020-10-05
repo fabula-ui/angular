@@ -8,6 +8,7 @@ import ElementStyles from '@fabula/core/styles/components/element/element';
 
 @Component({
   selector: 'fab-element',
+  styleUrls: ['./element.component.scss'],
   templateUrl: './element.component.html'
 })
 export class ElementComponent extends CommonComponent implements OnInit {

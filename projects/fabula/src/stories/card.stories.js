@@ -71,5 +71,5 @@ export default {
 // Stories
 export const Example = () => ({ component: CardExampleWrapper });
 export const PropColor = () => ({ component: CardColorWrapper });
-export const Glow = () => ({ component: CardGlowWrapper });
-export const Layout = () => ({ component: CardLayoutWrapper });
+export const PropGlow = () => ({ component: CardGlowWrapper });
+export const PropLayout = () => ({ component: CardLayoutWrapper });
