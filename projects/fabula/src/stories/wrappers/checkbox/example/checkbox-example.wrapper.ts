@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-checkbox-test',
-    templateUrl: './checkbox-test.wrapper.html'
+    selector: 'app-checkbox-example',
+    templateUrl: './checkbox-example.wrapper.html'
 })
-export class CheckboxTestWrapper implements OnInit {
+export class CheckboxExampleWrapper implements OnInit {
 
     constructor() { }
 

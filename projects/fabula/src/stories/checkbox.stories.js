@@ -4,6 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     CheckboxComponent,
+    HelpersModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -13,10 +14,10 @@ import {
 import { CheckboxActiveColorWrapper } from './wrappers/checkbox/active-color/checkbox-active-color.wrapper';
 import { CheckboxColorWrapper } from './wrappers/checkbox/color/checkbox-color.wrapper';
 import { CheckboxDisabledWrapper } from './wrappers/checkbox/disabled/checkbox-disabled.wrapper';
+import { CheckboxExampleWrapper } from './wrappers/checkbox/example/checkbox-example.wrapper';
 import { CheckboxInactiveColorWrapper } from './wrappers/checkbox/inactive-color/checkbox-inactive-color.wrapper';
-import { CheckboxRoundedWrapper } from './wrappers/checkbox/rounded/checkbox-rounded.wrapper';
+import { CheckboxReadOnlyWrapper } from './wrappers/checkbox/read-only/checkbox-read-only.wrapper';
 import { CheckboxSizeWrapper } from './wrappers/checkbox/size/checkbox-size.wrapper';
-import { CheckboxTestWrapper } from './wrappers/checkbox/test/checkbox-test.wrapper';
 
 // Module init
 export default {
@@ -27,6 +28,7 @@ export default {
             ],
             imports: [
                 BrowserModule,
+                HelpersModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
@@ -39,10 +41,10 @@ export default {
 }
 
 // Stories
-export const Test = () => ({ component: CheckboxTestWrapper });
-export const ActiveColor = () => ({ component: CheckboxActiveColorWrapper });
-export const Color = () => ({ component: CheckboxColorWrapper });
-export const Disabled = () => ({ component: CheckboxDisabledWrapper });
-export const InactiveColor = () => ({ component: CheckboxInactiveColorWrapper });
-export const Rounded = () => ({ component: CheckboxRoundedWrapper });
-export const Size = () => ({ component: CheckboxSizeWrapper });
+export const Example = () => ({ component: CheckboxExampleWrapper });
+export const PropActiveColor = () => ({ component: CheckboxActiveColorWrapper });
+export const PropColor = () => ({ component: CheckboxColorWrapper });
+export const PropDisabled = () => ({ component: CheckboxDisabledWrapper });
+export const PropInactiveColor = () => ({ component: CheckboxInactiveColorWrapper });
+export const PropReadOnly = () => ({ component: CheckboxReadOnlyWrapper });
+export const PropSize = () => ({ component: CheckboxSizeWrapper });

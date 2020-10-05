@@ -1,27 +1,35 @@
-<div mb="1" flex>
-  <fab-checkbox label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="primary" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="secondary" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="success" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="danger" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="warning" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="hot" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="cold" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="dark" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="light" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox inactiveColor="aux" label="Label" mr="1"></fab-checkbox>
-</div>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-checkbox label="Inactive" mr="1"></fab-checkbox>
+  <fab-checkbox [checked]="true" label="Active" mr="1"></fab-checkbox>
+  <fab-checkbox [indeterminate]="true" label="Indeterminate" mr="1"></fab-checkbox>
+</fab-wrapper>
 
-<div flex>
-  <fab-checkbox [checked]="true" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="primary" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="secondary" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="success" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="danger" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="warning" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="hot" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="cold" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="dark" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="light" label="Label" mr="1"></fab-checkbox>
-  <fab-checkbox [checked]="true" inactiveColor="aux" label="Label" mr="1"></fab-checkbox>
-</div>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-checkbox inactiveColor="primary" label="Inactive" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="primary" [checked]="true" label="Active" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="primary" [indeterminate]="true" label="Indeterminate" mr="1"></fab-checkbox>
+</fab-wrapper>
+
+<fab-wrapper [flex]="true" mb="1">
+  <fab-checkbox inactiveColor="lavender" label="Inactive" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="lavender" [checked]="true" label="Active" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="lavender" [indeterminate]="true" label="Indeterminate" mr="1"></fab-checkbox>
+</fab-wrapper>
+
+<fab-wrapper [flex]="true" mb="1">
+  <fab-checkbox inactiveColor="hot" label="Inactive" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="hot" [checked]="true" label="Active" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="hot" [indeterminate]="true" label="Indeterminate" mr="1"></fab-checkbox>
+</fab-wrapper>
+
+<fab-wrapper [flex]="true" mb="1">
+  <fab-checkbox inactiveColor="aux" label="Inactive" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="aux" [checked]="true" label="Active" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="aux" [indeterminate]="true" label="Indeterminate" mr="1"></fab-checkbox>
+</fab-wrapper>
+
+<fab-wrapper [flex]="true" mb="1">
+  <fab-checkbox inactiveColor="dark" label="Inactive" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="dark" [checked]="true" label="Active" mr="1"></fab-checkbox>
+  <fab-checkbox inactiveColor="dark" [indeterminate]="true" label="Indeterminate" mr="1"></fab-checkbox>
+</fab-wrapper>
