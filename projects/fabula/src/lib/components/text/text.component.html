@@ -1,13 +1,3 @@
-<div class="fab-text" data-fab-component="text" [attr.data-color]="color" #component>
-  <ng-container *ngIf="props">
-    <span>{{props.content}}</span>
-  </ng-container>
-
-  <ng-container *ngIf="!props">
-    <ng-content *ngTemplateOutlet="content"></ng-content>
-  </ng-container>
-</div>
-
-<ng-template #content>
+<div class="fab-text" data-fab-component="text">
   <ng-content></ng-content>
-</ng-template>
+</div>

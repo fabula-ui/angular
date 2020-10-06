@@ -8,12 +8,14 @@ export class CommonComponent implements OnChanges {
   @Input() props: any = {};
 
   additionalStyles;
+  callbacks;
   host;
   styles;
 
   constructor(public elRef: ElementRef) { }
 
   ngOnChanges() {
+    if (this.callbacks && typeof this.callbacks === 'function') { this.callbacks(); }
     if (this.styles) { this.refreshStyles(); }
   }
 

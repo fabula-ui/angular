@@ -3,8 +3,11 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
+    AvatarModule,
     BadgeComponent,
+    ButtonModule,
     DropdownModule,
+    HelpersModule,
     IconsModule,
     ListComponent,
     ListItemComponent,
@@ -16,14 +19,11 @@ import {
 } from '../public-api';
 
 // Wrappers
-import { DropdownColorWrapper } from './wrappers/dropdown/color/dropdown-color.wrapper';
 import { DropdownAlignmentWrapper } from './wrappers/dropdown/alignment/dropdown-alignment.wrapper';
 import { DropdownCustomContentWrapper } from './wrappers/dropdown/custom-content/dropdown-custom-content.wrapper';
 import { DropdownDirectionWrapper } from './wrappers/dropdown/direction/dropdown-direction.wrapper';
+import { DropdownExampleWrapper } from './wrappers/dropdown/example/dropdown-example.wrapper';
 import { DropdownExpandWrapper } from './wrappers/dropdown/expand/dropdown-expand.wrapper';
-import { DropdownExamplesWrapper } from './wrappers/dropdown/examples/dropdown-examples.wrapper';
-import { DropdownGlowWrapper } from './wrappers/dropdown/glow/dropdown-glow.wrapper';
-import { DropdownSizeWrapper } from './wrappers/dropdown/size/dropdown-size.wrapper';
 
 // Module init
 export default {
@@ -37,8 +37,11 @@ export default {
                 TextComponent
             ],
             imports: [
+                AvatarModule,
                 BrowserModule,
+                ButtonModule,
                 DropdownModule,
+                HelpersModule,
                 IconsModule,
                 ThemeModule.forRoot(),
                 UtilsModule
@@ -52,11 +55,8 @@ export default {
 }
 
 // Stories
-export const Example = () => ({ component: DropdownExamplesWrapper });
-export const Alignment = () => ({ component: DropdownAlignmentWrapper });
-export const Color = () => ({ component: DropdownColorWrapper });
+export const Example = () => ({ component: DropdownExampleWrapper });
+export const PropAlignment = () => ({ component: DropdownAlignmentWrapper });
+export const PropDirection = () => ({ component: DropdownDirectionWrapper });
+export const PropExpand = () => ({ component: DropdownExpandWrapper });
 export const CustomContent = () => ({ component: DropdownCustomContentWrapper });
-export const Direction = () => ({ component: DropdownDirectionWrapper });
-export const Expand = () => ({ component: DropdownExpandWrapper });
-export const Glow = () => ({ component: DropdownGlowWrapper });
-export const Size = () => ({ component: DropdownSizeWrapper });

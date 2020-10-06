@@ -65,7 +65,7 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
     handleDivider(divider) {
         if (this.color) { divider.parentColor = this.color; }
 
-        divider.ngAfterViewInit();
+        divider.refreshStyles();
     }
 
     handleDropdownHeader(header) {
@@ -75,7 +75,6 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
     }
 
     handleDropdownItem(item) {
-        console.log('item', item);
         item.clicked.subscribe(() => {
             if (this.clickToClose || item.clickToClose || item.props.clickToClose) {
                 this.closed.emit();

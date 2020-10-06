@@ -6,6 +6,7 @@ import IconStyles from '@fabula/core/styles/components/icon/icon';
 
 @Component({
   selector: 'fab-icon',
+  styleUrls: ['./icon.component.scss'],
   templateUrl: './icon.component.html'
 })
 export class IconComponent implements OnInit {

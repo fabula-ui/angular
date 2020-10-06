@@ -8,9 +8,9 @@ import {
     Output,
     EventEmitter
 } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
+import { CommonComponent } from '../common-component/common-component.component';
 import { DropdownMenuComponent } from '../dropdown-menu/dropdown-menu.component';
 import { DropdownToggleComponent } from '../dropdown-toggle/dropdown-toggle.component';
 
@@ -19,9 +19,10 @@ import DropdownStyles from '@fabula/core/styles/components/dropdown/dropdown';
 
 @Component({
     selector: 'fab-dropdown',
+    styleUrls: ['./dropdown.component.scss'],
     templateUrl: './dropdown.component.html',
 })
-export class DropdownComponent implements AfterViewInit, OnInit {
+export class DropdownComponent extends CommonComponent implements AfterViewInit, OnInit {
     @ContentChild(DropdownMenuComponent) dropdownMenu: DropdownMenuComponent;
     @ContentChild(DropdownToggleComponent) dropdownToggle: DropdownToggleComponent;
 
@@ -36,9 +37,23 @@ export class DropdownComponent implements AfterViewInit, OnInit {
 
     host;
 
-    constructor(private elRef: ElementRef) { }
+    constructor(public elRef: ElementRef) { super(elRef) }
 
     ngAfterViewInit() {
+        this.handleChildren();
+    }
+
+    ngOnInit() {
+        this.styles = DropdownStyles;
+        this.initStyles();
+        this.callbacks = () => { this.handleChildren(); }
+
+        // Event Listener
+        document.addEventListener('click', e => this.handleClick(e));
+    }
+
+    // Methods
+    handleChildren() {
         if (this.dropdownMenu) {
             this.dropdownMenu.alignment = this.alignment;
             this.dropdownMenu.direction = this.direction;
@@ -52,23 +67,15 @@ export class DropdownComponent implements AfterViewInit, OnInit {
             this.dropdownToggle.toggle.subscribe(() => this.handleToggle());
 
             if (this.expand) { this.dropdownToggle.expand = true; }
+            this.dropdownToggle.ngOnInit();
         }
+
+        this.refreshStyles();
     }
 
-    ngOnInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(DropdownStyles({ framework: 'angular', props: this }));
-
-        host.classList.add(styles);
-        this.host = host;
-
-        // Event Listener
-        document.addEventListener('click', e => this.handleClick(e));
-    }
-
-    // Methods
     handleClick(e) {
-        if (!this.host.contains(e.target) && this.isOpen) { this.handleToggle(); }
+        const host = this.elRef.nativeElement;
+        if (!host.contains(e.target) && this.isOpen) { this.handleToggle(); }
     }
 
     handleToggle() {

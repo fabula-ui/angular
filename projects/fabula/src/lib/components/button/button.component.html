@@ -10,9 +10,6 @@
   data-fab-component="button"
   *ngIf="!href"
 >
-  <ng-container *ngIf="!icon && (label || (props && props.label))">
-    {{ label || (props && props.label) }}
-  </ng-container>
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </button>
 
@@ -29,9 +26,6 @@
   data-fab-component="button"
   *ngIf="href"
 >
-  <ng-container *ngIf="!icon && (label || (props && props.label))">{{
-    label || (props && props.label)
-  }}</ng-container>
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </a>
 

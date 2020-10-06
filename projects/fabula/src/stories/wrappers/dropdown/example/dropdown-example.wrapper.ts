@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-dropdown-examples',
-    templateUrl: './dropdown-examples.wrapper.html'
+    selector: 'app-dropdown-example',
+    templateUrl: './dropdown-example.wrapper.html'
 })
-export class DropdownExamplesWrapper implements OnInit {
+export class DropdownExampleWrapper implements OnInit {
     items = [
         {
             clickToClose: true,
