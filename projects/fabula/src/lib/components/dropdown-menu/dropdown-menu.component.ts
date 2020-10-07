@@ -10,9 +10,9 @@ import {
     QueryList,
     ViewChildren,
 } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
+import { CommonComponent } from '../common-component/common-component.component';
 import { DividerComponent } from '../divider/divider.component';
 import { DropdownHeaderComponent } from '../dropdown-header/dropdown-header.component';
 import { DropdownItemComponent } from '../dropdown-item/dropdown-item.component';
@@ -24,7 +24,7 @@ import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dro
     selector: 'fab-dropdown-menu',
     templateUrl: './dropdown-menu.component.html',
 })
-export class DropdownMenuComponent implements AfterViewInit, OnInit {
+export class DropdownMenuComponent extends CommonComponent implements AfterViewInit, OnInit {
     @ContentChildren(DropdownHeaderComponent) contentHeader: QueryList<DropdownHeaderComponent>;
     @ContentChildren(DropdownItemComponent) contentItems: QueryList<DropdownItemComponent>;
     @ContentChildren(DividerComponent) divider: QueryList<DividerComponent>;
@@ -44,7 +44,7 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
 
     isOpen = false;
 
-    constructor(public elRef: ElementRef) {}
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     ngAfterViewInit() {
         this.contentHeader.forEach((header: DropdownHeaderComponent) => { this.handleDropdownHeader(header); });
@@ -55,10 +55,8 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
     }
 
     ngOnInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(DropdownMenuStyles({ framework: 'angular', props: this }));
-
-        host.classList.add(styles);
+        this.styles = DropdownMenuStyles;
+        this.initStyles();
     }
 
     // Methods
@@ -84,11 +82,13 @@ export class DropdownMenuComponent implements AfterViewInit, OnInit {
         });
 
         if (this.color) { item.parentColor = this.color; }
+        if (this.clickToClose) { item.clickToClose = this.clickToClose; }
         if (this.size && !item.size) { item.size = this.size; }
 
         item.padding = this.padding;
 
         item.ngAfterViewInit();
+        this.refreshStyles();
     }
 
     // Listeners

@@ -37,7 +37,7 @@ export class DropdownComponent extends CommonComponent implements AfterViewInit,
 
     host;
 
-    constructor(public elRef: ElementRef) { super(elRef) }
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     ngAfterViewInit() {
         this.handleChildren();
@@ -46,7 +46,7 @@ export class DropdownComponent extends CommonComponent implements AfterViewInit,
     ngOnInit() {
         this.styles = DropdownStyles;
         this.initStyles();
-        this.callbacks = () => { this.handleChildren(); }
+        this.callbacks = () => { this.handleChildren(); };
 
         // Event Listener
         document.addEventListener('click', e => this.handleClick(e));
