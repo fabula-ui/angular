@@ -1,6 +1,9 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { css } from 'emotion';
 
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
+
 // Styles
 import IconStyles from '@fabula/core/styles/components/icon/icon';
 
@@ -9,31 +12,23 @@ import IconStyles from '@fabula/core/styles/components/icon/icon';
   styleUrls: ['./icon.component.scss'],
   templateUrl: './icon.component.html'
 })
-export class IconComponent implements OnInit {
+export class IconComponent extends CommonComponent implements OnInit {
   @Input() color: string;
   @Input() name: string;
-  @Input() props;
   @Input() size = 'md';
 
-  host;
-
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
     const props = {
       color: this.color,
       name: this.name,
       size: this.size,
       ...this.props,
     };
-    const styles = css(IconStyles({ framework: 'angular', props }));
 
-    host.classList.add(styles);
-
-    // Pass props to component
     this.props = props;
+    this.styles = IconStyles;
+    this.initStyles();
   }
 }

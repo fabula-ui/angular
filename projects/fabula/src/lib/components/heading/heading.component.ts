@@ -14,7 +14,7 @@ import HeadingStyles from '@fabula/core/styles/components/heading/heading';
 export class HeadingComponent extends CommonComponent implements OnInit {
   @Input() color = '';
   @Input() level = 1;
-  @Input() size = 'md';
+  @Input() weight: any;
 
   constructor(public elRef: ElementRef) { super(elRef); }
 

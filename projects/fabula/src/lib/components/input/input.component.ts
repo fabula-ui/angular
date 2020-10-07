@@ -17,7 +17,7 @@ import InputStyles from '@fabula/core/styles/components/input/input';
     templateUrl: './input.component.html',
 })
 export class InputComponent implements OnInit {
-    @Input() color = '';
+    @Input() color: string;
     @Input() disabled = false;
     @Input() expand = false;
     @Input() glow = false;
@@ -35,6 +35,7 @@ export class InputComponent implements OnInit {
     @Input() status: string;
     @Input() textarea = false;
     @Input() type = 'text';
+    @Input() variant: string;
 
     hasFocus = false;
     host;
@@ -51,6 +52,8 @@ export class InputComponent implements OnInit {
                 ...this.props
             }
         }));
+
+        this.props = this;
 
         host.classList.add(styles);
         this.host = host;

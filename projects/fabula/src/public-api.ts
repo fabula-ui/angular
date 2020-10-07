@@ -81,6 +81,7 @@ export * from './lib/modules/grid.module';
 export * from './lib/modules/heading.module';
 export * from './lib/modules/helpers.module';
 export * from './lib/modules/icons.module';
+export * from './lib/modules/inner-icon.module';
 export * from './lib/modules/input.module';
 export * from './lib/modules/list.module';
 export * from './lib/modules/modal.module';

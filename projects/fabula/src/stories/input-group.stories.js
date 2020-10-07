@@ -5,9 +5,10 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonModule,
     DropdownModule,
+    IconsModule,
+    InnerIconModule,
     InputComponent,
     InputGroupComponent,
-    IconsModule,
     TagComponent,
     TagGroupComponent,
     TextComponent,
@@ -17,10 +18,8 @@ import {
 } from '../public-api';
 
 // Wrappers
-import { InputGroupExamplesWrapper } from './wrappers/input-group/examples/input-group-examples.wrapper';
-import { InputGroupGluedWrapper } from './wrappers/input-group/glued/input-group-glued.wrapper';
-import { InputGroupSizesWrapper } from './wrappers/input-group/sizes/input-group-sizes.wrapper';
-import { InputGroupSpacingWrapper } from './wrappers/input-group/spacing/input-group-spacing.wrapper';
+import { InputGroupExampleWrapper } from './wrappers/input-group/example/input-group-example.wrapper';
+import { InputGroupLayoutWrapper } from './wrappers/input-group/layout/input-group-layout.wrapper';
 
 // Module init
 export default {
@@ -38,6 +37,7 @@ export default {
                 ButtonModule,
                 DropdownModule,
                 IconsModule,
+                InnerIconModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
@@ -50,7 +50,5 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: InputGroupExamplesWrapper });
-export const Glued = () => ({ component: InputGroupGluedWrapper });
-export const Sizes = () => ({ component: InputGroupSizesWrapper });
-export const Spacing = () => ({ component: InputGroupSpacingWrapper });
+export const Example = () => ({ component: InputGroupExampleWrapper });
+export const PropLayout = () => ({ component: InputGroupLayoutWrapper });
