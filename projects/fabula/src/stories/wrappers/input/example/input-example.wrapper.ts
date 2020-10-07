@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-input-examples',
-    templateUrl: './input-examples.wrapper.html'
+    templateUrl: './input-example.wrapper.html'
 })
-export class InputExamplesWrapper implements OnInit {
-
+export class InputExampleWrapper implements OnInit {
     constructor() { }
 
     ngOnInit() {
@@ -27,5 +25,4 @@ export class InputExamplesWrapper implements OnInit {
     handleKeyUp(e) {
         console.log('Keyup', e);
     }
-
 }

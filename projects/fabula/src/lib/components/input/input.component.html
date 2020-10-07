@@ -12,7 +12,7 @@
     <textarea class="fab-input__field" [disabled]="disabled" [attr.placeholder]="placeholder" [attr.type]="type"
       (blur)="handleFocus(false)" (focus)="handleFocus(true)" data-fab-component="input" *ngIf="textarea"></textarea>
 
-    <div className="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle">
+    <div class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle">
       <fab-inner-icon [icon]="iconEnd" [parentProps]="props"></fab-inner-icon>
     </div>
 

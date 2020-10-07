@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { moduleMetadata } from '@storybook/angular';
+import { InputModule } from '../lib/modules/input.module';
 
 // Fabula API
 import {
-    InputComponent,
+    GridModule,
     IconsModule,
     TagComponent,
     TagGroupComponent,
@@ -16,7 +17,7 @@ import {
 // Wrappers
 import { InputColorWrapper } from './wrappers/input/color/input-color.wrapper';
 import { InputDisabledWrapper } from './wrappers/input/disabled/input-disabled.wrapper';
-import { InputExamplesWrapper } from './wrappers/input/examples/input-examples.wrapper';
+import { InputExampleWrapper } from './wrappers/input/example/input-example.wrapper';
 import { InputGlowWrapper } from './wrappers/input/glow/input-glow.wrapper';
 import { InputMessageColorWrapper } from './wrappers/input/message-color/input-message-color.wrapper';
 import { InputPasswordWrapper } from './wrappers/input/password/input-password.wrapper';
@@ -29,14 +30,15 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                InputComponent,
                 TagComponent,
                 TagGroupComponent,
                 TextComponent
             ],
             imports: [
                 BrowserModule,
+                GridModule,
                 IconsModule,
+                InputModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
@@ -49,7 +51,7 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: InputExamplesWrapper });
+export const Example = () => ({ component: InputExampleWrapper });
 export const Color = () => ({ component: InputColorWrapper });
 export const Disabled = () => ({ component: InputDisabledWrapper });
 export const Glow = () => ({ component: InputGlowWrapper });
