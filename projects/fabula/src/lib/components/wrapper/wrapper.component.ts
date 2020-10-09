@@ -14,14 +14,11 @@ import WrapperStyles from '@fabula/core/styles/components/wrapper/wrapper';
 export class WrapperComponent extends CommonComponent implements OnInit {
     @Input() bgColor: string;
     @Input() color: string;
-    
-    constructor(public elRef: ElementRef) {
-        super(elRef);
-        this.styles = WrapperStyles;
-    }
+
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     ngOnInit() {
+        this.styles = WrapperStyles;
         this.initStyles();
     }
-
 }

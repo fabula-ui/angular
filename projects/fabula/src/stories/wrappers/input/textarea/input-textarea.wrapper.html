@@ -1,19 +1,31 @@
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="primary" [icon]="{ color: 'primary', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="secondary" [icon]="{ color: 'secondary', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="success" [icon]="{ color: 'success', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..."></fab-input>
+    </fab-column>
 
-<div mb="1" row>
-    <fab-input col="3" color="danger" [icon]="{ color: 'danger', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="warning" [icon]="{ color: 'warning', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="hot" [icon]="{ color: 'hot', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="cold" [icon]="{ color: 'cold', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-</div>
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..." variant="clear"></fab-input>
+    </fab-column>
 
-<div mb="1" row>
-    <fab-input col="3" color="dark" [icon]="{ color: 'dark', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="light" [icon]="{ color: 'light', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-    <fab-input col="3" color="aux" [icon]="{ color: 'aux', name: 'user' }" placeholder="Type something..." [textarea]="true"></fab-input>
-</div>
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..." variant="fill"></fab-input>
+    </fab-column>
+</fab-row>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..." status="danger"></fab-input>
+    </fab-column>
+
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..." status="info"></fab-input>
+    </fab-column>
+
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..." status="success"></fab-input>
+    </fab-column>
+</fab-row>
+<fab-row>
+    <fab-column col="4">
+        <fab-input [textarea]="true" [icon]="{ name: 'user' }" placeholder="Type something..." status="warning"></fab-input>
+    </fab-column>
+</fab-row>
