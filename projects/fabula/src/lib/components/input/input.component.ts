@@ -1,12 +1,13 @@
 import {
     Component,
     ElementRef,
-    EventEmitter,
     Input,
-    OnInit,
-    Output
+    OnInit
 } from '@angular/core';
 import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import InputStyles from '@fabula/core/styles/components/input/input';
@@ -16,7 +17,7 @@ import InputStyles from '@fabula/core/styles/components/input/input';
     styleUrls: ['input.component.scss'],
     templateUrl: './input.component.html',
 })
-export class InputComponent implements OnInit {
+export class InputComponent extends CommonComponent implements OnInit {
     @Input() color: string;
     @Input() disabled = false;
     @Input() expand = false;
@@ -40,23 +41,12 @@ export class InputComponent implements OnInit {
     hasFocus = false;
     host;
 
-    constructor(
-        public elRef: ElementRef
-    ) { }
+    constructor(public elRef: ElementRef) { super(elRef) }
 
     ngOnInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(InputStyles({
-            framework: 'angular', props: {
-                ...this,
-                ...this.props
-            }
-        }));
-
         this.props = this;
-
-        host.classList.add(styles);
-        this.host = host;
+        this.styles = InputStyles;
+        this.initStyles();
     }
 
     // Methods

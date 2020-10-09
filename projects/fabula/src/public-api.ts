@@ -83,6 +83,7 @@ export * from './lib/modules/helpers.module';
 export * from './lib/modules/icons.module';
 export * from './lib/modules/inner-icon.module';
 export * from './lib/modules/input.module';
+export * from './lib/modules/link.module';
 export * from './lib/modules/list.module';
 export * from './lib/modules/modal.module';
 export * from './lib/modules/navbar.module';
