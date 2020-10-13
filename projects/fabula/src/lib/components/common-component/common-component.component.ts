@@ -7,6 +7,7 @@ import { css } from 'emotion';
 export class CommonComponent implements OnChanges {
   @Input() props: any = {};
 
+  additionalProps;
   additionalStyles;
   callbacks;
   host;
@@ -23,7 +24,8 @@ export class CommonComponent implements OnChanges {
     const styles = css(stylesFn({
       framework: 'angular', props: {
         ...this,
-        ...this.props
+        ...this.props,
+        ...this.additionalProps
       }
     }));
 

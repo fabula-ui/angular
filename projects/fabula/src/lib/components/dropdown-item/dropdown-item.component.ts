@@ -6,7 +6,6 @@ import {
     Output,
     EventEmitter
 } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';

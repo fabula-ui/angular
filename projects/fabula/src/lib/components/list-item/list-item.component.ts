@@ -1,15 +1,18 @@
 import { Component, ElementRef, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { css } from 'emotion';
+
+// Component
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import ListItemStyles from '@fabula/core/styles/components/list-item/list-item';
+
 
 @Component({
   selector: 'fab-list-item',
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss']
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent extends CommonComponent implements OnInit {
   @Input() button = false;
   @Input() color: string;
   @Input() divider: boolean;
@@ -21,19 +24,13 @@ export class ListItemComponent implements OnInit {
 
   @Output() clicked = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(ListItemStyles({
-      framework: 'angular', props: {
-        ...this,
-        ...this.item,
-        ...this.props,
-      }
-    }));
+    this.additionalProps = { ...this.item };
 
-    host.classList.add(styles);
+    this.styles = ListItemStyles;
+    this.initStyles();
   }
 
   // Methods

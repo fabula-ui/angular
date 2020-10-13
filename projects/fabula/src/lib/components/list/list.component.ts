@@ -1,16 +1,18 @@
 import { Component, ElementRef, OnInit, Input, QueryList, ContentChildren, ViewChildren, Output, EventEmitter } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
+import { ListItemComponent } from '../list-item/list-item.component';
 
 // Styles
 import ListStyles from '@fabula/core/styles/components/list/list';
-import { ListItemComponent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'fab-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent extends CommonComponent implements OnInit {
   @ContentChildren(ListItemComponent) contentItems: QueryList<ListItemComponent>;
   @ViewChildren(ListItemComponent) viewItems: QueryList<ListItemComponent>;
 
@@ -22,7 +24,7 @@ export class ListComponent implements OnInit {
 
   @Output() clickItem: EventEmitter<any> = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngAfterViewInit() {
     this.contentItems.forEach((item: ListItemComponent) => { this.handleItem(item); });
@@ -30,14 +32,8 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(ListStyles({
-      framework: 'angular', props: {
-        ...this,
-        ...this.props
-      }
-    }));
-    host.classList.add(styles);
+    this.styles = ListStyles;
+    this.initStyles();
   }
 
   // Methods
