@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 // Services
 import { ModalService } from '../../../../public-api';
@@ -7,18 +7,12 @@ import { ModalService } from '../../../../public-api';
     selector: 'app-modal-example',
     templateUrl: './modal-example.component.html'
 })
-export class ModalExampleComponent implements OnInit {
+export class ModalExampleComponent {
     @Input() color: string;
     
-    init = false;
-
     constructor(private modalService: ModalService) { }
 
-    ngOnInit() {
-        this.init = true;
-    }
-
-    closeModal() {
+    handleClose() {
         this.modalService.closeModal();
     }
 

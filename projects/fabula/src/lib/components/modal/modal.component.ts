@@ -15,6 +15,7 @@ import ModalStyles from '@fabula/core/styles/components/modal/modal';
 
 @Component({
   selector: 'fab-modal',
+  styleUrls: ['./modal.component.scss'],
   templateUrl: './modal.component.html',
 })
 export class ModalComponent implements AfterViewInit {

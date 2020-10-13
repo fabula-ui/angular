@@ -1,6 +1,8 @@
 <div class="fab-modal-wrapper" [attr.data-closing]="modalService.modalIsClosing" [attr.data-open]="isOpen">
-  <div class="fab-modal">
-    <ng-content></ng-content>
+  <div class="fab-modal__dialog">
+    <div class="fab-modal">
+      <ng-content></ng-content>
+    </div>
   </div>
 
   <div class="fab-modal__backdrop" (click)="closeModal()"></div>
