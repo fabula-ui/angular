@@ -13,8 +13,8 @@ import {
 
 // Wrappers
 import { ModalColorWrapper } from './wrappers/modal/color/modal-color.wrapper';
-import { ModalExampleComponent } from './wrappers/modal/example/modal-example.component';
-import { ModalExamplesWrapper } from './wrappers/modal/examples/modal-examples.wrapper';
+import { ModalExample } from './examples/modal/example/modal.example';
+import { ModalExampleWrapper } from './wrappers/modal/example/modal-example.wrapper';
 import { ModalSizeWrapper } from './wrappers/modal/size/modal-size.wrapper';
 
 // Module init
@@ -23,11 +23,11 @@ export default {
         moduleMetadata({
             declarations: [
                 ButtonGroupComponent,
-                ModalExampleComponent,
+                ModalExample,
                 TextComponent,
             ],
             entryComponents: [
-                ModalExampleComponent
+                ModalExample
             ],
             imports: [
                 BrowserModule,
@@ -45,6 +45,6 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: ModalExamplesWrapper });
-export const Color = () => ({ component: ModalColorWrapper });
-export const Size = () => ({ component: ModalSizeWrapper });
+export const Example = () => ({ component: ModalExampleWrapper });
+export const PropColor = () => ({ component: ModalColorWrapper });
+export const PropSize = () => ({ component: ModalSizeWrapper });

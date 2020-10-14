@@ -5,15 +5,15 @@ import { ModalService } from '../../../../public-api';
 
 @Component({
     selector: 'app-modal-example',
-    templateUrl: './modal-example.component.html'
+    templateUrl: './modal.example.html'
 })
-export class ModalExampleComponent {
+export class ModalExample {
     @Input() color: string;
-    
+    @Input() size = 'lg';
+
     constructor(private modalService: ModalService) { }
 
     handleClose() {
         this.modalService.closeModal();
     }
-
 }

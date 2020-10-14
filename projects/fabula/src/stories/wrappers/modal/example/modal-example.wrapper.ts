@@ -3,13 +3,13 @@ import { ModalService } from '../../../../public-api';
 import { ModalExample } from '../../../examples/modal/example/modal.example';
 
 @Component({
-    templateUrl: './modal-color.wrapper.html'
+    templateUrl: './modal-example.wrapper.html'
 })
-export class ModalColorWrapper {
+export class ModalExampleWrapper {
     constructor(public modalService: ModalService) { }
 
     // Methods
-    handleOpen(color) {
-        this.modalService.openModal(ModalExample, { color });
+    openModal() {
+        this.modalService.openModal(ModalExample, {});
     }
 }

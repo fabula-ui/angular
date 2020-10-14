@@ -1,7 +1,7 @@
-<fab-modal>
+<fab-modal [color]="color" [glow]="!color" [size]="size">
     <fab-modal-header divider="bottom">
         <fab-text [block]="true" size="lg" weight="700">Deactivate Account</fab-text>
-        <fab-text [aux]="true" size="sm">Modal Subtitle</fab-text>
+        <fab-text [aux]="true" [color]="color && 'inherit'" size="sm">Modal Subtitle</fab-text>
     </fab-modal-header>
     <fab-modal-body>
         <fab-text>
@@ -50,8 +50,8 @@
             efficitur porta. Etiam et lectus non mi dictum rhoncus sit amet id lacus.
         </fab-text>
     </fab-modal-body>
-    <fab-modal-footer alH="end" color="light" [flex]="true">
-        <fab-button [border]="true" [glow]="true" (click)="handleClose()" mr="1">Cancel</fab-button>
-        <fab-button [border]="true" color="danger" [glow]="true" (click)="handleClose()">Deactivate</fab-button>
+    <fab-modal-footer alH="end" [color]="color || 'light'" [darken]="!!color" [flex]="true">
+        <fab-button [border]="!color" [color]="color" [glow]="true" (click)="handleClose()" mr="1">Cancel</fab-button>
+        <fab-button [border]="!color" [color]="color || 'danger'" [glow]="!color" [invert]="!!color" (click)="handleClose()">Deactivate</fab-button>
     </fab-modal-footer>
 </fab-modal>
