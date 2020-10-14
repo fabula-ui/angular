@@ -46,7 +46,6 @@ export class ButtonComponent extends CommonComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.host = this.elRef.nativeElement;
     this.styles = ButtonStyles;
-    if (!this.props) { this.props = this; }
     this.initStyles();
   }
 }
