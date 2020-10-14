@@ -18,13 +18,13 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
 
   @Input() active: string;
   @Input() activeColor: string;
-  @Input() activeFillColor: string;
   @Input() activeTextColor: string;
+  @Input() border = true;
   @Input() clear = false;
   @Input() color: string;
   @Input() expand = false;
   @Input() faded = false;
-  @Input() inactiveFillColor: string;
+  @Input() inactiveColor: string;
   @Input() inactiveTextColor: string;
   @Input() invert = false;
   @Input() layout = 'horizontal';
@@ -41,13 +41,12 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     this.childComponents.forEach((child: SegmentComponent) => {
       child.activeColor = this.activeColor;
-      child.activeFillColor = this.activeFillColor;
       child.activeTextColor = this.activeTextColor;
       child.color = this.color;
       child.clear = this.clear;
       child.expand = this.expand;
       child.faded = this.faded;
-      child.inactiveFillColor = this.inactiveFillColor;
+      child.inactiveColor = this.inactiveColor;
       child.inactiveTextColor = this.inactiveTextColor;
       child.invert = this.invert;
       child.layout = this.layout;

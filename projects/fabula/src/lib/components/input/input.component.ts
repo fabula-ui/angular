@@ -4,7 +4,6 @@ import {
     Input,
     OnInit
 } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
@@ -30,7 +29,6 @@ export class InputComponent extends CommonComponent implements OnInit {
     @Input() messageColor: string;
     @Input() passwordToggle = false;
     @Input() placeholder = '';
-    @Input() props: any;
     @Input() rounded = false;
     @Input() size = 'md';
     @Input() status: string;
@@ -44,7 +42,6 @@ export class InputComponent extends CommonComponent implements OnInit {
     constructor(public elRef: ElementRef) { super(elRef) }
 
     ngOnInit() {
-        this.props = this;
         this.styles = InputStyles;
         this.initStyles();
     }

@@ -19,37 +19,46 @@ import SearchInputStyles from '@fabula/core/styles/components/search-input/searc
     templateUrl: './search-input.component.html',
 })
 export class SearchInputComponent extends InputComponent implements OnInit {
-    @Input() button: any;
+    @Input() button: any = null;
     @Input() placeholder = 'Search...';
 
     @ViewChild(ButtonComponent) buttonEl: ButtonComponent;
+    @ViewChild(InputComponent) inputEl: InputComponent;
 
+    buttonProps;
     inputProps;
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(public elRef: ElementRef) {
+        super(elRef);
+        this.additionalStyles = SearchInputStyles;
+    }
 
     ngOnInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(SearchInputStyles({ framework: 'angular', props: this }));
-        host.classList.add(styles);
+        if (this.button) { this.handleButton(); }
 
         this.inputProps = this;
-        this.handleButton();
     }
 
     // Methods
     handleButton() {
-        this.buttonEl.color = 'primary';
-        this.buttonEl.compact = true;
+        this.buttonProps = { ...this.button };
+        this.buttonProps.color = 'primary';
+        this.buttonProps.compact = true;
 
-        if (typeof this.button === 'object' && !this.button.icon && !this.button.label || typeof this.button !== 'object') { this.buttonEl.label = 'Search'; }
+        if (typeof this.button === 'string') {
+            this.buttonProps.label = this.button;
+        } else if (typeof this.button === 'object' && this.button.label) {
+            this.buttonProps.label = this.button.label;
+        } else if ((typeof this.button === 'object' && !this.button.icon && !this.button.label) || typeof this.button === 'boolean') {
+            this.buttonProps.label = 'Search';
+        }
 
         if (this.button && typeof this.button === 'object') {
             for (let key in this.button) {
-                this.buttonEl[key] = this.button[key];
+                this.buttonProps[key] = this.button[key];
             }
         }
 
-        this.buttonEl.ngAfterViewInit();
+        if (this.buttonEl) { this.buttonEl.ngAfterViewInit(); }
     }
 }

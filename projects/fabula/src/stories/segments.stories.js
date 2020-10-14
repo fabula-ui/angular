@@ -4,6 +4,8 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     CardComponent,
+    GridModule,
+    HelpersModule,
     IconsModule,
     SegmentsModule,
     TextComponent,
@@ -12,15 +14,19 @@ import {
     UtilsModule
 } from '../public-api';
 
+// Examples
+import { SegmentsExample } from './examples/segments/example/segments.example';
+
 // Wrappers
-import { SegmentsExamplesWrapper } from './wrappers/segments/examples/segments-examples.wrapper';
-import { SegmentsActiveFillColorWrapper } from './wrappers/segments/active-fill-color/segments-active-fill-color.wrapper';
+import { SegmentsActiveColorWrapper } from './wrappers/segments/active-color/segments-active-color.wrapper';
 import { SegmentsActiveTextColorWrapper } from './wrappers/segments/active-text-color/segments-active-text-color.wrapper';
+import { SegmentsBorderWrapper } from './wrappers/segments/border/segments-border.wrapper';
 import { SegmentsClearWrapper } from './wrappers/segments/clear/segments-clear.wrapper';
 import { SegmentsColorWrapper } from './wrappers/segments/color/segments-color.wrapper';
 import { SegmentsContentWrapper } from './wrappers/segments/content/segments-content.wrapper';
+import { SegmentsExampleWrapper } from './wrappers/segments/example/segments-example.wrapper';
 import { SegmentsFadedWrapper } from './wrappers/segments/faded/segments-faded.wrapper';
-import { SegmentsInactiveFillColorWrapper } from './wrappers/segments/inactive-fill-color/segments-inactive-fill-color.wrapper';
+import { SegmentsInactiveColorWrapper } from './wrappers/segments/inactive-color/segments-inactive-color.wrapper';
 import { SegmentsInactiveTextColorWrapper } from './wrappers/segments/inactive-text-color/segments-inactive-text-color.wrapper';
 import { SegmentsInvertWrapper } from './wrappers/segments/invert/segments-invert.wrapper';
 import { SegmentsOutlineWrapper } from './wrappers/segments/outline/segments-outline.wrapper';
@@ -32,10 +38,16 @@ export default {
         moduleMetadata({
             declarations: [
                 CardComponent,
+                SegmentsExample,
                 TextComponent
+            ],
+            entryComponents: [
+                SegmentsExample
             ],
             imports: [
                 BrowserModule,
+                GridModule,
+                HelpersModule,
                 IconsModule,
                 SegmentsModule,
                 ThemeModule.forRoot(),
@@ -50,15 +62,16 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: SegmentsExamplesWrapper });
-export const ActiveFillColor = () => ({ component: SegmentsActiveFillColorWrapper });
-export const ActiveTextColor = () => ({ component: SegmentsActiveTextColorWrapper });
-export const Clear = () => ({ component: SegmentsClearWrapper });
-export const Color = () => ({ component: SegmentsColorWrapper });
-export const Content = () => ({ component: SegmentsContentWrapper });
-export const Faded = () => ({ component: SegmentsFadedWrapper });
-export const InactiveFillColor = () => ({ component: SegmentsInactiveFillColorWrapper });
-export const InactiveTextColor = () => ({ component: SegmentsInactiveTextColorWrapper });
-export const Invert = () => ({ component: SegmentsInvertWrapper });
-export const Outline = () => ({ component: SegmentsOutlineWrapper });
-export const Rounded = () => ({ component: SegmentsRoundedWrapper });
+export const Examples = () => ({ component: SegmentsExampleWrapper });
+export const PropActiveColor = () => ({ component: SegmentsActiveColorWrapper });
+export const PropActiveTextColor = () => ({ component: SegmentsActiveTextColorWrapper });
+export const PropBorder = () => ({ component: SegmentsBorderWrapper });
+export const PropClear = () => ({ component: SegmentsClearWrapper });
+export const PropColor = () => ({ component: SegmentsColorWrapper });
+export const PropFaded = () => ({ component: SegmentsFadedWrapper });
+export const PropInactiveColor = () => ({ component: SegmentsInactiveColorWrapper });
+export const PropInactiveTextColor = () => ({ component: SegmentsInactiveTextColorWrapper });
+export const PropInvert = () => ({ component: SegmentsInvertWrapper });
+export const PropOutline = () => ({ component: SegmentsOutlineWrapper });
+export const PropRounded = () => ({ component: SegmentsRoundedWrapper });
+export const HandleContent = () => ({ component: SegmentsContentWrapper });

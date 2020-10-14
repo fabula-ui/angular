@@ -1,6 +1,6 @@
 <div class="fab-input-wrapper" data-fab-wrapper="input">
   <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus" [attr.data-textarea]="!!textarea"
-    [attr.data-variant]="variant">
+    [attr.data-variant]="variant" data-fab-component="input">
     <div class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart">
       <fab-inner-icon [icon]="icon" [parentProps]="props" *ngIf="icon"></fab-inner-icon>
       <fab-inner-icon [icon]="iconStart" [parentProps]="props" *ngIf="iconStart"></fab-inner-icon>

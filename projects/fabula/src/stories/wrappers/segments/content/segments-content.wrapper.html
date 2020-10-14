@@ -1,5 +1,5 @@
-<div row>
-  <div col="4">
+<fab-container>
+  <fab-wrapper>
     <fab-segments active="docs" mb="1" scope="scope1">
       <fab-segment name="docs">Docs</fab-segment>
       <fab-segment name="components">Components</fab-segment>
@@ -14,76 +14,17 @@
     </fab-segment-content>
 
     <fab-segment-content name="components" scope="scope1">
-      <fab-card [padding]="true" segmentName="components" segmentScope="scope1">
+      <fab-card [padding]="true">
         <fab-text size="xl" weight="600">Components</fab-text>
         <fab-text>This content is related to components</fab-text>
       </fab-card>
     </fab-segment-content>
 
     <fab-segment-content name="showcase" scope="scope1">
-      <fab-card [padding]="true" segmentName="showcase" segmentScope="scope1">
-        <fab-text size="xl" weight="600">Showcase</fab-text>
-        <fab-text>This content is related to showcase</fab-text>
-      </fab-card>
-    </fab-segment-content>
-  </div>
-
-
-  <div col="4">
-    <fab-segments active="docs" color="primary" [faded]="true" mb="1" scope="scope2">
-      <fab-segment name="docs">Docs</fab-segment>
-      <fab-segment name="components">Components</fab-segment>
-      <fab-segment name="showcase">Showcase</fab-segment>
-    </fab-segments>
-
-    <fab-segment-content [active]="true" name="docs" scope="scope2">
       <fab-card [padding]="true">
-        <fab-text size="xl" weight="600">Docs</fab-text>
-        <fab-text>This content is related to docs</fab-text>
-      </fab-card>
-    </fab-segment-content>
-
-    <fab-segment-content name="components" scope="scope2">
-      <fab-card [padding]="true" segmentName="components" segmentScope="scope1">
-        <fab-text size="xl" weight="600">Components</fab-text>
-        <fab-text>This content is related to components</fab-text>
-      </fab-card>
-    </fab-segment-content>
-
-    <fab-segment-content name="showcase" scope="scope2">
-      <fab-card [padding]="true" segmentName="showcase" segmentScope="scope1">
         <fab-text size="xl" weight="600">Showcase</fab-text>
         <fab-text>This content is related to showcase</fab-text>
       </fab-card>
     </fab-segment-content>
-  </div>
-
-  <div col="4">
-    <fab-segments active="docs" color="primary" mb="1" scope="scope3">
-      <fab-segment name="docs">Docs</fab-segment>
-      <fab-segment name="components">Components</fab-segment>
-      <fab-segment name="showcase">Showcase</fab-segment>
-    </fab-segments>
-
-    <fab-segment-content [active]="true" name="docs" scope="scope3">
-      <fab-card [padding]="true">
-        <fab-text size="xl" weight="600">Docs</fab-text>
-        <fab-text>This content is related to docs</fab-text>
-      </fab-card>
-    </fab-segment-content>
-
-    <fab-segment-content name="components" scope="scope3">
-      <fab-card [padding]="true" segmentName="components" segmentScope="scope1">
-        <fab-text size="xl" weight="600">Components</fab-text>
-        <fab-text>This content is related to components</fab-text>
-      </fab-card>
-    </fab-segment-content>
-
-    <fab-segment-content name="showcase" scope="scope3">
-      <fab-card [padding]="true" segmentName="showcase" segmentScope="scope1">
-        <fab-text size="xl" weight="600">Showcase</fab-text>
-        <fab-text>This content is related to showcase</fab-text>
-      </fab-card>
-    </fab-segment-content>
-  </div>
-</div>
+  </fab-wrapper>
+</fab-container>

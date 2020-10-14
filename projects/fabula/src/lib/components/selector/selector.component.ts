@@ -7,14 +7,13 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 export class SelectorComponent {
     @Input() active = false;
     @Input() activeColor: string;
-    @Input() activeFillColor: string;
     @Input() activeTextColor: string;
     @Input() clear: boolean;
     @Input() color: string;
     @Input() expand: boolean;
     @Input() faded: boolean;
     @Input() href: string;
-    @Input() inactiveFillColor: string;
+    @Input() inactiveColor: string;
     @Input() inactiveTextColor: string;
     @Input() invert: boolean;
     @Input() layout: string;
