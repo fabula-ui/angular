@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit, forwardRef } from '@angular/core';
-import { css } from 'emotion';
+import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 // Components
+import { CommonComponent } from '../common-component/common-component.component';
 import { SegmentComponent } from '../segment/segment.component';
 import { SelectorComponent } from '../selector/selector.component';
 
@@ -13,7 +13,7 @@ import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
   styleUrls: ['./segments.component.scss'],
   templateUrl: './segments.component.html'
 })
-export class SegmentsComponent implements AfterViewInit, OnInit {
+export class SegmentsComponent extends CommonComponent implements AfterViewInit, OnInit {
   @ContentChildren(SelectorComponent) childComponents: QueryList<SelectorComponent>;
 
   @Input() active: string;
@@ -36,7 +36,7 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
 
   @Output() changeSegment = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {
     this.childComponents.forEach((child: SegmentComponent) => {
@@ -70,10 +70,8 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(SegmentsStyles({ framework: 'angular', props: this }));
-
-    host.classList.add(styles);
+    this.styles = SegmentsStyles;
+    this.initStyles();
   }
 
   handleActiveSegment(segment) {

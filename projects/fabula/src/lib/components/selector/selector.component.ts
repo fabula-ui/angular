@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { CommonComponent } from '../common-component/common-component.component';
 
 @Component({
     selector: 'fab-selector',
     template: '<div></div>'
 })
-export class SelectorComponent {
+export class SelectorComponent extends CommonComponent {
     @Input() active = false;
     @Input() activeColor: string;
     @Input() activeTextColor: string;
@@ -28,7 +29,7 @@ export class SelectorComponent {
 
     @Output() selectedSegment = new EventEmitter();
 
-    constructor(public elRef: ElementRef) { }
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     handleClick() {
         if (this.name) { this.selectedSegment.emit(this.name); }

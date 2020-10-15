@@ -3,41 +3,49 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    CardComponent,
+    CardModule,
+    GridModule,
+    HelpersModule,
     IconsModule,
     TabsModule,
-    TextComponent,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
 } from '../public-api';
 
+// Examples
+import { TabsExample } from './examples/tabs/example/tabs.example';
+
 // Wrappers
-import { TabsExamplesWrapper } from './wrappers/tabs/examples/tabs-examples.wrapper';
-import { TabsBlockWrapper } from './wrappers/tabs/block/tabs-block.wrapper';
+import { TabsExampleWrapper } from './wrappers/tabs/example/tabs-example.wrapper';
 import { TabsColorWrapper } from './wrappers/tabs/color/tabs-color.wrapper';
 import { TabsContentWrapper } from './wrappers/tabs/content/tabs-content.wrapper';
 import { TabsExpandWrapper } from './wrappers/tabs/expand/tabs-expand.wrapper';
 import { TabsFadedWrapper } from './wrappers/tabs/faded/tabs-faded.wrapper';
-import { TabsFloatWrapper } from './wrappers/tabs/float/tabs-float.wrapper';
-import { TabsIconsWrapper } from './wrappers/tabs/icons/tabs-icons.wrapper';
 import { TabsInvertWrapper } from './wrappers/tabs/invert/tabs-invert.wrapper';
 import { TabsLayoutWrapper } from './wrappers/tabs/layout/tabs-layout.wrapper';
-import { TabsPillWrapper } from './wrappers/tabs/pill/tabs-pill.wrapper';
 import { TabsStackedWrapper } from './wrappers/tabs/stacked/tabs-stacked.wrapper';
+import { TabsTypeWrapper } from './wrappers/tabs/type/tabs-type.wrapper';
 
 // Module init
 export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                CardComponent,
-                TextComponent
+                TabsExample,
+            ],
+            entryComponents: [
+                TabsExample
             ],
             imports: [
                 BrowserModule,
+                CardModule,
+                HelpersModule,
+                GridModule,
                 IconsModule,
                 TabsModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
@@ -50,15 +58,12 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: TabsExamplesWrapper });
-export const Block = () => ({ component: TabsBlockWrapper });
-export const Color = () => ({ component: TabsColorWrapper });
-export const Content = () => ({ component: TabsContentWrapper });
-export const Expand = () => ({ component: TabsExpandWrapper });
-export const Faded = () => ({ component: TabsFadedWrapper });
-export const Float = () => ({ component: TabsFloatWrapper });
-export const Icons = () => ({ component: TabsIconsWrapper });
-export const Invert = () => ({ component: TabsInvertWrapper });
-export const Layout = () => ({ component: TabsLayoutWrapper });
-export const Pill = () => ({ component: TabsPillWrapper });
-export const Stacked = () => ({ component: TabsStackedWrapper });
+export const Example = () => ({ component: TabsExampleWrapper });
+export const PropColor = () => ({ component: TabsColorWrapper });
+export const PropExpand = () => ({ component: TabsExpandWrapper });
+export const PropFaded = () => ({ component: TabsFadedWrapper });
+export const PropInvert = () => ({ component: TabsInvertWrapper });
+export const PropLayout = () => ({ component: TabsLayoutWrapper });
+export const PropStacked = () => ({ component: TabsStackedWrapper });
+export const PropType = () => ({ component: TabsTypeWrapper });
+export const HandleContent = () => ({ component: TabsContentWrapper });

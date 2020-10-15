@@ -55,6 +55,7 @@ export * from './lib/directives/flex.directive';
 export * from './lib/directives/flow.directive';
 export * from './lib/directives/grow.directive';
 export * from './lib/directives/margin.directive';
+export * from './lib/directives/overflow.directive';
 export * from './lib/directives/padding.directive';
 export * from './lib/directives/row.directive';
 

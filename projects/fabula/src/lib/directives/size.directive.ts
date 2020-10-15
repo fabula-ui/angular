@@ -6,10 +6,11 @@ import { css } from 'emotion';
 import UtilsStyles from '@fabula/core/styles/utils/utils';
 
 @Directive({
-    selector: '[expand], [size], [width]'
+    selector: '[expand], [height], [width]'
 })
 export class SizeDirective implements AfterViewInit {
     @Input() expand: boolean;
+    @Input() height: any;
     @Input() width: any;
 
     constructor(private elRef: ElementRef) {}
