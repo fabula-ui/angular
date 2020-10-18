@@ -11,10 +11,10 @@ import { ToastService } from '../../services/toast.service';
 })
 export class ToastComponent implements AfterViewInit {
   @Input() clear: boolean;
-  @Input() closeButton: any;
   @Input() color: string;
   @Input() faded: boolean;
   @Input() glow: boolean;
+  @Input() hideButton: any;
   @Input() hiding = false;
   @Input() icon: any;
   @Input() index: any;

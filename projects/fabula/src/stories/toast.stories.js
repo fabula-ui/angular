@@ -5,6 +5,7 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonGroupComponent,
     ButtonModule,
+    GridModule,
     IconsModule,
     ThemeModule,
     ThemeService,
@@ -12,6 +13,9 @@ import {
     TooltipModule,
     UtilsModule
 } from '../public-api';
+
+// Example
+import { ToastExample } from './examples/toast/example/toast.example';
 
 // Wrappers
 import { ToastClearWrapper } from './wrappers/toast/clear/toast-clear.wrapper';
@@ -28,11 +32,14 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                ButtonGroupComponent
+                ButtonGroupComponent,
+                ToastExample
             ],
+            entryComponents: [ToastExample],
             imports: [
                 BrowserModule,
                 ButtonModule,
+                GridModule,
                 IconsModule,
                 ThemeModule.forRoot(),
                 ToastModule,

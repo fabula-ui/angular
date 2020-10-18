@@ -1,62 +1,29 @@
-<div mb="1" row>
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ label: 'Close' }" [icon]="{ color: 'primary', name: 'hard-drive' }"
-            message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
+<fab-row mb="1">
+    <fab-column col="6">
+        <app-toast-example [clear]="true" iconColor="primary"></app-toast-example>
+    </fab-column>
 
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'primary', label: 'Close', invert: true }" color="primary"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
+    <fab-column col="6">
+        <app-toast-example [clear]="true" color="primary"></app-toast-example>
+    </fab-column>
+</fab-row>
 
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'secondary', label: 'Close', invert: true }" color="secondary"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-</div>
+<fab-row mb="1">
+    <fab-column col="6">
+        <app-toast-example [clear]="true" color="lavender" iconColor="lavender"></app-toast-example>
+    </fab-column>
 
-<div mb="1" row>
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'success', label: 'Close', invert: true }" color="success"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
+    <fab-column col="6">
+        <app-toast-example [clear]="true" color="hot" iconColor="hot"></app-toast-example>
+    </fab-column>
+</fab-row>
 
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'danger', label: 'Close', invert: true }" color="danger"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
+<fab-row>
+    <fab-column col="6">
+        <app-toast-example [clear]="true" color="aux" iconColor="aux"></app-toast-example>
+    </fab-column>
 
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'warning', label: 'Close', invert: true }" color="warning"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-</div>
-
-<div mb="1" row>
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'hot', label: 'Close', invert: true }" color="hot"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'cold', label: 'Close', invert: true }" color="cold"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'dark', label: 'Close', invert: true }" color="dark"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-</div>
-
-<div mb="1" row>
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'light', label: 'Close', invert: true }" color="light"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-
-    <div col="4">
-        <fab-toast [clear]="true" [closeButton]="{ color: 'aux', label: 'Close', invert: true }" color="aux"
-            [icon]="{ name: 'hard-drive' }" message="Here is an example of a toast component working..." width="100%"></fab-toast>
-    </div>
-</div>
+    <fab-column col="6">
+        <app-toast-example [clear]="true" color="dark" iconColor="dark"></app-toast-example>
+    </fab-column>
+</fab-row>

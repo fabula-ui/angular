@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-tag-invert',
     templateUrl: './tag-invert.wrapper.html'
 })
-export class TagInvertWrapper implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-}
+export class TagInvertWrapper { }

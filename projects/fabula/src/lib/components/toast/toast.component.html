@@ -5,7 +5,7 @@
     <span class="fab-toast__message" *ngIf="message">{{message}}</span>
     <ng-content></ng-content>
     <div class="fab-toast__close-button">
-      <fab-button size="sm" (click)="hideToast()" [props]="closeButton"></fab-button>
+      <fab-button size="sm" (click)="hideToast()" [props]="hideButton"></fab-button>
     </div>
     <fab-link [props]="link" *ngIf="link"></fab-link>
   </div>
