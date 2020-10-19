@@ -9,4 +9,5 @@ export class ToastExample {
     @Input() color: string;
     @Input() iconColor: string;
     @Input() iconName: string;
+    @Input() mb: any;
 }

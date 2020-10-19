@@ -49,12 +49,12 @@ export class ToastComponent implements AfterViewInit {
       this.iconProps = {
         parentProps: this,
         ...this.icon,
-      }
+      };
     } else {
       this.iconProps = {
         parentProps: this,
         name: this.icon,
-      }
+      };
     }
 
     this.props = this;

@@ -6,6 +6,7 @@ import {
     ButtonGroupComponent,
     ButtonModule,
     GridModule,
+    HelpersModule,
     IconsModule,
     ThemeModule,
     ThemeService,
@@ -40,6 +41,7 @@ export default {
                 BrowserModule,
                 ButtonModule,
                 GridModule,
+                HelpersModule,
                 IconsModule,
                 ThemeModule.forRoot(),
                 ToastModule,
@@ -55,7 +57,7 @@ export default {
 }
 
 // Stories
-export const Clear = () => ({ component: ToastClearWrapper });
+export const PropClear = () => ({ component: ToastClearWrapper });
 export const Color = () => ({ component: ToastColorWrapper });
 export const Faded = () => ({ component: ToastFadedWrapper });
 export const Glow = () => ({ component: ToastGlowWrapper });
