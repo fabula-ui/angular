@@ -40,6 +40,7 @@ export class ButtonComponent extends CommonComponent implements AfterViewInit {
   @Input() wide: boolean;
 
   host;
+  inline = true;
 
   constructor(public elRef: ElementRef) { super(elRef); }
 

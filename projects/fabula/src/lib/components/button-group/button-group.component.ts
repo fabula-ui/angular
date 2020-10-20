@@ -22,6 +22,8 @@ export class ButtonGroupComponent extends CommonComponent implements OnInit {
   @Input() dividerColor = '';
   @Input() layout = 'h';
 
+  inline = true;
+
   constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {

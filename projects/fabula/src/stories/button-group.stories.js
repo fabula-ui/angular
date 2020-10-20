@@ -43,6 +43,6 @@ export default {
 
 // Stories
 export const Example = () => ({ component: ButtonGroupExampleWrapper });
-export const Color = () => ({ component: ButtonGroupColorWrapper });
-export const Layout = () => ({ component: ButtonGroupLayoutWrapper });
-export const ExternalDropdown = () => ({ component: ButtonGroupExternalDropdownWrapper });
+export const PropColor = () => ({ component: ButtonGroupColorWrapper });
+export const PropLayout = () => ({ component: ButtonGroupLayoutWrapper });
+export const PropExternalDropdown = () => ({ component: ButtonGroupExternalDropdownWrapper });

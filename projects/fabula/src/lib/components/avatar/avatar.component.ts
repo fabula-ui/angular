@@ -25,14 +25,11 @@ export class AvatarComponent extends CommonComponent implements OnInit {
   @Input() showInitials = '';
   @Input() size = 'md';
 
-  props;
+  inline = true;
 
-  constructor(public elRef: ElementRef) {
-    super(elRef);
-  }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
-    this.props = this;
     this.styles = AvatarStyles;
     this.initStyles();
   }
@@ -41,5 +38,4 @@ export class AvatarComponent extends CommonComponent implements OnInit {
   get initials(): string {
     return getInitials(this.showInitials);
   }
-
 }

@@ -26,6 +26,8 @@ export class BadgeComponent extends CommonComponent implements OnInit {
   @Input() rounded = false;
   @Input() size = 'md';
 
+  inline = true;
+
   constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
