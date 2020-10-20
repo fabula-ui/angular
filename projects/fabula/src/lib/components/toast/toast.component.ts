@@ -36,8 +36,6 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
   @ViewChild('toast') toastEl: ElementRef;
 
   height;
-  iconProps;
-  props;
 
   constructor(
     public cdRef: ChangeDetectorRef,
@@ -69,9 +67,9 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
     this.cdRef.detectChanges();
   }
 
+  // Methods
   hideToast() {
     const stack = this.toastService.stacks[this.stack];
-
     this.toastService.hideToast({
       index: this.index,
       stack

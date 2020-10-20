@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ElementRef, Input, AfterContentChecked, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Services
 import { ToastService } from '../../services/toast.service';
@@ -8,13 +8,7 @@ import { ToastService } from '../../services/toast.service';
   templateUrl: './toast-portal.component.html'
 })
 export class ToastPortalComponent implements OnInit {
-  // stacks: any;
-
-  constructor(
-    public toastService: ToastService
-  ) {
-    // this.stacks = this.toastService.stacks;
-  }
+  constructor(public toastService: ToastService) { }
 
   ngOnInit() { }
 
@@ -23,6 +17,4 @@ export class ToastPortalComponent implements OnInit {
       return this.toastService.stacks[name];
     });
   }
-
-
 }

@@ -1,16 +1,20 @@
-<div mb="1" row>
-  <fab-toggle col="2"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="primary"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="secondary"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="success"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="danger"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="warning"></fab-toggle>
-</div>
-
-<div mb="1" row>
-  <fab-toggle col="2" inactiveColor="hot"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="cold"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="dark"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="light"></fab-toggle>
-  <fab-toggle col="2" inactiveColor="aux"></fab-toggle>
-</div>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-toggle inactiveColor="primary" label="Inactive" mr="1"></fab-toggle>
+  <fab-toggle [active]="true" inactiveColor="primary" label="Active"></fab-toggle>
+</fab-wrapper>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-toggle inactiveColor="lavender" label="Inactive" mr="1"></fab-toggle>
+  <fab-toggle [active]="true" inactiveColor="lavender" label="Active"></fab-toggle>
+</fab-wrapper>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-toggle inactiveColor="hot" label="Inactive" mr="1"></fab-toggle>
+  <fab-toggle [active]="true" inactiveColor="hot" label="Active"></fab-toggle>
+</fab-wrapper>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-toggle inactiveColor="aux" label="Inactive" mr="1"></fab-toggle>
+  <fab-toggle [active]="true" inactiveColor="aux" label="Active"></fab-toggle>
+</fab-wrapper>
+<fab-wrapper [flex]="true" mb="1">
+  <fab-toggle color="dark" label="Inactive" mr="1"></fab-toggle>
+  <fab-toggle [active]="true" color="dark" label="Active"></fab-toggle>
+</fab-wrapper>

@@ -1,13 +1,21 @@
-<fab-button-group mt="3">
-  <fab-button [border]="true" [tooltip]="{label: 'Default', placement: 'top'}">Default</fab-button>
+<fab-wrapper mt="5">
+  <fab-button [border]="true" [tooltip]="{label: 'Default', placement: 'top'}" mr="1">Default</fab-button>
   <fab-button color="primary" [tooltip]="{color: 'primary', label: 'Primary', placement: 'top'}">Primary</fab-button>
-  <fab-button color="secondary" [tooltip]="{color: 'secondary', label: 'Secondary', placement: 'top'}">Secondary</fab-button>
-  <fab-button color="success" [tooltip]="{color: 'success', label: 'Success', placement: 'top'}">Success</fab-button>
-  <fab-button color="danger" [tooltip]="{color: 'danger', label: 'Danger', placement: 'top'}">Danger</fab-button>
-  <fab-button color="warning" [tooltip]="{color: 'warning', label: 'Warning', placement: 'top'}">Warning</fab-button>
-  <fab-button color="hot" [tooltip]="{color: 'hot', label: 'Hot', placement: 'top'}">Hot</fab-button>
-  <fab-button color="cold" [tooltip]="{color: 'cold', label: 'Cold', placement: 'top'}">Cold</fab-button>
-  <fab-button color="dark" [tooltip]="{color: 'dark', label: 'Dark', placement: 'top'}">Dark</fab-button>
-  <fab-button color="light" [tooltip]="{color: 'light', label: 'Light', placement: 'top'}">Light</fab-button>
-  <fab-button color="aux" [tooltip]="{color: 'aux', label: 'Aux', placement: 'top'}">Aux</fab-button>
+</fab-wrapper>
+
+<fab-wrapper>
+  <fab-avatar [tooltip]="{label: 'Default', placement: 'top'}"></fab-avatar>
+</fab-wrapper>
+
+<fab-button-group>
+  <fab-button [tooltip]="{label: 'Default', placement: 'top'}">Button 1</fab-button>
+  <fab-button>Button 2</fab-button>
+  <fab-button>Button 3</fab-button>
 </fab-button-group>
+
+<fab-card>
+  <fab-card-image height="200" [tooltip]="{label: 'Default', placement: 'top'}"></fab-card-image>
+  <fab-card-section [padding]="true">
+    <fab-button color="primary" [expand]="true" [tooltip]="{label: 'Default', placement: 'top'}">Button</fab-button>
+  </fab-card-section>
+</fab-card>

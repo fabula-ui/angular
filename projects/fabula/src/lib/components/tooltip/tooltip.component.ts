@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, Input } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -22,5 +22,4 @@ export class TooltipComponent implements AfterViewInit {
 
     host.classList.add(styles);
   }
-
 }
