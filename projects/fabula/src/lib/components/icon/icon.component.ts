@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
@@ -20,14 +19,6 @@ export class IconComponent extends CommonComponent implements OnInit {
   constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
-    const props = {
-      color: this.color,
-      name: this.name,
-      size: this.size,
-      ...this.props,
-    };
-
-    this.props = props;
     this.styles = IconStyles;
     this.initStyles();
   }

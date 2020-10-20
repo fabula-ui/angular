@@ -1,7 +1,9 @@
 :host {
+    color: inherit;
     display: inline-flex;
 
     .fab-icon {
         align-items: center;
+        color: inherit;
     }
 }
