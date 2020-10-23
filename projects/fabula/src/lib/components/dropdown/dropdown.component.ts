@@ -35,7 +35,7 @@ export class DropdownComponent extends CommonComponent implements AfterViewInit,
     @Output() open: EventEmitter<any> = new EventEmitter();
     @Output() toggle: EventEmitter<any> = new EventEmitter();
 
-    host;
+    inline = true;
 
     constructor(public elRef: ElementRef) { super(elRef); }
 

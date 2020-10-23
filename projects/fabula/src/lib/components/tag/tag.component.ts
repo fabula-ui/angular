@@ -27,6 +27,8 @@ export class TagComponent extends CommonComponent implements AfterViewInit {
   @Input() rounded = false;
   @Input() size = 'md';
 
+  inline = true;
+
   constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {

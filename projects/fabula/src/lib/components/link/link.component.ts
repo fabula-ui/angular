@@ -15,6 +15,7 @@ export class LinkComponent extends CommonComponent implements OnInit {
     @Input() color: string;
     @Input() label: string;
     @Input() props: any;
+    @Input() rel: string;
     @Input() size = 'md';
     @Input() target = '_blank';
     @Input() underline = true;

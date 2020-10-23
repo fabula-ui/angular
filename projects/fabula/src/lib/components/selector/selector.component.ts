@@ -21,6 +21,7 @@ export class SelectorComponent extends CommonComponent {
     @Input() link: string;
     @Input() name: string;
     @Input() outline: boolean;
+    @Input() rel: string;
     @Input() rounded: boolean;
     @Input() scope: string;
     @Input() stacked: boolean;
