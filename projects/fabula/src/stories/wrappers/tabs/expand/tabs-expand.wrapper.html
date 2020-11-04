@@ -1,23 +1,37 @@
-<fab-tabs [expand]="true" mb="1">
-    <fab-tab [active]="true" name="docs">Docs</fab-tab>
-    <fab-tab name="components">Components</fab-tab>
-    <fab-tab name="showcase">Showcase</fab-tab>
-</fab-tabs>
+<fab-row>
+    <fab-column col="6">
+        <fab-wrapper [flex]="true" mb="1">
+            <app-tabs-example color="aux" expand="h"></app-tabs-example>
+        </fab-wrapper>
 
-<fab-tabs [expand]="true" mb="1" type="block">
-    <fab-tab [active]="true" name="docs">Docs</fab-tab>
-    <fab-tab name="components">Components</fab-tab>
-    <fab-tab name="showcase">Showcase</fab-tab>
-</fab-tabs>
+        <fab-wrapper [flex]="true" mb="1">
+            <app-tabs-example color="aux" expand="h" type="block"></app-tabs-example>
+        </fab-wrapper>
 
-<fab-tabs [expand]="true" mb="1" type="float">
-    <fab-tab [active]="true" name="docs">Docs</fab-tab>
-    <fab-tab name="components">Components</fab-tab>
-    <fab-tab name="showcase">Showcase</fab-tab>
-</fab-tabs>
+        <fab-wrapper [flex]="true" mb="1">
+            <app-tabs-example color="aux" expand="h" type="float"></app-tabs-example>
+        </fab-wrapper>
 
-<fab-tabs [expand]="true" mb="1" type="pill">
-    <fab-tab [active]="true" name="docs">Docs</fab-tab>
-    <fab-tab name="components">Components</fab-tab>
-    <fab-tab name="showcase">Showcase</fab-tab>
-</fab-tabs>
+        <fab-wrapper [flex]="true" mb="1">
+            <app-tabs-example color="aux" expand="h" type="pill"></app-tabs-example>
+        </fab-wrapper>
+    </fab-column>
+
+    <fab-column col="6">
+        <fab-wrapper [flex]="true" height="75" mb="1">
+            <app-tabs-example color="aux" expand="both"></app-tabs-example>
+        </fab-wrapper>
+
+        <fab-wrapper [flex]="true" height="75" mb="1">
+            <app-tabs-example color="aux" expand="both" type="block"></app-tabs-example>
+        </fab-wrapper>
+
+        <fab-wrapper [flex]="true" height="75" mb="1">
+            <app-tabs-example color="aux" expand="both" type="float"></app-tabs-example>
+        </fab-wrapper>
+
+        <fab-wrapper [flex]="true" height="75" mb="1">
+            <app-tabs-example color="aux" expand="both" type="pill"></app-tabs-example>
+        </fab-wrapper>
+    </fab-column>
+</fab-row>

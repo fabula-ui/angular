@@ -1,0 +1,27 @@
+<fab-dropdown (open)="handleOpen()">
+    <fab-dropdown-toggle color="primary" [compact]="true">
+        <fab-icon mr=".5" name="map-pin"></fab-icon>
+        <span>Dropdown Toggle</span>
+    </fab-dropdown-toggle>
+    <fab-dropdown-menu [clickToClose]="true" (clickItem)="handleClick()">
+        <fab-dropdown-header>
+            <fab-icon mr=".3" name="database"></fab-icon>
+            <span>Dropdown Header</span>
+        </fab-dropdown-header>
+        <fab-dropdown-item [button]="true">Dropdown Item 1</fab-dropdown-item>
+        <fab-dropdown-item [button]="true">Dropdown Item 2</fab-dropdown-item>
+        <fab-dropdown-item [button]="true">Dropdown Item 3</fab-dropdown-item>
+        <fab-divider></fab-divider>
+        <fab-dropdown-item [button]="true">
+            <fab-icon color="primary" mr=".5" name="database"></fab-icon>
+            <fab-element grow="1" mr="1">Dropdown Item 4</fab-element>
+            <fab-badge color="primary">New</fab-badge>
+        </fab-dropdown-item>
+        <fab-divider></fab-divider>
+        <fab-dropdown-item color="primary">
+            <fab-icon mr=".5" name="database"></fab-icon>
+            <fab-element grow="1" mr="1">Dropdown Item 5</fab-element>
+            <fab-badge color="primary" [invert]="true" [rounded]="true" size="sm">1</fab-badge>
+        </fab-dropdown-item>
+    </fab-dropdown-menu>
+</fab-dropdown>

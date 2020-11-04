@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-tabs-faded',
     templateUrl: './tabs-faded.wrapper.html'
 })
-export class TabsFadedWrapper implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-}
+export class TabsFadedWrapper {}

@@ -1,0 +1,20 @@
+<fab-wrapper al="center" [flex]="true" direction="column">
+  <fab-wrapper mb="1" mt="3">
+    <fab-avatar [tooltip]="{label: 'Tooltip'}"></fab-avatar>
+  </fab-wrapper>
+
+  <fab-button [border]="true" [tooltip]="{label: 'Tooltip'}" mb="1">Button</fab-button>
+
+  <fab-button-group mb="1">
+    <fab-button [tooltip]="{label: 'Tooltip'}">Button 1</fab-button>
+    <fab-button [tooltip]="{label: 'Tooltip'}">Button 2</fab-button>
+    <fab-button [tooltip]="{label: 'Tooltip'}">Button 3</fab-button>
+  </fab-button-group>
+
+  <fab-card width="300">
+    <fab-card-image height="200" [tooltip]="{label: 'Default'}"></fab-card-image>
+    <fab-card-section [padding]="true">
+      <fab-button color="primary" [expand]="true" [tooltip]="{label: 'Default'}">Button</fab-button>
+    </fab-card-section>
+  </fab-card>
+</fab-wrapper>

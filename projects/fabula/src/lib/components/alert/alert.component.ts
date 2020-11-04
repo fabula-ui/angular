@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 import { css } from 'emotion';
 
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
+
 // Methods
 import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitionDuration';
 
@@ -12,9 +15,10 @@ import AlertStyles from '@fabula/core/styles/components/alert/alert';
 
 @Component({
   selector: 'fab-alert',
+  styleUrls: ['./alert.component.scss'],
   templateUrl: './alert.component.html'
 })
-export class AlertComponent implements OnInit {
+export class AlertComponent extends CommonComponent implements OnInit {
   @Input() border = true;
   @Input() borderColor: string;
   @Input() clear = false;
@@ -39,16 +43,16 @@ export class AlertComponent implements OnInit {
   host;
   props;
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { 
+    super(elRef);
+  }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(AlertStyles({ framework: 'angular', props: this }));
-
-    host.classList.add(styles);
-    this.host = host;
+    this.host = this.elRef.nativeElement;
     this.props = this;
-
+    this.styles = AlertStyles;
+    this.initStyles();
+    
     if (this.type) { this.handleType(); }
   }
 
@@ -83,7 +87,7 @@ export class AlertComponent implements OnInit {
       case 'warning':
         this.icon = {
           color: 'warning',
-          name: 'check'
+          name: 'alert-circle'
         };
         break;
       default:

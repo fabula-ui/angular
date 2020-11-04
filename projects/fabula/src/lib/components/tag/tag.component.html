@@ -1,6 +1,18 @@
-<div class="fab-tag-wrapper" [attr.data-placement-x]="!!placement && placement.x" [attr.data-placement-y]="!!placement && placement.y">
-  <div class="fab-tag">
-      {{label}}
-      <ng-content></ng-content>
+<div class="fab-tag-wrapper" [attr.data-placement-x]="!!placement && placement.x"
+  [attr.data-placement-y]="!!placement && placement.y" data-fab-wrapper="tag">
+  <div class="fab-tag" (click)="handleClick()" *ngIf="!button && !link" data-fab-component="tag">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
   </div>
+
+  <button class="fab-tag" (click)="handleClick()" *ngIf="button" data-fab-component="tag">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </button>
+
+  <a class="fab-tag" *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target" data-fab-component="tag">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </a>
 </div>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

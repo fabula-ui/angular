@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-tag-size',
     templateUrl: './tag-size.wrapper.html'
 })
-export class TagSizeWrapper implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-}
+export class TagSizeWrapper { }

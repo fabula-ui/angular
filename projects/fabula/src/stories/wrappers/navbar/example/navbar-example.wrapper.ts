@@ -8,10 +8,10 @@ export class NavbarExampleWrapper implements AfterViewInit {
     @Input() color: string;
     @Input() height: any;
     @Input() logo = 'fabula-logo.svg';
-    @Input() signInProps: any;
-    @Input() signUpProps: any;
-    @Input() socialProps: any;
-    @Input() tabsProps: any;
+    @Input() signInProps = {};
+    @Input() signUpProps = {};
+    @Input() socialProps = {};
+    @Input() tabsProps = {};
 
     init = false;
     logoSrc;

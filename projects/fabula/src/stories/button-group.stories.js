@@ -5,15 +5,18 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonModule,
     ButtonGroupComponent,
+    DropdownModule,
     ThemeModule,
     ThemeService,
-    UtilsModule
+    UtilsModule,
+    WrapperModule
 } from '../public-api';
 
 // Wrappers
-import { ButtonGroupFlowWrapper } from './wrappers/button-group/flow/button-group-flow.wrapper';
-import { ButtonGroupGluedWrapper } from './wrappers/button-group/glued/button-group-glued.wrapper';
-import { ButtonGroupSpacedWrapper } from './wrappers/button-group/spaced/button-group-spaced.wrapper';
+import { ButtonGroupExampleWrapper } from './wrappers/button-group/example/button-group-example.wrapper';
+import { ButtonGroupColorWrapper } from './wrappers/button-group/color/button-group-color.wrapper';
+import { ButtonGroupLayoutWrapper } from './wrappers/button-group/layout/button-group-layout.wrapper';
+import { ButtonGroupExternalDropdownWrapper } from './wrappers/button-group/external-dropdown/button-group-external-dropdown.wrapper';
 
 // Module init
 export default {
@@ -25,8 +28,10 @@ export default {
             imports: [
                 BrowserModule,
                 ButtonModule,
+                DropdownModule,
                 ThemeModule.forRoot(),
-                UtilsModule
+                UtilsModule,
+                WrapperModule
             ],
             providers: [
                 ThemeService
@@ -37,6 +42,7 @@ export default {
 }
 
 // Stories
-export const Flow = () => ({ component: ButtonGroupFlowWrapper });
-export const Glued = () => ({ component: ButtonGroupGluedWrapper });
-export const Spaced = () => ({ component: ButtonGroupSpacedWrapper });
+export const Example = () => ({ component: ButtonGroupExampleWrapper });
+export const PropColor = () => ({ component: ButtonGroupColorWrapper });
+export const PropLayout = () => ({ component: ButtonGroupLayoutWrapper });
+export const PropExternalDropdown = () => ({ component: ButtonGroupExternalDropdownWrapper });

@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-segments-color',
     templateUrl: './segments-color.wrapper.html'
 })
-export class SegmentsColorWrapper implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-}
+export class SegmentsColorWrapper { }

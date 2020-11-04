@@ -6,7 +6,6 @@ import {
     OnInit,
     Output
 } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { ButtonComponent } from '../button/button.component';
@@ -26,23 +25,15 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
 
     @Output() toggle: EventEmitter<any> = new EventEmitter();
 
-    props;
-
-    constructor(public elRef: ElementRef) {
-        super(elRef);
-    }
+    constructor(public elRef: ElementRef) { super(elRef) }
 
     ngOnInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(DropdownToggleStyles({ framework: 'angular', props: this }));
-        host.classList.add(styles);
-
         // Set props
         this.props = {
             ...this,
-            icon: '',
-            label: ''
         };
+        this.styles = DropdownToggleStyles;
+        this.initStyles();
     }
 
     handleClick() {

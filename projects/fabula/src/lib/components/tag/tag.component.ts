@@ -1,5 +1,7 @@
 import { Component, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import TagStyles from '@fabula/core/styles/components/tag/tag';
@@ -13,7 +15,7 @@ interface Placement {
   selector: 'fab-tag',
   templateUrl: './tag.component.html',
 })
-export class TagComponent implements AfterViewInit {
+export class TagComponent extends CommonComponent implements AfterViewInit {
   @Input() color: string;
   @Input() clear = false;
   @Input() faded = false;
@@ -25,11 +27,12 @@ export class TagComponent implements AfterViewInit {
   @Input() rounded = false;
   @Input() size = 'md';
 
-  constructor(public elRef: ElementRef) { }
+  inline = true;
+
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(TagStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = TagStyles;
+    this.initStyles();
   }
 }

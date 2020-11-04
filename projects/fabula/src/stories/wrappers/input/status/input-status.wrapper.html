@@ -1,5 +1,4 @@
-<div row>
-    <fab-input col="4" status="error" [icon]="{ name: 'user' }" [iconEnd]="{ name: 'x' }" message="This input field has error" placeholder="Has error"></fab-input>
-    <fab-input col="4" status="success" [icon]="{ name: 'user' }" [iconEnd]="{ name: 'check' }" message="This input field has success" placeholder="Has success"></fab-input>
-    <fab-input col="4" status="warning" [icon]="{ name: 'user' }" [iconEnd]="{ name: 'alert-triangle' }" message="This input field has warning" placeholder="Has warning"></fab-input>
-</div>
+<fab-input [icon]="{ name: 'user' }" mb="1" message="Danger status message" placeholder="Danger status" status="danger"></fab-input>
+<fab-input [icon]="{ name: 'user' }" mb="1" message="Info status message" placeholder="Info status" status="info"></fab-input>
+<fab-input [icon]="{ name: 'user' }" mb="1" message="Success status message" placeholder="Success status" status="success"></fab-input>
+<fab-input [icon]="{ name: 'user' }" message="Warning status message" placeholder="Warning status" status="warning"></fab-input>

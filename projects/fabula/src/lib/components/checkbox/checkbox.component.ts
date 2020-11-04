@@ -1,5 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import CheckboxStyles from '@fabula/core/styles/components/checkbox/checkbox';
@@ -8,7 +10,7 @@ import CheckboxStyles from '@fabula/core/styles/components/checkbox/checkbox';
   selector: 'fab-checkbox',
   templateUrl: './checkbox.component.html',
 })
-export class CheckboxComponent implements OnInit {
+export class CheckboxComponent extends CommonComponent implements OnInit {
   @Input() activeColor: string;
   @Input() checked = false;
   @Input() color: string;
@@ -24,12 +26,11 @@ export class CheckboxComponent implements OnInit {
   @Output() check: EventEmitter<any> = new EventEmitter();
   @Output() uncheck: EventEmitter<any> = new EventEmitter();
 
-  constructor(private elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(CheckboxStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = CheckboxStyles;
+    this.initStyles();
   }
 
   // Methods

@@ -11,6 +11,9 @@ import { ModalFooterComponent } from '../components/modal-footer/modal-footer.co
 import { ModalHeaderComponent } from '../components/modal-header/modal-header.component';
 import { ModalSectionComponent } from '../components/modal-section/modal-section.component';
 
+// Services
+import { ModalService } from '../services/modal.service';
+
 @NgModule({
     declarations: [
         CloseButtonComponent,
@@ -28,9 +31,6 @@ import { ModalSectionComponent } from '../components/modal-section/modal-section
         ModalHeaderComponent,
         ModalSectionComponent
     ],
-    imports: [
-        CommonModule
-    ],
     exports: [
         CloseButtonComponent,
         ModalComponent,
@@ -38,6 +38,12 @@ import { ModalSectionComponent } from '../components/modal-section/modal-section
         ModalFooterComponent,
         ModalHeaderComponent,
         ModalSectionComponent
+    ],
+    imports: [
+        CommonModule
+    ],
+    providers: [
+        ModalService
     ]
 })
 export class ModalModule { }

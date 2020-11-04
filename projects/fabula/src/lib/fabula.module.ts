@@ -18,15 +18,30 @@ import { ContainerComponent } from './components/container/container.component';
 import { ColumnComponent } from './components/column/column.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { GeneralComponent } from './components/general-component/general-component.component';
+import { HeadingComponent } from './components/heading/heading.component';
+import { IconComponent } from './components/icon/icon.component';
 import { InputComponent } from './components/input/input.component';
 import { InputGroupComponent } from './components/input-group/input-group.component';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalHeaderComponent } from './components/modal-header/modal-header.component';
+import { ModalBodyComponent } from './components/modal-body/modal-body.component';
+import { ModalFooterComponent } from './components/modal-footer/modal-footer.component';
+import { ModalSectionComponent } from './components/modal-section/modal-section.component';
 import { RowComponent } from './components/row/row.component';
+import { SegmentComponent } from './components/segment/segment.component';
+import { SegmentsComponent } from './components/segments/segments.component';
+import { TabComponent } from './components/tab/tab.component';
+import { TabContentComponent } from './components/tab-content/tab-content.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 import { TagComponent } from './components/tag/tag.component';
 import { TagGroupComponent } from './components/tag-group/tag-group.component';
+import { TagInputComponent } from './components/tag-input/tag-input.component';
 import { TextComponent } from './components/text/text.component';
 import { TextPartComponent } from './components/text-part/text-part.component';
+import { ToastComponent } from './components/toast/toast.component';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
 
 // Directives
 import { ColumnDirective } from './directives/column.directive';
@@ -42,19 +57,6 @@ import { IUserOptions } from './models/user-options.model';
 
 // Services
 import { ThemeService } from './services/theme.service';
-import { TabsComponent } from './components/tabs/tabs.component';
-import { TabComponent } from './components/tab/tab.component';
-import { TabContentComponent } from './components/tab-content/tab-content.component';
-import { SegmentComponent } from './components/segment/segment.component';
-import { SegmentsComponent } from './components/segments/segments.component';
-import { IconComponent } from './components/icon/icon.component';
-import { ModalComponent } from './components/modal/modal.component';
-import { ModalHeaderComponent } from './components/modal-header/modal-header.component';
-import { ModalBodyComponent } from './components/modal-body/modal-body.component';
-import { ModalFooterComponent } from './components/modal-footer/modal-footer.component';
-import { ModalSectionComponent } from './components/modal-section/modal-section.component';
-import { TagInputComponent } from './components/tag-input/tag-input.component';
-import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { ToastComponent } from './components/toast/toast.component';
     ContainerComponent,
     DropdownComponent,
     GeneralComponent,
+    HeadingComponent,
     IconComponent,
     InputComponent,
     InputGroupComponent,
@@ -141,6 +144,7 @@ import { ToastComponent } from './components/toast/toast.component';
     TagGroupComponent,
     TextComponent,
     TextPartComponent,
+    WrapperComponent,
 
     // Directives
     AlignDirective,
@@ -150,37 +154,6 @@ import { ToastComponent } from './components/toast/toast.component';
     MarginDirective,
     PaddingDirective,
     RowDirective,
-    // Components
-    // AvatarComponent,
-    // BadgeComponent,
-    // ButtonComponent,
-    // ButtonGroupComponent,
-    // CollapseComponent,
-    // CollapseContentComponent,
-    // CollapseToggleComponent,
-    // TooltipComponent,
-
-    // Directives
-    // BlockDirective,
-    // CardBodyDirective,
-    // CardFooterDirective,
-    // CardHeaderDirective,
-    // CardImageDirective,
-    // CardSubtitleDirective,
-    // CardTextDirective,
-    // CardTitleDirective,
-    // ClearDirective,
-    // DisabledDirective,
-    // ElementDirective,
-    // FixedHeightDirective,
-    // FloatDirective,
-    // InvertColorDirective,
-    // OutlineDirective,
-    // PlacementDirective,
-    // SizeDirective,
-    // SubtitleDirective,
-    // TitleDirective,
-    // TooltipDirective
   ]
 })
 export class FabulaModule {

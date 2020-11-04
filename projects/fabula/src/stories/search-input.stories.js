@@ -4,6 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     ButtonModule,
+    GridModule,
     IconsModule,
     SearchInputModule,
     ThemeModule,
@@ -12,13 +13,12 @@ import {
 } from '../public-api';
 
 // Wrappers
-import { SearchInputButtonColorWrapper } from './wrappers/search-input/button-color/search-input-button-color.wrapper';
-import { SearchInputButtonLabelWrapper } from './wrappers/search-input/button-label/search-input-button-label.wrapper';
-import { SearchInputButtonTypesWrapper } from './wrappers/search-input/button-types/search-input-button-types.wrapper';
-import { SearchInputExamplesWrapper } from './wrappers/search-input/examples/search-input-examples.wrapper';
-import { SearchInputInputColorWrapper } from './wrappers/search-input/input-color/search-input-input-color.wrapper';
+import { SearchInputButtonWrapper } from './wrappers/search-input/button/search-input-button.wrapper';
+import { SearchInputGlowWrapper } from './wrappers/search-input/glow/search-input-glow.wrapper';
+import { SearchInputExampleWrapper } from './wrappers/search-input/example/search-input-example.wrapper';
 import { SearchInputRoundedWrapper } from './wrappers/search-input/rounded/search-input-rounded.wrapper';
 import { SearchInputSizeWrapper } from './wrappers/search-input/size/search-input-size.wrapper';
+import { SearchInputVariantWrapper } from './wrappers/search-input/variant/search-input-variant.wrapper';
 
 // Module init
 export default {
@@ -28,6 +28,7 @@ export default {
             imports: [
                 BrowserModule,
                 ButtonModule,
+                GridModule,
                 IconsModule,
                 SearchInputModule,
                 ThemeModule.forRoot(),
@@ -42,10 +43,9 @@ export default {
 }
 
 // Stories
-export const Examples = () => ({ component: SearchInputExamplesWrapper });
-export const ButtonColor = () => ({ component: SearchInputButtonColorWrapper });
-export const ButtonLabel = () => ({ component: SearchInputButtonLabelWrapper });
-export const ButtonTypes = () => ({ component: SearchInputButtonTypesWrapper });
-export const InputColor = () => ({ component: SearchInputInputColorWrapper });
-export const Rounded = () => ({ component: SearchInputRoundedWrapper });
-export const Size = () => ({ component: SearchInputSizeWrapper });
+export const Example = () => ({ component: SearchInputExampleWrapper });
+export const PropButton = () => ({ component: SearchInputButtonWrapper });
+export const PropGlow = () => ({ component: SearchInputGlowWrapper });
+export const PropRounded = () => ({ component: SearchInputRoundedWrapper });
+export const PropSize = () => ({ component: SearchInputSizeWrapper });
+export const PropVariant = () => ({ component: SearchInputVariantWrapper });

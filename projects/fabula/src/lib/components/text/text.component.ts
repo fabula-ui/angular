@@ -1,54 +1,41 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import TextStyles from '@fabula/core/styles/components/text/text';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: 'fab-text',
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss']
 })
-export class TextComponent implements OnInit {
+export class TextComponent extends CommonComponent implements OnInit {
+  @Input() aux: boolean;
   @Input() color: string;
+  @Input() inline = false;
   @Input() props: any;
   @Input() size: string;
+  @Input() strong: boolean;
   @Input() weight: string;
   @Input() wrap = true;
 
-  @ViewChild('component') component: ElementRef;
-
-  aux;
-  block;
   bold;
-  flex;
-  hasChildren;
-  host;
   italic;
   medium;
   semibold;
-  strong;
 
-  constructor(
-    public elRef: ElementRef
-  ) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
-    let props;
-    let styles;
-
-    this.host = this.elRef.nativeElement;
+    const host = this.elRef.nativeElement;
 
     // Get attributes
-    this.aux = this.host.hasAttribute('aux');
-    this.block = this.host.hasAttribute('block');
-    this.bold = this.host.hasAttribute('bold');
-    this.flex = this.host.hasAttribute('flex');
-    this.italic = this.host.hasAttribute('italic');
-    this.medium = this.host.hasAttribute('medium');
-    this.semibold = this.host.hasAttribute('semibold');
-    this.strong = this.host.hasAttribute('strong');
+    this.bold = host.hasAttribute('bold');
+    this.italic = host.hasAttribute('italic');
+    this.medium = host.hasAttribute('medium');
+    this.semibold = host.hasAttribute('semibold');
 
     if (!this.weight && (this.bold || this.strong)) {
       this.weight = '700';
@@ -62,27 +49,15 @@ export class TextComponent implements OnInit {
       this.weight = '500';
     }
 
-    // Has children
-    this.hasChildren = this.host.querySelector('.fab-text').children.length > 1;
-
     // Set props
-    props = {
+    this.props = {
       aux: this.aux,
-      block: this.block,
       bold: this.bold,
-      color: this.color,
-      flex: this.flex,
       italic: this.italic,
-      size: this.size,
-      weight: this.weight,
-      wrap: this.wrap,
-      ...this.props
     };
 
-    styles = css(TextStyles({ framework: 'angular', props }));
-
-    // Attach classes to host
-    this.host.classList.add(styles);
+    this.styles = TextStyles;
+    this.initStyles();
   }
 
 }

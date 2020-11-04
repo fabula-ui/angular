@@ -1,14 +1,14 @@
-<div class="fab-list-item" [attr.data-divider]="divider" [attr.data-striped]="striped" data-fab-component="list-item" *ngIf="!button && !href">
+<div class="fab-list-item" [attr.data-divider]="divider" [attr.data-striped]="striped" data-fab-component="listItem" *ngIf="!button && !href">
   {{item && item.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </div>
 
-<button class="fab-list-item" [attr.data-divider]="divider" [attr.data-striped]="striped" data-fab-component="list-item" (click)="handleClick()" *ngIf="!!button">
+<button class="fab-list-item" [attr.data-divider]="divider" [attr.data-striped]="striped" data-fab-component="listItem" (click)="handleClick()" *ngIf="!!button">
   {{item && item.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </button>
 
-<a class="fab-list-item" [attr.data-divider]="divider" [attr.data-striped]="striped" data-fab-component="list-item" [attr.href]="href" [attr.target]="target" *ngIf="!!href && !button">
+<a class="fab-list-item" [attr.data-divider]="divider" [attr.data-striped]="striped" data-fab-component="listItem" [attr.href]="href" [attr.target]="target" *ngIf="!!href && !button">
   {{item && item.label || label}}
   <ng-content *ngTemplateOutlet="content"></ng-content>
 </a>

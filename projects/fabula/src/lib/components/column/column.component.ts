@@ -1,37 +1,23 @@
-import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
-// Services
-import { ThemeService } from '../../services/theme.service';
+// Component
+import { CommonComponent } from '../common-component/common-component.component';
+
+// Styles
+import ColumnStyles from '@fabula/core/styles/components/column/column';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: 'fab-column, fab-col',
   templateUrl: './column.component.html',
-  styleUrls: ['./column.component.css'],
+  styleUrls: ['./column.component.scss'],
 })
-export class ColumnComponent implements OnInit {
-  @Input() col: any;
-  @Input() grow: any;
-  @Input() width: any;
+export class ColumnComponent extends CommonComponent implements OnInit {
+  @Input() col: string;
 
-  host;
-
-  constructor(
-    public elRef: ElementRef,
-    public themeService: ThemeService
-  ) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
-    const props = {
-      col: this.col,
-      grow: this.grow,
-      width: this.width
-    };
-
-    this.host = this.elRef.nativeElement;
-
-    // Attach classes to host
-    // this.themeService.attachClasses(this.host, 'column', props);
+    this.styles = ColumnStyles;
+    this.initStyles();
   }
-
 }

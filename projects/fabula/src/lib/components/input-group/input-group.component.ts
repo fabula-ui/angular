@@ -1,5 +1,7 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import InputGroupStyles from '@fabula/core/styles/components/input-group/input-group';
@@ -8,16 +10,13 @@ import InputGroupStyles from '@fabula/core/styles/components/input-group/input-g
   selector: 'fab-input-group',
   templateUrl: './input-group.component.html'
 })
-export class InputGroupComponent implements OnInit {
-  @Input() flow = 'horizontal';
-  @Input() glued = false;
-  @Input() spacing: any;
+export class InputGroupComponent extends CommonComponent implements OnInit {
+  @Input() layout = 'horizontal';
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(InputGroupStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = InputGroupStyles;
+    this.initStyles();
   }
 }

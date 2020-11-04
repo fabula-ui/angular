@@ -1,65 +1,51 @@
-<div row>
-  <fab-card col="3">
-    <fab-card-image height="200"></fab-card-image>
-    <fab-card-section divider="top" [padding]="true">
-      <fab-text size="lg" strong>
-        <strong mr=".5">Card Title</strong>
-        <fab-badge color="primary">New</fab-badge>
-      </fab-text>
-      <fab-text aux flex mb="1" size="sm" span>Card subtitle</fab-text>
-      <fab-text block mb="1">This is some text inside this card. You can add whatever content in here.</fab-text>
-    </fab-card-section>
-    <fab-card-section divider="top" [padding]="true">
-      <fab-button color="primary" [expand]="true">Card Button</fab-button>
-    </fab-card-section>
-  </fab-card>
-
-  <div col="9">
-    <fab-card layout="h" mb="1">
-      <fab-card-image width="200"></fab-card-image>
-      <fab-card-section [expand]="true" [padding]="true">
-        <fab-text size="lg" strong>
-          <strong mr=".5">Card Title</strong>
+<fab-row>
+  <fab-column col="3">
+    <fab-card>
+      <fab-card-image height="200"></fab-card-image>
+      <fab-card-section divider="top" [padding]="true">
+        <fab-element>
+          <fab-text [inline]="true" mr=".5" size="lg" [strong]="true">Card Title</fab-text>
           <fab-badge color="primary">New</fab-badge>
-        </fab-text>
-        <fab-text aux flex mb="1" size="sm" span>Card subtitle</fab-text>
-        <fab-text block>This is some text inside this card. You can add whatever content in here.</fab-text>
+        </fab-element>
+        <fab-text [aux]="true" mb="1" size="sm">Card subtitle</fab-text>
+        <fab-text mb="1">This is some text inside this card. You can add whatever content in
+          here.</fab-text>
       </fab-card-section>
-      <fab-card-section [padding]="true">
+      <fab-card-section divider="top" [padding]="true">
         <fab-button color="primary" [expand]="true">Card Button</fab-button>
       </fab-card-section>
     </fab-card>
+  </fab-column>
 
+  <fab-column col="9">
     <fab-card layout="h" mb="1">
-      <fab-card-image height="300" width="200"></fab-card-image>
-      <fab-card-section [expand]="true">
-        <fab-card-section [expand]="true" [padding]="true">
-          <fab-text size="lg" strong>
-            <strong mr=".5">Card Title</strong>
-            <fab-badge color="primary">New</fab-badge>
-          </fab-text>
-          <fab-text aux flex mb="1" size="sm" span>Card subtitle</fab-text>
-          <fab-text block mb="1">This is some text inside this card. You can add whatever content in here.</fab-text>
-        </fab-card-section>
-        <fab-card-section divider="top" [padding]="true">
-          <fab-button color="primary" [expand]="true">Card Button</fab-button>
-        </fab-card-section>
+      <fab-card-image width="200"></fab-card-image>
+      <fab-card-section grow="1" [padding]="true">
+        <fab-element>
+          <fab-text [inline]="true" mr=".5" size="lg" [strong]="true">Card Title</fab-text>
+          <fab-badge color="primary">New</fab-badge>
+        </fab-element>
+        <fab-text [aux]="true" mb="1" size="sm">Card subtitle</fab-text>
+        <fab-text>This is some text inside this card. You can add whatever content in
+          here.</fab-text>
+        <fab-button color="primary" [expand]="true" mt="1">Card Button</fab-button>
       </fab-card-section>
     </fab-card>
 
     <fab-card layout="h">
-      <fab-card-section grow="1" [padding]="true">
-        <fab-text size="lg" strong>
-          <strong mr=".5">Card Title</strong>
+      <fab-card-section [grow]="1" [padding]="true">
+        <fab-element>
+          <fab-text [inline]="true" mr=".5" size="lg" [strong]="true">Card Title</fab-text>
           <fab-badge color="primary">New</fab-badge>
+        </fab-element>
+        <fab-text [aux]="true" mb="1" size="sm">Card subtitle</fab-text>
+        <fab-text>
+          This is some text inside this card. You can add whatever content in
+          here.
         </fab-text>
-        <fab-text aux flex mb="1" size="sm" span>Card subtitle</fab-text>
-        <fab-text block>This is some text inside this card. You can add whatever content in here.</fab-text>
+        <fab-button color="primary" [expand]="true" mt="1">Card Button</fab-button>
       </fab-card-section>
-      <fab-card-section [padding]="true">
-        <fab-button color="primary" [expand]="true">Card Button</fab-button>
-      </fab-card-section>
-      <fab-card-image></fab-card-image>
+      <fab-card-image width="200"></fab-card-image>
     </fab-card>
-  </div>
-</div>
+  </fab-column>
+</fab-row>

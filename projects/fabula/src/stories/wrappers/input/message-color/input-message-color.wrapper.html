@@ -1,39 +1,45 @@
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'primary', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'secondary', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'success', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" message="This is an input message" messageColor="primary" placeholder="Type something..."></fab-input>
+    </fab-column>
 
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'danger', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'warning', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'hot', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'cold', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-</div>
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" message="This is an input message" messageColor="lavender" placeholder="Type something..."></fab-input>
+    </fab-column>
 
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'dark', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'light', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'color': 'aux', 'text': 'This is a message...'}" placeholder="Type something..."></fab-input>
-</div>
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" message="This is an input message" messageColor="hot" placeholder="Type something..."></fab-input>
+    </fab-column>
+</fab-row>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" message="This is an input message" messageColor="aux" placeholder="Type something..."></fab-input>
+    </fab-column>
 
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="primary" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="secondary" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="success" placeholder="Type something..."></fab-input>
-</div>
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" message="This is an input message" messageColor="dark" placeholder="Type something..."></fab-input>
+    </fab-column>
+</fab-row>
 
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="danger" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="warning" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="hot" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="cold" placeholder="Type something..."></fab-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" [message]="{ color: 'primary', text: 'This is an input message' }" placeholder="Type something..."></fab-input>
+    </fab-column>
 
-<div mb="1" row>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="dark" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="light" placeholder="Type something..."></fab-input>
-    <fab-input col="3" [icon]="{ name: 'user' }" [message]="{'text': 'This is a message...'}" messageColor="aux" placeholder="Type something..."></fab-input>
-</div>
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" [message]="{ color: 'lavender', text: 'This is an input message' }" placeholder="Type something..."></fab-input>
+    </fab-column>
+
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" [message]="{ color: 'hot', text: 'This is an input message' }" placeholder="Type something..."></fab-input>
+    </fab-column>
+</fab-row>
+<fab-row>
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" [message]="{ color: 'aux', text: 'This is an input message' }" placeholder="Type something..."></fab-input>
+    </fab-column>
+
+    <fab-column col="4">
+        <fab-input [icon]="{ name: 'user' }" [message]="{ color: 'dark', text: 'This is an input message' }" placeholder="Type something..."></fab-input>
+    </fab-column>
+</fab-row>

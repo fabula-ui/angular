@@ -1,73 +1,30 @@
-<div mb="1" row>
-    <fab-tabs alH="center" flex col="4" [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="primary" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="secondary" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-</div>
-
-<div mb="1" row>
-    <fab-tabs alH="center" flex col="4" color="success" [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="danger" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="warning" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-</div>
-
-<div mb="1" row>
-    <fab-tabs alH="center" flex col="4" color="hot" [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="cold" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="dark" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-</div>
-
-<div mb="1" row>
-    <fab-tabs alH="center" flex col="4" color="light" [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" col="4" color="aux" flex [invert]="true">
-        <fab-tab [active]="true" name="docs">Docs</fab-tab>
-        <fab-tab name="components">Components</fab-tab>
-        <fab-tab name="showcase">Showcase</fab-tab>
-    </fab-tabs>
-</div>
+<fab-wrapper [flex]="true" height="50" mb="1">
+    <app-tabs-example alignment="center" color="primary" expand="v" grow="1" [invert]="true"></app-tabs-example>
+    <app-tabs-example alignment="center" color="primary" expand="v" grow="1" [invert]="true" type="block"></app-tabs-example>
+    <app-tabs-example alignment="center" color="primary" expand="v" grow="1" [invert]="true" type="float"></app-tabs-example>
+    <app-tabs-example alignment="center" color="primary" expand="v" grow="1" [invert]="true" type="pill"></app-tabs-example>
+</fab-wrapper>
+<fab-wrapper [flex]="true" height="50" mb="1">
+    <app-tabs-example alignment="center" color="lavender" expand="v" grow="1" [invert]="true"></app-tabs-example>
+    <app-tabs-example alignment="center" color="lavender" expand="v" grow="1" [invert]="true" type="block"></app-tabs-example>
+    <app-tabs-example alignment="center" color="lavender" expand="v" grow="1" [invert]="true" type="float"></app-tabs-example>
+    <app-tabs-example alignment="center" color="lavender" expand="v" grow="1" [invert]="true" type="pill"></app-tabs-example>
+</fab-wrapper>
+<fab-wrapper [flex]="true" height="50" mb="1">
+    <app-tabs-example alignment="center" color="hot" expand="v" grow="1" [invert]="true"></app-tabs-example>
+    <app-tabs-example alignment="center" color="hot" expand="v" grow="1" [invert]="true" type="block"></app-tabs-example>
+    <app-tabs-example alignment="center" color="hot" expand="v" grow="1" [invert]="true" type="float"></app-tabs-example>
+    <app-tabs-example alignment="center" color="hot" expand="v" grow="1" [invert]="true" type="pill"></app-tabs-example>
+</fab-wrapper>
+<fab-wrapper [flex]="true" height="50" mb="1">
+    <app-tabs-example alignment="center" color="aux" expand="v" grow="1" [invert]="true"></app-tabs-example>
+    <app-tabs-example alignment="center" color="aux" expand="v" grow="1" [invert]="true" type="block"></app-tabs-example>
+    <app-tabs-example alignment="center" color="aux" expand="v" grow="1" [invert]="true" type="float"></app-tabs-example>
+    <app-tabs-example alignment="center" color="aux" expand="v" grow="1" [invert]="true" type="pill"></app-tabs-example>
+</fab-wrapper>
+<fab-wrapper [flex]="true" height="50" mb="1">
+    <app-tabs-example alignment="center" color="dark" expand="v" grow="1" [invert]="true"></app-tabs-example>
+    <app-tabs-example alignment="center" color="dark" expand="v" grow="1" [invert]="true" type="block"></app-tabs-example>
+    <app-tabs-example alignment="center" color="dark" expand="v" grow="1" [invert]="true" type="float"></app-tabs-example>
+    <app-tabs-example alignment="center" color="dark" expand="v" grow="1" [invert]="true" type="pill"></app-tabs-example>
+</fab-wrapper>

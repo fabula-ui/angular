@@ -1,0 +1,18 @@
+<fab-list [padding]="true">
+    <fab-list-item [button]="button" [color]="color" [flex]="true" [href]="href" target="_blank">
+        <fab-wrapper grow="1">
+            <fab-text size="lg" weight="600">
+                <fab-text [inline]="true" mr=".5">List Item 1</fab-text>
+                <fab-badge [color]="color || 'primary'" [invert]="!!color" size="sm">Badge</fab-badge>
+            </fab-text>
+            <fab-text [aux]="true" [color]="color ? 'inherit' : ''" size="sm">
+                List item subtitle
+            </fab-text>
+        </fab-wrapper>
+        <fab-tag-group>
+            <fab-tag [color]="color" [invert]="!!color" size="sm">Tag 1</fab-tag>
+            <fab-tag [color]="color" [invert]="!!color" size="sm">Tag 2</fab-tag>
+            <fab-tag [color]="color" [invert]="!!color" size="sm">Tag 3</fab-tag>
+        </fab-tag-group>
+    </fab-list-item>
+</fab-list>

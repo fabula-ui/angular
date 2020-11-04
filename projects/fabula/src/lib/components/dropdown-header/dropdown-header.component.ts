@@ -4,7 +4,9 @@ import {
     ElementRef,
     Input
 } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import DropdownHeaderStyles from '@fabula/core/styles/components/dropdown-header/dropdown-header';
@@ -13,15 +15,14 @@ import DropdownHeaderStyles from '@fabula/core/styles/components/dropdown-header
     selector: 'fab-dropdown-header',
     templateUrl: './dropdown-header.component.html',
 })
-export class DropdownHeaderComponent implements AfterViewInit {
+export class DropdownHeaderComponent extends CommonComponent implements AfterViewInit {
     @Input() label: string;
     @Input() textColor: string;
 
-    constructor(public elRef: ElementRef) {}
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     ngAfterViewInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(DropdownHeaderStyles({ framework: 'angular', props: this }));
-        host.classList.add(styles);
+        this.styles = DropdownHeaderStyles;
+        this.initStyles();
     }
 }

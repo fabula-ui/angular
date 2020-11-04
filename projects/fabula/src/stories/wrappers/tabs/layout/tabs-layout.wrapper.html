@@ -1,31 +1,6 @@
-<div mb="1" row>
-    <fab-tabs alH="center" flex layout="horizontal" col="4">
-        <fab-tab [active]="true" name="docs">
-            <fab-icon name="file-text"></fab-icon>
-            <span>Docs</span>
-        </fab-tab>
-        <fab-tab name="components">
-            <fab-icon name="tool"></fab-icon>
-            <span>Components</span>
-        </fab-tab>
-        <fab-tab name="showcase">
-            <fab-icon name="camera"></fab-icon>
-            <span>Showcase</span>
-        </fab-tab>
-    </fab-tabs>
-
-    <fab-tabs alH="center" flex layout="vertical" col="4">
-        <fab-tab [active]="true" name="docs">
-            <fab-icon name="file-text"></fab-icon>
-            <span>Docs</span>
-        </fab-tab>
-        <fab-tab name="components">
-            <fab-icon name="tool"></fab-icon>
-            <span>Components</span>
-        </fab-tab>
-        <fab-tab name="showcase">
-            <fab-icon name="camera"></fab-icon>
-            <span>Showcase</span>
-        </fab-tab>
-    </fab-tabs>
-</div>
+<fab-container>
+    <fab-wrapper al="center" [flex]="true">
+        <app-tabs-example mr="1"></app-tabs-example>
+        <app-tabs-example layout="v"></app-tabs-example>
+    </fab-wrapper>
+</fab-container>

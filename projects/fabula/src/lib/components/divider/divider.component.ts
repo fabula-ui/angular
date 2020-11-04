@@ -1,27 +1,29 @@
 import {
-    AfterViewInit,
     Component,
     ElementRef,
-    Input
+    Input,
+    OnInit
 } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import DividerStyles from '@fabula/core/styles/components/divider/divider';
 
 @Component({
     selector: 'fab-divider',
+    styleUrls: ['./divider.component.scss'],
     templateUrl: './divider.component.html',
 })
-export class DividerComponent implements AfterViewInit {
+export class DividerComponent extends CommonComponent implements OnInit {
     @Input() label: string;
     @Input() textColor: string;
 
-    constructor(public elRef: ElementRef) {}
+    constructor(public elRef: ElementRef) { super(elRef); }
 
-    ngAfterViewInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(DividerStyles({ framework: 'angular', props: this }));
-        host.classList.add(styles);
+    ngOnInit() {
+        this.styles = DividerStyles;
+        this.initStyles();
     }
 }

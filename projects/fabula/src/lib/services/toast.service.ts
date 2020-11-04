@@ -74,9 +74,9 @@ export class ToastService {
         const { stack, ...rest } = params;
 
         if (this.stacks[stack]) {
-            this.stacks[stack].toasts.push({ ...rest, stack });
+            this.stacks[stack].toasts.push({ stack, ...rest });
         } else {
-            this.stacks.default.toasts.push({ ...rest, stack });
+            this.stacks.default.toasts.push({ stack, ...rest });
         }
 
         this.handleToast(stack);

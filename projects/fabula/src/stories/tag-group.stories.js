@@ -10,14 +10,20 @@ import {
     UtilsModule
 } from '../public-api';
 
+// Examples
+import { TagGroupExample } from './examples/tag-group/example/tag-group.example';
+
 // Wrappers
 import { TagGroupColorWrapper } from './wrappers/tag-group/color/tag-group-color.wrapper';
+import { TagGroupExampleWrapper } from './wrappers/tag-group/example/tag-group-example.wrapper';
 import { TagGroupSpacingWrapper } from './wrappers/tag-group/spacing/tag-group-spacing.wrapper';
 
 // Module init
 export default {
     decorators: [
         moduleMetadata({
+            declarations: [TagGroupExample],
+            entryComponents: [TagGroupExample],
             imports: [
                 BrowserModule,
                 IconsModule,
@@ -34,5 +40,6 @@ export default {
 }
 
 // Stories
-export const Color = () => ({ component: TagGroupColorWrapper });
-export const Spacing = () => ({ component: TagGroupSpacingWrapper });
+export const Example = () => ({ component: TagGroupExampleWrapper });
+export const PropColor = () => ({ component: TagGroupColorWrapper });
+export const PropSpacing = () => ({ component: TagGroupSpacingWrapper });

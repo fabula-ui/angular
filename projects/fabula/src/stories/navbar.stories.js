@@ -5,6 +5,7 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonModule,
     ButtonGroupComponent,
+    GridModule,
     IconsModule,
     NavbarModule,
     TabsModule,
@@ -34,15 +35,14 @@ export default {
             imports: [
                 BrowserModule,
                 ButtonModule,
+                GridModule,
                 IconsModule,
                 NavbarModule,
                 TabsModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
-            providers: [
-                
-            ]
+            providers: []
         })
     ],
     title: 'Navbar'

@@ -9,32 +9,44 @@ import {
     TextComponent,
     ThemeModule,
     ThemeService,
-    UtilsModule
+    UtilsModule,
+    WrapperModule
 } from '../public-api';
 
 // Wrappers
-import { AvatarAdaptColorWrapper } from './wrappers/avatar/adapt-color/avatar-adapt-color.wrapper';
+import { AvatarExampleWrapper } from './wrappers/avatar/example/avatar-example.wrapper';
 import { AvatarColorWrapper } from './wrappers/avatar/color/avatar-color.wrapper';
-import { AvatarCustomIconWrapper } from './wrappers/avatar/custom-icon/avatar-custom-icon.wrapper';
+import { AvatarDarkenWrapper } from './wrappers/avatar/darken/avatar-darken.wrapper';
+import { AvatarFadedWrapper } from './wrappers/avatar/faded/avatar-faded.wrapper';
+import { AvatarIconWrapper } from './wrappers/avatar/icon/avatar-icon.wrapper';
+import { AvatarLightenWrapper } from './wrappers/avatar/lighten/avatar-lighten.wrapper';
+
 import { AvatarExternalBadgeWrapper } from './wrappers/avatar/external-badge/avatar-external-badge.wrapper';
 import { AvatarRoundedWrapper } from './wrappers/avatar/rounded/avatar-rounded.wrapper';
 import { AvatarShowInitialsWrapper } from './wrappers/avatar/show-initials/avatar-show-initials.wrapper';
 import { AvatarSizeWrapper } from './wrappers/avatar/size/avatar-size.wrapper';
-import {  } from '../lib/modules/icons.module';
+
+// Examples
+import { AvatarExternalBadgeExample } from './wrappers/avatar/external-badge/example/avatar-external-badge.example';
 
 export default {
     decorators: [
         moduleMetadata({
             declarations: [
+                AvatarExternalBadgeExample,
                 BadgeComponent,
                 TextComponent
+            ],
+            entryComponents: [
+                AvatarExternalBadgeExample
             ],
             imports: [
                 AvatarModule,
                 BrowserModule,
                 IconsModule,
                 ThemeModule.forRoot(),
-                UtilsModule
+                UtilsModule,
+                WrapperModule
             ],
             providers: [
                 ThemeService
@@ -44,19 +56,31 @@ export default {
     title: 'Avatar'
 }
 
-export const AdaptColor = () => ({
-    component: AvatarAdaptColorWrapper,
+export const Example = () => ({
+    component: AvatarExampleWrapper,
 });
 
-export const Color = () => ({
+export const PropColor = () => ({
     component: AvatarColorWrapper,
 });
 
-export const CustomIcon = () => ({
-    component: AvatarCustomIconWrapper,
+export const PropDarken = () => ({
+    component: AvatarDarkenWrapper,
 });
 
-export const Rounded = () => ({
+export const PropFaded = () => ({
+    component: AvatarFadedWrapper,
+});
+
+export const PropIcon = () => ({
+    component: AvatarIconWrapper,
+});
+
+export const PropLighten = () => ({
+    component: AvatarLightenWrapper,
+});
+
+export const PropRounded = () => ({
     component: AvatarRoundedWrapper,
 });
 
@@ -64,7 +88,7 @@ export const ShowInitials = () => ({
     component: AvatarShowInitialsWrapper,
 });
 
-export const Size = () => ({
+export const PropSize = () => ({
     component: AvatarSizeWrapper,
 });
 

@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit, forwardRef } from '@angular/core';
-import { css } from 'emotion';
+import { Component, OnInit, ElementRef, Input, ContentChildren, QueryList, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 // Components
+import { CommonComponent } from '../common-component/common-component.component';
 import { SegmentComponent } from '../segment/segment.component';
 import { SelectorComponent } from '../selector/selector.component';
 
@@ -10,20 +10,21 @@ import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
 
 @Component({
   selector: 'fab-segments',
+  styleUrls: ['./segments.component.scss'],
   templateUrl: './segments.component.html'
 })
-export class SegmentsComponent implements AfterViewInit, OnInit {
+export class SegmentsComponent extends CommonComponent implements AfterViewInit, OnInit {
   @ContentChildren(SelectorComponent) childComponents: QueryList<SelectorComponent>;
 
   @Input() active: string;
   @Input() activeColor: string;
-  @Input() activeFillColor: string;
   @Input() activeTextColor: string;
+  @Input() border = true;
   @Input() clear = false;
   @Input() color: string;
   @Input() expand = false;
   @Input() faded = false;
-  @Input() inactiveFillColor: string;
+  @Input() inactiveColor: string;
   @Input() inactiveTextColor: string;
   @Input() invert = false;
   @Input() layout = 'horizontal';
@@ -35,18 +36,17 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
 
   @Output() changeSegment = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {
     this.childComponents.forEach((child: SegmentComponent) => {
       child.activeColor = this.activeColor;
-      child.activeFillColor = this.activeFillColor;
       child.activeTextColor = this.activeTextColor;
       child.color = this.color;
       child.clear = this.clear;
       child.expand = this.expand;
       child.faded = this.faded;
-      child.inactiveFillColor = this.inactiveFillColor;
+      child.inactiveColor = this.inactiveColor;
       child.inactiveTextColor = this.inactiveTextColor;
       child.invert = this.invert;
       child.layout = this.layout;
@@ -70,10 +70,8 @@ export class SegmentsComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(SegmentsStyles({ framework: 'angular', props: this }));
-
-    host.classList.add(styles);
+    this.styles = SegmentsStyles;
+    this.initStyles();
   }
 
   handleActiveSegment(segment) {

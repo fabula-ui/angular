@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-tabs-layout',
     templateUrl: './tabs-layout.wrapper.html'
 })
-export class TabsLayoutWrapper implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-}
+export class TabsLayoutWrapper { }

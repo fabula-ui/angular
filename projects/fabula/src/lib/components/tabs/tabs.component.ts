@@ -10,10 +10,12 @@ import TabsStyles from '@fabula/core/styles/components/tabs/tabs';
 
 @Component({
   selector: 'fab-tabs',
+  styleUrls: ['./tabs.component.scss'],
   templateUrl: './tabs.component.html'
 })
 export class TabsComponent extends SegmentsComponent implements AfterViewInit, OnInit {
   @ContentChildren(TabComponent) tabComponents: QueryList<TabComponent>;
+  @Input() alignment: string;
   @Input() props: any;
 
   constructor(public elRef: ElementRef) { super(elRef); }

@@ -5,16 +5,19 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     IconsModule,
     TagModule,
-    TextComponent,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
 } from '../public-api';
 
+// Examples
+import { TagExample } from './examples/tag/example/tag.example';
+
 // Wrappers
-import { TagAnchorAndButtonWrapper } from './wrappers/tag/anchor-and-button/tag-anchor-and-button.wrapper';
 import { TagClearWrapper } from './wrappers/tag/clear/tag-clear.wrapper';
 import { TagColorWrapper } from './wrappers/tag/color/tag-color.wrapper';
+import { TagExampleWrapper } from './wrappers/tag/example/tag-example.wrapper';
 import { TagFadedWrapper } from './wrappers/tag/faded/tag-faded.wrapper';
 import { TagGlowWrapper } from './wrappers/tag/glow/tag-glow.wrapper';
 import { TagInvertWrapper } from './wrappers/tag/invert/tag-invert.wrapper';
@@ -26,31 +29,29 @@ import { TagSizeWrapper } from './wrappers/tag/size/tag-size.wrapper';
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                TextComponent
-            ],
+            declarations: [TagExample],
+            entryComponents: [TagExample],
             imports: [
                 BrowserModule,
                 IconsModule,
                 TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
-            providers: [
-                ThemeService
-            ]
+            providers: []
         })
     ],
     title: 'Tag'
 }
 
 // Stories
-export const AnchorAndButton = () => ({ component: TagAnchorAndButtonWrapper });
-export const Clear = () => ({ component: TagClearWrapper });
-export const Color = () => ({ component: TagColorWrapper });
-export const Faded = () => ({ component: TagFadedWrapper });
-export const Glow = () => ({ component: TagGlowWrapper });
-export const Invert = () => ({ component: TagInvertWrapper });
-export const Outline = () => ({ component: TagOutlineWrapper });
-export const Rounded = () => ({ component: TagRoundedWrapper });
-export const Size = () => ({ component: TagSizeWrapper });
+export const Example = () => ({ component: TagExampleWrapper });
+export const PropClear = () => ({ component: TagClearWrapper });
+export const PropColor = () => ({ component: TagColorWrapper });
+export const PropFaded = () => ({ component: TagFadedWrapper });
+export const PropGlow = () => ({ component: TagGlowWrapper });
+export const PropInvert = () => ({ component: TagInvertWrapper });
+export const PropOutline = () => ({ component: TagOutlineWrapper });
+export const PropRounded = () => ({ component: TagRoundedWrapper });
+export const PropSize = () => ({ component: TagSizeWrapper });

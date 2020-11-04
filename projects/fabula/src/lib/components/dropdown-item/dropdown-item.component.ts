@@ -3,11 +3,12 @@ import {
     Component,
     ElementRef,
     Input,
-    OnInit,
     Output,
     EventEmitter
 } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dropdown-item';
@@ -16,7 +17,7 @@ import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dro
     selector: 'fab-dropdown-item',
     templateUrl: './dropdown-item.component.html',
 })
-export class DropdownItemComponent implements AfterViewInit {
+export class DropdownItemComponent extends CommonComponent implements AfterViewInit {
     @Input() button = false;
     @Input() color: string;
     @Input() clickToClose = false;
@@ -28,22 +29,17 @@ export class DropdownItemComponent implements AfterViewInit {
 
     @Output() clicked = new EventEmitter();
 
-    constructor(public elRef: ElementRef) { }
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     ngAfterViewInit() {
-        const host = this.elRef.nativeElement;
-        const styles = css(DropdownItemStyles({
-            framework: 'angular', props: {
-                ...this,
-                ...this.props
-            }
-        }));
-        host.classList.add(styles);
-
         if (this.props && this.props.clickToClose || this.clickToClose) {
             this.button = true;
             this.props.button = true;
         }
+
+        // this.props
+        this.styles = DropdownItemStyles;
+        this.initStyles();
     }
 
     // Methods

@@ -4,30 +4,30 @@ import {
   Input,
   OnInit
 } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import ButtonGroupStyles from '@fabula/core/styles/components/button-group/button-group';
 
 @Component({
   selector: 'fab-button-group',
+  styleUrls: ['./button-group.component.scss'],
   templateUrl: './button-group.component.html'
 })
-export class ButtonGroupComponent implements OnInit {
+export class ButtonGroupComponent extends CommonComponent implements OnInit {
   @Input() color: string;
   @Input() divider = true;
   @Input() dividerColor = '';
-  @Input() glued = false;
-  @Input() layout = 'horizontal';
-  @Input() spacing: string;
-  @Input() wrap = true;
+  @Input() layout = 'h';
 
-  constructor(public elRef: ElementRef) {}
+  inline = true;
+
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngOnInit() {
-    const styles = css(ButtonGroupStyles({ framework: 'angular', props: this }));
-    const host = this.elRef.nativeElement;
-    host.classList.add(css(styles));
+    this.styles = ButtonGroupStyles;
+    this.initStyles();
   }
-
 }

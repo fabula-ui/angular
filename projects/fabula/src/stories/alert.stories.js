@@ -10,7 +10,6 @@ import {
     IconsModule,
     TextModule,
     ThemeModule,
-    ThemeService,
     UtilsModule
 } from '../public-api';
 
@@ -20,7 +19,6 @@ import { AlertBorderWrapper } from './wrappers/alert/border/alert-border.wrapper
 import { AlertClearWrapper } from './wrappers/alert/clear/alert-clear.wrapper';
 import { AlertCloseButtonWrapper } from './wrappers/alert/close-button/alert-close-button.wrapper';
 import { AlertColorsWrapper } from './wrappers/alert/colors/alert-colors.wrapper';
-import { AlertCustomContentWrapper } from './wrappers/alert/custom-content/alert-custom-content.wrapper';
 import { AlertFadedWrapper } from './wrappers/alert/faded/alert-faded.wrapper';
 import { AlertGlowWrapper } from './wrappers/alert/glow/alert-glow.wrapper';
 import { AlertIconsWrapper } from './wrappers/alert/icons/alert-icons.wrapper';
@@ -48,74 +46,64 @@ export default {
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
-            providers: [
-                ThemeService
-            ]
+            providers: []
         })
     ],
     title: 'Alert'
 }
 
-export const Examples = () => ({
+export const Example = () => ({
     component: AlertExamplesWrapper,
 });
 
-export const Border = () => ({
+export const PropBorder = () => ({
     component: AlertBorderWrapper,
 });
 
-export const Clear = () => ({
+export const PropClear = () => ({
     component: AlertClearWrapper,
 });
 
-export const CloseButton = () => ({
+export const PropCloseButton = () => ({
     component: AlertCloseButtonWrapper,
 });
 
-export const Color = () => ({
+export const PropColor = () => ({
     component: AlertColorsWrapper,
 });
 
-export const CustomContent = () => ({
-    component: AlertCustomContentWrapper,
-});
-
-export const Faded = () => ({
+export const PropFaded = () => ({
     component: AlertFadedWrapper,
 });
 
-export const Glow = () => ({
+export const PropGlow = () => ({
     component: AlertGlowWrapper,
 });
 
-export const Icons = () => ({
+export const PropIcon = () => ({
     component: AlertIconsWrapper,
 });
 
-export const IconColors = () => ({
-    component: AlertIconColorsWrapper,
-});
-
-export const Invert = () => ({
+export const PropInvert = () => ({
     component: AlertInvertWrapper,
 });
 
-export const Marker = () => ({
+export const PropMarker = () => ({
     component: AlertMarkerWrapper,
 });
 
-export const Outline = () => ({
+export const PropOutline = () => ({
     component: AlertOutlineWrapper,
 });
 
-export const TextColor = () => ({
+export const PropTextColor = () => ({
     component: AlertTextColorWrapper,
 });
 
-export const TitleColor = () => ({
+export const PropTitleColor = () => ({
     component: AlertTitleColorWrapper,
 });
 
-export const Type = () => ({
+export const PropType = () => ({
     component: AlertTypeWrapper,
 });

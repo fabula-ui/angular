@@ -71,10 +71,7 @@ export class TooltipDirective implements AfterViewInit {
     }
 
     getCoords(host) {
-        const height = host.offsetHeight;
-        const width = host.offsetWidth;
-        const x = host.offsetLeft;
-        const y = host.offsetTop;
+        const { height, width, x, y } = host.getBoundingClientRect();
         let left;
         let top;
 

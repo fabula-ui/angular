@@ -1,14 +1,21 @@
-<div class="fab-button-wrapper" [attr.data-border]="border" [attr.data-circle]="!!circle || !!icon" [attr.data-disabled]="disabled" [attr.data-expand]="true" [attr.data-outline]="outline" [attr.data-rounded]="rounded" data-fab-wrapper="button">
-  <button class="fab-button" [disabled]="disabled" data-fab-component="button" *ngIf="!href">
-    <ng-container *ngIf="!icon && (label || props && props.label)">{{label || props && props.label}}</ng-container>
+<button class="fab-button" [attr.data-border]="border || props.border" [attr.data-color]="color || props.color"
+  [attr.data-circle]="!!circle || !!props.circle" [attr.data-expand]="expand || props.expand"
+  [attr.data-outline]="outline || props.outline" [attr.data-rounded]="rounded || props.rounded"
+  [disabled]="disabled || props.disabled" data-fab-component="button" *ngIf="!href">
+  <ng-container *ngIf="!label && !props.label">
     <ng-content *ngTemplateOutlet="content"></ng-content>
-  </button>
+  </ng-container>
+  <ng-container *ngIf="label || props.label">
+    {{label || props.label}}
+  </ng-container>
+</button>
 
-  <a class="fab-button" [attr.href]="href" [attr.target]="target" data-fab-component="button" *ngIf="href">
-    <ng-container *ngIf="!icon && (label || props && props.label)">{{label || props && props.label}}</ng-container>
-    <ng-content *ngTemplateOutlet="content"></ng-content>
-  </a>
-</div>
+<a class="fab-button" [attr.data-border]="border || props.border" [attr.data-color]="color || props.color"
+  [attr.data-circle]="!!circle || !!props.circle" [attr.data-expand]="expand || props.expand"
+  [attr.data-outline]="outline || props.outline" [attr.data-rounded]="rounded || props.rounded"
+  [attr.href]="href || props.href" [attr.rel]="rel || props.rel" [attr.target]="target || props.target" data-fab-component="button" *ngIf="href">
+  <ng-content *ngTemplateOutlet="content"></ng-content>
+</a>
 
 <ng-template #content>
   <ng-content></ng-content>

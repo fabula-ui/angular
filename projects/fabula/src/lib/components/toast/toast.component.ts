@@ -1,68 +1,74 @@
-import { Component, Input, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, ElementRef, AfterViewInit, ViewChild, AfterContentInit, OnInit, ChangeDetectorRef, ContentChild } from '@angular/core';
 import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { ToastService } from '../../services/toast.service';
 
 // Styles
 import ToastStyles from '@fabula/core/styles/components/toast/toast';
-import { ToastService } from '../../services/toast.service';
+import { InnerIconComponent } from '../inner-icon/inner-icon.component';
 
 @Component({
   selector: 'fab-toast',
+  styleUrls: ['./toast.component.scss'],
   templateUrl: './toast.component.html'
 })
-export class ToastComponent implements AfterViewInit {
+export class ToastComponent extends CommonComponent implements AfterContentInit, AfterViewInit {
+  @Input() button: any;
   @Input() clear: boolean;
-  @Input() closeButton: any;
   @Input() color: string;
   @Input() faded: boolean;
   @Input() glow: boolean;
+  @Input() hideButton: any;
   @Input() hiding = false;
   @Input() icon: any;
   @Input() index: any;
-  @Input() link: any;
   @Input() message: string;
   @Input() outline: boolean;
   @Input() stack: string;
   @Input() stacked = false;
 
-  iconProps;
-  props;
+  @ContentChild(InnerIconComponent) iconComponent: InnerIconComponent;
+  @ViewChild('toast') toastEl: ElementRef;
+
+  height;
 
   constructor(
+    public cdRef: ChangeDetectorRef,
     public elRef: ElementRef,
     public toastService: ToastService
-  ) { }
+  ) {
+    super(elRef);
+  }
 
-  ngAfterViewInit() {
-    const host = this.elRef.nativeElement;
-    const height = host.offsetHeight;
-    const styles = css(ToastStyles({
-      framework: 'angular', props: {
-        ...this,
-        height
-      }
-    }));
-
-    host.classList.add(styles);
-
-    // Icon props
-    if (typeof this.icon === 'object') {
-      this.iconProps = {
-        parentProps: this,
-        ...this.icon,
-      }
-    } else {
-      this.iconProps = {
-        parentProps: this,
-        name: this.icon,
-      }
-    }
-
+  ngAfterContentInit() {
+    this.styles = ToastStyles;
+    this.initStyles();
     this.props = this;
   }
 
+  ngAfterViewInit() {
+    const host = this.elRef.nativeElement;
+    let height;
+
+    if (this.stacked) {
+      this.stacked = false;
+      height = host.querySelector('.fab-toast-wrapper').offsetHeight;
+    }
+
+    this.stacked = true;
+
+    this.additionalProps = { height };
+    this.height = height;
+    this.cdRef.detectChanges();
+  }
+
+  // Methods
   hideToast() {
     const stack = this.toastService.stacks[this.stack];
-
     this.toastService.hideToast({
       index: this.index,
       stack

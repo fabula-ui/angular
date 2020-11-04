@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './avatar-color.wrapper.html'
 })
 export class AvatarColorWrapper implements OnInit {
-
     constructor() { }
 
     ngOnInit() {

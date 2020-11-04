@@ -1,0 +1,17 @@
+<fab-row>
+    <fab-column col="4">
+        <fab-search-input button="Search"></fab-search-input>
+    </fab-column>
+
+    <fab-column col="4">
+        <fab-search-input [button]="{ label: 'Search' }"></fab-search-input>
+    </fab-column>
+
+    <fab-column col="4">
+        <fab-search-input [rounded]="true">
+            <fab-button [circle]="true" color="primary">
+                <fab-icon name="search"></fab-icon>
+            </fab-button>
+        </fab-search-input>
+    </fab-column>
+</fab-row>

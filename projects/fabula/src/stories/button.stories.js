@@ -9,17 +9,20 @@ import {
     IconsModule,
     ThemeModule,
     ThemeService,
-    UtilsModule
+    UtilsModule,
+    WrapperModule
 } from '../public-api';
 
 // Wrappers
+import { ButtonBorderWrapper } from './wrappers/button/border/button-border.wrapper';
 import { ButtonCircleWrapper } from './wrappers/button/circle/button-circle.wrapper';
 import { ButtonClearWrapper } from './wrappers/button/clear/button-clear.wrapper';
 import { ButtonColorWrapper } from './wrappers/button/color/button-color.wrapper';
-import { ButtonCompactWideWrapper } from './wrappers/button/compact-wide/button-compact-wide.wrapper';
+import { ButtonCompactWrapper } from './wrappers/button/compact/button-compact.wrapper';
+import { ButtonDarkenWrapper } from './wrappers/button/darken/button-darken.wrapper';
 import { ButtonDisabledWrapper } from './wrappers/button/disabled/button-disabled.wrapper';
+import { ButtonExampleWrapper } from './wrappers/button/example/button-example.wrapper';
 import { ButtonExpandWrapper } from './wrappers/button/expand/button-expand.wrapper';
-import { ButtonExternalBadgeWrapper } from './wrappers/button/external-badge/button-external-badge.wrapper';
 import { ButtonFadedWrapper } from './wrappers/button/faded/button-faded.wrapper';
 import { ButtonGlowWrapper } from './wrappers/button/glow/button-glow.wrapper';
 import { ButtonGradientWrapper } from './wrappers/button/gradient/button-gradient.wrapper';
@@ -27,6 +30,7 @@ import { ButtonInvertWrapper } from './wrappers/button/invert/button-invert.wrap
 import { ButtonOutlineWrapper } from './wrappers/button/outline/button-outline.wrapper';
 import { ButtonRoundedWrapper } from './wrappers/button/rounded/button-rounded.wrapper';
 import { ButtonSizeWrapper } from './wrappers/button/size/button-size.wrapper';
+import { ButtonWideWrapper } from './wrappers/button/wide/button-wide.wrapper';
 
 // Module init
 export default {
@@ -41,7 +45,8 @@ export default {
                 ButtonModule,
                 IconsModule,
                 ThemeModule.forRoot(),
-                UtilsModule
+                UtilsModule,
+                WrapperModule
             ],
             providers: [
                 ThemeService
@@ -52,17 +57,20 @@ export default {
 }
 
 // Stories
-export const Circle = () => ({ component: ButtonCircleWrapper });
-export const Clear = () => ({ component: ButtonClearWrapper });
-export const Color = () => ({ component: ButtonColorWrapper });
-export const CompactVsWide = () => ({ component: ButtonCompactWideWrapper });
-export const Disabled = () => ({ component: ButtonDisabledWrapper });
-export const Expand = () => ({ component: ButtonExpandWrapper });
-export const Faded = () => ({ component: ButtonFadedWrapper });
-export const Glow = () => ({ component: ButtonGlowWrapper });
-export const Gradient = () => ({ component: ButtonGradientWrapper });
-export const Invert = () => ({ component: ButtonInvertWrapper });
-export const Outline = () => ({ component: ButtonOutlineWrapper });
-export const Rounded = () => ({ component: ButtonRoundedWrapper });
-export const Size = () => ({ component: ButtonSizeWrapper });
-export const ExternalBadge = () => ({ component: ButtonExternalBadgeWrapper });
+export const Example = () => ({ component: ButtonExampleWrapper });
+export const PropBorder = () => ({ component: ButtonBorderWrapper });
+export const PropCircle = () => ({ component: ButtonCircleWrapper });
+export const PropClear = () => ({ component: ButtonClearWrapper });
+export const PropColor = () => ({ component: ButtonColorWrapper });
+export const PropCompact = () => ({ component: ButtonCompactWrapper });
+export const PropDarken = () => ({ component: ButtonDarkenWrapper });
+export const PropDisabled = () => ({ component: ButtonDisabledWrapper });
+export const PropExpand = () => ({ component: ButtonExpandWrapper });
+export const PropFaded = () => ({ component: ButtonFadedWrapper });
+export const PropGlow = () => ({ component: ButtonGlowWrapper });
+export const PropGradient = () => ({ component: ButtonGradientWrapper });
+export const PropInvert = () => ({ component: ButtonInvertWrapper });
+export const PropOutline = () => ({ component: ButtonOutlineWrapper });
+export const PropRounded = () => ({ component: ButtonRoundedWrapper });
+export const PropSize = () => ({ component: ButtonSizeWrapper });
+export const PropWide = () => ({ component: ButtonWideWrapper });

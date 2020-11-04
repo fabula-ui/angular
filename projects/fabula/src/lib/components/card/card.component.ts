@@ -1,9 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ContentChildren, QueryList, AfterViewInit } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CardImageComponent } from '../card-image/card-image.component';
 import { CardSectionComponent } from '../card-section/card-section.component';
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import CardStyles from '@fabula/core/styles/components/card/card';
@@ -12,7 +12,7 @@ import CardStyles from '@fabula/core/styles/components/card/card';
   selector: 'fab-card',
   templateUrl: './card.component.html',
 })
-export class CardComponent implements AfterViewInit, OnInit {
+export class CardComponent extends CommonComponent implements AfterViewInit, OnInit {
   @ContentChildren(CardImageComponent) cardImageComponents: QueryList<CardImageComponent>;
   @ContentChildren(CardSectionComponent) cardSectionComponents: QueryList<CardSectionComponent>;
 
@@ -21,7 +21,7 @@ export class CardComponent implements AfterViewInit, OnInit {
   @Input() layout = 'v';
   @Input() padding = false;
 
-  constructor(private elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef) }
 
   ngAfterViewInit() {
     this.cardImageComponents.forEach((child: CardImageComponent) => {
@@ -36,8 +36,7 @@ export class CardComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(CardStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = CardStyles;
+    this.initStyles();
   }
 }

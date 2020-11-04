@@ -1,6 +1,10 @@
 <div class="fab-input-wrapper" data-fab-wrapper="input">
-  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus" [attr.data-textarea]="!!textarea">
-    <span class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart"></span>
+  <div class="fab-input" [attr.data-disabled]="disabled" [attr.data-focus]="hasFocus" [attr.data-textarea]="!!textarea"
+    [attr.data-variant]="variant" data-fab-component="input">
+    <div class="fab-input__icon" data-placement="start" *ngIf="icon || iconStart">
+      <fab-inner-icon [icon]="icon" [parentProps]="props" *ngIf="icon"></fab-inner-icon>
+      <fab-inner-icon [icon]="iconStart" [parentProps]="props" *ngIf="iconStart"></fab-inner-icon>
+    </div>
 
     <input class="fab-input__field" [disabled]="disabled" (blur)="handleFocus(false)" (focus)="handleFocus(true)"
       [attr.placeholder]="placeholder" [attr.type]="type" data-fab-component="input" *ngIf="!textarea">
@@ -8,7 +12,9 @@
     <textarea class="fab-input__field" [disabled]="disabled" [attr.placeholder]="placeholder" [attr.type]="type"
       (blur)="handleFocus(false)" (focus)="handleFocus(true)" data-fab-component="input" *ngIf="textarea"></textarea>
 
-    <span class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle"></span>
+    <div class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle">
+      <fab-inner-icon [icon]="iconEnd" [parentProps]="props"></fab-inner-icon>
+    </div>
 
     <button class="fab-input__password-toggle" (click)="toggleType()" [attr.data-toggled]="type === 'text'"
       *ngIf="passwordToggle">
@@ -21,7 +27,7 @@
   </div>
 
   <div class="fab-input__message" *ngIf="message">
-    <span *ngIf="isObject(message)">{{message.text}}</span>
+    <span *ngIf="isObject(message) && message.text">{{message.text}}</span>
     <span *ngIf="!isObject(message)">{{message}}</span>
   </div>
 </div>

@@ -1,11 +1,21 @@
-<div>
-  <fab-dropdown mr="5">
-      <fab-dropdown-toggle color="primary" icon="arrow-left" [compact]="true" label="Left"></fab-dropdown-toggle>
-      <fab-dropdown-menu [clickToClose]="true" [items]="[{ button: true, label: 'Dropdown Item 1' }, { button: true, label: 'Dropdown Item 2' }, { button: true, label: 'Dropdown Item 3' }]" (click)="handleClick()"></fab-dropdown-menu>
+<fab-wrapper [flex]="true">
+  <fab-dropdown alignment="left" mr="1">
+    <fab-dropdown-toggle color="primary" [compact]="true">
+      <fab-icon mr=".5" name="arrow-left-circle"></fab-icon>
+      <span>Alignment: Left</span>
+    </fab-dropdown-toggle>
+    <fab-dropdown-menu [clickToClose]="true">
+      <fab-dropdown-item [button]="true">This dropdown is aligned to the left</fab-dropdown-item>
+    </fab-dropdown-menu>
   </fab-dropdown>
 
   <fab-dropdown alignment="right">
-      <fab-dropdown-toggle color="primary" icon="arrow-right" [compact]="true" label="Right"></fab-dropdown-toggle>
-      <fab-dropdown-menu [clickToClose]="true" [items]="[{ button: true, label: 'Dropdown Item 1' }, { button: true, label: 'Dropdown Item 2' }, { button: true, label: 'Dropdown Item 3' }]" (click)="handleClick()"></fab-dropdown-menu>
+    <fab-dropdown-toggle color="primary" [compact]="true">
+      <fab-icon mr=".5" name="arrow-right-circle"></fab-icon>
+      <span>Alignment: Right</span>
+    </fab-dropdown-toggle>
+    <fab-dropdown-menu [clickToClose]="true">
+      <fab-dropdown-item [button]="true">This dropdown is aligned to the right</fab-dropdown-item>
+    </fab-dropdown-menu>
   </fab-dropdown>
-</div>
+</fab-wrapper>

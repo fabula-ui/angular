@@ -10,6 +10,7 @@ import { ToastComponent } from '../components/toast/toast.component';
 
 // Modules
 import { ButtonModule } from '../modules/button.module';
+import { IconsModule } from './icons.module';
 import { InnerIconModule } from '../modules/inner-icon.module';
 
 // Services
@@ -34,6 +35,7 @@ import { ToastPortalComponent } from '../components/toast-portal/toast-portal.co
     imports: [
         ButtonModule,
         CommonModule,
+        IconsModule,
         InnerIconModule
     ],
     exports: [

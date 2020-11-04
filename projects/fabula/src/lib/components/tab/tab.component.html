@@ -1,9 +1,9 @@
-<div class="fab-tab" [attr.data-active]="active">
-  <button (click)="handleClick()" *ngIf="!link">
+<div class="fab-tab" [attr.data-active]="active" data-fab-wrapper="tab">
+  <button (click)="handleClick()" *ngIf="!href && !link" data-fab-component="tab">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </button>
 
-  <a *ngIf="href" [href]="link" [target]="target">
+  <a *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target" data-fab-component="tab">
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </a>
 </div>

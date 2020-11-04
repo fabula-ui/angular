@@ -1,32 +1,71 @@
-<div mb="1" row>
-    <fab-search-input [button]="{ color: 'primary' }" col="4" placeholder="Extra-large input field" size="xl"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary' }" col="4" placeholder="Large input field" size="lg"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary' }" col="4" placeholder="Medium input field"></fab-search-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary' }" placeholder="2x Extra-large input field" size="xxl"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="2x Extra-large input field" [rounded]="true" size="xxl"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="2x Extra-large input field" [rounded]="true" size="xxl" variant="fill"></fab-search-input>
+    </fab-column>
+</fab-row>
 
-<div mb="1" row>
-    <fab-search-input [button]="{ color: 'primary' }" col="4" placeholder="Small input field" size="sm"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary' }" col="4" placeholder="Extra-small input field" size="xs"></fab-search-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary' }" placeholder="Extra-large input field" size="xl"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Extra-large input field" [rounded]="true" size="xl"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Extra-large input field" [rounded]="true" size="xl" variant="fill"></fab-search-input>
+    </fab-column>
+</fab-row>
 
-<div mb="1" row>
-    <fab-search-input [button]="{ color: 'primary', rounded: true }" col="4" placeholder="Extra-large input field" [rounded]="true" size="xl"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary', rounded: true }" col="4" placeholder="Large input field" [rounded]="true" size="lg"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary', rounded: true }" col="4" placeholder="Medium input field" [rounded]="true"></fab-search-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary' }" placeholder="Large input field" size="lg"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Large input field" [rounded]="true" size="lg"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Large input field" [rounded]="true" size="lg" variant="fill"></fab-search-input>
+    </fab-column>
+</fab-row>
 
-<div mb="1" row>
-    <fab-search-input [button]="{ color: 'primary', rounded: true }" col="4" placeholder="Small input field" [rounded]="true" size="sm"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary', rounded: true }" col="4" placeholder="Extra-small input field" [rounded]="true" size="xs"></fab-search-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary' }" placeholder="Medium input field" size="md"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Medium input field" [rounded]="true" size="md"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Medium input field" [rounded]="true" size="md" variant="fill"></fab-search-input>
+    </fab-column>
+</fab-row>
 
-<div mb="1" row>
-    <fab-search-input [button]="{ color: 'primary', icon: { name: 'search' }, circle: true }" col="4" placeholder="Extra-large input field" [rounded]="true" size="xl"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary', icon: { name: 'search' }, circle: true }" col="4" placeholder="Large input field" [rounded]="true" size="lg"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary', icon: { name: 'search' }, circle: true }" col="4" placeholder="Medium input field" [rounded]="true"></fab-search-input>
-</div>
+<fab-row mb="1">
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary' }" placeholder="Small input field" size="sm"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Small input field" [rounded]="true" size="sm"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Small input field" [rounded]="true" size="sm" variant="fill"></fab-search-input>
+    </fab-column>
+</fab-row>
 
-<div mb="1" row>
-    <fab-search-input [button]="{ color: 'primary', icon: { name: 'search' }, circle: true }" col="4" placeholder="Small input field" [rounded]="true" size="sm"></fab-search-input>
-    <fab-search-input [button]="{ color: 'primary', icon: { name: 'search' }, circle: true }" col="4" placeholder="Extra-small input field" [rounded]="true" size="xs"></fab-search-input>
-</div>
+<fab-row>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary' }" placeholder="Extra-small input field" size="xs"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Extra-small input field" [rounded]="true" size="xs"></fab-search-input>
+    </fab-column>
+    <fab-column col="4">
+        <fab-search-input [button]="{ color: 'primary', rounded: true }" placeholder="Extra-small input field" [rounded]="true" size="xs" variant="fill"></fab-search-input>
+    </fab-column>
+</fab-row>

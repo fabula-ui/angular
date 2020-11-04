@@ -1,25 +1,12 @@
-import { AfterViewInit, Directive, ElementRef, Input, Renderer2 } from '@angular/core';
-import { css } from 'emotion';
+import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 
-// Styles
-import UtilsStyles from '@fabula/core/styles/utils/utils';
+// Directives
+import { CommonDirective } from './common.directive'
 
 @Directive({
     selector: '[block]'
 })
-export class BlockDirective implements AfterViewInit {
+export class BlockDirective extends CommonDirective {
     @Input() block: any;
-
-    constructor(
-        private elRef: ElementRef
-    ) { }
-
-    ngAfterViewInit() {
-        const element = this.elRef.nativeElement;
-        const props = {
-            block: element.hasAttribute('block')
-        };
-
-        element.classList.add(css(UtilsStyles({ framework: 'angular', props })));
-    }
+    constructor(public elRef: ElementRef) { super(elRef) }
 }

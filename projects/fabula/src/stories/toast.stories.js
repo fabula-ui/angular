@@ -5,6 +5,8 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonGroupComponent,
     ButtonModule,
+    GridModule,
+    HelpersModule,
     IconsModule,
     ThemeModule,
     ThemeService,
@@ -13,13 +15,17 @@ import {
     UtilsModule
 } from '../public-api';
 
+// Example
+import { ToastExample } from './examples/toast/example/toast.example';
+
 // Wrappers
 import { ToastClearWrapper } from './wrappers/toast/clear/toast-clear.wrapper';
 import { ToastColorWrapper } from './wrappers/toast/color/toast-color.wrapper';
 import { ToastFadedWrapper } from './wrappers/toast/faded/toast-faded.wrapper';
 import { ToastGlowWrapper } from './wrappers/toast/glow/toast-glow.wrapper';
-import { ToastIconsWrapper } from './wrappers/toast/icons/toast-icons.wrapper';
-import { ToastLinksWrapper } from './wrappers/toast/links/toast-links.wrapper';
+import { ToastHideButtonWrapper } from './wrappers/toast/hide-button/toast-hide-button.wrapper';
+import { ToastIconWrapper } from './wrappers/toast/icon/toast-icon.wrapper';
+import { ToastLinkWrapper } from './wrappers/toast/link/toast-link.wrapper';
 import { ToastOutlineWrapper } from './wrappers/toast/outline/toast-outline.wrapper';
 import { ToastStacksWrapper } from './wrappers/toast/stacks/toast-stacks.wrapper';
 
@@ -28,11 +34,15 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                ButtonGroupComponent
+                ButtonGroupComponent,
+                ToastExample
             ],
+            entryComponents: [ToastExample],
             imports: [
                 BrowserModule,
                 ButtonModule,
+                GridModule,
+                HelpersModule,
                 IconsModule,
                 ThemeModule.forRoot(),
                 ToastModule,
@@ -48,11 +58,12 @@ export default {
 }
 
 // Stories
-export const Clear = () => ({ component: ToastClearWrapper });
-export const Color = () => ({ component: ToastColorWrapper });
-export const Faded = () => ({ component: ToastFadedWrapper });
-export const Glow = () => ({ component: ToastGlowWrapper });
-export const Icons = () => ({ component: ToastIconsWrapper });
-export const Links = () => ({ component: ToastLinksWrapper });
-export const Outline = () => ({ component: ToastOutlineWrapper });
-export const Stacks = () => ({ component: ToastStacksWrapper });
+export const PropClear = () => ({ component: ToastClearWrapper });
+export const PropColor = () => ({ component: ToastColorWrapper });
+export const PropFaded = () => ({ component: ToastFadedWrapper });
+export const PropGlow = () => ({ component: ToastGlowWrapper });
+export const PropHideButton = () => ({ component: ToastHideButtonWrapper });
+export const PropIcon = () => ({ component: ToastIconWrapper });
+export const PropLink = () => ({ component: ToastLinkWrapper });
+export const PropOutline = () => ({ component: ToastOutlineWrapper });
+export const HandleStacks = () => ({ component: ToastStacksWrapper });

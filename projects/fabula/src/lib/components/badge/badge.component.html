@@ -1,5 +1,5 @@
 <div class="fab-badge-wrapper" data-fab-wrapper="badge">
-  <div class="fab-badge" data-fab-component="badge" [attr.data-has-placement]="!!placement">
+  <div class="fab-badge" [attr.data-has-placement]="!!placement" data-fab-component="badge">
     <span *ngIf="label">{{label}}</span>
     <ng-content></ng-content>
   </div>

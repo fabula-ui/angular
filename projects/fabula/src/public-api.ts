@@ -19,6 +19,8 @@ export * from './lib/components/dropdown-item/dropdown-item.component';
 export * from './lib/components/dropdown-menu/dropdown-menu.component';
 export * from './lib/components/dropdown-toggle/dropdown-toggle.component';
 export * from './lib/components/general-component/general-component.component';
+export * from './lib/components/icon/icon.component';
+export * from './lib/components/heading/heading.component';
 export * from './lib/components/input/input.component';
 export * from './lib/components/input-group/input-group.component';
 export * from './lib/components/link/link.component';
@@ -43,6 +45,7 @@ export * from './lib/components/tag-input/tag-input.component';
 export * from './lib/components/text/text.component';
 export * from './lib/components/text-part/text-part.component';
 export * from './lib/components/toggle/toggle.component';
+export * from './lib/components/wrapper/wrapper.component';
 
 // Directives
 export * from './lib/directives/align.directive';
@@ -52,6 +55,7 @@ export * from './lib/directives/flex.directive';
 export * from './lib/directives/flow.directive';
 export * from './lib/directives/grow.directive';
 export * from './lib/directives/margin.directive';
+export * from './lib/directives/overflow.directive';
 export * from './lib/directives/padding.directive';
 export * from './lib/directives/row.directive';
 
@@ -61,7 +65,6 @@ export * from './lib/models/tooltip.model';
 export * from './lib/models/user-options.model';
 
 // Services
-export * from './lib/services/fabula.service';
 export * from './lib/services/modal.service';
 export * from './lib/services/theme.service';
 export * from './lib/services/toast.service';
@@ -70,11 +73,19 @@ export * from './lib/services/toast.service';
 export * from './lib/fabula.module';
 export * from './lib/modules/alert.module';
 export * from './lib/modules/avatar.module';
+export * from './lib/modules/badge.module';
 export * from './lib/modules/button.module';
 export * from './lib/modules/card.module';
+export * from './lib/modules/divider.module';
 export * from './lib/modules/dropdown.module';
+export * from './lib/modules/element.module';
+export * from './lib/modules/grid.module';
+export * from './lib/modules/heading.module';
+export * from './lib/modules/helpers.module';
 export * from './lib/modules/icons.module';
+export * from './lib/modules/inner-icon.module';
 export * from './lib/modules/input.module';
+export * from './lib/modules/link.module';
 export * from './lib/modules/list.module';
 export * from './lib/modules/modal.module';
 export * from './lib/modules/navbar.module';
@@ -87,3 +98,4 @@ export * from './lib/modules/theme.module';
 export * from './lib/modules/toast.module';
 export * from './lib/modules/tooltip.module';
 export * from './lib/modules/utils.module';
+export * from './lib/modules/wrapper.module';

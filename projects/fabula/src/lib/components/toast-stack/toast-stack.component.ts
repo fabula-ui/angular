@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import { css } from 'emotion';
+
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
 
 // Styles
 import ToastStackStyles from '@fabula/core/styles/components/toast-stack/toast-stack';
@@ -8,16 +10,15 @@ import ToastStackStyles from '@fabula/core/styles/components/toast-stack/toast-s
   selector: 'fab-toast-stack',
   templateUrl: './toast-stack.component.html'
 })
-export class ToastStackComponent implements OnInit {
+export class ToastStackComponent extends CommonComponent implements OnInit {
   @Input() placement: any;
   @Input() toasts: Array<any>;
 
-  constructor(public elRef: ElementRef) { }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
-    const host = this.elRef.nativeElement;
-    const styles = css(ToastStackStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = ToastStackStyles;
+    this.initStyles();
   }
 
   get visibleToasts() {
@@ -28,5 +29,4 @@ export class ToastStackComponent implements OnInit {
 
     return toasts.filter(toast => !toast.hidden);
   }
-
 }
