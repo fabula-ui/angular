@@ -4,11 +4,9 @@
     <fab-icon [color]="color" [props]="icon" *ngIf="icon"></fab-icon>
     <span class="fab-toast__message" *ngIf="message">{{message}}</span>
     <ng-content></ng-content>
-    <div class="fab-toast__close-button" *ngIf="!!button || !!hideButton || !!link">
-      <fab-button (click)="hideToast()" [props]="hideButton" size="sm" *ngIf="!!hideButton && !link && !button">
-      </fab-button>
+    <div class="fab-toast__close-button" *ngIf="!!button || !!hideButton">
+      <fab-button (click)="hideToast()" [props]="hideButton" size="sm" *ngIf="!!hideButton && !button"></fab-button>
       <fab-button [props]="button" size="sm" *ngIf="button"></fab-button>
-      <fab-link [props]="link" *ngIf="link && !button && !link.button"></fab-link>
     </div>
   </div>
 </div>

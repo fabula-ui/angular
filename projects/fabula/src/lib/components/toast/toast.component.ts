@@ -26,7 +26,6 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
   @Input() hiding = false;
   @Input() icon: any;
   @Input() index: any;
-  @Input() link: any;
   @Input() message: string;
   @Input() outline: boolean;
   @Input() stack: string;

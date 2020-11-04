@@ -34,6 +34,7 @@ export class ButtonComponent extends CommonComponent implements AfterViewInit {
   @Input() loading: string;
   @Input() label: string;
   @Input() outline: boolean;
+  @Input() rel: string;
   @Input() rounded: boolean;
   @Input() size: string;
   @Input() target: string;
