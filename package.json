@@ -1,7 +1,14 @@
 {
-  "name": "@fabula/angular",
+  "name": "@fabula-ui/angular",
   "description": "Fabula UI Angular library",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabula-ui/angular.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "start-storybook -p 8008",
@@ -18,7 +25,7 @@
     "storybook": "start-storybook -p 8008",
     "storybook:ci": "start-storybook -p 8008 --ci"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
