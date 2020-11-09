@@ -1,11 +1,19 @@
-<div class="fab-alert" [attr.data-closing]="closing" [attr.data-title]="!!title" data-fab-component="alert"
+<div
+  class="fab-alert"
+  [attr.data-closing]="closing"
+  [attr.data-title]="!!title"
+  data-fab-component="alert"
   *ngIf="visible">
-  <ng-content select="fab-icon"></ng-content>
-  <fab-inner-icon [icon]="icon" [parentProps]="props" *ngIf="icon"></fab-inner-icon>
+  <fab-icon [props]="icon" *ngIf="icon"></fab-icon>
   <div class="fab-alert__stage">
     <div class="fab-alert__title" *ngIf="title">{{title}}</div>
     <div class="fab-alert__text" *ngIf="text">{{text}}</div>
     <ng-content></ng-content>
   </div>
-  <fab-close-button *ngIf="closeButton" (close)="closeAlert()" [parentColor]="color" size="sm"></fab-close-button>
+  <fab-close-button
+    (close)="closeAlert()"
+    [parentColor]="color"
+    size="sm"
+    *ngIf="closeButton">
+  </fab-close-button>
 </div>

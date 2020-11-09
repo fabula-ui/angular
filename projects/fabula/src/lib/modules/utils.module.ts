@@ -13,6 +13,7 @@ import { OverflowDirective } from '../directives/overflow.directive';
 import { PaddingDirective } from '../directives/padding.directive';
 import { RowDirective } from '../directives/row.directive';
 import { SizeDirective } from '../directives/size.directive';
+import { VisibilityDirective } from '../directives/visibility.directive';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { SizeDirective } from '../directives/size.directive';
         OverflowDirective,
         PaddingDirective,
         RowDirective,
-        SizeDirective
+        SizeDirective,
+        VisibilityDirective
     ],
     imports: [
         CommonModule,
@@ -44,7 +46,8 @@ import { SizeDirective } from '../directives/size.directive';
         MarginDirective,
         PaddingDirective,
         RowDirective,
-        SizeDirective
+        SizeDirective,
+        VisibilityDirective
     ]
 })
 export class UtilsModule {}

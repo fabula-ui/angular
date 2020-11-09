@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
@@ -41,18 +40,16 @@ export class AlertComponent extends CommonComponent implements OnInit {
 
   closing;
   host;
-  props;
 
-  constructor(public elRef: ElementRef) { 
-    super(elRef);
-  }
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
     this.host = this.elRef.nativeElement;
     this.props = this;
     this.styles = AlertStyles;
+
     this.initStyles();
-    
+
     if (this.type) { this.handleType(); }
   }
 
@@ -97,9 +94,4 @@ export class AlertComponent extends CommonComponent implements OnInit {
         };
     }
   }
-
-  isObject(subject) {
-    return typeof subject === 'object';
-  }
-
 }

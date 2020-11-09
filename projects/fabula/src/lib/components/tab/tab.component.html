@@ -1,11 +1,9 @@
-<div class="fab-tab" [attr.data-active]="active" data-fab-wrapper="tab">
-  <button (click)="handleClick()" *ngIf="!href && !link" data-fab-component="tab">
-    <ng-container *ngTemplateOutlet="content"></ng-container>
-  </button>
+<button class="fab-tab" [attr.data-active]="active" (click)="handleClick()" *ngIf="!href && !link" data-fab-component="tab">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</button>
 
-  <a *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target" data-fab-component="tab">
-    <ng-content *ngTemplateOutlet="content"></ng-content>
-  </a>
-</div>
+<a class="fab-tab" [attr.data-active]="active" *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target" data-fab-component="tab">
+  <ng-content *ngTemplateOutlet="content"></ng-content>
+</a>
 
 <ng-template #content><ng-content></ng-content></ng-template>

@@ -21,5 +21,4 @@ export class SizeDirective implements AfterViewInit {
 
         host.classList.add(css(UtilsStyles({ angularElement, framework: 'angular', props: this })));
     }
-
 }
