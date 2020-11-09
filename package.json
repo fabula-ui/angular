@@ -80,8 +80,12 @@
       "projects/fabula"
     ],
     "transform": {
+      "\\.(eot)$": "<rootDir>/tests/unit/fontMock.js",
       "\\.(svg)$": "<rootDir>/tests/unit/svgMock.js",
-      "^.+\\.(ts|js|html)$": "ts-jest"
+      "^.+\\.(ts|js|html)$": "ts-jest",
+      "\\.(ttf)$": "<rootDir>/tests/unit/fontMock.js",
+      "\\.(woff)$": "<rootDir>/tests/unit/fontMock.js",
+      "\\.(woff2)$": "<rootDir>/tests/unit/fontMock.js"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/src/setup-jest.ts"
@@ -93,7 +97,11 @@
       "@env": "<rootDir>/src/environments/environment",
       "@src/(.*)": "<rootDir>/src/src/$1",
       "@state/(.*)": "<rootDir>/src/app/state/$1",
-      "^.+\\.svg$": "<rootDir>/tests/unit/svgMock.js"
+      "^.+\\.svg$": "<rootDir>/tests/unit/svgMock.js",
+      "^.+\\.eot$": "<rootDir>/tests/unit/fontMock.js",
+      "^.+\\.ttf$": "<rootDir>/tests/unit/fontMock.js",
+      "^.+\\.woff$": "<rootDir>/tests/unit/fontMock.js",
+      "^.+\\.woff2$": "<rootDir>/tests/unit/fontMock.js"
     },
     "globals": {
       "ts-jest": {

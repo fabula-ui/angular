@@ -1,4 +1,4 @@
 export interface Icon {
-    color: string;
+    color?: string;
     name: string;
 }
