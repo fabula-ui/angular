@@ -1,73 +1,101 @@
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Components
 import { AvatarComponent } from './avatar.component';
-import { IconComponent } from '../icon/icon.component';
+
+// Modules
+import { AvatarModule } from '../../modules/avatar.module';
+import { BadgeModule } from '../../modules/badge.module';
+
+@Component({
+  template: `<fab-avatar><fab-badge></fab-badge></fab-avatar>`,
+})
+class BadgeExample { }
 
 describe('Avatar Component', () => {
-    let component: AvatarComponent;
-    let fixture: ComponentFixture<AvatarComponent>;
+  let component: AvatarComponent;
+  let fixture: ComponentFixture<AvatarComponent>;
 
-    beforeEach(async(() => {
-      TestBed.configureTestingModule({
-        declarations: [
-          AvatarComponent,
-          IconComponent,
-        ],
-      })
-        .compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        BadgeExample
+      ],
+      imports: [
+        AvatarModule,
+        BadgeModule
+      ]
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-      fixture = TestBed.createComponent(AvatarComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AvatarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('Should create', () => {
-      expect(component).toBeTruthy();
-    });
+  it('Should create', () => {
+    expect(component).toBeTruthy();
+  });
 
-    it('Should have an icon as an object', () => {
-      component.icon = { name: 'icon' };
-      fixture.detectChanges();
+  it('Should have a defined structure', () => {
+    const compiled: HTMLElement = fixture.debugElement.nativeElement;
+    const avatarElement = compiled.querySelector('.fab-avatar');
+    const wrapperElement = compiled.querySelector('.fab-avatar-wrapper');
 
-      const compiled: HTMLElement = fixture.debugElement.nativeElement;
-      const iconElement = compiled.querySelector('.fab-icon');
-      const name = iconElement.getAttribute('data-name');
+    expect(avatarElement).toBeTruthy();
+    expect(wrapperElement).toBeTruthy();
+  });
 
-      expect(name).toBe('icon');
-    });
+  it('Should have an image', () => {
+    let compiled: HTMLElement;
+    let element;
 
-    it('Should have an icon as a string', () => {
-      component.icon = 'icon';
-      fixture.detectChanges();
+    component.src = 'image';
+    fixture.detectChanges();
 
-      const compiled: HTMLElement = fixture.debugElement.nativeElement;
-      const iconElement = compiled.querySelector('.fab-icon');
-      const name = iconElement.getAttribute('data-name');
+    compiled = fixture.debugElement.nativeElement;
+    element = compiled.querySelector('.fab-avatar__image');
 
-      expect(name).toBe('icon');
-    });
+    expect(element).toBeTruthy();
+    expect(element.style.backgroundImage).toBe(`url(image)`);
+  });
 
-    it('Should show initials', () => {
-      component.showInitials = 'Show Initials';
-      fixture.detectChanges();
+  it('Should have an icon', () => {
+    let compiled: HTMLElement;
+    let iconElement;
 
-      const compiled: HTMLElement = fixture.debugElement.nativeElement;
-      const initalsElement = compiled.querySelector('.fab-avatar__initials');
-      const text = initalsElement.textContent;
+    component.icon = { name: 'icon' };
+    fixture.detectChanges();
 
-      expect(text).toBe('SI');
-    });
+    compiled = fixture.debugElement.nativeElement;
+    iconElement = compiled.querySelector('.fab-icon');
 
-    it('Should hide icon when showing initials', () => {
-      component.showInitials = 'Show Initials';
-      fixture.detectChanges();
+    expect(iconElement).toBeTruthy();
+  });
 
-      const compiled: HTMLElement = fixture.debugElement.nativeElement;
-      const iconElement = compiled.querySelector('.fab-icon');
+  it('Should show initials', () => {
+    let compiled: HTMLElement;
+    let iconElement;
+    let initialsElement;
 
-      expect(iconElement).toBeFalsy();
-    });
+    component.showInitials = 'Show Initials';
+    fixture.detectChanges();
 
+    compiled = fixture.debugElement.nativeElement;
+    iconElement = compiled.querySelector('.fab-icon');
+    initialsElement = compiled.querySelector('.fab-avatar__initials');
+
+    expect(iconElement).toBeFalsy();
+    expect(initialsElement.textContent).toBe('SI');
+  });
+
+  it('Should accept external components - eg: badge', () => {
+    const badgeFixture = TestBed.createComponent(BadgeExample);
+    const compiled: HTMLElement = badgeFixture.debugElement.nativeElement;
+    const badgeElement = compiled.querySelector('.fab-badge');
+
+    expect(badgeElement).toBeTruthy();
+  });
 });

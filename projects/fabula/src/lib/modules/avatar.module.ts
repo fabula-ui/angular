@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { AvatarComponent } from '../components/avatar/avatar.component';
 
 // Modules
-import { InnerIconModule } from '../modules/inner-icon.module';
+import { IconsModule } from '../modules/icons.module';
 
 @NgModule({
     declarations: [
@@ -18,7 +18,7 @@ import { InnerIconModule } from '../modules/inner-icon.module';
     ],
     imports: [
         CommonModule,
-        InnerIconModule
+        IconsModule
     ],
     exports: [
         AvatarComponent

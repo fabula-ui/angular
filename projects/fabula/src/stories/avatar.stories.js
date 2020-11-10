@@ -13,21 +13,26 @@ import {
     WrapperModule
 } from '../public-api';
 
-// Wrappers
+// Examples
+import { AvatarExternalBadgeExample } from './wrappers/avatar/external-badge/example/avatar-external-badge.example';
+
+// Example
 import { AvatarExampleWrapper } from './wrappers/avatar/example/avatar-example.wrapper';
+
+// Props
 import { AvatarColorWrapper } from './wrappers/avatar/color/avatar-color.wrapper';
 import { AvatarDarkenWrapper } from './wrappers/avatar/darken/avatar-darken.wrapper';
 import { AvatarFadedWrapper } from './wrappers/avatar/faded/avatar-faded.wrapper';
 import { AvatarIconWrapper } from './wrappers/avatar/icon/avatar-icon.wrapper';
 import { AvatarLightenWrapper } from './wrappers/avatar/lighten/avatar-lighten.wrapper';
-
 import { AvatarExternalBadgeWrapper } from './wrappers/avatar/external-badge/avatar-external-badge.wrapper';
 import { AvatarRoundedWrapper } from './wrappers/avatar/rounded/avatar-rounded.wrapper';
 import { AvatarShowInitialsWrapper } from './wrappers/avatar/show-initials/avatar-show-initials.wrapper';
 import { AvatarSizeWrapper } from './wrappers/avatar/size/avatar-size.wrapper';
 
-// Examples
-import { AvatarExternalBadgeExample } from './wrappers/avatar/external-badge/example/avatar-external-badge.example';
+// Utils
+import { AvatarUtilMarginWrapper } from './wrappers/avatar/util-margin/avatar-util-margin.wrapper';
+import { AvatarUtilVisibilityWrapper } from './wrappers/avatar/util-visibility/avatar-util-visibility.wrapper';
 
 export default {
     decorators: [
@@ -84,12 +89,20 @@ export const PropRounded = () => ({
     component: AvatarRoundedWrapper,
 });
 
-export const ShowInitials = () => ({
+export const PropShowInitials = () => ({
     component: AvatarShowInitialsWrapper,
 });
 
 export const PropSize = () => ({
     component: AvatarSizeWrapper,
+});
+
+export const UtilMargin = () => ({
+    component: AvatarUtilMarginWrapper,
+});
+
+export const UtilVisibility = () => ({
+    component: AvatarUtilVisibilityWrapper,
 });
 
 export const ExternalBadge = () => ({

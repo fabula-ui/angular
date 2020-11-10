@@ -4,7 +4,10 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { CommonComponent } from '../common-component/common-component.component';
 
 // Methods
-import getInitials from '@fabula/core/styles/methods/misc/getInitials';
+import getInitials from '@fabula/core/methods/misc/getInitials';
+
+// Models
+import { Icon } from '../../models/icon.model';
 
 // Styles
 import AvatarStyles from '@fabula/core/styles/components/avatar/avatar';
@@ -18,12 +21,14 @@ export class AvatarComponent extends CommonComponent implements OnInit {
   @Input() color = '';
   @Input() darken = false;
   @Input() faded = false;
-  @Input() icon: any = 'image';
-  @Input() image = '';
+  @Input() icon: Icon = {
+    name: 'image'
+  };
   @Input() lighten = false;
   @Input() rounded = false;
   @Input() showInitials = '';
   @Input() size = 'md';
+  @Input() src = '';
 
   inline = true;
 
