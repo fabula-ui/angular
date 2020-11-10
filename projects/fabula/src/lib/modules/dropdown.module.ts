@@ -13,7 +13,7 @@ import { DropdownComponent } from '../components/dropdown/dropdown.component';
 
 // Modules
 import { ButtonModule } from './button.module';
-import { InnerIconModule } from './inner-icon.module';
+import { IconsModule } from './icons.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +27,7 @@ import { InnerIconModule } from './inner-icon.module';
     imports: [
         ButtonModule,
         CommonModule,
-        InnerIconModule
+        IconsModule
     ],
     exports: [
         DividerComponent,

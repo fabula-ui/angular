@@ -6,10 +6,6 @@ import { CommonModule } from '@angular/common';
 // Components
 import { ButtonComponent } from '../components/button/button.component';
 
-// Modules
-import { InnerIconModule } from '../modules/inner-icon.module';
-
-
 @NgModule({
     declarations: [
         ButtonComponent,
@@ -19,7 +15,6 @@ import { InnerIconModule } from '../modules/inner-icon.module';
     ],
     imports: [
         CommonModule,
-        InnerIconModule
     ],
     exports: [
         ButtonComponent
