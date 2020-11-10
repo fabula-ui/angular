@@ -5,16 +5,18 @@
   <ng-container *ngIf="!label && !props.label">
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </ng-container>
-  <ng-container *ngIf="label || props.label">
-    {{label || props.label}}
-  </ng-container>
+  <ng-container *ngIf="label || props.label">{{label || props.label}}</ng-container>
 </button>
 
 <a class="fab-button" [attr.data-border]="border || props.border" [attr.data-color]="color || props.color"
   [attr.data-circle]="!!circle || !!props.circle" [attr.data-expand]="expand || props.expand"
   [attr.data-outline]="outline || props.outline" [attr.data-rounded]="rounded || props.rounded"
-  [attr.href]="href || props.href" [attr.rel]="rel || props.rel" [attr.target]="target || props.target" data-fab-component="button" *ngIf="href">
-  <ng-content *ngTemplateOutlet="content"></ng-content>
+  [attr.href]="href || props.href" [attr.rel]="rel || props.rel" [attr.target]="target || props.target"
+  data-fab-component="button" *ngIf="href">
+  <ng-container *ngIf="!label && !props.label">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </ng-container>
+  <ng-container *ngIf="label || props.label">{{label || props.label}}</ng-container>
 </a>
 
 <ng-template #content>

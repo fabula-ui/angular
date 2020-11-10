@@ -3,8 +3,6 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    BadgeComponent,
-    ButtonGroupComponent,
     ButtonModule,
     IconsModule,
     ThemeModule,
@@ -13,7 +11,7 @@ import {
     WrapperModule
 } from '../public-api';
 
-// Wrappers
+// Props
 import { ButtonBorderWrapper } from './wrappers/button/border/button-border.wrapper';
 import { ButtonCircleWrapper } from './wrappers/button/circle/button-circle.wrapper';
 import { ButtonClearWrapper } from './wrappers/button/clear/button-clear.wrapper';
@@ -32,15 +30,17 @@ import { ButtonRoundedWrapper } from './wrappers/button/rounded/button-rounded.w
 import { ButtonSizeWrapper } from './wrappers/button/size/button-size.wrapper';
 import { ButtonWideWrapper } from './wrappers/button/wide/button-wide.wrapper';
 
+// Utils
+import { ButtonUtilMarginWrapper } from './wrappers/button/util-margin/button-util-margin.wrapper';
+import { ButtonUtilPaddingWrapper } from './wrappers/button/util-padding/button-util-padding.wrapper';
+import { ButtonUtilVisibilityWrapper } from './wrappers/button/util-visibility/button-util-visibility.wrapper';
+
 // Module init
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                BadgeComponent,
-                ButtonGroupComponent
-            ],
             imports: [
+                ButtonModule,
                 BrowserModule,
                 ButtonModule,
                 IconsModule,
@@ -74,3 +74,6 @@ export const PropOutline = () => ({ component: ButtonOutlineWrapper });
 export const PropRounded = () => ({ component: ButtonRoundedWrapper });
 export const PropSize = () => ({ component: ButtonSizeWrapper });
 export const PropWide = () => ({ component: ButtonWideWrapper });
+export const UtilMargin = () => ({ component: ButtonUtilMarginWrapper });
+export const UtilPadding = () => ({ component: ButtonUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: ButtonUtilVisibilityWrapper });

@@ -17,7 +17,7 @@ import {
     WrapperModule
 } from '../public-api';
 
-// Wrappers
+// Props
 import { BadgeClearWrapper } from './wrappers/badge/clear/badge-clear.wrapper';
 import { BadgeColorWrapper } from './wrappers/badge/color/badge-color.wrapper';
 import { BadgeDarkenWrapper } from './wrappers/badge/darken/badge-darken.wrapper';
@@ -27,6 +27,11 @@ import { BadgeInvertWrapper } from './wrappers/badge/invert/badge-invert.wrapper
 import { BadgeLightenWrapper } from './wrappers/badge/lighten/badge-lighten.wrapper';
 import { BadgeOutlineWrapper } from './wrappers/badge/outline/badge-outline.wrapper';
 import { BadgeRoundedWrapper } from './wrappers/badge/rounded/badge-rounded.wrapper';
+
+// Utils
+import { BadgeUtilMarginWrapper } from './wrappers/badge/util-margin/badge-util-margin.wrapper';
+import { BadgeUtilPaddingWrapper } from './wrappers/badge/util-padding/badge-util-padding.wrapper';
+import { BadgeUtilVisibilityWrapper } from './wrappers/badge/util-visibility/badge-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -66,3 +71,6 @@ export const PropInvert = () => ({ component: BadgeInvertWrapper });
 export const PropLighten = () => ({ component: BadgeLightenWrapper });
 export const PropOutline = () => ({ component: BadgeOutlineWrapper });
 export const PropRounded = () => ({ component: BadgeRoundedWrapper });
+export const UtilMargin = () => ({ component: BadgeUtilMarginWrapper });
+export const UtilPadding = () => ({ component: BadgeUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: BadgeUtilVisibilityWrapper });

@@ -40,13 +40,11 @@ export class ButtonComponent extends CommonComponent implements AfterViewInit {
   @Input() target: string;
   @Input() wide: boolean;
 
-  host;
   inline = true;
 
   constructor(public elRef: ElementRef) { super(elRef); }
 
   ngAfterViewInit() {
-    this.host = this.elRef.nativeElement;
     this.styles = ButtonStyles;
     this.initStyles();
   }

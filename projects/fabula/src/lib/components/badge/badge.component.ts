@@ -34,5 +34,4 @@ export class BadgeComponent extends CommonComponent implements OnInit {
     this.styles = BadgeStyles;
     this.initStyles();
   }
-
 }

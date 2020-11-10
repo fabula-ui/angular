@@ -6,9 +6,9 @@ import { BadgeComponent } from './badge.component';
 @Component({
     template: `<fab-badge>Label</fab-badge>`,
 })
-class BadgeLabelComponent { }
+class BadgeExample { }
 
-describe('Avatar Component', () => {
+describe('Badge Component', () => {
     let component: BadgeComponent;
     let fixture: ComponentFixture<BadgeComponent>;
 
@@ -16,7 +16,7 @@ describe('Avatar Component', () => {
         TestBed.configureTestingModule({
             declarations: [
                 BadgeComponent,
-                BadgeLabelComponent
+                BadgeExample
             ],
         })
             .compileComponents();
@@ -32,6 +32,13 @@ describe('Avatar Component', () => {
         expect(component).toBeTruthy();
     });
 
+    it('Should have a defined structure', () => {
+        const compiled: HTMLElement = fixture.debugElement.nativeElement;
+        const badgeElement = compiled.querySelector('.fab-badge');
+    
+        expect(badgeElement).toBeTruthy();
+      });
+
     it('Should have a label', () => {
         component.label = 'Label';
         fixture.detectChanges();
@@ -42,10 +49,9 @@ describe('Avatar Component', () => {
     });
 
     it('Should have inner text as children', () => {
-        const labelFixture = TestBed.createComponent(BadgeLabelComponent);
-        const compiled: HTMLElement = labelFixture.debugElement.nativeElement;
+        const tempFixture = TestBed.createComponent(BadgeExample);
+        const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
 
         expect(compiled.textContent).toBe('Label');
     });
-
 });
