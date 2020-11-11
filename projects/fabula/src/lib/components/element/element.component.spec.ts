@@ -2,25 +2,25 @@ import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 // Components
-import { ContentComponent } from './content.component';
+import { ElementComponent } from './element.component';
 
 // Modules
 import { GridModule } from '../../modules/grid.module';
 
 @Component({
-    template: `<fab-content>Content</fab-content>`,
+    template: `<fab-element>Content</fab-element>`,
 })
-class ContentExample { }
+class ElementExample { }
 
-describe('Content Component', () => {
-    let component: ContentComponent;
-    let fixture: ComponentFixture<ContentComponent>;
+describe('Element Component', () => {
+    let component: ElementComponent;
+    let fixture: ComponentFixture<ElementComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                ContentComponent,
-                ContentExample
+                ElementComponent,
+                ElementExample
             ],
             imports: [
                 GridModule
@@ -29,7 +29,7 @@ describe('Content Component', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(ContentComponent);
+        fixture = TestBed.createComponent(ElementComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -40,13 +40,13 @@ describe('Content Component', () => {
 
     it('Should have a defined structure', () => {
         const compiled: HTMLElement = fixture.debugElement.nativeElement;
-        const element = compiled.querySelector('.fab-content');
+        const element = compiled.querySelector('.fab-element');
 
         expect(element).toBeTruthy();
     });
 
     it('Should have inner content as children', () => {
-        const labelFixture = TestBed.createComponent(ContentExample);
+        const labelFixture = TestBed.createComponent(ElementExample);
         const compiled: HTMLElement = labelFixture.debugElement.nativeElement;
 
         labelFixture.detectChanges();

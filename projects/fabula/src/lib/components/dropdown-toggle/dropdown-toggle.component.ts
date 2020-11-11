@@ -1,4 +1,6 @@
 import {
+    AfterViewChecked,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     EventEmitter,
@@ -11,6 +13,9 @@ import {
 // Components
 import { ButtonComponent } from '../button/button.component';
 
+// Models
+import { Icon } from '../../models/icon.model';
+
 // Styles
 import DropdownToggleStyles from '@fabula/core/styles/components/dropdown-toggle/dropdown-toggle';
 
@@ -18,10 +23,10 @@ import DropdownToggleStyles from '@fabula/core/styles/components/dropdown-toggle
     selector: 'fab-dropdown-toggle',
     templateUrl: './dropdown-toggle.component.html',
 })
-export class DropdownToggleComponent extends ButtonComponent implements OnInit {
+export class DropdownToggleComponent extends ButtonComponent implements AfterViewChecked, OnInit {
     @Input() arrow = true;
     @Input() direction: string;
-    @Input() icon: string;
+    @Input() icon: Icon;
     @Input() label: string;
     @Input() isOpen = false;
 
@@ -29,13 +34,17 @@ export class DropdownToggleComponent extends ButtonComponent implements OnInit {
 
     @ViewChild('label') labelEl: ElementRef;
 
-    constructor(public elRef: ElementRef) { super(elRef) }
+    constructor(
+        public cdRef: ChangeDetectorRef,
+        public elRef: ElementRef,
+    ) { super(elRef) }
 
+    ngAfterViewChecked() {
+        this.cdRef.detectChanges();
+    }
+    
     ngOnInit() {
-        // Set props
-        this.props = {
-            ...this,
-        };
+        this.props = { ...this };
         this.styles = DropdownToggleStyles;
         this.initStyles();
     }

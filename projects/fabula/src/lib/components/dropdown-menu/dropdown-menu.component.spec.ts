@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DropdownMenuComponent } from './dropdown-menu.component';
@@ -7,7 +7,7 @@ import { DropdownModule } from '../../modules/dropdown.module';
 @Component({
     template: `<fab-dropdown-menu color="blue">Custom Content</fab-dropdown-menu>`,
 })
-class DropdownExample {}
+class DropdownExample { }
 
 describe('Dropdown Menu Component', () => {
     let component: DropdownMenuComponent;
@@ -36,7 +36,7 @@ describe('Dropdown Menu Component', () => {
     });
 
     it('Should have items', () => {
-        component.items = [{ label: 'Item 1'}, { label: 'Item 2' }, { label: 'Item 3' }];
+        component.items = [{ label: 'Item 1' }, { label: 'Item 2' }, { label: 'Item 3' }];
 
         fixture.detectChanges();
 
@@ -57,6 +57,7 @@ describe('Dropdown Menu Component', () => {
         expect(compiled.textContent).toBe('Custom Content');
     });
 
+    // TODO: fix this test
     // it('Should set color', () => {
     //     component.color = 'blue';
     //     component.ngOnInit();
