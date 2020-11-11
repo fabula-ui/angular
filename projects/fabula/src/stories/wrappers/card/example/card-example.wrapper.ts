@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-card-example-wrapper',
     templateUrl: './card-example.wrapper.html'
 })
-export class CardExampleWrapper implements OnInit {
+export class CardExampleWrapper {
     items = [
         {
             badges: [
@@ -43,9 +42,4 @@ export class CardExampleWrapper implements OnInit {
             ]
         }
     ];
-    constructor() { }
-
-    ngOnInit() {
-    }
-
 }

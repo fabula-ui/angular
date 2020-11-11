@@ -2,14 +2,16 @@
 import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Components
 import { CardComponent } from './card.component';
-import { CardImageComponent } from '../card-image/card-image.component';
-import { CardSectionComponent } from '../card-section/card-section.component';
+
+// Modules
+import { CardModule } from '../../modules/card.module';
 
 @Component({
     template: `<fab-card layout="h"><fab-card-image></fab-card-image><fab-card-section></fab-card-section></fab-card>`,
 })
-class CardChildrenComponent implements AfterViewInit {
+class CardExample implements AfterViewInit {
     constructor(public cdRef: ChangeDetectorRef) { }
 
     ngAfterViewInit() {
@@ -24,13 +26,12 @@ describe('Card Component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                CardComponent,
-                CardChildrenComponent,
-                CardImageComponent,
-                CardSectionComponent
+                CardExample
             ],
-        })
-            .compileComponents();
+            imports: [
+                CardModule
+            ]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -43,8 +44,31 @@ describe('Card Component', () => {
         expect(component).toBeTruthy();
     });
 
+    it('Should have a defined structure', () => {
+        const compiled: HTMLElement = fixture.debugElement.nativeElement;
+        const cardElement = compiled.querySelector('.fab-card');
+
+        expect(cardElement).toBeTruthy();
+    });
+
+    it('Should have card components as children', () => {
+        const tempFixture = TestBed.createComponent(CardExample);
+        let compiled: HTMLElement;
+        let imageElement;
+        let sectionElement;
+
+        tempFixture.detectChanges();
+
+        compiled = tempFixture.debugElement.nativeElement;
+        imageElement = compiled.querySelector('.fab-card-image');
+        sectionElement = compiled.querySelector('.fab-card-section');
+
+        expect(imageElement).toBeTruthy();
+        expect(sectionElement).toBeTruthy();
+    });
+
     it('Should pass layout prop to children', () => {
-        const childrenFixture = TestBed.createComponent(CardChildrenComponent);
+        const childrenFixture = TestBed.createComponent(CardExample);
         const compiled: HTMLElement = childrenFixture.debugElement.nativeElement;
         let cardImageElement;
         let cardSectionElement;
@@ -57,5 +81,4 @@ describe('Card Component', () => {
         expect(cardImageElement.getAttribute('data-layout')).toBe('h');
         expect(cardSectionElement.getAttribute('data-layout')).toBe('h');
     });
-
 });

@@ -9,6 +9,7 @@ import { CardComponent } from '../components/card/card.component';
 // Modules
 import { CardSectionComponent } from '../components/card-section/card-section.component';
 import { CardImageComponent } from '../components/card-image/card-image.component';
+import { IconsModule } from './icons.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CardImageComponent } from '../components/card-image/card-image.componen
         CardSectionComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        IconsModule
     ],
     exports: [
         CardComponent,

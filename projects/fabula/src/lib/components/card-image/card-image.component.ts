@@ -3,6 +3,9 @@ import { Component, ElementRef, OnInit, Input } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Models
+import { Icon } from '../../models/icon.model';
+
 // Styles
 import CardImageStyles from '@fabula/core/styles/components/card-image/card-image';
 
@@ -17,7 +20,9 @@ export class CardImageComponent extends CommonComponent implements OnInit {
   @Input() darken = false;
   @Input() faded = false;
   @Input() height: any;
-  @Input() icon: string;
+  @Input() icon: Icon = {
+    name: 'image'
+  };
   @Input() layout: string;
   @Input() lighten = false;
   @Input() src: string;

@@ -41,7 +41,7 @@ describe('Button Group Component', () => {
     it('Should have a defined structure', () => {
         const compiled: HTMLElement = fixture.debugElement.nativeElement;
         const element = compiled.querySelector('.fab-button-group');
-    
+
         expect(element).toBeTruthy();
       });
 

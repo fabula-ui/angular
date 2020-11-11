@@ -3,20 +3,17 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    BadgeComponent,
+    BadgeModule,
     ButtonModule,
-    ButtonGroupComponent,
-    CardComponent,
-    CardImageComponent,
-    CardSectionComponent,
+    ButtonGroupModule,
+    CardModule,
     GridModule,
     HelpersModule,
     IconsModule,
-    ListComponent,
-    ListItemComponent,
-    TagComponent,
-    TagGroupComponent,
+    ListModule,
+    TagModule,
     TextComponent,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -25,38 +22,38 @@ import {
 // Examples
 import { CardExample } from './examples/card/example/card.example';
 
-// Wrappers
+// Props
 import { CardExampleWrapper } from './wrappers/card/example/card-example.wrapper';
 import { CardColorWrapper } from './wrappers/card/color/card-color.wrapper';
 import { CardGlowWrapper } from './wrappers/card/glow/card-glow.wrapper';
 import { CardLayoutWrapper } from './wrappers/card/layout/card-layout.wrapper';
+
+// Utils
+import { CardUtilMarginWrapper } from './wrappers/card/util-margin/card-util-margin.wrapper';
+import { CardUtilVisibilityWrapper } from './wrappers/card/util-visibility/card-util-visibility.wrapper';
 
 // Module init
 export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                BadgeComponent,
-                ButtonGroupComponent,
-                CardComponent,
                 CardExample,
-                CardImageComponent,
-                CardSectionComponent,
-                ListComponent,
-                ListItemComponent,
-                TagComponent,
-                TagGroupComponent,
-                TextComponent,
             ],
             entryComponents: [
                 CardExample
             ],
             imports: [
+                BadgeModule,
                 BrowserModule,
                 ButtonModule,
+                ButtonGroupModule,
+                CardModule,
                 GridModule,
                 HelpersModule,
                 IconsModule,
+                ListModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
@@ -73,3 +70,5 @@ export const Example = () => ({ component: CardExampleWrapper });
 export const PropColor = () => ({ component: CardColorWrapper });
 export const PropGlow = () => ({ component: CardGlowWrapper });
 export const PropLayout = () => ({ component: CardLayoutWrapper });
+export const UtilMargin = () => ({ component: CardUtilMarginWrapper });
+export const UtilVisibility = () => ({ component: CardUtilVisibilityWrapper });
