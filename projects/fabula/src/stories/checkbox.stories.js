@@ -3,14 +3,14 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    CheckboxComponent,
+    CheckboxModule,
     HelpersModule,
     ThemeModule,
     ThemeService,
     UtilsModule
 } from '../public-api';
 
-// Wrappers
+// Props
 import { CheckboxActiveColorWrapper } from './wrappers/checkbox/active-color/checkbox-active-color.wrapper';
 import { CheckboxColorWrapper } from './wrappers/checkbox/color/checkbox-color.wrapper';
 import { CheckboxDisabledWrapper } from './wrappers/checkbox/disabled/checkbox-disabled.wrapper';
@@ -19,15 +19,17 @@ import { CheckboxInactiveColorWrapper } from './wrappers/checkbox/inactive-color
 import { CheckboxReadOnlyWrapper } from './wrappers/checkbox/read-only/checkbox-read-only.wrapper';
 import { CheckboxSizeWrapper } from './wrappers/checkbox/size/checkbox-size.wrapper';
 
+// Utils
+import { CheckboxUtilMarginWrapper } from './wrappers/checkbox/util-margin/checkbox-util-margin.wrapper';
+import { CheckboxUtilVisibilityWrapper } from './wrappers/checkbox/util-visibility/checkbox-util-visibility.wrapper';
+
 // Module init
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                CheckboxComponent
-            ],
             imports: [
                 BrowserModule,
+                CheckboxModule,
                 HelpersModule,
                 ThemeModule.forRoot(),
                 UtilsModule
@@ -48,3 +50,5 @@ export const PropDisabled = () => ({ component: CheckboxDisabledWrapper });
 export const PropInactiveColor = () => ({ component: CheckboxInactiveColorWrapper });
 export const PropReadOnly = () => ({ component: CheckboxReadOnlyWrapper });
 export const PropSize = () => ({ component: CheckboxSizeWrapper });
+export const UtilMargin = () => ({ component: CheckboxUtilMarginWrapper });
+export const UtilVisibility = () => ({ component: CheckboxUtilVisibilityWrapper });

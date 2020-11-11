@@ -5,12 +5,14 @@ import { css } from 'emotion';
 import { ContentComponent } from '../content/content.component';
 
 @Component({
+  templateUrl: '../content/content.component.html',
   selector: 'fab-tab-content',
-  templateUrl: './tab-content.component.html',
 })
 export class TabContentComponent extends ContentComponent implements OnInit {
   constructor(public elRef: ElementRef) { 
     super(elRef);
+
+    this.contentClass = 'fab-tab-content';
   }
 
   ngOnInit() {

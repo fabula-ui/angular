@@ -7,10 +7,10 @@ import { DropdownItemComponent } from './dropdown-item.component';
 
 @Component({
     template: `
-            <fab-dropdown-item>Custom Content</fab-dropdown-item>
+            <fab-dropdown-item>Label</fab-dropdown-item>
         `,
 })
-class DropdownCustomContent implements AfterViewInit {
+class DropdownExample implements AfterViewInit {
     public output = '';
 
     constructor(public cdRef: ChangeDetectorRef) { }
@@ -25,11 +25,11 @@ class DropdownCustomContent implements AfterViewInit {
 }
 
 @Component({
-    template: `<fab-dropdown [open]="true">
+    template: `<fab-dropdown [isOpen]="true">
         <fab-dropdown-menu (clickItem)="handleClick()" [items]="[{ button: true, label: 'Item 1'}]"></fab-dropdown-menu>
     </fab-dropdown>`,
 })
-class DropdownParentClick implements AfterViewInit {
+class DropdownParentClickExample implements AfterViewInit {
     output = '';
 
     constructor(public cdRef: ChangeDetectorRef) { }
@@ -50,14 +50,13 @@ describe('Dropdown Toggle Component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                DropdownCustomContent,
-                DropdownParentClick
+                DropdownExample,
+                DropdownParentClickExample
             ],
             imports: [
                 DropdownModule
             ]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -71,43 +70,118 @@ describe('Dropdown Toggle Component', () => {
     });
 
     it('Should have a label', () => {
+        let compiled: HTMLElement;
+
         component.label = 'Label';
         fixture.detectChanges();
 
-        const compiled: HTMLElement = fixture.debugElement.nativeElement;
+        compiled = fixture.debugElement.nativeElement;
 
         expect(compiled.textContent).toBe('Label');
     });
 
-    it('Should have custom content', () => {
-        const tempFixture = TestBed.createComponent(DropdownCustomContent);
+    it('Should have children as label', () => {
+        const tempFixture = TestBed.createComponent(DropdownExample);
+        let compiled: HTMLElement;
+
         tempFixture.detectChanges();
 
-        const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
+        compiled = tempFixture.debugElement.nativeElement;
 
-        expect(compiled.textContent).toBe('Custom Content');
+        expect(compiled.textContent).toBe('Label');
+    });
+
+    // TODO: fix this test
+    // it('Should set color', () => {
+    //     let compiled: HTMLElement;
+    //     let element;
+
+    //     component.color = 'blue';
+    //     component.ngAfterViewInit();
+
+    //     fixture.detectChanges();
+
+    //     compiled = fixture.debugElement.nativeElement;
+    //     element = compiled.querySelector('.fab-dropdown-item');        
+
+    //     expect(getComputedStyle(element).backgroundColor).toBe('blue');
+    // });
+
+    it('Should be an anchor', () => {
+        let anchorElement;
+        let buttonElement;
+        let compiled: HTMLElement;
+        let divElement;
+
+        component.href = 'href';
+        component.rel = 'rel';
+        component.target = 'target';
+        component.ngAfterViewInit();
+
+        fixture.detectChanges();
+
+        compiled = fixture.debugElement.nativeElement;
+        anchorElement = compiled.querySelector('a.fab-dropdown-item');
+        buttonElement = compiled.querySelector('button.fab-dropdown-item');
+        divElement = compiled.querySelector('div.fab-dropdown-item');
+
+        expect(anchorElement.getAttribute('href')).toBe('href');
+        expect(anchorElement.getAttribute('rel')).toBe('rel');
+        expect(anchorElement.getAttribute('target')).toBe('target');
+        expect(buttonElement).toBeFalsy();
+        expect(divElement).toBeFalsy();
     });
 
     it('Should be a button', () => {
+        let anchorElement;
+        let buttonElement;
+        let compiled: HTMLElement;
+        let divElement;
+
         component.button = true;
-        component.ngOnInit();
+        component.ngAfterViewInit();
 
         fixture.detectChanges();
 
-        const compiled: HTMLElement = fixture.debugElement.nativeElement;
-        const buttonElement = compiled.querySelector('.fab-button');
+        compiled = fixture.debugElement.nativeElement;
+        compiled = fixture.debugElement.nativeElement;
+        anchorElement = compiled.querySelector('a.fab-dropdown-item');
+        buttonElement = compiled.querySelector('button.fab-dropdown-item');
+        divElement = compiled.querySelector('div.fab-dropdown-item');
 
+        expect(anchorElement).toBeFalsy();
         expect(buttonElement).toBeTruthy();
+        expect(divElement).toBeFalsy();
+    });
+
+    it('Should be a button', () => {
+        let anchorElement;
+        let buttonElement;
+        let compiled: HTMLElement;
+        let divElement;
+
+        compiled = fixture.debugElement.nativeElement;
+        compiled = fixture.debugElement.nativeElement;
+        anchorElement = compiled.querySelector('a.fab-dropdown-item');
+        buttonElement = compiled.querySelector('button.fab-dropdown-item');
+        divElement = compiled.querySelector('div.fab-dropdown-item');
+
+        expect(anchorElement).toBeFalsy();
+        expect(buttonElement).toBeFalsy();
+        expect(divElement).toBeTruthy();
     });
 
     it('Should call onClick', () => {
+        let buttonElement;
+        let compiled: HTMLElement;
+
         component.button = true;
-        component.ngOnInit();
+        component.ngAfterViewInit();
 
         fixture.detectChanges();
 
-        const compiled: HTMLElement = fixture.debugElement.nativeElement;
-        const buttonElement: any = compiled.querySelector('.fab-button');
+        compiled = fixture.debugElement.nativeElement;
+        buttonElement = compiled.querySelector('button.fab-dropdown-item');
 
         spyOn(buttonElement, 'click');
         buttonElement.click();
@@ -117,23 +191,25 @@ describe('Dropdown Toggle Component', () => {
         expect(buttonElement.click).toHaveBeenCalled();
     });
 
+    // TODO: fix this test
     // it('Should call parent onClick', () => {
-    //     const tempFixture = TestBed.createComponent(DropdownParentClick);
+    //     const exampleFixture = TestBed.createComponent(DropdownParentClickExample);
+    //     const compiled: HTMLElement = exampleFixture.debugElement.nativeElement;
+    //     let exampleComponent = exampleFixture.componentInstance;
+    //     let buttonElement;
 
-    //     tempFixture.detectChanges();
+    //     exampleFixture.detectChanges();
 
-    //     const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
-    //     const buttonElement: any = compiled.querySelector('.fab-dropdown-item');
+    //     buttonElement = compiled.querySelector('button.fab-dropdown-item');
 
     //     spyOn(buttonElement, 'click');
+    //     spyOn(exampleComponent, 'handleClick');
     //     buttonElement.click();
 
-    //     tempFixture.detectChanges();
-
-    //     const tempComponent = tempFixture.componentInstance;
+    //     fixture.detectChanges();
 
     //     expect(buttonElement.click).toHaveBeenCalled();
-    //     expect(tempComponent.output).toBe('Clicked');
+    //     expect(exampleComponent.handleClick).toHaveBeenCalled();
+    //     expect(exampleComponent.output).toBe('clicked');
     // });
-
 });

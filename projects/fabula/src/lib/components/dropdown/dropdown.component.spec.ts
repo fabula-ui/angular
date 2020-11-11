@@ -28,8 +28,7 @@ describe('Dropdown Component', () => {
             imports: [
                 DropdownModule
             ]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -58,19 +57,44 @@ describe('Dropdown Component', () => {
         expect(menuElement).toBeTruthy();
     });
 
-    it('Should have a dropdown menu', () => {
+    it('Should have dropdown menu closed by default', () => {
         const exampleFixture = TestBed.createComponent(DropdownExample);
         const compiled: HTMLElement = exampleFixture.debugElement.nativeElement;
+        let menuElement;
+        let toggleElement;
 
         exampleFixture.detectChanges();
 
-        const menuElement = compiled.querySelector('.fab-dropdown-menu');
-        const toggleElement = compiled.querySelector('.fab-dropdown-toggle');
+        menuElement = compiled.querySelector('.fab-dropdown-menu');
+        toggleElement = compiled.querySelector('.fab-dropdown-toggle');
 
-        expect(menuElement.getAttribute('data-direction')).toBe('down');
         expect(menuElement.getAttribute('data-open')).toBe('false');
-        expect(toggleElement.getAttribute('data-direction')).toBe('down');
         expect(toggleElement.getAttribute('data-open')).toBe('false');
     });
 
+    it('Should open and close dropdown when clicking dropdown toggle', () => {
+        const exampleFixture = TestBed.createComponent(DropdownExample);
+        const compiled: HTMLElement = exampleFixture.debugElement.nativeElement;
+        let menuElement: any;
+        let toggleElement: any;
+
+        exampleFixture.detectChanges();
+
+        menuElement = compiled.querySelector('.fab-dropdown-menu');
+        toggleElement = compiled.querySelector('.fab-dropdown-toggle');
+
+        toggleElement.click();
+
+        exampleFixture.detectChanges();
+
+        expect(menuElement.getAttribute('data-open')).toBe('true');
+        expect(toggleElement.getAttribute('data-open')).toBe('true');
+
+        toggleElement.click();
+
+        exampleFixture.detectChanges();
+
+        expect(menuElement.getAttribute('data-open')).toBe('false');
+        expect(toggleElement.getAttribute('data-open')).toBe('false');
+    });
 });

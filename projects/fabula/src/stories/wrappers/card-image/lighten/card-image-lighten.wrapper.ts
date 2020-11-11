@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-card-image-lighten',
     templateUrl: './card-image-lighten.wrapper.html'
 })
-export class CardImageLightenWrapper implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-}
+export class CardImageLightenWrapper { }

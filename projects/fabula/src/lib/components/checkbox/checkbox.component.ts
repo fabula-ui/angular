@@ -3,6 +3,9 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@ang
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Models
+import { Icon } from '../../models/icon.model';
+
 // Styles
 import CheckboxStyles from '@fabula/core/styles/components/checkbox/checkbox';
 
@@ -48,5 +51,9 @@ export class CheckboxComponent extends CommonComponent implements OnInit {
 
     if (this.checked) { this.check.emit(); }
     if (!this.checked) { this.uncheck.emit(); }
+  }
+
+  get currentIcon(): Icon {
+    return this.indeterminate ? { name: 'minus' } : { name: 'check' }
   }
 }

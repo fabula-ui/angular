@@ -9,7 +9,9 @@ export class CardImageExample {
     @Input() darken = false;
     @Input() faded = false;
     @Input() height = '120';
-    @Input() icon: string;
+    @Input() icon = {
+        name: 'image'
+    };
     @Input() lighten = false;
     @Input() src: string;
     constructor() { }

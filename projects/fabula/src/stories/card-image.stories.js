@@ -5,12 +5,11 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     CardModule,
     GridModule,
+    HelpersModule,
     IconsModule,
-    ListComponent,
-    ListItemComponent,
-    TagComponent,
-    TagGroupComponent,
-    TextComponent,
+    ListModule,
+    TagModule,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -19,7 +18,7 @@ import {
 // Examples
 import { CardImageExample } from './examples/card-image/example/card-image.example';
 
-// Wrappers
+// Props
 import { CardImageColorWrapper } from './wrappers/card-image/color/card-image-color.wrapper';
 import { CardImageDarkenWrapper } from './wrappers/card-image/darken/card-image-darken.wrapper';
 import { CardImageExampleWrapper } from './wrappers/card-image/example/card-image-example.wrapper';
@@ -29,23 +28,25 @@ import { CardImageHeightWrapper } from './wrappers/card-image/height/card-image-
 import { CardImageIconWrapper } from './wrappers/card-image/icon/card-image-icon.wrapper';
 import { CardImageLightenWrapper } from './wrappers/card-image/lighten/card-image-lighten.wrapper';
 
+// Utils
+import { CardImageUtilVisibilityWrapper } from './wrappers/card-image/util-visibility/card-image-util-visibility.wrapper';
+
 // Module init
 export default {
     decorators: [
         moduleMetadata({
             declarations: [
                 CardImageExample,
-                ListComponent,
-                ListItemComponent,
-                TagComponent,
-                TagGroupComponent,
-                TextComponent,
             ],
             imports: [
                 BrowserModule,
                 CardModule,
                 GridModule,
+                HelpersModule,
                 IconsModule,
+                ListModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],
@@ -65,4 +66,5 @@ export const PropFaded = () => ({ component: CardImageFadedWrapper });
 export const PropHeight = () => ({ component: CardImageHeightWrapper });
 export const PropIcon = () => ({ component: CardImageIconWrapper });
 export const PropLighten = () => ({ component: CardImageLightenWrapper });
+export const UtilVisibility = () => ({ component: CardImageUtilVisibilityWrapper });
 export const ExternalTag = () => ({ component: CardImageExternalTagWrapper });

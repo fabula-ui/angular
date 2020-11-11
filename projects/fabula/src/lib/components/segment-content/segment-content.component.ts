@@ -4,11 +4,14 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { ContentComponent } from '../content/content.component';
 
 @Component({
-  selector: 'fab-segment-content',
-  templateUrl: './segment-content.component.html',
+  templateUrl: '../content/content.component.html',
+  selector: 'fab-segment-content'
 })
 export class SegmentContentComponent extends ContentComponent implements OnInit {
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(public elRef: ElementRef) {
+    super(elRef);
+    this.contentClass = 'fab-segment-content';
+  }
 
   ngOnInit() {
     super.ngOnInit();

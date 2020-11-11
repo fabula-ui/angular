@@ -1,11 +1,24 @@
-<button class="fab-dropdown-item" data-fab-component="dropdownItem" (click)="handleClick()" *ngIf="props.button || button">
-  {{props && props.label || label}}
-  <ng-content *ngTemplateOutlet="content"></ng-content>
+<a class="fab-dropdown-item" data-fab-component="dropdownItem" [attr.href]="href || props.href" [attr.rel]="rel || props.rel" [attr.target]="target || props.target"
+  *ngIf="href || props.href">
+  <ng-container *ngIf="(props.label && props.label) || label">{{props.label || label}}</ng-container>
+  <ng-container *ngIf="!props.label && !label">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </ng-container>
+</a>
+
+<button class="fab-dropdown-item" data-fab-component="dropdownItem" (click)="handleClick()"
+  *ngIf="(button || props.button) && !href && !props.href">
+  <ng-container *ngIf="(props.label && props.label) || label">{{props.label || label}}</ng-container>
+  <ng-container *ngIf="!props.label && !label">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </ng-container>
 </button>
 
-<div class="fab-dropdown-item" data-fab-component="dropdownItem" *ngIf="!props.button && !button">
-  {{props && props.label || label}}
-  <ng-content *ngTemplateOutlet="content"></ng-content>
+<div class="fab-dropdown-item" data-fab-component="dropdownItem" *ngIf="!button && !href && !props.button && !props.href">
+  <ng-container *ngIf="(props.label && props.label) || label">{{props.label || label}}</ng-container>
+  <ng-container *ngIf="!props.label && !label">
+    <ng-content *ngTemplateOutlet="content"></ng-content>
+  </ng-container>
 </div>
 
 <ng-template #content>

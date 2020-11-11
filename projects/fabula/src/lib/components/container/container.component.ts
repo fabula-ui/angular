@@ -12,7 +12,6 @@ import ContainerStyles from '@fabula/core/styles/components/container/container'
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent extends CommonComponent implements OnInit {
-
   constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {

@@ -10,6 +10,7 @@ import { BadgeModule } from './badge.module';
 import { ButtonGroupModule } from './button-group.module';
 import { ButtonModule } from './button.module';
 import { CardModule } from './card.module';
+import { CheckboxModule } from './checkbox.module';
 import { DividerModule } from './divider.module';
 import { DropdownModule } from './dropdown.module';
 import { HelpersModule } from './helpers.module';
@@ -36,6 +37,7 @@ import { TooltipModule } from './tooltip.module';
     ButtonGroupModule,
     ButtonModule,
     CardModule,
+    CheckboxModule,
     CommonModule,
     DividerModule,
     DropdownModule,

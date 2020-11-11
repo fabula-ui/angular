@@ -1,17 +1,19 @@
-<div class="fab-tag-wrapper" [attr.data-placement-x]="!!placement && placement.x"
-  [attr.data-placement-y]="!!placement && placement.y" data-fab-wrapper="tag">
-  <div class="fab-tag" (click)="handleClick()" *ngIf="!button && !link" data-fab-component="tag">
-    <ng-container *ngTemplateOutlet="content"></ng-container>
-  </div>
-
-  <button class="fab-tag" (click)="handleClick()" *ngIf="button" data-fab-component="tag">
-    <ng-container *ngTemplateOutlet="content"></ng-container>
-  </button>
-
-  <a class="fab-tag" *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target" data-fab-component="tag">
-    <ng-content *ngTemplateOutlet="content"></ng-content>
-  </a>
+<div class="fab-tag" (click)="handleClick()" *ngIf="!button && !link"
+  [attr.data-placement-x]="!!placement && placement.x" [attr.data-placement-y]="!!placement && placement.y"
+  data-fab-component="tag">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
 </div>
+
+<button class="fab-tag" (click)="handleClick()" *ngIf="button" [attr.data-placement-x]="!!placement && placement.x"
+  [attr.data-placement-y]="!!placement && placement.y" data-fab-component="tag">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</button>
+
+<a class="fab-tag" *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target"
+  [attr.data-placement-x]="!!placement && placement.x" [attr.data-placement-y]="!!placement && placement.y"
+  data-fab-component="tag">
+  <ng-content *ngTemplateOutlet="content"></ng-content>
+</a>
 
 <ng-template #content>
   <ng-content></ng-content>

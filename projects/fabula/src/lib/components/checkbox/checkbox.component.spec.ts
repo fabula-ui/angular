@@ -7,7 +7,7 @@ import { CheckboxComponent } from './checkbox.component';
 @Component({
     template: `<fab-checkbox>Label</fab-checkbox>`,
 })
-class CheckboxLabelComponent { }
+class CheckboxExample { }
 
 describe('Card Component', () => {
     let component: CheckboxComponent;
@@ -17,7 +17,7 @@ describe('Card Component', () => {
         TestBed.configureTestingModule({
             declarations: [
                 CheckboxComponent,
-                CheckboxLabelComponent
+                CheckboxExample
             ],
         })
             .compileComponents();
@@ -43,7 +43,7 @@ describe('Card Component', () => {
     });
 
     it('Should have inner text as children', () => {
-        const labelFixture = TestBed.createComponent(CheckboxLabelComponent);
+        const labelFixture = TestBed.createComponent(CheckboxExample);
         const compiled: HTMLElement = labelFixture.debugElement.nativeElement;
 
         labelFixture.detectChanges();

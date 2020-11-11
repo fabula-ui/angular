@@ -20,13 +20,17 @@ import {
 // Examples
 import { CardSectionExample } from './examples/card-section/example/card-section.example';
 
-// Wrappers
+// Props
 import { CardSectionColorWrapper } from './wrappers/card-section/color/card-section-color.wrapper';
 import { CardSectionDarkenWrapper } from './wrappers/card-section/darken/card-section-darken.wrapper';
 import { CardSectionDividerWrapper } from './wrappers/card-section/divider/card-section-divider.wrapper';
 import { CardSectionExampleWrapper } from './wrappers/card-section/example/card-section-example.wrapper';
 import { CardSectionFadedWrapper } from './wrappers/card-section/faded/card-section-faded.wrapper';
 import { CardSectionLightenWrapper } from './wrappers/card-section/lighten/card-section-lighten.wrapper';
+
+// Utils
+import { CardSectionUtilPaddingWrapper } from './wrappers/card-section/util-padding/card-section-util-padding.wrapper';
+import { CardSectionUtilVisibilityWrapper } from './wrappers/card-section/util-visibility/card-section-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -64,3 +68,5 @@ export const PropDarken = () => ({ component: CardSectionDarkenWrapper });
 export const PropDivider = () => ({ component: CardSectionDividerWrapper });
 export const PropFaded = () => ({ component: CardSectionFadedWrapper });
 export const PropLighten = () => ({ component: CardSectionLightenWrapper });
+export const UtilPadding = () => ({ component: CardSectionUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: CardSectionUtilVisibilityWrapper });

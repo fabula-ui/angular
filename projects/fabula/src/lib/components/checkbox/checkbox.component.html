@@ -1,12 +1,16 @@
 <div class="fab-checkbox-wrapper" data-fab-wrapper="checkbox">
-  <div class="fab-checkbox" [attr.data-checked]="checked" [attr.data-disabled]="disabled" [attr.data-focus]="focus"
+  <div class="fab-checkbox" [attr.data-checked]="checked" [attr.data-disabled]="disabled"
     [attr.data-indeterminate]="indeterminate" [attr.data-read-only]="readOnly" data-fab-component="checkbox">
-    <div class="fab-checkbox__square" (click)="handleChange()"></div>
+    <div class="fab-checkbox__square" (click)="handleChange()">
+      <fab-icon [props]="currentIcon"></fab-icon>
+    </div>
     <label class="fab-checkbox__label">
       <input [checked]="checked" [disabled]="disabled" [indeterminate]="indeterminate" (change)="handleChange($event)"
         type="checkbox">
-      {{label}}
-      <ng-content></ng-content>
+      <ng-container *ngIf="label">{{label}}</ng-container>
+      <ng-container *ngIf="!label">
+        <ng-content></ng-content>
+      </ng-container>
     </label>
   </div>
 </div>

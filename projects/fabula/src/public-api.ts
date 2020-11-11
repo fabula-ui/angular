@@ -77,6 +77,7 @@ export * from './lib/modules/badge.module';
 export * from './lib/modules/button.module';
 export * from './lib/modules/button-group.module';
 export * from './lib/modules/card.module';
+export * from './lib/modules/checkbox.module';
 export * from './lib/modules/divider.module';
 export * from './lib/modules/dropdown.module';
 export * from './lib/modules/element.module';

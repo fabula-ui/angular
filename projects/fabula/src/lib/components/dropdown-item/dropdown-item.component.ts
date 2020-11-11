@@ -21,11 +21,14 @@ export class DropdownItemComponent extends CommonComponent implements AfterViewI
     @Input() button = false;
     @Input() color: string;
     @Input() clickToClose = false;
+    @Input() href: string;
     @Input() invert = false;
     @Input() label: string;
     @Input() parentColor: string;
     @Input() props: any = { button: false };
+    @Input() rel: string;
     @Input() size: string;
+    @Input() target = '_blank';
 
     @Output() clicked = new EventEmitter();
 
@@ -37,7 +40,6 @@ export class DropdownItemComponent extends CommonComponent implements AfterViewI
             this.props.button = true;
         }
 
-        // this.props
         this.styles = DropdownItemStyles;
         this.initStyles();
     }
