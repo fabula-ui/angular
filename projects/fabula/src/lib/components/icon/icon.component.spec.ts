@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 // Components
-import { DividerComponent } from './divider.component';
+import { IconComponent } from './icon.component';
 
 // Modules
-import { DividerModule } from '../../modules/divider.module';
+import { IconsModule } from '../../modules/icons.module';
 
 describe('Divider Component', () => {
-    let component: DividerComponent;
-    let fixture: ComponentFixture<DividerComponent>;
+    let component: IconComponent;
+    let fixture: ComponentFixture<IconComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                DividerModule
+                IconsModule
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(DividerComponent);
+        fixture = TestBed.createComponent(IconComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -30,7 +30,7 @@ describe('Divider Component', () => {
 
     it('Should have a defined structure', () => {
         const compiled: HTMLElement = fixture.debugElement.nativeElement;
-        const element = compiled.querySelector('.fab-divider');
+        const element = compiled.querySelector('.fab-icon');
 
         expect(element).toBeTruthy();
     });

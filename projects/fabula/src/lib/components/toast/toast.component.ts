@@ -1,5 +1,13 @@
-import { Component, Input, ElementRef, AfterViewInit, ViewChild, AfterContentInit, OnInit, ChangeDetectorRef, ContentChild } from '@angular/core';
-import { css } from 'emotion';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ContentChild,
+  ElementRef,
+  Input,
+  ViewChild
+} from '@angular/core';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';

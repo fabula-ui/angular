@@ -65,7 +65,7 @@ describe('Dropdown Toggle Component', () => {
 
         compiled = fixture.debugElement.nativeElement;
         arrowElement = compiled.querySelector('.fab-dropdown-toggle__chevron');
-        
+
         expect(arrowElement).toBeTruthy();
 
         component.arrow = false;

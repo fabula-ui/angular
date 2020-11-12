@@ -126,7 +126,7 @@ describe('Alert Component', () => {
 
   //   buttonElement.click();
   //   tick();
-    
+
   //   expect(buttonElement.click).toHaveBeenCalled();
   //   expect(component.closeAlert).toHaveBeenCalled();
   // }));

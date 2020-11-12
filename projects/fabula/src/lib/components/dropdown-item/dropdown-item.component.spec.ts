@@ -102,7 +102,7 @@ describe('Dropdown Toggle Component', () => {
     //     fixture.detectChanges();
 
     //     compiled = fixture.debugElement.nativeElement;
-    //     element = compiled.querySelector('.fab-dropdown-item');        
+    //     element = compiled.querySelector('.fab-dropdown-item');
 
     //     expect(getComputedStyle(element).backgroundColor).toBe('blue');
     // });

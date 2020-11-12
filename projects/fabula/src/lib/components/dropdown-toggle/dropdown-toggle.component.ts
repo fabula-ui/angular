@@ -37,12 +37,12 @@ export class DropdownToggleComponent extends ButtonComponent implements AfterVie
     constructor(
         public cdRef: ChangeDetectorRef,
         public elRef: ElementRef,
-    ) { super(elRef) }
+    ) { super(elRef); }
 
     ngAfterViewChecked() {
         this.cdRef.detectChanges();
     }
-    
+
     ngOnInit() {
         this.props = { ...this };
         this.styles = DropdownToggleStyles;

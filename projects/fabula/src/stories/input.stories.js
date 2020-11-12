@@ -20,7 +20,6 @@ import { InputDisabledWrapper } from './wrappers/input/disabled/input-disabled.w
 import { InputExampleWrapper } from './wrappers/input/example/input-example.wrapper';
 import { InputGlowWrapper } from './wrappers/input/glow/input-glow.wrapper';
 import { InputMessageWrapper } from './wrappers/input/message/input-message.wrapper';
-import { InputMessageColorWrapper } from './wrappers/input/message-color/input-message-color.wrapper';
 import { InputPasswordWrapper } from './wrappers/input/password/input-password.wrapper';
 import { InputRoundedWrapper } from './wrappers/input/rounded/input-rounded.wrapper';
 import { InputSizeWrapper } from './wrappers/input/size/input-size.wrapper';
@@ -59,7 +58,6 @@ export const Example = () => ({ component: InputExampleWrapper });
 export const PropDisabled = () => ({ component: InputDisabledWrapper });
 export const PropGlow = () => ({ component: InputGlowWrapper });
 export const PropMessage = () => ({ component: InputMessageWrapper });
-export const PropMessageColor = () => ({ component: InputMessageColorWrapper });
 export const PropPassword = () => ({ component: InputPasswordWrapper });
 export const PropRounded = () => ({ component: InputRoundedWrapper });
 export const PropSize = () => ({ component: InputSizeWrapper });

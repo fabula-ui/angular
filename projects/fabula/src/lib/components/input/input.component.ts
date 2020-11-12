@@ -8,6 +8,10 @@ import {
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Models
+import { Icon } from '../../models/icon.model';
+import { Message } from '../../models/message.model';
+
 // Styles
 import InputStyles from '@fabula/core/styles/components/input/input';
 
@@ -22,11 +26,10 @@ export class InputComponent extends CommonComponent implements OnInit {
     @Input() expand = false;
     @Input() glow = false;
     @Input() has: string;
-    @Input() icon: any;
-    @Input() iconEnd: any;
-    @Input() iconStart: any;
-    @Input() message: string;
-    @Input() messageColor: string;
+    @Input() icon: Icon;
+    @Input() iconEnd: Icon;
+    @Input() iconStart: Icon;
+    @Input() message: Message;
     @Input() passwordToggle = false;
     @Input() placeholder = '';
     @Input() rounded = false;
@@ -39,7 +42,7 @@ export class InputComponent extends CommonComponent implements OnInit {
     hasFocus = false;
     host;
 
-    constructor(public elRef: ElementRef) { super(elRef) }
+    constructor(public elRef: ElementRef) { super(elRef); }
 
     ngOnInit() {
         this.styles = InputStyles;
@@ -57,6 +60,10 @@ export class InputComponent extends CommonComponent implements OnInit {
 
     toggleType() {
         this.type = this.type === 'text' ? 'password' : 'text';
+    }
+
+    get toggleIcon(): string {
+        return this.type === 'text' ? 'eye-off' : 'eye';
     }
 
 }

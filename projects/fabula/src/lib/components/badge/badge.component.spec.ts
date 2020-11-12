@@ -35,7 +35,7 @@ describe('Badge Component', () => {
     it('Should have a defined structure', () => {
         const compiled: HTMLElement = fixture.debugElement.nativeElement;
         const badgeElement = compiled.querySelector('.fab-badge');
-    
+
         expect(badgeElement).toBeTruthy();
       });
 
