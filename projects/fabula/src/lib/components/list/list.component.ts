@@ -1,4 +1,14 @@
-import { Component, ElementRef, OnInit, Input, QueryList, ContentChildren, ViewChildren, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Input,
+  Output,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';

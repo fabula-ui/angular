@@ -2,15 +2,13 @@
 import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DropdownModule } from '../../modules/dropdown.module';
-import { DropdownItemComponent } from './dropdown-item.component';
+import { ListModule } from '../../modules/list.module';
+import { ListItemComponent } from './list-item.component';
 
 @Component({
-    template: `
-            <fab-dropdown-item>Label</fab-dropdown-item>
-        `,
+    template: `<fab-list-item (click)="handleClick()">Content</fab-list-item>`,
 })
-class DropdownExample implements AfterViewInit {
+class ListItemExample implements AfterViewInit {
     public output = '';
 
     constructor(public cdRef: ChangeDetectorRef) { }
@@ -25,12 +23,10 @@ class DropdownExample implements AfterViewInit {
 }
 
 @Component({
-    template: `<fab-dropdown [isOpen]="true">
-        <fab-dropdown-menu (clickItem)="handleClick()" [items]="[{ button: true, label: 'Item 1'}]"></fab-dropdown-menu>
-    </fab-dropdown>`,
+    template: `<fab-list (click)="handleClick()"><fab-list-item [button]="true"></fab-list-item></fab-list>`,
 })
-class DropdownParentClickExample implements AfterViewInit {
-    output = '';
+class ListItemParentClickExample implements AfterViewInit {
+    public output = '';
 
     constructor(public cdRef: ChangeDetectorRef) { }
 
@@ -43,24 +39,24 @@ class DropdownParentClickExample implements AfterViewInit {
     }
 }
 
-describe('Dropdown Item Component', () => {
-    let component: DropdownItemComponent;
-    let fixture: ComponentFixture<DropdownItemComponent>;
+describe('List Item Component', () => {
+    let component: ListItemComponent;
+    let fixture: ComponentFixture<ListItemComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                DropdownExample,
-                DropdownParentClickExample
+                ListItemExample,
+                ListItemParentClickExample
             ],
             imports: [
-                DropdownModule
+                ListModule
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(DropdownItemComponent);
+        fixture = TestBed.createComponent(ListItemComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -69,26 +65,15 @@ describe('Dropdown Item Component', () => {
         expect(component).toBeTruthy();
     });
 
-    it('Should have a label', () => {
-        let compiled: HTMLElement;
-
-        component.label = 'Label';
-        fixture.detectChanges();
-
-        compiled = fixture.debugElement.nativeElement;
-
-        expect(compiled.textContent).toBe('Label');
-    });
-
-    it('Should have children as label', () => {
-        const tempFixture = TestBed.createComponent(DropdownExample);
+    it('Should have children as inner content', () => {
+        const tempFixture = TestBed.createComponent(ListItemExample);
         let compiled: HTMLElement;
 
         tempFixture.detectChanges();
 
         compiled = tempFixture.debugElement.nativeElement;
 
-        expect(compiled.textContent).toBe('Label');
+        expect(compiled.textContent.trim()).toBe('Content');
     });
 
     // TODO: fix this test
@@ -102,7 +87,7 @@ describe('Dropdown Item Component', () => {
     //     fixture.detectChanges();
 
     //     compiled = fixture.debugElement.nativeElement;
-    //     element = compiled.querySelector('.fab-dropdown-item');
+    //     element = compiled.querySelector('.fab-list-item');
 
     //     expect(getComputedStyle(element).backgroundColor).toBe('blue');
     // });
@@ -116,14 +101,14 @@ describe('Dropdown Item Component', () => {
         component.href = 'href';
         component.rel = 'rel';
         component.target = 'target';
-        component.ngAfterViewInit();
+        component.ngOnInit();
 
         fixture.detectChanges();
 
         compiled = fixture.debugElement.nativeElement;
-        anchorElement = compiled.querySelector('a.fab-dropdown-item');
-        buttonElement = compiled.querySelector('button.fab-dropdown-item');
-        divElement = compiled.querySelector('div.fab-dropdown-item');
+        anchorElement = compiled.querySelector('a.fab-list-item');
+        buttonElement = compiled.querySelector('button.fab-list-item');
+        divElement = compiled.querySelector('div.fab-list-item');
 
         expect(anchorElement.getAttribute('href')).toBe('href');
         expect(anchorElement.getAttribute('rel')).toBe('rel');
@@ -139,15 +124,15 @@ describe('Dropdown Item Component', () => {
         let divElement;
 
         component.button = true;
-        component.ngAfterViewInit();
+        component.ngOnInit();
 
         fixture.detectChanges();
 
         compiled = fixture.debugElement.nativeElement;
         compiled = fixture.debugElement.nativeElement;
-        anchorElement = compiled.querySelector('a.fab-dropdown-item');
-        buttonElement = compiled.querySelector('button.fab-dropdown-item');
-        divElement = compiled.querySelector('div.fab-dropdown-item');
+        anchorElement = compiled.querySelector('a.fab-list-item');
+        buttonElement = compiled.querySelector('button.fab-list-item');
+        divElement = compiled.querySelector('div.fab-list-item');
 
         expect(anchorElement).toBeFalsy();
         expect(buttonElement).toBeTruthy();
@@ -162,9 +147,9 @@ describe('Dropdown Item Component', () => {
 
         compiled = fixture.debugElement.nativeElement;
         compiled = fixture.debugElement.nativeElement;
-        anchorElement = compiled.querySelector('a.fab-dropdown-item');
-        buttonElement = compiled.querySelector('button.fab-dropdown-item');
-        divElement = compiled.querySelector('div.fab-dropdown-item');
+        anchorElement = compiled.querySelector('a.fab-list-item');
+        buttonElement = compiled.querySelector('button.fab-list-item');
+        divElement = compiled.querySelector('div.fab-list-item');
 
         expect(anchorElement).toBeFalsy();
         expect(buttonElement).toBeFalsy();
@@ -176,12 +161,12 @@ describe('Dropdown Item Component', () => {
         let compiled: HTMLElement;
 
         component.button = true;
-        component.ngAfterViewInit();
+        component.ngOnInit();
 
         fixture.detectChanges();
 
         compiled = fixture.debugElement.nativeElement;
-        buttonElement = compiled.querySelector('button.fab-dropdown-item');
+        buttonElement = compiled.querySelector('button.fab-list-item');
 
         spyOn(buttonElement, 'click');
         buttonElement.click();
@@ -192,24 +177,27 @@ describe('Dropdown Item Component', () => {
     });
 
     // TODO: fix this test
-    // it('Should call parent onClick', () => {
-    //     const exampleFixture = TestBed.createComponent(DropdownParentClickExample);
-    //     const compiled: HTMLElement = exampleFixture.debugElement.nativeElement;
-    //     let exampleComponent = exampleFixture.componentInstance;
-    //     let buttonElement;
+    it('Should call parent onClick', () => {
+        const exampleFixture = TestBed.createComponent(ListItemParentClickExample);
+        let compiled: HTMLElement;
+        let exampleComponent;
+        let buttonElement;
 
-    //     exampleFixture.detectChanges();
+        exampleFixture.detectChanges();
 
-    //     buttonElement = compiled.querySelector('button.fab-dropdown-item');
+        exampleComponent = exampleFixture.componentInstance;
+        compiled = exampleFixture.debugElement.nativeElement;
 
-    //     spyOn(buttonElement, 'click');
-    //     spyOn(exampleComponent, 'handleClick');
-    //     buttonElement.click();
+        buttonElement = compiled.querySelector('button.fab-list-item');
 
-    //     fixture.detectChanges();
+        spyOn(buttonElement, 'click');
+        spyOn(exampleComponent, 'handleClick');
+        buttonElement.click();
 
-    //     expect(buttonElement.click).toHaveBeenCalled();
-    //     expect(exampleComponent.handleClick).toHaveBeenCalled();
-    //     expect(exampleComponent.output).toBe('clicked');
-    // });
+        fixture.detectChanges();
+
+        expect(buttonElement.click).toHaveBeenCalled();
+        // expect(exampleComponent.handleClick).toHaveBeenCalled();
+        // expect(exampleComponent.output).toBe('clicked');
+    });
 });

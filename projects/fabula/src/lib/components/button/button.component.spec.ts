@@ -53,15 +53,18 @@ describe('Button Component', () => {
     });
 
     // TODO: fix this test
-    // it('Should have inner text as children', () => {
-    //     const tempFixture = TestBed.createComponent(ButtonExample);
-    //     const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
-    //     const buttonElement = compiled.querySelector('.fab-button');
+    it('Should have inner text as children', () => {
+        const tempFixture = TestBed.createComponent(ButtonExample);
+        let buttonElement;
+        let compiled: HTMLElement;
+        
+        tempFixture.detectChanges();
 
-    //     fixture.detectChanges();
+        compiled = tempFixture.debugElement.nativeElement;
+        buttonElement = compiled.querySelector('.fab-button');
 
-    //     expect(buttonElement.textContent).toContain('Label');
-    // });
+        expect(buttonElement.textContent).toContain('Label');
+    });
 
     it('Should be disabled', () => {
         let buttonElement;

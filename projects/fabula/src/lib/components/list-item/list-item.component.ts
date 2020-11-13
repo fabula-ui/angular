@@ -20,6 +20,7 @@ export class ListItemComponent extends CommonComponent implements OnInit {
   @Input() item: any = { button: false };
   @Input() padding: boolean;
   @Input() props: any;
+  @Input() rel: string;
   @Input() target = '_blank';
 
   @Output() clicked = new EventEmitter();

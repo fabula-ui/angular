@@ -1,4 +1,4 @@
-<a class="fab-link" [attr.href]="props.url || url" [attr.target]="target" data-fab-component="link">
+<a class="fab-link" [attr.href]="props.href || href" [attr.rel]="rel" [attr.target]="target" data-fab-component="link">
     <ng-container *ngIf="props.label || label">{{props.label || label}}</ng-container>
     <ng-content></ng-content>
 </a>

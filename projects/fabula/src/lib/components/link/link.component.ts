@@ -13,13 +13,13 @@ import LinkStyles from '@fabula/core/styles/components/link/link';
 })
 export class LinkComponent extends CommonComponent implements OnInit {
     @Input() color: string;
+    @Input() href: string;
     @Input() label: string;
     @Input() props: any;
     @Input() rel: string;
     @Input() size = 'md';
     @Input() target = '_blank';
     @Input() underline = true;
-    @Input() url: string;
 
     constructor(public elRef: ElementRef) { super(elRef) }
 

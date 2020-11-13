@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+
 // Components
 import { HeadingComponent } from './heading.component';
 
 // Modules
-import { GridModule } from '../../modules/grid.module';
+import { HeadingModule } from '../../modules/heading.module';
 
 @Component({
     template: `<fab-heading>Content</fab-heading>`,
@@ -19,11 +20,10 @@ describe('Heading Component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                HeadingComponent,
                 HeadingExample
             ],
             imports: [
-                GridModule
+                HeadingModule
             ]
         }).compileComponents();
     }));
