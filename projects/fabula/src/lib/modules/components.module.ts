@@ -13,11 +13,10 @@ import { CardModule } from './card.module';
 import { CheckboxModule } from './checkbox.module';
 import { DividerModule } from './divider.module';
 import { DropdownModule } from './dropdown.module';
-import { HelpersModule } from './helpers.module';
-import { GridModule } from './grid.module';
 import { HeadingModule } from './heading.module';
 import { IconsModule } from './icons.module';
 import { InputModule } from './input.module';
+import { InputGroupModule } from './input-group.module';
 import { LinkModule } from './link.module';
 import { ModalModule } from './modal.module';
 import { SearchInputModule } from './search-input.module';
@@ -26,10 +25,8 @@ import { TabsModule } from './tabs.module';
 import { TagModule } from './tag.module';
 import { TextModule } from './text.module';
 import { TooltipModule } from './tooltip.module';
-// import { NavbarModule } from './navbar.module';
 
 @NgModule({
-  declarations: [],
   imports: [
     AlertModule,
     AvatarModule,
@@ -44,6 +41,7 @@ import { TooltipModule } from './tooltip.module';
     HeadingModule,
     IconsModule,
     InputModule,
+    InputGroupModule,
     LinkModule,
     ModalModule,
     // NavbarModule,

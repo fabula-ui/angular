@@ -1,6 +1,7 @@
 import {
     Component,
     ElementRef,
+    HostBinding,
     Input,
     OnInit
 } from '@angular/core';
@@ -21,6 +22,8 @@ import InputStyles from '@fabula/core/styles/components/input/input';
     templateUrl: './input.component.html',
 })
 export class InputComponent extends CommonComponent implements OnInit {
+    @HostBinding('attr.data-focus') focused = false;
+
     @Input() color: string;
     @Input() disabled = false;
     @Input() expand = false;
@@ -51,6 +54,7 @@ export class InputComponent extends CommonComponent implements OnInit {
 
     // Methods
     handleFocus(hasFocus: boolean) {
+        this.focused = hasFocus;
         this.hasFocus = hasFocus;
     }
 

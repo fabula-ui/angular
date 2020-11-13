@@ -170,4 +170,23 @@ describe('Input Component', () => {
         expect(inputFieldElement).toBeFalsy();
         expect(textareaElement).toBeTruthy();
     });
+
+    it('Should change input type', () => {
+        const compiled: HTMLElement = fixture.debugElement.nativeElement;
+        const inputFieldElement = compiled.querySelector('input.fab-input__field');
+
+        expect(inputFieldElement.getAttribute('type')).toBe('text');
+
+        // Email
+        component.type = 'email';
+        fixture.detectChanges();
+
+        expect(inputFieldElement.getAttribute('type')).toBe('email');
+
+        // Password
+        component.type = 'password';
+        fixture.detectChanges();
+
+        expect(inputFieldElement.getAttribute('type')).toBe('password');
+    });
 });

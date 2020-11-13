@@ -1,3 +1,7 @@
 :host {
     display: block;
+
+    &[data-focus='true'] {
+        z-index: 1;
+    }
 }
