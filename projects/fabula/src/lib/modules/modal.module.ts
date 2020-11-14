@@ -11,6 +11,9 @@ import { ModalFooterComponent } from '../components/modal-footer/modal-footer.co
 import { ModalHeaderComponent } from '../components/modal-header/modal-header.component';
 import { ModalSectionComponent } from '../components/modal-section/modal-section.component';
 
+// Modules
+import { IconsModule } from '../modules/icons.module';
+
 // Services
 import { ModalService } from '../services/modal.service';
 
@@ -40,7 +43,8 @@ import { ModalService } from '../services/modal.service';
         ModalSectionComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        IconsModule
     ],
     providers: [
         ModalService
