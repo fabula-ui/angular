@@ -3,6 +3,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
+    HelpersModule,
     IconsModule,
     TagModule,
     TextModule,
@@ -33,6 +34,7 @@ export default {
             entryComponents: [TagExample],
             imports: [
                 BrowserModule,
+                HelpersModule,
                 IconsModule,
                 TagModule,
                 TextModule,

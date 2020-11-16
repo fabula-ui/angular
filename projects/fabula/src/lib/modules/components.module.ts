@@ -24,6 +24,7 @@ import { SegmentsModule } from './segments.module';
 import { TabsModule } from './tabs.module';
 import { TagModule } from './tag.module';
 import { TextModule } from './text.module';
+import { ToggleModule } from './toggle.module';
 import { TooltipModule } from './tooltip.module';
 
 @NgModule({
@@ -50,6 +51,7 @@ import { TooltipModule } from './tooltip.module';
     TabsModule,
     TagModule,
     TextModule,
+    ToggleModule,
     TooltipModule,
   ],
   exports: []

@@ -42,7 +42,6 @@ export * from './lib/components/tag/tag.component';
 export * from './lib/components/tag-group/tag-group.component';
 export * from './lib/components/tag-input/tag-input.component';
 export * from './lib/components/text/text.component';
-export * from './lib/components/text-part/text-part.component';
 export * from './lib/components/toggle/toggle.component';
 export * from './lib/components/wrapper/wrapper.component';
 
@@ -98,6 +97,7 @@ export * from './lib/modules/tag.module';
 export * from './lib/modules/text.module';
 export * from './lib/modules/theme.module';
 export * from './lib/modules/toast.module';
+export * from './lib/modules/toggle.module';
 export * from './lib/modules/tooltip.module';
 export * from './lib/modules/utils.module';
 export * from './lib/modules/wrapper.module';

@@ -12,6 +12,9 @@ import {
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Models
+import { Icon } from '../../models/icon.model';
+
 // Services
 import { ToastService } from '../../services/toast.service';
 
@@ -31,18 +34,21 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
   @Input() faded: boolean;
   @Input() glow: boolean;
   @Input() hideButton: any;
+  @Input() href: string;
   @Input() hiding = false;
-  @Input() icon: any;
+  @Input() icon: Icon;
   @Input() index: any;
   @Input() message: string;
   @Input() outline: boolean;
+  @Input() rel: string;
   @Input() stack: string;
   @Input() stacked = false;
+  @Input() target: string;
 
   @ContentChild(InnerIconComponent) iconComponent: InnerIconComponent;
   @ViewChild('toast') toastEl: ElementRef;
 
-  height;
+  height = 0;
 
   constructor(
     public cdRef: ChangeDetectorRef,
@@ -81,5 +87,14 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
       index: this.index,
       stack
     });
+  }
+
+  // Getters
+  get toastHeight() {
+    if (this.stacked) {
+      return this.elRef.nativeElement.querySelector('.fab-toast-wrapper').offsetHeight;
+    } else {
+      return null;
+    }
   }
 }

@@ -1,26 +1,31 @@
 
-import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Components
 import { CheckboxComponent } from './checkbox.component';
+
+// Modules
+import { CheckboxModule } from '../../modules/checkbox.module';
 
 @Component({
     template: `<fab-checkbox>Label</fab-checkbox>`,
 })
 class CheckboxExample { }
 
-describe('Card Component', () => {
+describe('Checkbox Component', () => {
     let component: CheckboxComponent;
     let fixture: ComponentFixture<CheckboxComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                CheckboxComponent,
                 CheckboxExample
             ],
-        })
-            .compileComponents();
+            imports: [
+                CheckboxModule
+            ]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -158,5 +163,4 @@ describe('Card Component', () => {
 
         expect(component.uncheck.emit).toHaveBeenCalled();
     });
-
 });

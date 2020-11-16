@@ -2,33 +2,33 @@ import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 // Components
-import { ElementComponent } from './element.component';
+import { WrapperComponent } from './wrapper.component';
 
 // Modules
-import { ElementModule } from '../../modules/element.module';
+import { HelpersModule } from '../../modules/helpers.module';
 
 @Component({
     template: `<fab-element>Content</fab-element>`,
 })
-class ElementExample { }
+class WrapperExample { }
 
-describe('Element Component', () => {
-    let component: ElementComponent;
-    let fixture: ComponentFixture<ElementComponent>;
+describe('Wrapper Component', () => {
+    let component: WrapperComponent;
+    let fixture: ComponentFixture<WrapperComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                ElementExample
+                WrapperExample
             ],
             imports: [
-                ElementModule
+                HelpersModule
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(ElementComponent);
+        fixture = TestBed.createComponent(WrapperComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -39,13 +39,13 @@ describe('Element Component', () => {
 
     it('Should have a defined structure', () => {
         const compiled: HTMLElement = fixture.debugElement.nativeElement;
-        const element = compiled.querySelector('.fab-element');
+        const element = compiled.querySelector('.fab-wrapper');
 
         expect(element).toBeTruthy();
     });
 
     it('Should have inner content as children', () => {
-        const tempFixture = TestBed.createComponent(ElementExample);
+        const tempFixture = TestBed.createComponent(WrapperExample);
         const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
 
         tempFixture.detectChanges();

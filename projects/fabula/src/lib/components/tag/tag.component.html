@@ -1,15 +1,15 @@
-<div class="fab-tag" (click)="handleClick()" *ngIf="!button && !link"
+<div class="fab-tag" *ngIf="!button && !href"
   [attr.data-placement-x]="!!placement && placement.x" [attr.data-placement-y]="!!placement && placement.y"
   data-fab-component="tag">
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </div>
 
-<button class="fab-tag" (click)="handleClick()" *ngIf="button" [attr.data-placement-x]="!!placement && placement.x"
+<button class="fab-tag" *ngIf="button" [attr.data-placement-x]="!!placement && placement.x"
   [attr.data-placement-y]="!!placement && placement.y" data-fab-component="tag">
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </button>
 
-<a class="fab-tag" *ngIf="href || link" [href]="href || link" [rel]="rel" [target]="target"
+<a class="fab-tag" *ngIf="href" [href]="href" [rel]="rel" [target]="target"
   [attr.data-placement-x]="!!placement && placement.x" [attr.data-placement-y]="!!placement && placement.y"
   data-fab-component="tag">
   <ng-content *ngTemplateOutlet="content"></ng-content>

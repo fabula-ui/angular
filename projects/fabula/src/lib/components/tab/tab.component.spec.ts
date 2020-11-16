@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 // Components
-import { SegmentComponent } from './segment.component';
+import { TabComponent } from './tab.component';
 
 // Modules
-import { SegmentsModule } from '../../modules/segments.module';
+import { TabsModule } from '../../modules/tabs.module';
 
 @Component({
-    template: `<fab-segments><fab-segment name="segment" (click)="handleClick()"></fab-segment></fab-segments>`,
+    template: `<fab-tabs><fab-tab name="tab" (click)="handleClick()"></fab-tab></fab-tabs>`,
 })
-class SegmentExample { 
+class TabExample { 
     public output = '';
 
     handleClick() {
@@ -18,23 +18,23 @@ class SegmentExample {
     }
 }
 
-describe('Segment Component', () => {
-    let component: SegmentComponent;
-    let fixture: ComponentFixture<SegmentComponent>;
+describe('Tab Component', () => {
+    let component: TabComponent;
+    let fixture: ComponentFixture<TabComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                SegmentExample
+                TabExample
             ],
             imports: [
-                SegmentsModule
+                TabsModule
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(SegmentComponent);
+        fixture = TestBed.createComponent(TabComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -45,7 +45,7 @@ describe('Segment Component', () => {
 
     it('Should be a button by default', () => {
         const compiled: HTMLElement = fixture.debugElement.nativeElement;
-        const buttonElement = compiled.querySelector('button.fab-segment');
+        const buttonElement = compiled.querySelector('button.fab-tab');
 
         expect(buttonElement).toBeTruthy();
     });
@@ -60,7 +60,7 @@ describe('Segment Component', () => {
         fixture.detectChanges();
 
         compiled = fixture.debugElement.nativeElement;
-        anchorElement = compiled.querySelector('a.fab-segment');
+        anchorElement = compiled.querySelector('a.fab-tab');
 
         expect(anchorElement.getAttribute('href')).toBe('href');
         expect(anchorElement.getAttribute('rel')).toBe('rel');
@@ -68,20 +68,20 @@ describe('Segment Component', () => {
     });
 
     it('Should call onClick', () => {
-        const tempFixture = TestBed.createComponent(SegmentExample);
+        const tempFixture = TestBed.createComponent(TabExample);
         const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
         let component;
-        let segmentElement: any;
+        let tabElement: any;
 
         tempFixture.detectChanges();
 
-        segmentElement = compiled.querySelector('.fab-segment');
+        tabElement = compiled.querySelector('.fab-tab');
 
-        segmentElement.click();
+        tabElement.click();
 
         tempFixture.detectChanges();
 
-        segmentElement = compiled.querySelector('.fab-segment');
+        tabElement = compiled.querySelector('.fab-tab');
 
         component = tempFixture.componentInstance;
 
@@ -89,21 +89,21 @@ describe('Segment Component', () => {
     });
 
     it('Should toggle', () => {
-        const tempFixture = TestBed.createComponent(SegmentExample);
+        const tempFixture = TestBed.createComponent(TabExample);
         const compiled: HTMLElement = tempFixture.debugElement.nativeElement;
-        let segmentElement: any;
+        let tabElement: any;
 
         tempFixture.detectChanges();
 
-        segmentElement = compiled.querySelector('.fab-segment');
+        tabElement = compiled.querySelector('.fab-tab');
 
-        expect(segmentElement.getAttribute('data-active')).toBe('false');
+        expect(tabElement.getAttribute('data-active')).toBe('false');
 
-        segmentElement.click();
+        tabElement.click();
         tempFixture.detectChanges();
 
-        segmentElement = compiled.querySelector('.fab-segment');
+        tabElement = compiled.querySelector('.fab-tab');
 
-        expect(segmentElement.getAttribute('data-active')).toBe('true');
+        expect(tabElement.getAttribute('data-active')).toBe('true');
     });
 });

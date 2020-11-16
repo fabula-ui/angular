@@ -16,16 +16,20 @@ interface Placement {
   templateUrl: './tag.component.html',
 })
 export class TagComponent extends CommonComponent implements AfterViewInit {
+  @Input() button = false;
   @Input() color: string;
   @Input() clear = false;
   @Input() faded = false;
   @Input() glow = false;
+  @Input() href: string;
   @Input() invert = false;
   @Input() link: string;
   @Input() outline = false;
   @Input() placement: Placement;
+  @Input() rel: string;
   @Input() rounded = false;
   @Input() size = 'md';
+  @Input() target: string;
 
   inline = true;
 

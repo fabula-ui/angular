@@ -1,10 +1,10 @@
 <div class="fab-toast-wrapper" data-fab-wrapper="toast" [attr.data-hiding]="hiding"
-  [attr.data-stacked]="stacked" [style]="{ height: height }">
+  [attr.data-stacked]="stacked" [ngStyle]="{ 'height': toastHeight }">
   <div class="fab-toast" data-fab-component="toast">
-    <fab-icon [color]="color" [props]="icon" *ngIf="icon"></fab-icon>
+    <fab-icon [props]="icon" *ngIf="icon"></fab-icon>
     <span class="fab-toast__message" *ngIf="message">{{message}}</span>
     <ng-content></ng-content>
-    <div class="fab-toast__close-button" *ngIf="!!button || !!hideButton">
+    <div class="fab-toast__button" *ngIf="!!button || !!hideButton">
       <fab-button (click)="hideToast()" [props]="hideButton" size="sm" *ngIf="!!hideButton && !button"></fab-button>
       <fab-button [props]="button" size="sm" *ngIf="button"></fab-button>
     </div>

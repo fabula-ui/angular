@@ -33,7 +33,6 @@ import {
   TagGroupComponent,
   TagInputComponent,
   TextComponent,
-  TextPartComponent,
 } from 'projects/fabula/src/public-api';
 
 import {
@@ -100,7 +99,6 @@ import { ToastWrapperComponent } from './components/toast-wrapper/toast-wrapper.
     TagGroupComponent,
     TagInputComponent,
     TextComponent,
-    TextPartComponent,
 
     AlertWrapperComponent,
     AvatarWrapperComponent,

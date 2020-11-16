@@ -5,14 +5,15 @@ import { Component, Input, OnInit } from '@angular/core';
     templateUrl: './toast.example.html'
 })
 export class ToastExample implements OnInit {
+    @Input() button: any;
     @Input() clear = false;
     @Input() color: string;
     @Input() faded = false;
     @Input() glow = false;
+    @Input() href: any;
     @Input() hideButton: any;
     @Input() iconColor: string;
     @Input() iconName: string;
-    @Input() link: any;
     @Input() mb: any;
     @Input() outline = false;
 

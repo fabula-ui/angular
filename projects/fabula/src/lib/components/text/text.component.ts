@@ -14,11 +14,12 @@ import TextStyles from '@fabula/core/styles/components/text/text';
 export class TextComponent extends CommonComponent implements OnInit {
   @Input() aux: boolean;
   @Input() color: string;
+  @Input() content: string;
   @Input() inline = false;
   @Input() props: any;
   @Input() size: string;
   @Input() strong: boolean;
-  @Input() weight: string;
+  @Input() weight: any;
   @Input() wrap = true;
 
   bold;

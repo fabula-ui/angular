@@ -19,8 +19,10 @@ import {
 import { ToastExample } from './examples/toast/example/toast.example';
 
 // Wrappers
+import { ToastButtonWrapper } from './wrappers/toast/button/toast-button.wrapper';
 import { ToastClearWrapper } from './wrappers/toast/clear/toast-clear.wrapper';
 import { ToastColorWrapper } from './wrappers/toast/color/toast-color.wrapper';
+import { ToastExampleWrapper } from './wrappers/toast/example/toast-example.wrapper';
 import { ToastFadedWrapper } from './wrappers/toast/faded/toast-faded.wrapper';
 import { ToastGlowWrapper } from './wrappers/toast/glow/toast-glow.wrapper';
 import { ToastHideButtonWrapper } from './wrappers/toast/hide-button/toast-hide-button.wrapper';
@@ -58,6 +60,8 @@ export default {
 }
 
 // Stories
+export const Example = () => ({ component: ToastExampleWrapper });
+export const PropButton = () => ({ component: ToastButtonWrapper });
 export const PropClear = () => ({ component: ToastClearWrapper });
 export const PropColor = () => ({ component: ToastColorWrapper });
 export const PropFaded = () => ({ component: ToastFadedWrapper });

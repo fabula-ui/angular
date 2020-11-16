@@ -1,3 +1,6 @@
-<div class="fab-text" data-fab-component="text">
-  <ng-content></ng-content>
+<div class="fab-text" [attr.data-aux]="aux" [attr.data-color]="color" data-fab-component="text">
+  <ng-container *ngIf="!content">
+    <ng-content></ng-content>
+  </ng-container>
+  <ng-container *ngIf="content">{{content}}</ng-container>
 </div>

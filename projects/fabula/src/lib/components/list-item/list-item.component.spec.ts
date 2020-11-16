@@ -139,7 +139,7 @@ describe('List Item Component', () => {
         expect(divElement).toBeFalsy();
     });
 
-    it('Should be a button', () => {
+    it('Should be a div', () => {
         let anchorElement;
         let buttonElement;
         let compiled: HTMLElement;

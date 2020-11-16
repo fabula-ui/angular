@@ -11,7 +11,10 @@ import ToastStackStyles from '@fabula/core/styles/components/toast-stack/toast-s
   templateUrl: './toast-stack.component.html'
 })
 export class ToastStackComponent extends CommonComponent implements OnInit {
-  @Input() placement: any;
+  @Input() placement: any = {
+    x: 'left',
+    y: 'bottom'
+  };
   @Input() toasts: Array<any>;
 
   constructor(public elRef: ElementRef) { super(elRef); }
@@ -22,11 +25,15 @@ export class ToastStackComponent extends CommonComponent implements OnInit {
   }
 
   get visibleToasts() {
-    const toasts = this.toasts.map((toast, index) => {
-      toast.index = index;
-      return toast;
-    });
-
-    return toasts.filter(toast => !toast.hidden);
+    if (this.toasts) {
+      const toasts = this.toasts.map((toast, index) => {
+        toast.index = index;
+        return toast;
+      });
+  
+      return toasts.filter(toast => !toast.hidden);
+    } else {
+      return [];
+    }
   }
 }

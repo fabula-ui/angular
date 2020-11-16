@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
 import { TagComponent } from '../components/tag/tag.component';
 import { TagGroupComponent } from '../components/tag-group/tag-group.component';
 
+// TODO: remove tag group component
+
 @NgModule({
     declarations: [
         TagComponent,
