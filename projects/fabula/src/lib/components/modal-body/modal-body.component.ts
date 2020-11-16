@@ -11,13 +11,12 @@ import ModalBodyStyles from '@fabula/core/styles/components/modal-body/modal-bod
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends ModalSectionComponent implements OnInit {
-
-  constructor(public elRef: ElementRef) { 
+  constructor(public elRef: ElementRef) {
     super(elRef);
   }
 
   ngOnInit() {
-    this.additionalStyles = ModalBodyStyles
+    this.additionalStyles = ModalBodyStyles;
     super.ngOnInit();
   }
 }

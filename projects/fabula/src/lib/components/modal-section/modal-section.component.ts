@@ -19,8 +19,8 @@ export class ModalSectionComponent extends CommonComponent implements OnInit {
   @Input() lighten: boolean;
   @Input() padding = true;
   @Input() parentColor: string;
-  
-  constructor(public elRef: ElementRef) { super(elRef) }
+
+  constructor(public elRef: ElementRef) { super(elRef); }
 
   ngOnInit() {
     this.styles = ModalSectionStyles;

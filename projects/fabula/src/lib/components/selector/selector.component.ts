@@ -18,7 +18,6 @@ export class SelectorComponent extends CommonComponent {
     @Input() inactiveTextColor: string;
     @Input() invert: boolean;
     @Input() layout: string;
-    @Input() link: string;
     @Input() name: string;
     @Input() outline: boolean;
     @Input() rel: string;

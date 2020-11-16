@@ -1,9 +1,9 @@
 <div class="fab-segment" [attr.data-active]="active" data-fab-wrapper="segment">
-  <button (click)="handleClick()" *ngIf="!href && !link" data-fab-component="segment">
+  <button (click)="handleClick()" *ngIf="!href" data-fab-component="segment">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </button>
 
-  <a *ngIf="href || link" [href]="href || link" [target]="target" data-fab-component="segment">
+  <a *ngIf="href" [href]="href" [rel]="rel" [target]="target" data-fab-component="segment">
     <ng-content *ngTemplateOutlet="content"></ng-content>
   </a>
 </div>

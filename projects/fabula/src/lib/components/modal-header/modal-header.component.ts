@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Input, ElementRef, Output, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { AfterViewChecked, Component, EventEmitter, ElementRef, Output, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { css } from 'emotion';
 
 // Components
@@ -12,7 +12,7 @@ import { CloseButtonComponent } from '../close-button/close-button.component';
   selector: 'fab-modal-header',
   templateUrl: './modal-header.component.html'
 })
-export class ModalHeaderComponent extends ModalSectionComponent implements AfterViewInit {
+export class ModalHeaderComponent extends ModalSectionComponent implements AfterViewChecked, AfterViewInit {
   @Output() clickedClose = new EventEmitter();
 
   @ViewChild(CloseButtonComponent) closeButton: CloseButtonComponent;
@@ -26,16 +26,17 @@ export class ModalHeaderComponent extends ModalSectionComponent implements After
     super(elRef);
   }
 
-  ngAfterViewInit() {
-    const host = this.elRef.nativeElement;
-    let styles;
+  ngAfterViewChecked() {
+    this.cdRef.detectChanges();
+  }
 
+  ngAfterViewInit() {
     // Init modal section
     super.ngOnInit();
 
     // Set and apply styles
-    styles = css(ModalHeaderStyles({ framework: 'angular', props: this }));
-    host.classList.add(styles);
+    this.styles = ModalHeaderStyles;
+    this.initStyles();
 
     this.cdRef.detectChanges();
     this.init = true;

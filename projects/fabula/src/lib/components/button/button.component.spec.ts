@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 
+// Components
 import { ButtonComponent } from './button.component';
+
+// Modules
+import { ButtonModule } from '../../modules/button.module';
 
 @Component({
     template: `<fab-button>Label</fab-button>`,
@@ -16,9 +19,11 @@ describe('Button Component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                ButtonComponent,
                 ButtonExample
             ],
+            imports: [
+                ButtonModule
+            ]
         }).compileComponents();
     }));
 
@@ -57,7 +62,7 @@ describe('Button Component', () => {
         const tempFixture = TestBed.createComponent(ButtonExample);
         let buttonElement;
         let compiled: HTMLElement;
-        
+
         tempFixture.detectChanges();
 
         compiled = tempFixture.debugElement.nativeElement;
