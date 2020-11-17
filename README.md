@@ -1,27 +1,43 @@
-# Angular
+<a href="https://www.fabulaui.com" target="_blank">
+    <img alt="Fabula (for Angular)" height="75" src="https://github.com/fabula-ui/react/blob/master/.github/fabula-logo.svg">
+</a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+---
 
-## Development server
+# Fabula (for Angular)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is the Angular version of Fabula.
 
-## Code scaffolding
+## About Fabula
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Fabula is an open-source component ecosystem designed to help developers across the world deliver beautiful applications. It focus on making it easier to customize everything inside it, from components all the way to variables and colors.
 
-## Build
+It is currently on a beta version for React and Angular, which means you can stumble across a few bugs while working with it.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Installing
 
-## Running unit tests
+Installing Fabula is pretty straightforward. Just do a install for the specific framework you're using, as following:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install --save @fabula/react
 
-## Running end-to-end tests
+# or
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+yarn add @fabula/react
+```
 
-## Further help
+## Documentation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To view Fabula's full documentation, go to our [website](https://www.fabulaui.com/docs).
+
+## Contributing
+
+Fabula is and always will be 100% open-source. To help make Fabula grow stronger and even easier to use you can report bugs whenever you catch one, improve the documentation when you feel something might be wrong or missing or you can request a new feature if you think Fabula misses something.
+
+### Reporting bugs
+
+Whenever you see something is wrong with Fabula and want to be helpful 💙, you can check our [guide](https://github.com/fabula-ui/react/blob/master/.github/REPORTING-BUGS.md) and follow the instructions on how to report a bug.
+
+## License
+
+Fabula is currently available under the terms of the MIT license.
