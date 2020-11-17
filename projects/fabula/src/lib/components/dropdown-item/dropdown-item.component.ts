@@ -15,6 +15,7 @@ import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dro
 
 @Component({
     selector: 'fab-dropdown-item',
+    styleUrls: ['./dropdown-item.component.scss'],
     templateUrl: './dropdown-item.component.html',
 })
 export class DropdownItemComponent extends CommonComponent implements AfterViewInit {
