@@ -22,9 +22,14 @@ import {
 // Examples
 import { DropdownMenuExample } from './examples/dropdown-menu/example/dropdown-menu.example';
 
-// Wrappers
+// Props
 import { DropdownMenuColorWrapper } from './wrappers/dropdown-menu/color/dropdown-menu-color.wrapper';
 import { DropdownMenuExampleWrapper } from './wrappers/dropdown-menu/example/dropdown-menu-example.wrapper';
+
+// Utils
+import { DropdownMenuUtilMarginWrapper } from './wrappers/dropdown-menu/util-margin/dropdown-menu-util-margin.wrapper';
+import { DropdownMenuUtilPaddingWrapper } from './wrappers/dropdown-menu/util-padding/dropdown-menu-util-padding.wrapper';
+import { DropdownMenuUtilVisibilityWrapper } from './wrappers/dropdown-menu/util-visibility/dropdown-menu-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -63,3 +68,6 @@ export default {
 // Stories
 export const Example = () => ({ component: DropdownMenuExampleWrapper });
 export const PropColor = () => ({ component: DropdownMenuColorWrapper });
+export const UtilMargin = () => ({ component: DropdownMenuUtilMarginWrapper });
+export const UtilPadding = () => ({ component: DropdownMenuUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: DropdownMenuUtilVisibilityWrapper });
