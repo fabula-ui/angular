@@ -21,12 +21,17 @@ import {
 // Examples
 import { ListExample } from './examples/list/example/list.example';
 
-// Wrappers
+// Props
 import { ListColorWrapper } from './wrappers/list/color/list-color.wrapper';
 import { ListDividerWrapper } from './wrappers/list/divider/list-divider.wrapper';
 import { ListExampleWrapper } from './wrappers/list/example/list-example.wrapper';
 import { ListPaddingWrapper } from './wrappers/list/padding/list-padding.wrapper';
 import { ListStripedWrapper } from './wrappers/list/striped/list-striped.wrapper';
+
+// Utils
+import { ListUtilMarginWrapper } from './wrappers/list/util-margin/list-util-margin.wrapper';
+import { ListUtilPaddingWrapper } from './wrappers/list/util-padding/list-util-padding.wrapper';
+import { ListUtilVisibilityWrapper } from './wrappers/list/util-visibility/list-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -64,3 +69,6 @@ export const PropColor = () => ({ component: ListColorWrapper });
 export const PropDivider = () => ({ component: ListDividerWrapper });
 export const PropPadding = () => ({ component: ListPaddingWrapper });
 export const PropStriped = () => ({ component: ListStripedWrapper });
+export const UtilMargin = () => ({ component: ListUtilMarginWrapper });
+export const UtilPadding = () => ({ component: ListUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: ListUtilVisibilityWrapper });

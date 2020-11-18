@@ -5,6 +5,7 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     ButtonModule,
     DropdownModule,
+    HelpersModule,
     IconsModule,
     InnerIconModule,
     InputComponent,
@@ -17,9 +18,13 @@ import {
     UtilsModule
 } from '../public-api';
 
-// Wrappers
+// Props
 import { InputGroupExampleWrapper } from './wrappers/input-group/example/input-group-example.wrapper';
 import { InputGroupLayoutWrapper } from './wrappers/input-group/layout/input-group-layout.wrapper';
+
+// Utils
+import { InputGroupUtilMarginWrapper } from './wrappers/input-group/util-margin/input-group-util-margin.wrapper';
+import { InputGroupUtilVisibilityWrapper } from './wrappers/input-group/util-visibility/input-group-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -36,6 +41,7 @@ export default {
                 BrowserModule,
                 ButtonModule,
                 DropdownModule,
+                HelpersModule,
                 IconsModule,
                 InnerIconModule,
                 ThemeModule.forRoot(),
@@ -52,3 +58,5 @@ export default {
 // Stories
 export const Example = () => ({ component: InputGroupExampleWrapper });
 export const PropLayout = () => ({ component: InputGroupLayoutWrapper });
+export const UtilMargin = () => ({ component: InputGroupUtilMarginWrapper });
+export const UtilVisibility = () => ({ component: InputGroupUtilVisibilityWrapper });

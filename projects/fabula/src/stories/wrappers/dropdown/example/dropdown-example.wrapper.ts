@@ -38,5 +38,4 @@ export class DropdownExampleWrapper implements OnInit {
     handleToggle() {
         alert('toggle');
     }
-
 }

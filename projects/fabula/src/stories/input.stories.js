@@ -15,7 +15,7 @@ import {
     UtilsModule
 } from '../public-api';
 
-// Wrappers
+// Props
 import { InputDisabledWrapper } from './wrappers/input/disabled/input-disabled.wrapper';
 import { InputExampleWrapper } from './wrappers/input/example/input-example.wrapper';
 import { InputGlowWrapper } from './wrappers/input/glow/input-glow.wrapper';
@@ -26,6 +26,11 @@ import { InputSizeWrapper } from './wrappers/input/size/input-size.wrapper';
 import { InputStatusWrapper } from './wrappers/input/status/input-status.wrapper';
 import { InputTextareaWrapper } from './wrappers/input/textarea/input-textarea.wrapper';
 import { InputVariantWrapper } from './wrappers/input/variant/input-variant.wrapper';
+
+// Utils
+import { InputUtilMarginWrapper } from './wrappers/input/util-margin/input-util-margin.wrapper';
+import { InputUtilPaddingWrapper } from './wrappers/input/util-padding/input-util-padding.wrapper';
+import { InputUtilVisibilityWrapper } from './wrappers/input/util-visibility/input-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -64,3 +69,6 @@ export const PropSize = () => ({ component: InputSizeWrapper });
 export const PropStatus = () => ({ component: InputStatusWrapper });
 export const PropTextarea = () => ({ component: InputTextareaWrapper });
 export const PropVariant = () => ({ component: InputVariantWrapper });
+export const UtilMargin = () => ({ component: InputUtilMarginWrapper });
+export const UtilPadding = () => ({ component: InputUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: InputUtilVisibilityWrapper });
