@@ -97,11 +97,11 @@ export class TooltipDirective implements AfterViewInit {
         const component = host.querySelector('[data-fab-component]');
         const target = component || host;
 
-        target.addEventListener('mouseover', () => {
+        target.addEventListener('mouseenter', () => {
             this.createTooltip(target);
         });
 
-        target.addEventListener('mouseout', () => {
+        target.addEventListener('mouseleave', () => {
             this.destroyTooltip();
         });
     }

@@ -20,7 +20,6 @@ import {
 // Wrappers
 import { TooltipColorWrapper } from './wrappers/tooltip/color/tooltip-color.wrapper';
 import { TooltipExampleWrapper } from './wrappers/tooltip/example/tooltip-example.wrapper';
-import { TooltipLabelWrapper } from './wrappers/tooltip/label/tooltip-label.wrapper';
 import { TooltipOffsetWrapper } from './wrappers/tooltip/offset/tooltip-offset.wrapper';
 import { TooltipPlacementWrapper } from './wrappers/tooltip/placement/tooltip-placement.wrapper';
 
@@ -55,6 +54,5 @@ export default {
 // Stories
 export const Example = () => ({ component: TooltipExampleWrapper });
 export const PropColor = () => ({ component: TooltipColorWrapper });
-export const Label = () => ({ component: TooltipLabelWrapper });
-export const Offset = () => ({ component: TooltipOffsetWrapper });
-export const Placement = () => ({ component: TooltipPlacementWrapper });
+export const PropOffset = () => ({ component: TooltipOffsetWrapper });
+export const PropPlacement = () => ({ component: TooltipPlacementWrapper });
