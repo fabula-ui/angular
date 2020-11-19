@@ -29,7 +29,6 @@ import { InputVariantWrapper } from './wrappers/input/variant/input-variant.wrap
 
 // Utils
 import { InputUtilMarginWrapper } from './wrappers/input/util-margin/input-util-margin.wrapper';
-import { InputUtilPaddingWrapper } from './wrappers/input/util-padding/input-util-padding.wrapper';
 import { InputUtilVisibilityWrapper } from './wrappers/input/util-visibility/input-util-visibility.wrapper';
 
 // Module init
@@ -70,5 +69,4 @@ export const PropStatus = () => ({ component: InputStatusWrapper });
 export const PropTextarea = () => ({ component: InputTextareaWrapper });
 export const PropVariant = () => ({ component: InputVariantWrapper });
 export const UtilMargin = () => ({ component: InputUtilMarginWrapper });
-export const UtilPadding = () => ({ component: InputUtilPaddingWrapper });
 export const UtilVisibility = () => ({ component: InputUtilVisibilityWrapper });

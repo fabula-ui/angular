@@ -5,7 +5,6 @@ import {
     OnInit,
     ViewChild,
 } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { ButtonComponent } from '../button/button.component';
@@ -16,6 +15,7 @@ import SearchInputStyles from '@fabula/core/styles/components/search-input/searc
 
 @Component({
     selector: 'fab-search-input',
+    styleUrls: ['./search-input.component.scss'],
     templateUrl: './search-input.component.html',
 })
 export class SearchInputComponent extends InputComponent implements OnInit {
@@ -30,13 +30,15 @@ export class SearchInputComponent extends InputComponent implements OnInit {
 
     constructor(public elRef: ElementRef) {
         super(elRef);
-        this.additionalStyles = SearchInputStyles;
+        
     }
 
     ngOnInit() {
         if (this.button) { this.handleButton(); }
 
+        this.additionalStyles = SearchInputStyles;
         this.inputProps = this;
+        this.initStyles();
     }
 
     // Methods

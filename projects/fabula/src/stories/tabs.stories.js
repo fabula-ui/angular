@@ -17,7 +17,7 @@ import {
 // Examples
 import { TabsExample } from './examples/tabs/example/tabs.example';
 
-// Wrappers
+// Props
 import { TabsExampleWrapper } from './wrappers/tabs/example/tabs-example.wrapper';
 import { TabsColorWrapper } from './wrappers/tabs/color/tabs-color.wrapper';
 import { TabsContentWrapper } from './wrappers/tabs/content/tabs-content.wrapper';
@@ -27,6 +27,10 @@ import { TabsInvertWrapper } from './wrappers/tabs/invert/tabs-invert.wrapper';
 import { TabsLayoutWrapper } from './wrappers/tabs/layout/tabs-layout.wrapper';
 import { TabsStackedWrapper } from './wrappers/tabs/stacked/tabs-stacked.wrapper';
 import { TabsTypeWrapper } from './wrappers/tabs/type/tabs-type.wrapper';
+
+// Utils
+import { TabsUtilMarginWrapper } from './wrappers/tabs/util-margin/tabs-util-margin.wrapper';
+import { TabsUtilVisibilityWrapper } from './wrappers/tabs/util-visibility/tabs-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -66,4 +70,6 @@ export const PropInvert = () => ({ component: TabsInvertWrapper });
 export const PropLayout = () => ({ component: TabsLayoutWrapper });
 export const PropStacked = () => ({ component: TabsStackedWrapper });
 export const PropType = () => ({ component: TabsTypeWrapper });
+export const UtilMargin = () => ({ component: TabsUtilMarginWrapper });
+export const UtilVisibility = () => ({ component: TabsUtilVisibilityWrapper });
 export const HandleContent = () => ({ component: TabsContentWrapper });

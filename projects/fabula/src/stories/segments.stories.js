@@ -17,7 +17,7 @@ import {
 // Examples
 import { SegmentsExample } from './examples/segments/example/segments.example';
 
-// Wrappers
+// Props
 import { SegmentsActiveColorWrapper } from './wrappers/segments/active-color/segments-active-color.wrapper';
 import { SegmentsActiveTextColorWrapper } from './wrappers/segments/active-text-color/segments-active-text-color.wrapper';
 import { SegmentsBorderWrapper } from './wrappers/segments/border/segments-border.wrapper';
@@ -31,6 +31,10 @@ import { SegmentsInactiveTextColorWrapper } from './wrappers/segments/inactive-t
 import { SegmentsInvertWrapper } from './wrappers/segments/invert/segments-invert.wrapper';
 import { SegmentsOutlineWrapper } from './wrappers/segments/outline/segments-outline.wrapper';
 import { SegmentsRoundedWrapper } from './wrappers/segments/rounded/segments-rounded.wrapper';
+
+// Utils
+import { SegmentsUtilMarginWrapper } from './wrappers/segments/util-margin/segments-util-margin.wrapper';
+import { SegmentsUtilVisibilityWrapper } from './wrappers/segments/util-visibility/segments-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -74,4 +78,6 @@ export const PropInactiveTextColor = () => ({ component: SegmentsInactiveTextCol
 export const PropInvert = () => ({ component: SegmentsInvertWrapper });
 export const PropOutline = () => ({ component: SegmentsOutlineWrapper });
 export const PropRounded = () => ({ component: SegmentsRoundedWrapper });
+export const UtilMargin = () => ({ component: SegmentsUtilMarginWrapper });
+export const UtilVisibility = () => ({ component: SegmentsUtilVisibilityWrapper });
 export const HandleContent = () => ({ component: SegmentsContentWrapper });

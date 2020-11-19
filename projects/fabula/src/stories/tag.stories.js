@@ -15,7 +15,7 @@ import {
 // Examples
 import { TagExample } from './examples/tag/example/tag.example';
 
-// Wrappers
+// Props
 import { TagClearWrapper } from './wrappers/tag/clear/tag-clear.wrapper';
 import { TagColorWrapper } from './wrappers/tag/color/tag-color.wrapper';
 import { TagExampleWrapper } from './wrappers/tag/example/tag-example.wrapper';
@@ -25,6 +25,11 @@ import { TagInvertWrapper } from './wrappers/tag/invert/tag-invert.wrapper';
 import { TagOutlineWrapper } from './wrappers/tag/outline/tag-outline.wrapper';
 import { TagRoundedWrapper } from './wrappers/tag/rounded/tag-rounded.wrapper';
 import { TagSizeWrapper } from './wrappers/tag/size/tag-size.wrapper';
+
+// Utils
+import { TagUtilMarginWrapper } from './wrappers/tag/util-margin/tag-util-margin.wrapper';
+import { TagUtilPaddingWrapper } from './wrappers/tag/util-padding/tag-util-padding.wrapper';
+import { TagUtilVisibilityWrapper } from './wrappers/tag/util-visibility/tag-util-visibility.wrapper';
 
 // Module init
 export default {
@@ -57,3 +62,6 @@ export const PropInvert = () => ({ component: TagInvertWrapper });
 export const PropOutline = () => ({ component: TagOutlineWrapper });
 export const PropRounded = () => ({ component: TagRoundedWrapper });
 export const PropSize = () => ({ component: TagSizeWrapper });
+export const UtilMargin = () => ({ component: TagUtilMarginWrapper });
+export const UtilPadding = () => ({ component: TagUtilPaddingWrapper });
+export const UtilVisibility = () => ({ component: TagUtilVisibilityWrapper });
