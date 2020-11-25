@@ -7,6 +7,7 @@ import {
     AvatarModule,
     ButtonModule,
     ButtonGroupComponent,
+    FabulaModule,
     HelpersModule,
     IconsModule,
     TextModule,
@@ -55,10 +56,12 @@ export default {
                 AvatarModule,
                 BrowserModule,
                 ButtonModule,
+                FabulaModule.forRoot({
+                    theme: {}
+                }),
                 HelpersModule,
                 IconsModule,
                 TextModule,
-                ThemeModule.forRoot(),
                 UtilsModule
             ],
             providers: []

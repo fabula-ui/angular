@@ -3,6 +3,7 @@ import { css } from 'emotion';
 
 // Default theme
 import reset from '@fabula/core/styles/common/reset';
+import setBaseTheme from '@fabula/core/styles/methods/misc/setBaseTheme';
 
 // Models
 import { IUserOptions } from '../models/user-options.model';
@@ -15,5 +16,6 @@ export class ThemeService {
 
   init() {
     document.body.classList.add(css(reset));
+    setBaseTheme(this.options);
   }
 }

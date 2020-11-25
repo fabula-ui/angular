@@ -1,22 +1,38 @@
 import {
+  APP_INITIALIZER,
   NgModule,
   ModuleWithProviders
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// Modules
-import { ComponentsModule } from './modules/components.module';
-import { GridModule } from './modules/grid.module';
-import { HelpersModule } from './modules/helpers.module';
-import { UtilsModule } from './modules/utils.module';
+// Models
+import { IUserOptions } from './models/user-options.model';
+
+// Services
+import { ThemeService } from './services/theme.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    ComponentsModule,
-    GridModule,
-    HelpersModule,
-    UtilsModule
+    CommonModule
   ]
 })
-export class FabulaModule {}
+export class FabulaModule {
+  static forRoot(options?: IUserOptions): ModuleWithProviders {
+    return {
+      ngModule: FabulaModule,
+      providers: [
+        ThemeService,
+        {
+          provide: APP_INITIALIZER,
+          useFactory: (service: ThemeService) => () => service.init(),
+          deps: [ThemeService],
+          multi: true
+        },
+        {
+          provide: 'UserOptions',
+          useValue: options
+        }
+      ]
+    };
+  }
+}
