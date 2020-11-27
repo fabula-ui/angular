@@ -9,6 +9,9 @@ import getInitials from '@fabula/core/methods/misc/getInitials';
 // Models
 import { Icon } from '../../models/icon.model';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import AvatarStyles from '@fabula/core/styles/components/avatar/avatar';
 
@@ -32,7 +35,10 @@ export class AvatarComponent extends CommonComponent implements OnInit {
 
   inline = true;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = AvatarStyles;

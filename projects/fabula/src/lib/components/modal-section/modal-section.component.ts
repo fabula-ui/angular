@@ -3,6 +3,9 @@ import { Component, OnInit, ElementRef, Input } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ModalSectionStyles from '@fabula/core/styles/components/modal-section/modal-section';
 
@@ -20,7 +23,10 @@ export class ModalSectionComponent extends CommonComponent implements OnInit {
   @Input() padding = true;
   @Input() parentColor: string;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = ModalSectionStyles;

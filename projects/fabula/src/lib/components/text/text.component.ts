@@ -1,7 +1,10 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 // Styles
 import TextStyles from '@fabula/core/styles/components/text/text';
@@ -27,7 +30,10 @@ export class TextComponent extends CommonComponent implements OnInit {
   medium;
   semibold;
 
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     const host = this.elRef.nativeElement;

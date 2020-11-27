@@ -14,6 +14,9 @@ import { CommonComponent } from '../common-component/common-component.component'
 import { DropdownMenuComponent } from '../dropdown-menu/dropdown-menu.component';
 import { DropdownToggleComponent } from '../dropdown-toggle/dropdown-toggle.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import DropdownStyles from '@fabula/core/styles/components/dropdown/dropdown';
 
@@ -37,7 +40,10 @@ export class DropdownComponent extends CommonComponent implements AfterViewInit,
 
     inline = true;
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+      ) { super(elRef, fabulaService); }
 
     ngAfterViewInit() {
         this.handleChildren();

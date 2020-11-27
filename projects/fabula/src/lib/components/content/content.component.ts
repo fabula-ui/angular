@@ -1,8 +1,10 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 // Styles
 import ContentStyles from '@fabula/core/styles/components/content/content';
@@ -18,7 +20,10 @@ export class ContentComponent extends CommonComponent implements OnInit {
 
   contentClass: string;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = ContentStyles;

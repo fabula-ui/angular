@@ -17,6 +17,9 @@ import { DividerComponent } from '../divider/divider.component';
 import { DropdownHeaderComponent } from '../dropdown-header/dropdown-header.component';
 import { DropdownItemComponent } from '../dropdown-item/dropdown-item.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import DropdownMenuStyles from '@fabula/core/styles/components/dropdown-menu/dropdown-menu';
 
@@ -44,7 +47,10 @@ export class DropdownMenuComponent extends CommonComponent implements AfterViewI
 
     isOpen = false;
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngAfterViewInit() {
         this.contentHeader.forEach((header: DropdownHeaderComponent) => { this.handleDropdownHeader(header); });

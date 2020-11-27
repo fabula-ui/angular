@@ -4,6 +4,9 @@ import { css } from 'emotion';
 // Components
 import { SelectorComponent } from '../selector/selector.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import TabStyles from '@fabula/core/styles/components/tab/tab';
 
@@ -14,8 +17,11 @@ import TabStyles from '@fabula/core/styles/components/tab/tab';
 })
 export class TabComponent extends SelectorComponent {
   @Input() type: string;
-  
-  constructor(public elRef: ElementRef) { super(elRef); }
+
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   childViewInit() {
     const host = this.elRef.nativeElement;

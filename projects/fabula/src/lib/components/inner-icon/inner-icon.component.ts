@@ -1,8 +1,10 @@
 import { Component, ElementRef, Input, AfterViewInit } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 // Styles
 import InnerIconStyles from '@fabula/core/styles/components/inner-icon/inner-icon';
@@ -16,7 +18,10 @@ export class InnerIconComponent extends CommonComponent implements AfterViewInit
     @Input() icon: any;
     @Input() parentProps: any;
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngAfterViewInit() {
         this.additionalProps = {

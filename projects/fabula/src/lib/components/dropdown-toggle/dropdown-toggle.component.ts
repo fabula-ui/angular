@@ -16,6 +16,9 @@ import { ButtonComponent } from '../button/button.component';
 // Models
 import { Icon } from '../../models/icon.model';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import DropdownToggleStyles from '@fabula/core/styles/components/dropdown-toggle/dropdown-toggle';
 
@@ -37,7 +40,8 @@ export class DropdownToggleComponent extends ButtonComponent implements AfterVie
     constructor(
         public cdRef: ChangeDetectorRef,
         public elRef: ElementRef,
-    ) { super(elRef); }
+        public fabulaService: FabulaService
+      ) { super(elRef, fabulaService); }
 
     ngAfterViewChecked() {
         this.cdRef.detectChanges();

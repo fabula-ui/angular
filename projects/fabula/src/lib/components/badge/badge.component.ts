@@ -1,8 +1,13 @@
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
 
+// Components
+import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import BadgeStyles from '@fabula/core/styles/components/badge/badge';
-import { CommonComponent } from '../common-component/common-component.component';
 
 @Component({
   selector: 'fab-badge',
@@ -28,7 +33,10 @@ export class BadgeComponent extends CommonComponent implements OnInit {
 
   inline = true;
 
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = BadgeStyles;

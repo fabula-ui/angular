@@ -4,6 +4,9 @@ import { css } from 'emotion';
 // Components
 import { TabsComponent } from '../tabs/tabs.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import NavbarTabsStyles from '@fabula/core/styles/components/navbar-tabs/navbar-tabs';
 
@@ -17,7 +20,10 @@ export class NavbarTabsComponent extends TabsComponent implements OnInit {
   
   tabsProps;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     const host = this.elRef.nativeElement;

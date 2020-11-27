@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './alert-examples.wrapper.html',
 })
 export class AlertExamplesWrapper implements OnInit {
-
+  downProps = { 'xl': { 'color': 'primary' } };
   constructor() { }
 
   ngOnInit() {

@@ -5,6 +5,9 @@ import { CardImageComponent } from '../card-image/card-image.component';
 import { CardSectionComponent } from '../card-section/card-section.component';
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import CardStyles from '@fabula/core/styles/components/card/card';
 
@@ -21,7 +24,10 @@ export class CardComponent extends CommonComponent implements AfterViewInit, OnI
   @Input() layout = 'v';
   @Input() padding = false;
 
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     this.cardImageComponents.forEach((child: CardImageComponent) => {

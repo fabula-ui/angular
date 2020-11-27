@@ -1,8 +1,10 @@
 import { Component, ElementRef, Input, ChangeDetectorRef, AfterViewInit } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 // Styles
 import CloseButtonStyles from '@fabula/core/styles/components/close-button/close-button';
@@ -18,10 +20,9 @@ export class CloseButtonComponent extends CommonComponent implements AfterViewIn
 
     constructor(
         public cdRef: ChangeDetectorRef,
-        public elRef: ElementRef
-    ) {
-        super(elRef);
-    }
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngAfterViewInit() {
         // Set and apply styles

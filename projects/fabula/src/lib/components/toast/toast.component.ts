@@ -16,6 +16,7 @@ import { CommonComponent } from '../common-component/common-component.component'
 import { Icon } from '../../models/icon.model';
 
 // Services
+import { FabulaService } from '../../services/fabula.service';
 import { ToastService } from '../../services/toast.service';
 
 // Styles
@@ -53,10 +54,9 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
   constructor(
     public cdRef: ChangeDetectorRef,
     public elRef: ElementRef,
+    public fabulaService: FabulaService,
     public toastService: ToastService
-  ) {
-    super(elRef);
-  }
+  ) { super(elRef, fabulaService); }
 
   ngAfterContentInit() {
     this.styles = ToastStyles;

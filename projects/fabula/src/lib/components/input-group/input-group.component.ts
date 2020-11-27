@@ -3,6 +3,9 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import InputGroupStyles from '@fabula/core/styles/components/input-group/input-group';
 
@@ -13,7 +16,10 @@ import InputGroupStyles from '@fabula/core/styles/components/input-group/input-g
 export class InputGroupComponent extends CommonComponent implements OnInit {
   @Input() layout = 'horizontal';
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = InputGroupStyles;

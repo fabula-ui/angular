@@ -1,7 +1,11 @@
 import { Component, ElementRef, Input, OnInit, ContentChildren, QueryList, AfterViewInit } from '@angular/core';
+
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 import { TagComponent } from '../tag/tag.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 // Styles
 import TagGroupStyles from '@fabula/core/styles/components/tag-group/tag-group';
@@ -16,7 +20,10 @@ export class TagGroupComponent extends CommonComponent implements AfterViewInit,
   @Input() color: string;
   @Input() spacing: any;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     this.tagComponents.forEach((tag: TagComponent) => {

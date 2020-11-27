@@ -1,5 +1,10 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+
+// Component
 import { CommonComponent } from '../common-component/common-component.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 @Component({
     selector: 'fab-selector',
@@ -29,7 +34,10 @@ export class SelectorComponent extends CommonComponent {
 
     @Output() selectedSegment = new EventEmitter();
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     handleClick() {
         if (this.name) { this.selectedSegment.emit(this.name); }

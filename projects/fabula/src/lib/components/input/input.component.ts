@@ -13,6 +13,9 @@ import { CommonComponent } from '../common-component/common-component.component'
 import { Icon } from '../../models/icon.model';
 import { Message } from '../../models/message.model';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import InputStyles from '@fabula/core/styles/components/input/input';
 
@@ -45,7 +48,10 @@ export class InputComponent extends CommonComponent implements OnInit {
     hasFocus = false;
     host;
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngOnInit() {
         this.styles = InputStyles;

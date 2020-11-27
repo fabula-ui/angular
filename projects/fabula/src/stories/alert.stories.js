@@ -10,8 +10,8 @@ import {
     FabulaModule,
     HelpersModule,
     IconsModule,
+    ResponsivenessModule,
     TextModule,
-    ThemeModule,
     UtilsModule
 } from '../public-api';
 
@@ -61,8 +61,9 @@ export default {
                 }),
                 HelpersModule,
                 IconsModule,
+                ResponsivenessModule.forRoot(),
                 TextModule,
-                UtilsModule
+                UtilsModule.forRoot()
             ],
             providers: []
         })

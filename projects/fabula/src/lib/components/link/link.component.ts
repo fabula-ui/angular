@@ -3,6 +3,9 @@ import { Component, OnInit, ElementRef, Input } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import LinkStyles from '@fabula/core/styles/components/link/link';
 
@@ -17,11 +20,14 @@ export class LinkComponent extends CommonComponent implements OnInit {
     @Input() label: string;
     @Input() props: any;
     @Input() rel: string;
-    @Input() size = 'md';
+    @Input() size: string;
     @Input() target = '_blank';
     @Input() underline = true;
 
-    constructor(public elRef: ElementRef) { super(elRef) }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngOnInit() {
         this.styles = LinkStyles;

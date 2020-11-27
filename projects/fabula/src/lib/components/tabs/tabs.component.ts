@@ -5,6 +5,9 @@ import { css } from 'emotion';
 import { SegmentsComponent } from '../segments/segments.component';
 import { TabComponent } from '../tab/tab.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import TabsStyles from '@fabula/core/styles/components/tabs/tabs';
 
@@ -18,7 +21,10 @@ export class TabsComponent extends SegmentsComponent implements AfterViewInit, O
   @Input() alignment: string;
   @Input() props: any;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     super.ngAfterViewInit();

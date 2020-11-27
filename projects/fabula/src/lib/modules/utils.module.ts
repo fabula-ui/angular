@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Directives
@@ -14,6 +14,9 @@ import { PaddingDirective } from '../directives/padding.directive';
 import { RowDirective } from '../directives/row.directive';
 import { SizeDirective } from '../directives/size.directive';
 import { VisibilityDirective } from '../directives/visibility.directive';
+
+// Services
+import { FabulaService } from '../services/fabula.service';
 
 @NgModule({
     declarations: [
@@ -50,4 +53,21 @@ import { VisibilityDirective } from '../directives/visibility.directive';
         VisibilityDirective
     ]
 })
-export class UtilsModule {}
+export class UtilsModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: UtilsModule,
+            providers: [
+                FabulaService,
+                {
+                    provide: APP_INITIALIZER,
+                    useFactory: (service: FabulaService) => () => {
+                        service.utils = true;
+                    },
+                    deps: [FabulaService],
+                    multi: true
+                }
+            ]
+        };
+    }
+}

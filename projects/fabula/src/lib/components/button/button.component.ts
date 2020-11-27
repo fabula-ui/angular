@@ -8,6 +8,9 @@ import {
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ButtonStyles from '@fabula/core/styles/components/button/button';
 
@@ -42,7 +45,10 @@ export class ButtonComponent extends CommonComponent implements AfterViewInit {
 
   inline = true;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     this.styles = ButtonStyles;

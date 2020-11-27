@@ -9,6 +9,9 @@ import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitio
 // Models
 import { Icon } from '../../models/icon.model';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import AlertStyles from '@fabula/core/styles/components/alert/alert';
 
@@ -39,9 +42,15 @@ export class AlertComponent extends CommonComponent implements OnInit {
   @Output() close: EventEmitter<any> = new EventEmitter();
 
   closing;
+  hasProperty = {
+    visible: true
+  };
   host;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.host = this.elRef.nativeElement;

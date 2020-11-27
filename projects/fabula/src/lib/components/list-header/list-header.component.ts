@@ -3,6 +3,9 @@ import { Component, OnInit, ElementRef, Input } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ListHeaderStyles from '@fabula/core/styles/components/list-header/list-header';
 
@@ -13,7 +16,10 @@ import ListHeaderStyles from '@fabula/core/styles/components/list-header/list-he
 export class ListHeaderComponent extends CommonComponent implements OnInit {
     @Input() color: string;
 
-    constructor(public elRef: ElementRef) { super(elRef) }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+      ) { super(elRef, fabulaService); }
 
     ngOnInit() {
         this.styles = ListHeaderStyles;

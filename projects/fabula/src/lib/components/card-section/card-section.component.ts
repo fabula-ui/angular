@@ -3,6 +3,9 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import CardSectionStyles from '@fabula/core/styles/components/card-section/card-section';
 
@@ -20,7 +23,10 @@ export class CardSectionComponent extends CommonComponent implements OnInit {
   @Input() lighten = false;
   @Input() padding;
 
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = CardSectionStyles;

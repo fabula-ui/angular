@@ -3,6 +3,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ContainerStyles from '@fabula/core/styles/components/container/container';
 
@@ -12,7 +15,10 @@ import ContainerStyles from '@fabula/core/styles/components/container/container'
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent extends CommonComponent implements OnInit {
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = ContainerStyles;

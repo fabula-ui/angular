@@ -3,6 +3,9 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import HeadingStyles from '@fabula/core/styles/components/heading/heading';
 
@@ -16,7 +19,10 @@ export class HeadingComponent extends CommonComponent implements OnInit {
   @Input() level = 1;
   @Input() weight: any;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = HeadingStyles;

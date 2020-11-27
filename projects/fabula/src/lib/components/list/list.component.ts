@@ -14,6 +14,9 @@ import {
 import { CommonComponent } from '../common-component/common-component.component';
 import { ListItemComponent } from '../list-item/list-item.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ListStyles from '@fabula/core/styles/components/list/list';
 
@@ -34,7 +37,10 @@ export class ListComponent extends CommonComponent implements OnInit {
 
   @Output() clickItem: EventEmitter<any> = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     this.contentItems.forEach((item: ListItemComponent) => { this.handleItem(item); });

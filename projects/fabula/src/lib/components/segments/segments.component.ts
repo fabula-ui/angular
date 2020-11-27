@@ -5,6 +5,9 @@ import { CommonComponent } from '../common-component/common-component.component'
 import { SegmentComponent } from '../segment/segment.component';
 import { SelectorComponent } from '../selector/selector.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import SegmentsStyles from '@fabula/core/styles/components/segments/segments';
 
@@ -36,7 +39,10 @@ export class SegmentsComponent extends CommonComponent implements AfterViewInit,
 
   @Output() changeSegment = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     this.childComponents.forEach((child: SegmentComponent) => {

@@ -3,6 +3,9 @@ import { Component, ElementRef, Input, AfterViewInit } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import TagStyles from '@fabula/core/styles/components/tag/tag';
 
@@ -33,7 +36,10 @@ export class TagComponent extends CommonComponent implements AfterViewInit {
 
   inline = true;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewInit() {
     this.styles = TagStyles;

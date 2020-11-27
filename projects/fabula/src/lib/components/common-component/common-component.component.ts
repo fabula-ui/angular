@@ -1,11 +1,22 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
 import { css } from 'emotion';
 
+// Responsiveness
+import ResponsiveStyles from '@fabula/core/styles/responsive/responsive';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 @Component({
   selector: 'fab-component'
 })
 export class CommonComponent implements OnChanges {
   @Input() props: any = {};
+
+  // Responsiveness
+  @Input() down: any = {};
+  @Input() on: any = {};
+  @Input() up: any = {};
 
   additionalProps;
   additionalStyles;
@@ -13,7 +24,10 @@ export class CommonComponent implements OnChanges {
   host;
   styles;
 
-  constructor(public elRef: ElementRef) { }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { }
 
   ngOnChanges() {
     if (this.callbacks && typeof this.callbacks === 'function') { this.callbacks(); }
@@ -28,9 +42,25 @@ export class CommonComponent implements OnChanges {
         ...this.additionalProps
       }
     }));
+    let responsiveStyles;
 
     this.host = this.elRef.nativeElement;
     this.host.classList.add(styles);
+
+    if (this.fabulaService.responsiveness) {
+      responsiveStyles = css(ResponsiveStyles({
+        framework: 'angular',
+        props: {
+          ...this,
+          ...this.props,
+          ...this.additionalProps
+        },
+        styles: stylesFn,
+        utils: this.fabulaService.utils
+      }));
+
+      this.host.classList.add(responsiveStyles);
+    }
   }
 
   initStyles() {

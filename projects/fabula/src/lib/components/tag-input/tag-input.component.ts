@@ -4,9 +4,11 @@ import { css } from 'emotion';
 // Components
 import { InputComponent } from '../input/input.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import TagInputStyles from '@fabula/core/styles/components/tag-input/tag-input';
-
 
 @Component({
   selector: 'fab-tag-input',
@@ -23,10 +25,9 @@ export class TagInputComponent extends InputComponent implements OnInit {
   width;
 
   constructor(
-    public elRef: ElementRef
-  ) {
-    super(elRef);
-  }
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     let props;

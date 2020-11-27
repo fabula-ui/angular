@@ -90,6 +90,7 @@ export * from './lib/modules/link.module';
 export * from './lib/modules/list.module';
 export * from './lib/modules/modal.module';
 export * from './lib/modules/navbar.module';
+export * from './lib/modules/responsiveness.module';
 export * from './lib/modules/search-input.module';
 export * from './lib/modules/segments.module';
 export * from './lib/modules/tabs.module';

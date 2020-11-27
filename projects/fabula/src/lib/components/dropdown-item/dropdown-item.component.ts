@@ -10,6 +10,9 @@ import {
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import DropdownItemStyles from '@fabula/core/styles/components/dropdown-item/dropdown-item';
 
@@ -33,7 +36,10 @@ export class DropdownItemComponent extends CommonComponent implements AfterViewI
 
     @Output() clicked = new EventEmitter();
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngAfterViewInit() {
         if (this.props && this.props.clickToClose || this.clickToClose) {

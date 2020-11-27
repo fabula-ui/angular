@@ -6,6 +6,9 @@ import { CommonComponent } from '../common-component/common-component.component'
 // Models
 import { Icon } from '../../models/icon.model';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import CheckboxStyles from '@fabula/core/styles/components/checkbox/checkbox';
 
@@ -29,7 +32,10 @@ export class CheckboxComponent extends CommonComponent implements OnInit {
   @Output() check: EventEmitter<any> = new EventEmitter();
   @Output() uncheck: EventEmitter<any> = new EventEmitter();
 
-  constructor(public elRef: ElementRef) { super(elRef) }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = CheckboxStyles;

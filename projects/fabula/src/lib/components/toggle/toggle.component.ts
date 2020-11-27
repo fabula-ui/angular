@@ -3,6 +3,9 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ToggleStyles from '@fabula/core/styles/components/toggle/toggle';
 
@@ -21,7 +24,10 @@ export class ToggleComponent extends CommonComponent implements OnInit {
   @Input() rounded = false;
   @Input() size: string;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = ToggleStyles;

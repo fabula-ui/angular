@@ -10,6 +10,9 @@ import {
 import { ButtonComponent } from '../button/button.component';
 import { InputComponent } from '../input/input.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import SearchInputStyles from '@fabula/core/styles/components/search-input/search-input';
 
@@ -28,10 +31,10 @@ export class SearchInputComponent extends InputComponent implements OnInit {
     buttonProps;
     inputProps;
 
-    constructor(public elRef: ElementRef) {
-        super(elRef);
-        
-    }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngOnInit() {
         if (this.button) { this.handleButton(); }

@@ -3,6 +3,9 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import ToastStackStyles from '@fabula/core/styles/components/toast-stack/toast-stack';
 
@@ -17,7 +20,10 @@ export class ToastStackComponent extends CommonComponent implements OnInit {
   };
   @Input() toasts: Array<any>;
 
-  constructor(public elRef: ElementRef) { super(elRef); }
+  constructor(
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngOnInit() {
     this.styles = ToastStackStyles;
@@ -30,7 +36,7 @@ export class ToastStackComponent extends CommonComponent implements OnInit {
         toast.index = index;
         return toast;
       });
-  
+
       return toasts.filter(toast => !toast.hidden);
     } else {
       return [];

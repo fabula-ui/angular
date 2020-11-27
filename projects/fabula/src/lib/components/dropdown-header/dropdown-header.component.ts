@@ -8,6 +8,9 @@ import {
 // Components
 import { CommonComponent } from '../common-component/common-component.component';
 
+// Services
+import { FabulaService } from '../../services/fabula.service';
+
 // Styles
 import DropdownHeaderStyles from '@fabula/core/styles/components/dropdown-header/dropdown-header';
 
@@ -19,7 +22,10 @@ export class DropdownHeaderComponent extends CommonComponent implements AfterVie
     @Input() label: string;
     @Input() textColor: string;
 
-    constructor(public elRef: ElementRef) { super(elRef); }
+    constructor(
+        public elRef: ElementRef,
+        public fabulaService: FabulaService
+    ) { super(elRef, fabulaService); }
 
     ngAfterViewInit() {
         this.styles = DropdownHeaderStyles;

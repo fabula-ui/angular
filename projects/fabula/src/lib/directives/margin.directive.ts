@@ -34,5 +34,4 @@ export class MarginDirective implements AfterViewInit {
 
         host.classList.add(css(UtilsStyles({ framework: 'angular', props })));
     }
-
 }

@@ -1,8 +1,10 @@
 import { AfterViewChecked, Component, EventEmitter, ElementRef, Output, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { css } from 'emotion';
 
 // Components
 import { ModalSectionComponent } from '../modal-section/modal-section.component';
+
+// Services
+import { FabulaService } from '../../services/fabula.service';
 
 // Styles
 import ModalHeaderStyles from '@fabula/core/styles/components/modal-header/modal-header';
@@ -21,10 +23,9 @@ export class ModalHeaderComponent extends ModalSectionComponent implements After
 
   constructor(
     public cdRef: ChangeDetectorRef,
-    public elRef: ElementRef
-  ) {
-    super(elRef);
-  }
+    public elRef: ElementRef,
+    public fabulaService: FabulaService
+  ) { super(elRef, fabulaService); }
 
   ngAfterViewChecked() {
     this.cdRef.detectChanges();
