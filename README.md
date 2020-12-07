@@ -6,6 +6,8 @@
 
 > Fabula is currently in a beta version. It is not advised to be used in production yet.
 
+---
+
 This is the repository for the angular version of Fabula.
 
 To view this readme in portuguese, [click here](https://github.com/fabula-ui/angular/blob/master/.github/docs/pt/README.md).
