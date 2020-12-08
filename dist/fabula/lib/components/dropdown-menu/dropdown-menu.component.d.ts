@@ -1,0 +1,32 @@
+import { ElementRef, OnInit, EventEmitter, AfterViewInit, QueryList } from '@angular/core';
+import { CommonComponent } from '../common-component/common-component.component';
+import { DividerComponent } from '../divider/divider.component';
+import { DropdownHeaderComponent } from '../dropdown-header/dropdown-header.component';
+import { DropdownItemComponent } from '../dropdown-item/dropdown-item.component';
+import { FabulaService } from '../../services/fabula.service';
+export declare class DropdownMenuComponent extends CommonComponent implements AfterViewInit, OnInit {
+    elRef: ElementRef;
+    fabulaService: FabulaService;
+    contentHeader: QueryList<DropdownHeaderComponent>;
+    contentItems: QueryList<DropdownItemComponent>;
+    divider: QueryList<DividerComponent>;
+    viewHeader: QueryList<DropdownHeaderComponent>;
+    viewItems: QueryList<DropdownItemComponent>;
+    alignment: string;
+    clickToClose: boolean;
+    color: string;
+    direction: string;
+    items: Array<any>;
+    padding: boolean;
+    size: string;
+    clickItem: EventEmitter<any>;
+    closed: EventEmitter<any>;
+    isOpen: boolean;
+    constructor(elRef: ElementRef, fabulaService: FabulaService);
+    ngAfterViewInit(): void;
+    ngOnInit(): void;
+    handleDivider(divider: any): void;
+    handleDropdownHeader(header: any): void;
+    handleDropdownItem(item: any): void;
+    listen(events: any): void;
+}

@@ -1,0 +1,32 @@
+import { AfterViewInit, ElementRef } from '@angular/core';
+import { CommonComponent } from '../common-component/common-component.component';
+import { FabulaService } from '../../services/fabula.service';
+export declare class ButtonComponent extends CommonComponent implements AfterViewInit {
+    elRef: ElementRef;
+    fabulaService: FabulaService;
+    border: boolean;
+    circle: boolean;
+    clear: boolean;
+    color: string;
+    compact: boolean;
+    darken: boolean;
+    disabled: boolean;
+    expand: boolean;
+    faded: boolean;
+    glow: boolean;
+    gradient: boolean;
+    href: string;
+    invert: boolean;
+    lighten: boolean;
+    loading: string;
+    label: string;
+    outline: boolean;
+    rel: string;
+    rounded: boolean;
+    size: string;
+    target: string;
+    wide: boolean;
+    inline: boolean;
+    constructor(elRef: ElementRef, fabulaService: FabulaService);
+    ngAfterViewInit(): void;
+}

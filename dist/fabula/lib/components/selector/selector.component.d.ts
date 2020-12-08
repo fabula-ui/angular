@@ -1,0 +1,32 @@
+import { ElementRef, EventEmitter } from '@angular/core';
+import { CommonComponent } from '../common-component/common-component.component';
+import { FabulaService } from '../../services/fabula.service';
+export declare class SelectorComponent extends CommonComponent {
+    elRef: ElementRef;
+    fabulaService: FabulaService;
+    active: boolean;
+    activeColor: string;
+    activeTextColor: string;
+    clear: boolean;
+    color: string;
+    expand: boolean;
+    faded: boolean;
+    href: string;
+    inactiveColor: string;
+    inactiveTextColor: string;
+    invert: boolean;
+    layout: string;
+    link: string;
+    name: string;
+    outline: boolean;
+    rel: string;
+    rounded: boolean;
+    scope: string;
+    stacked: boolean;
+    target: string;
+    type: string;
+    selectedSegment: EventEmitter<{}>;
+    constructor(elRef: ElementRef, fabulaService: FabulaService);
+    handleClick(): void;
+    listen(events: any): void;
+}
