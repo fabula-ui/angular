@@ -1,9 +1,9 @@
 {
   "name": "@fabula/angular",
   "description": "Fabula UI Angular library",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -35,8 +35,8 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "core-js": "^2.5.4",
     "@fabula/core": "~0.0",
+    "core-js": "^2.5.4",
     "emotion": "^10.0.27",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
@@ -115,5 +115,27 @@
         ]
       }
     }
-  }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "dist/fabula/bundles/fabula-angular.umd.js",
+  "module": "dist/fabula/fesm5/fabula-angular.js",
+  "es2015": "dist/fabula/fesm2015/fabula-angular.js",
+  "esm5": "dist/fabula/esm5/fabula-angular.js",
+  "esm2015": "dist/fabula/esm2015/fabula-angular.js",
+  "fesm5": "dist/fabula/fesm5/fabula-angular.js",
+  "fesm2015": "dist/fabula/fesm2015/fabula-angular.js",
+  "typings": "dist/fabula/fabula-angular.d.ts",
+  "metadata": "dist/fabula/fabula-angular.metadata.json",
+  "sideEffects": false
 }
