@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Services
 import { FabulaService } from '../services/fabula.service';
 
+// @dynamic
 @NgModule({
   imports: [
     CommonModule,

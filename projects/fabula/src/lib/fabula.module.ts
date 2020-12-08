@@ -10,8 +10,19 @@ import { IUserOptions } from './models/user-options.model';
 
 // Services
 import { ThemeService } from './services/theme.service';
+import { CommonComponent } from './components/common-component/common-component.component';
 
+// @dynamic
 @NgModule({
+  declarations: [
+    CommonComponent
+  ],
+  entryComponents: [
+    CommonComponent
+  ],
+  exports: [
+    CommonComponent
+  ],
   imports: [
     CommonModule
   ]

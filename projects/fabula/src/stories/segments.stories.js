@@ -3,12 +3,12 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    CardComponent,
+    CardModule,
     GridModule,
     HelpersModule,
     IconsModule,
     SegmentsModule,
-    TextComponent,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -41,19 +41,19 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                CardComponent,
                 SegmentsExample,
-                TextComponent
             ],
             entryComponents: [
                 SegmentsExample
             ],
             imports: [
                 BrowserModule,
+                CardModule,
                 GridModule,
                 HelpersModule,
                 IconsModule,
                 SegmentsModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

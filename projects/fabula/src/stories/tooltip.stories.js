@@ -5,12 +5,11 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     AvatarModule,
     ButtonModule,
-    ButtonGroupComponent,
+    ButtonGroupModule,
     CardModule,
     HelpersModule,
     IconsModule,
-    TagComponent,
-    TagGroupComponent,
+    TagModule,
     ThemeModule,
     ThemeService,
     TooltipModule,
@@ -27,18 +26,15 @@ import { TooltipPlacementWrapper } from './wrappers/tooltip/placement/tooltip-pl
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                ButtonGroupComponent,
-                TagComponent,
-                TagGroupComponent
-            ],
             imports: [
                 AvatarModule,
                 BrowserModule,
+                ButtonGroupModule,
                 ButtonModule,
                 CardModule,
                 HelpersModule,
                 IconsModule,
+                TagModule,
                 ThemeModule.forRoot(),
                 TooltipModule,
                 UtilsModule

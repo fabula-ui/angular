@@ -20,9 +20,11 @@ export class ListItemComponent extends CommonComponent implements OnInit {
   @Input() divider: boolean;
   @Input() href: string;
   @Input() item: any = { button: false };
+  @Input() label: string;
   @Input() padding: boolean;
   @Input() props: any;
   @Input() rel: string;
+  @Input() striped = false;
   @Input() target = '_blank';
 
   @Output() clicked = new EventEmitter();

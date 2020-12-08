@@ -8,7 +8,8 @@ import ResponsiveStyles from '@fabula/core/styles/responsive/responsive';
 import { FabulaService } from '../../services/fabula.service';
 
 @Component({
-  selector: 'fab-component'
+  selector: 'fab-component',
+  template: ''
 })
 export class CommonComponent implements OnChanges {
   @Input() props: any = {};

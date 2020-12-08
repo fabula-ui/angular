@@ -4,11 +4,11 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     ButtonModule,
+    HelpersModule,
     IconsModule,
     ThemeModule,
     ThemeService,
-    UtilsModule,
-    WrapperModule
+    UtilsModule
 } from '../public-api';
 
 // Props
@@ -43,10 +43,10 @@ export default {
                 ButtonModule,
                 BrowserModule,
                 ButtonModule,
+                HelpersModule,
                 IconsModule,
                 ThemeModule.forRoot(),
-                UtilsModule,
-                WrapperModule
+                UtilsModule
             ],
             providers: [
                 ThemeService

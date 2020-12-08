@@ -43,7 +43,7 @@ export class CheckboxComponent extends CommonComponent implements OnInit {
   }
 
   // Methods
-  handleChange(e) {
+  handleChange(e?) {
     if (!this.disabled && !this.readOnly) {
       this.checked = !!e ? e.target.checked : !this.checked;
       this.indeterminate = !!e ? e.target.indeterminate : false;

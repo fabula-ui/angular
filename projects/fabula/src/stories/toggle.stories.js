@@ -4,9 +4,9 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     HelpersModule,
-    ToggleComponent,
     ThemeModule,
     ThemeService,
+    ToggleModule,
     UtilsModule
 } from '../public-api';
 
@@ -26,13 +26,11 @@ import { ToggleUtilVisibilityWrapper } from './wrappers/toggle/util-visibility/t
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                ToggleComponent
-            ],
             imports: [
                 BrowserModule,
                 HelpersModule,
                 ThemeModule.forRoot(),
+                ToggleModule,
                 UtilsModule
             ],
             providers: [

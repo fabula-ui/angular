@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AlignDirective } from '../directives/align.directive';
 import { BlockDirective } from '../directives/block.directive';
 import { ColumnDirective } from '../directives/column.directive';
+import { CommonDirective } from '../directives/common.directive';
 import { FlexDirective } from '../directives/flex.directive';
 import { FlowDirective } from '../directives/flow.directive';
 import { GrowDirective } from '../directives/grow.directive';
@@ -18,12 +19,14 @@ import { VisibilityDirective } from '../directives/visibility.directive';
 // Services
 import { FabulaService } from '../services/fabula.service';
 
+// @dynamic
 @NgModule({
     declarations: [
         // Directives
         AlignDirective,
         BlockDirective,
         ColumnDirective,
+        CommonDirective,
         FlexDirective,
         FlowDirective,
         GrowDirective,
@@ -42,6 +45,7 @@ import { FabulaService } from '../services/fabula.service';
         AlignDirective,
         BlockDirective,
         ColumnDirective,
+        CommonDirective,
         FlexDirective,
         FlowDirective,
         GrowDirective,

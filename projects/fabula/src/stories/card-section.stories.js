@@ -7,11 +7,9 @@ import {
     CardModule,
     GridModule,
     IconsModule,
-    ListComponent,
-    ListItemComponent,
-    TagComponent,
-    TagGroupComponent,
-    TextComponent,
+    ListModule,
+    TagModule,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -37,12 +35,7 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                CardSectionExample,
-                ListComponent,
-                ListItemComponent,
-                TagComponent,
-                TagGroupComponent,
-                TextComponent,
+                CardSectionExample
             ],
             imports: [
                 BrowserModule,
@@ -50,6 +43,9 @@ export default {
                 CardModule,
                 GridModule,
                 IconsModule,
+                ListModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

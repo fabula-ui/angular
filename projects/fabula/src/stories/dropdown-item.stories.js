@@ -4,15 +4,14 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     AvatarModule,
-    BadgeComponent,
+    BadgeModule,
     ButtonModule,
     DropdownModule,
     HelpersModule,
     IconsModule,
-    ListComponent,
-    ListItemComponent,
-    TagComponent,
-    TextComponent,
+    ListModule,
+    TagModule,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -32,20 +31,17 @@ import { DropdownItemUtilVisibilityWrapper } from './wrappers/dropdown-item/util
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                BadgeComponent,
-                ListComponent,
-                ListItemComponent,
-                TagComponent,
-                TextComponent
-            ],
             imports: [
                 AvatarModule,
+                BadgeModule,
                 BrowserModule,
                 ButtonModule,
                 DropdownModule,
                 HelpersModule,
                 IconsModule,
+                ListModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

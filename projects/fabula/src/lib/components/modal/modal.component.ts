@@ -34,7 +34,7 @@ export class ModalComponent implements AfterViewInit {
 
   constructor(
     public elRef: ElementRef,
-    private modalService: ModalService,
+    public modalService: ModalService,
   ) { }
 
   ngAfterViewInit() {

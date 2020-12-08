@@ -7,9 +7,8 @@ import {
     GridModule,
     HelpersModule,
     IconsModule,
-    TagComponent,
-    TagGroupComponent,
-    TextComponent,
+    TagModule,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -35,17 +34,14 @@ import { InputUtilVisibilityWrapper } from './wrappers/input/util-visibility/inp
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                TagComponent,
-                TagGroupComponent,
-                TextComponent
-            ],
             imports: [
                 BrowserModule,
                 GridModule,
                 HelpersModule,
                 IconsModule,
                 InputModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

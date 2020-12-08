@@ -8,11 +8,10 @@ import {
     HelpersModule,
     IconsModule,
     InnerIconModule,
-    InputComponent,
-    InputGroupComponent,
-    TagComponent,
-    TagGroupComponent,
-    TextComponent,
+    InputModule,
+    InputGroupModule,
+    TagModule,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -30,13 +29,6 @@ import { InputGroupUtilVisibilityWrapper } from './wrappers/input-group/util-vis
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                InputComponent,
-                InputGroupComponent,
-                TagComponent,
-                TagGroupComponent,
-                TextComponent
-            ],
             imports: [
                 BrowserModule,
                 ButtonModule,
@@ -44,6 +36,10 @@ export default {
                 HelpersModule,
                 IconsModule,
                 InnerIconModule,
+                InputGroupModule,
+                InputModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

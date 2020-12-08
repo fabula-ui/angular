@@ -4,13 +4,13 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     AvatarModule,
-    BadgeComponent,
+    BadgeModule,
+    HelpersModule,
     IconsModule,
-    TextComponent,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule,
-    WrapperModule
 } from '../public-api';
 
 // Examples
@@ -39,19 +39,19 @@ export default {
         moduleMetadata({
             declarations: [
                 AvatarExternalBadgeExample,
-                BadgeComponent,
-                TextComponent
             ],
             entryComponents: [
                 AvatarExternalBadgeExample
             ],
             imports: [
                 AvatarModule,
+                BadgeModule,
                 BrowserModule,
                 IconsModule,
+                HelpersModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule,
-                WrapperModule
             ],
             providers: [
                 ThemeService

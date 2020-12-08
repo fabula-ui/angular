@@ -4,12 +4,12 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     ButtonModule,
-    ButtonGroupComponent,
+    ButtonGroupModule,
     DropdownModule,
+    HelpersModule,
     ThemeModule,
     ThemeService,
     UtilsModule,
-    WrapperModule
 } from '../public-api';
 
 // Props
@@ -26,16 +26,14 @@ import { ButtonGroupUtilVisibilityWrapper } from './wrappers/button-group/util-v
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                ButtonGroupComponent
-            ],
             imports: [
                 BrowserModule,
+                ButtonGroupModule,
                 ButtonModule,
                 DropdownModule,
+                HelpersModule,
                 ThemeModule.forRoot(),
-                UtilsModule,
-                WrapperModule
+                UtilsModule
             ],
             providers: [
                 ThemeService

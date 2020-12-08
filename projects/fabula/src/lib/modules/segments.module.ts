@@ -4,6 +4,7 @@ import {
 import { CommonModule } from '@angular/common';
 
 // Components
+import { ContentComponent } from '../components/content/content.component';
 import { SegmentComponent } from '../components/segment/segment.component';
 import { SegmentContentComponent } from '../components/segment-content/segment-content.component';
 import { SegmentsComponent } from '../components/segments/segments.component';
@@ -14,6 +15,7 @@ import { SegmentsDirective } from '../directives/segments.directive';
 
 @NgModule({
     declarations: [
+        ContentComponent,
         SegmentComponent,
         SegmentContentComponent,
         SegmentsComponent,
@@ -25,6 +27,7 @@ import { SegmentsDirective } from '../directives/segments.directive';
     ],
     imports: [CommonModule],
     exports: [
+        ContentComponent,
         SegmentComponent,
         SegmentContentComponent,
         SegmentsComponent,

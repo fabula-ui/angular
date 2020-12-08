@@ -3,7 +3,7 @@ import { moduleMetadata } from '@storybook/angular';
 
 // Fabula API
 import {
-    ButtonGroupComponent,
+    ButtonGroupModule,
     ButtonModule,
     GridModule,
     HelpersModule,
@@ -36,12 +36,12 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                ButtonGroupComponent,
                 ToastExample
             ],
             entryComponents: [ToastExample],
             imports: [
                 BrowserModule,
+                ButtonGroupModule,
                 ButtonModule,
                 GridModule,
                 HelpersModule,

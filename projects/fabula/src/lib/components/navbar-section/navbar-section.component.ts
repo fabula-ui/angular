@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ContentChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { css } from 'emotion';
 
 // Styles
@@ -11,6 +11,7 @@ import NavbarSectionStyles from '@fabula/core/styles/components/navbar-section/n
 export class NavbarSectionComponent implements AfterViewInit {
   @Input() alignment: string;
   @Input() expand = false;
+  @Input() tabs = false;
   
   constructor(public elRef: ElementRef) {}
 

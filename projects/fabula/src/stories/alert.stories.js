@@ -5,8 +5,8 @@ import { moduleMetadata } from '@storybook/angular';
 import {
     AlertModule,
     AvatarModule,
+    ButtonGroupModule,
     ButtonModule,
-    ButtonGroupComponent,
     FabulaModule,
     HelpersModule,
     IconsModule,
@@ -46,7 +46,6 @@ export default {
         moduleMetadata({
             declarations: [
                 AlertExample,
-                ButtonGroupComponent,
             ],
             entryComponents: [
                 AlertExample
@@ -55,6 +54,7 @@ export default {
                 AlertModule,
                 AvatarModule,
                 BrowserModule,
+                ButtonGroupModule,
                 ButtonModule,
                 FabulaModule.forRoot({
                     theme: {}

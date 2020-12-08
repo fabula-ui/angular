@@ -11,6 +11,7 @@ import { IUserOptions } from '../models/user-options.model';
 // Services
 import { ThemeService } from '../services/theme.service';
 
+// @dynamic
 @NgModule({
   declarations: [],
   imports: [CommonModule],

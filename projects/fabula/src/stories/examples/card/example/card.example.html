@@ -1,7 +1,7 @@
 <fab-card [color]="color" [glow]="glow">
     <fab-card-image [color]="color" [darken]="!!color" height="120"></fab-card-image>
     <fab-card-section [padding]="true">
-      <fab-text size="lg"><strong>Card Title</strong></fab-text>
+      <fab-text [color]="!!color && 'inherit'" size="lg"><strong>Card Title</strong></fab-text>
       <fab-text [aux]="true" [color]="!!color && 'inherit'" size="sm">Card subtitle</fab-text>
     </fab-card-section>
     <fab-card-section [color]="color" divider="top" [padding]="true">

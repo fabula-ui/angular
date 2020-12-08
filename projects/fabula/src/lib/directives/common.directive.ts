@@ -4,7 +4,9 @@ import { css } from 'emotion';
 // Styles
 import UtilsStyles from '@fabula/core/styles/utils/utils';
 
-@Directive({})
+@Directive({
+    selector: 'commonDirective'
+})
 export class CommonDirective implements AfterViewInit {
     constructor(public elRef: ElementRef) { }
 

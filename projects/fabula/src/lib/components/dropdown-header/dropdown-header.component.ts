@@ -19,8 +19,8 @@ import DropdownHeaderStyles from '@fabula/core/styles/components/dropdown-header
     templateUrl: './dropdown-header.component.html',
 })
 export class DropdownHeaderComponent extends CommonComponent implements AfterViewInit {
+    @Input() color: string;
     @Input() label: string;
-    @Input() textColor: string;
 
     constructor(
         public elRef: ElementRef,

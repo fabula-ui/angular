@@ -1,5 +1,5 @@
 {
-  "name": "@fabula-ui/angular",
+  "name": "@fabula/angular",
   "description": "Fabula UI Angular library",
   "version": "0.0.1",
   "publishConfig": {

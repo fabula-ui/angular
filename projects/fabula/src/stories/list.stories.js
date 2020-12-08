@@ -10,9 +10,8 @@ import {
     HelpersModule,
     IconsModule,
     ListModule,
-    TagComponent,
-    TagGroupComponent,
-    TextComponent,
+    TagModule,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule
@@ -38,10 +37,7 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [
-                ListExample,
-                TagComponent,
-                TagGroupComponent,
-                TextComponent
+                ListExample
             ],
             imports: [
                 AvatarModule,
@@ -52,6 +48,8 @@ export default {
                 HelpersModule,
                 IconsModule,
                 ListModule,
+                TagModule,
+                TextModule,
                 ThemeModule.forRoot(),
                 UtilsModule
             ],

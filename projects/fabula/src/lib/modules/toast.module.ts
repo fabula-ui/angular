@@ -5,28 +5,27 @@ import { CommonModule } from '@angular/common';
 
 // Components
 import { InnerIconComponent } from '../components/inner-icon/inner-icon.component';
-import { LinkComponent } from '../components/link/link.component';
 import { ToastComponent } from '../components/toast/toast.component';
 
 // Modules
 import { ButtonModule } from '../modules/button.module';
 import { IconsModule } from './icons.module';
 import { InnerIconModule } from '../modules/inner-icon.module';
+import { LinkModule } from './link.module';
 
 // Services
 import { ToastService } from '../services/toast.service';
 import { ToastStackComponent } from '../components/toast-stack/toast-stack.component';
 import { ToastPortalComponent } from '../components/toast-portal/toast-portal.component';
 
+
 @NgModule({
     declarations: [
-        LinkComponent,
         ToastComponent,
         ToastPortalComponent,
         ToastStackComponent
     ],
     entryComponents: [
-        LinkComponent,
         InnerIconComponent,
         ToastComponent,
         ToastPortalComponent,
@@ -36,10 +35,10 @@ import { ToastPortalComponent } from '../components/toast-portal/toast-portal.co
         ButtonModule,
         CommonModule,
         IconsModule,
-        InnerIconModule
+        InnerIconModule,
+        LinkModule
     ],
     exports: [
-        LinkComponent,
         ToastComponent,
         ToastPortalComponent,
         ToastStackComponent

@@ -4,17 +4,16 @@ import { moduleMetadata } from '@storybook/angular';
 // Fabula API
 import {
     AvatarModule,
-    BadgeComponent,
+    BadgeModule,
     ButtonModule,
     DividerModule,
-    ElementModule,
     HeadingModule,
+    HelpersModule,
     IconsModule,
-    TextComponent,
+    TextModule,
     ThemeModule,
     ThemeService,
     UtilsModule,
-    WrapperModule
 } from '../public-api';
 
 // Props
@@ -37,21 +36,18 @@ import { BadgeUtilVisibilityWrapper } from './wrappers/badge/util-visibility/bad
 export default {
     decorators: [
         moduleMetadata({
-            declarations: [
-                BadgeComponent,
-                TextComponent
-            ],
             imports: [
                 AvatarModule,
+                BadgeModule,
                 BrowserModule,
                 ButtonModule,
                 DividerModule,
-                ElementModule,
                 HeadingModule,
+                HelpersModule,
                 IconsModule,
+                TextModule,
                 ThemeModule.forRoot(),
-                UtilsModule,
-                WrapperModule
+                UtilsModule
             ],
             providers: [
                 ThemeService
