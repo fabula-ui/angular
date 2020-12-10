@@ -14,7 +14,7 @@
     "start": "start-storybook -p 8008",
     "build": "ng build",
     "lint": "ng lint",
-    "compile": "ng build fabula && cd dist/fabula && npm pack .",
+    "compile": "ng build fabula --prod && cd dist/fabula && npm pack .",
     "test": "jest",
     "test:ci": "jest --runInBand",
     "test:watch": "jest --watch",

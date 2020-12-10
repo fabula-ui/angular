@@ -1,6 +1,14 @@
 {
   "name": "@fabula/angular",
-  "version": "0.0.1",
+  "version": "0.0.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabula-ui/angular.git"
+  },
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^11.0.3",
     "@angular/core": "^11.0.3"
