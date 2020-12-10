@@ -15,6 +15,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "compile": "ng build fabula --prod",
+    "compile-and-publish": "npm run compile && cd dist/fabula && npm publish --access public",
     "pack-files": "npm run compile && cd dist/fabula && npm pack .",
     "test": "jest",
     "test:ci": "jest --runInBand",

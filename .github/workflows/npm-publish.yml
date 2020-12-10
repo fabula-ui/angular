@@ -19,10 +19,6 @@ jobs:
       - name: install
         uses: bahmutov/npm-install@v1
       - name: compile
-        run: npm run compile
-      - name: change folder
-        run: cd dist/fabula
-      - name: publish
-        run: npm publish --access public
+        run: npm run compile-and-publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
