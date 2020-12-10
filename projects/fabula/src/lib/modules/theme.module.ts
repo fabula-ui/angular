@@ -19,7 +19,7 @@ import { ThemeService } from '../services/theme.service';
   providers: [ThemeService]
 })
 export class ThemeModule {
-  static forRoot(options?: IUserOptions): ModuleWithProviders {
+  static forRoot(options?: IUserOptions): ModuleWithProviders<any> {
     return {
       ngModule: ThemeModule,
       providers: [

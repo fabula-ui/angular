@@ -28,7 +28,7 @@ import { CommonComponent } from './components/common-component/common-component.
   ]
 })
 export class FabulaModule {
-  static forRoot(options?: IUserOptions): ModuleWithProviders {
+  static forRoot(options?: IUserOptions): ModuleWithProviders<FabulaModule> {
     return {
       ngModule: FabulaModule,
       providers: [

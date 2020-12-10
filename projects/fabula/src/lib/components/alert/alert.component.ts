@@ -7,7 +7,7 @@ import { CommonComponent } from '../common-component/common-component.component'
 import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitionDuration';
 
 // Models
-import { Icon } from '../../models/icon.model';
+import type { Icon } from '../../models/icon.model';
 
 // Services
 import { FabulaService } from '../../services/fabula.service';

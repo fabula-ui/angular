@@ -11,7 +11,7 @@ import { FabulaService } from '../services/fabula.service';
   ]
 })
 export class ResponsivenessModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<any> {
     return {
       ngModule: ResponsivenessModule,
       providers: [

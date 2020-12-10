@@ -6,7 +6,7 @@ import reset from '@fabula/core/styles/common/reset';
 import setBaseTheme from '@fabula/core/styles/methods/misc/setBaseTheme';
 
 // Models
-import { IUserOptions } from '../models/user-options.model';
+import type { IUserOptions } from '../models/user-options.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,23 +1,13 @@
 {
   "name": "@fabula/angular",
-  "version": "0.0.4",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fabula-ui/angular.git"
-  },
+  "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/common": "^11.0.3",
+    "@angular/core": "^11.0.3"
   },
   "dependencies": {
-    "emotion": "^10.0.27"
+    "@fabula/core": "~0.0",
+    "emotion": "^10.0.27",
+    "tslib": "^2.0.0"
   }
 }

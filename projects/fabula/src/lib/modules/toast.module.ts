@@ -4,13 +4,11 @@ import {
 import { CommonModule } from '@angular/common';
 
 // Components
-import { InnerIconComponent } from '../components/inner-icon/inner-icon.component';
 import { ToastComponent } from '../components/toast/toast.component';
 
 // Modules
-import { ButtonModule } from '../modules/button.module';
+import { ButtonModule } from './button.module';
 import { IconsModule } from './icons.module';
-import { InnerIconModule } from '../modules/inner-icon.module';
 import { LinkModule } from './link.module';
 
 // Services
@@ -26,7 +24,6 @@ import { ToastPortalComponent } from '../components/toast-portal/toast-portal.co
         ToastStackComponent
     ],
     entryComponents: [
-        InnerIconComponent,
         ToastComponent,
         ToastPortalComponent,
         ToastStackComponent
@@ -35,7 +32,6 @@ import { ToastPortalComponent } from '../components/toast-portal/toast-portal.co
         ButtonModule,
         CommonModule,
         IconsModule,
-        InnerIconModule,
         LinkModule
     ],
     exports: [

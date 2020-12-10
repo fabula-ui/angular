@@ -10,8 +10,8 @@ import {
 import { CommonComponent } from '../common-component/common-component.component';
 
 // Models
-import { Icon } from '../../models/icon.model';
-import { Message } from '../../models/message.model';
+import type { Icon } from '../../models/icon.model';
+import type { Message } from '../../models/message.model';
 
 // Services
 import { FabulaService } from '../../services/fabula.service';

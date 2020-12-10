@@ -3,7 +3,6 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
-  ContentChild,
   ElementRef,
   Input,
   ViewChild
@@ -13,7 +12,7 @@ import {
 import { CommonComponent } from '../common-component/common-component.component';
 
 // Models
-import { Icon } from '../../models/icon.model';
+import type { Icon } from '../../models/icon.model';
 
 // Services
 import { FabulaService } from '../../services/fabula.service';
@@ -21,7 +20,6 @@ import { ToastService } from '../../services/toast.service';
 
 // Styles
 import ToastStyles from '@fabula/core/styles/components/toast/toast';
-import { InnerIconComponent } from '../inner-icon/inner-icon.component';
 
 @Component({
   selector: 'fab-toast',
@@ -46,7 +44,6 @@ export class ToastComponent extends CommonComponent implements AfterContentInit,
   @Input() stacked = false;
   @Input() target: string;
 
-  @ContentChild(InnerIconComponent) iconComponent: InnerIconComponent;
   @ViewChild('toast') toastEl: ElementRef;
 
   height = 0;

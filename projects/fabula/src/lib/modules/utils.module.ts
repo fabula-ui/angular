@@ -58,7 +58,7 @@ import { FabulaService } from '../services/fabula.service';
     ]
 })
 export class UtilsModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<any> {
         return {
             ngModule: UtilsModule,
             providers: [

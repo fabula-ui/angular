@@ -6,25 +6,19 @@ import { CommonModule } from '@angular/common';
 
 // Components
 import { TagComponent } from '../components/tag/tag.component';
-import { TagGroupComponent } from '../components/tag-group/tag-group.component';
-
-// TODO: remove tag group component
 
 @NgModule({
     declarations: [
-        TagComponent,
-        TagGroupComponent
+        TagComponent
     ],
     entryComponents: [
-        TagComponent,
-        TagGroupComponent
+        TagComponent
     ],
     imports: [
         CommonModule
     ],
     exports: [
-        TagComponent,
-        TagGroupComponent
+        TagComponent
     ]
 })
 export class TagModule { }

@@ -7,7 +7,7 @@ import { CommonComponent } from '../common-component/common-component.component'
 import getInitials from '@fabula/core/methods/misc/getInitials';
 
 // Models
-import { Icon } from '../../models/icon.model';
+import type { Icon } from '../../models/icon.model';
 
 // Services
 import { FabulaService } from '../../services/fabula.service';

@@ -1,8 +1,0 @@
-<div class="fab-tag-input fab-input" [attr.data-focus]="hasFocus">
-  <div class="fab-tag-input__stage">
-    <fab-tag *ngFor="let tag of tags">{{tag}}</fab-tag>
-    <div class="fab-tag-input__field-wrapper">
-      <input class="fab-tag-input__field" (blur)="handleBlur()" (focus)="handleFocus()" (input)="handleChange($event)" (keyup)="handleKeypress($event)" [(ngModel)]="tag" placeholder="Type something..." [ngStyle]="{'width': width}">
-    </div>
-  </div>
-</div>

@@ -14,7 +14,7 @@ import {
 import { ButtonComponent } from '../button/button.component';
 
 // Models
-import { Icon } from '../../models/icon.model';
+import type { Icon } from '../../models/icon.model';
 
 // Services
 import { FabulaService } from '../../services/fabula.service';

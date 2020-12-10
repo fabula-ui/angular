@@ -8,7 +8,7 @@ import { SearchInputComponent } from '../components/search-input/search-input.co
 
 // Modules
 import { ButtonModule } from './button.module';
-import { InnerIconModule } from './inner-icon.module';
+import { IconsModule } from './icons.module';
 import { InputModule } from './input.module';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { InputModule } from './input.module';
     imports: [
         ButtonModule,
         CommonModule,
-        InnerIconModule,
+        IconsModule,
         InputModule
     ],
     exports: [
