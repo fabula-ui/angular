@@ -43,6 +43,7 @@ export class InputComponent extends CommonComponent implements OnInit {
     @Input() status: string;
     @Input() textarea = false;
     @Input() type = 'text';
+    @Input() value = '';
     @Input() variant: string;
 
     hasFocus = false;

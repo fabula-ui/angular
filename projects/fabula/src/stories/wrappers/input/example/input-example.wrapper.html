@@ -1,7 +1,7 @@
 <fab-row>
     <fab-column col="4">
         <fab-input [message]="{ color: 'primary', text: 'This is a message...' }" placeholder="Type something..." (change)="handleChange($event)" (input)="handleInput($event)"
-            (keydown)="handleKeyDown($event)" (keyup)="handleKeyUp($event)"></fab-input>
+            (keydown)="handleKeyDown($event)" value="This is an input value" (keyup)="handleKeyUp($event)"></fab-input>
     </fab-column>
     <fab-column col="4">
         <fab-input [iconEnd]="{ color: 'success', name: 'check' }" [iconStart]="{ color: 'primary', name: 'user' }"

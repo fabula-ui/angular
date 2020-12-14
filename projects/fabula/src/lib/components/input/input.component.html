@@ -7,10 +7,10 @@
     </div>
 
     <input class="fab-input__field" [disabled]="disabled" (blur)="handleFocus(false)" (focus)="handleFocus(true)"
-      [attr.placeholder]="placeholder" [attr.type]="type" *ngIf="!textarea">
+      [attr.placeholder]="placeholder" [attr.type]="type" [value]="value" *ngIf="!textarea">
 
     <textarea class="fab-input__field" [disabled]="disabled" [attr.placeholder]="placeholder" [attr.type]="type"
-      (blur)="handleFocus(false)" (focus)="handleFocus(true)" *ngIf="textarea"></textarea>
+      (blur)="handleFocus(false)" (focus)="handleFocus(true)" [value]="value" *ngIf="textarea"></textarea>
 
     <div class="fab-input__icon" data-placement="end" *ngIf="iconEnd && !passwordToggle">
       <fab-icon [props]="iconEnd"></fab-icon>
