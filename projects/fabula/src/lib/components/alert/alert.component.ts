@@ -13,7 +13,7 @@ import type { Icon } from '../../models/icon.model';
 import { FabulaService } from '../../services/fabula.service';
 
 // Styles
-import AlertStyles from '@fabula/core/styles/components/alert/alert';
+import { AlertStyles } from '@fabula/core/styles/components/alert/alert';
 
 @Component({
   selector: 'fab-alert',
