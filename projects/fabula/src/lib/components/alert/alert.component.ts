@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@ang
 import { CommonComponent } from '../common-component/common-component.component';
 
 // Methods
-import getTransitionDuration from '@fabula/core/styles/methods/misc/getTransitionDuration';
+import { getTransitionDuration } from '@fabula/core/styles/methods/misc/getTransitionDuration';
 
 // Models
 import type { Icon } from '../../models/icon.model';

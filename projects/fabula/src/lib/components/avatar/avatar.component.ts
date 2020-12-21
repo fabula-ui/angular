@@ -4,7 +4,7 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { CommonComponent } from '../common-component/common-component.component';
 
 // Methods
-import getInitials from '@fabula/core/methods/misc/getInitials';
+import { getInitials } from '@fabula/core/methods/misc/getInitials';
 
 // Models
 import type { Icon } from '../../models/icon.model';
@@ -13,7 +13,7 @@ import type { Icon } from '../../models/icon.model';
 import { FabulaService } from '../../services/fabula.service';
 
 // Styles
-import AvatarStyles from '@fabula/core/styles/components/avatar/avatar';
+import { AvatarStyles } from '@fabula/core/styles/components/avatar/avatar';
 
 @Component({
   selector: 'fab-avatar',

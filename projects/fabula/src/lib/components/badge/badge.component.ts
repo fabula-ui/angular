@@ -7,7 +7,7 @@ import { CommonComponent } from '../common-component/common-component.component'
 import { FabulaService } from '../../services/fabula.service';
 
 // Styles
-import BadgeStyles from '@fabula/core/styles/components/badge/badge';
+import { BadgeStyles } from '@fabula/core/styles/components/badge/badge';
 
 @Component({
   selector: 'fab-badge',
