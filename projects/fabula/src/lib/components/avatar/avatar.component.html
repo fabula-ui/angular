@@ -1,5 +1,5 @@
-<div class="fab-avatar-wrapper" data-fab-wrapper="avatar" [attr.data-rounded]="rounded">
-  <div class="fab-avatar" [attr.data-color]="color" [attr.data-rounded]="rounded" [attr.data-size]="size">
+<div class="fab-avatar-wrapper" data-fab-wrapper="avatar">
+  <div class="fab-avatar">
     <fab-icon *ngIf="!showInitials && icon" [props]="icon"></fab-icon>
     <span class="fab-avatar__initials" *ngIf="showInitials">{{initials}}</span>
     <div class="fab-avatar__image" [ngStyle]="{'background-image': 'url(' + src + ')'}" *ngIf="src"></div>
