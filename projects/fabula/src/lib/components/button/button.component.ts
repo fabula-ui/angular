@@ -12,7 +12,7 @@ import { CommonComponent } from '../common-component/common-component.component'
 import { FabulaService } from '../../services/fabula.service';
 
 // Styles
-import ButtonStyles from '@fabula/core/styles/components/button/button';
+import { ButtonStyles } from '@fabula/core/styles/components/button/button';
 
 @Component({
   selector: 'fab-button',
